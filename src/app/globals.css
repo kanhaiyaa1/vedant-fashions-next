@@ -1,26 +1,212 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Luxury sustainable textile palette */
+    --background: 40 20% 97%;
+    --foreground: 220 15% 15%;
+
+    --card: 40 15% 99%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 40 15% 99%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Deep olive green – sustainability */
+    --primary: 150 25% 22%;
+    --primary-foreground: 40 20% 97%;
+
+    /* Warm stone */
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 220 15% 15%;
+
+    --muted: 35 12% 93%;
+    --muted-foreground: 220 10% 46%;
+
+    /* Soft sand accent */
+    --accent: 35 30% 88%;
+    --accent-foreground: 220 15% 15%;
+
+    /* Warm terracotta for destructive */
+    --destructive: 12 70% 50%;
+    --destructive-foreground: 40 20% 97%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 150 25% 22%;
+
+    --radius: 0.25rem;
+
+    /* Gold accent for luxury touches */
+    --gold: 42 65% 55%;
+    --gold-foreground: 220 15% 15%;
+
+    /* Olive for eco badges */
+    --olive: 90 20% 40%;
+    --olive-foreground: 40 20% 97%;
+
+    /* Cream for sections */
+    --cream: 40 30% 95%;
+
+    /* Charcoal for strong text */
+    --charcoal: 220 15% 18%;
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 40 15% 92%;
+
+    --card: 220 15% 11%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 220 15% 11%;
+    --popover-foreground: 40 15% 92%;
+
+    --primary: 150 30% 45%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 12% 18%;
+    --secondary-foreground: 40 15% 92%;
+
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 35 20% 20%;
+    --accent-foreground: 40 15% 92%;
+
+    --destructive: 12 60% 40%;
+    --destructive-foreground: 40 15% 92%;
+
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 150 30% 45%;
+
+    --gold: 42 55% 50%;
+    --gold-foreground: 40 15% 92%;
+    --olive: 90 18% 35%;
+    --olive-foreground: 40 15% 92%;
+    --cream: 220 12% 12%;
+    --charcoal: 40 12% 88%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Typography scale */
+@layer components {
+  .text-display-xl {
+    font-family: var(--font-display);
+    @apply text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight;
+  }
+  .text-display-lg {
+    font-family: var(--font-display);
+    @apply text-4xl md:text-5xl font-light leading-tight tracking-tight;
+  }
+  .text-display-md {
+    font-family: var(--font-display);
+    @apply text-3xl md:text-4xl font-light leading-snug;
+  }
+  .text-display-sm {
+    font-family: var(--font-display);
+    @apply text-2xl md:text-3xl font-normal leading-snug;
+  }
+  .text-heading {
+    font-family: var(--font-display);
+    @apply text-xl md:text-2xl font-medium leading-snug;
+  }
+  .text-subheading {
+    @apply text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground;
+  }
+  .text-body-lg {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+  .text-body {
+    @apply text-sm md:text-base leading-relaxed;
+  }
+  .text-body-sm {
+    @apply text-xs md:text-sm leading-relaxed;
+  }
+  .text-caption {
+    @apply text-xs leading-normal text-muted-foreground;
+  }
+}
+
+/* Grid system */
+@layer components {
+  .grid-layout {
+    @apply grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8;
+  }
+  .container-tight {
+    @apply max-w-4xl mx-auto px-4 md:px-6;
+  }
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  .container-full {
+    @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Section spacing */
+@layer components {
+  .section-spacing {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  .section-spacing-sm {
+    @apply py-10 md:py-16 lg:py-20;
+  }
+}
+
+/* Luxury divider */
+@layer components {
+  .divider-gold {
+    @apply w-12 h-px bg-gold mx-auto;
+  }
 }
