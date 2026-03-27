@@ -11,8 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: "About Vedant Fashion",
     description: "Since 1998, Vedant Fashion has been a trusted garment manufacturer for 200+ European brands. GOTS, OEKO-TEX certified. 4 factories, 800+ workers.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/about`, ...buildHreflangAlternates("/about") },
-  };
+alternates: { 
+  ...buildHreflangAlternates("/about"), 
+  canonical: `https://www.vedantfashion.com/${lang}/about` 
+},  };
 }
 
 const milestones = [
