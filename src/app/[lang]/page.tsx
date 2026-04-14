@@ -32,10 +32,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
       "GOTS, OEKO-TEX & GRS certified garment manufacturer exporting premium sustainable apparel to Europe and Russia. Private label, OEM & wholesale.",
     keywords:
       "garment manufacturer India, sustainable fashion, GOTS certified, OEKO-TEX, private label, organic cotton, wholesale garments Europe",
-    alternates: {
-      canonical: `https://www.vedantfashion.com/${lang}`,
-      ...buildHreflangAlternates("/"),
-    },
+    alternates: buildHreflangAlternates("/"),
   };
 }
 

@@ -7,11 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Leaf, Globe, FlaskConical, Palette } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Fabric Sourcing",
-    description: "Premium fabric sourcing from GOTS-certified mills. Organic cotton, Tencel™, linen blends, and recycled materials for sustainable garment manufacturing.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/fabric-sourcing`, ...buildHreflangAlternates("/fabric-sourcing") },
+    title: "Fabric Sourcing India | GOTS Certified Mills",
+    description: "GOTS-certified fabric sourcing India — organic cotton, Tencel™, linen for UAE, Saudi Arabia & Middle East garment export. Full chain-of-custody.",
+    alternates: buildHreflangAlternates("/fabric-sourcing"),
   };
 }
 

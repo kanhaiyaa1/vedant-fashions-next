@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { fabricPages } from "@/data/seo-pages";
+import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: `${page.name} fabric, ${page.name.toLowerCase()} garment manufacturing`,
-    alternates: { canonical: `https://www.vedantfashion.com/en/fabrics/${page.slug}` },
+    alternates: buildHreflangAlternates(`/fabrics/${page.slug}`),
   };
 }
 

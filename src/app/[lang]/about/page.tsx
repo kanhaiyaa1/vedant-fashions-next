@@ -7,14 +7,12 @@ import { Shield, Users, Globe, Award, Factory, Truck } from "lucide-react";
 import { WebPageSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
     title: "About Vedant Fashion",
-    description: "Since 1998, Vedant Fashion has been a trusted garment manufacturer for 200+ European brands. GOTS, OEKO-TEX certified. 4 factories, 800+ workers.",
-alternates: { 
-  ...buildHreflangAlternates("/about"), 
-  canonical: `https://www.vedantfashion.com/${lang}/about` 
-},  };
+    description: "Ladies woven wear manufacturer India — exporting to UAE, Saudi Arabia, Russia & global markets since 2015. GOTS & OEKO-TEX certified. MOQ 300 pcs.",
+    alternates: buildHreflangAlternates("/about"),
+  };
 }
 
 const milestones = [

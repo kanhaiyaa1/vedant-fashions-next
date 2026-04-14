@@ -1,105 +1,140 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/types";
-import { countryPages, fabricPages, categorySubPages, knowledgePages } from "@/data/seo-pages";
+import { countryPages, knowledgePages } from "@/data/seo-pages";
 import { knowledgeHubArticles } from "@/data/knowledge-hub";
-import { products } from "@/data/products";
 
 const BASE_URL = "https://www.vedantfashion.com";
 
-const staticPaths = [
-  "",
+// Core pages — priority 0.8
+const CORE_PATHS = [
   "/about",
   "/manufacturing",
-  "/sustainability",
   "/certifications",
-  "/quality-control",
-  "/private-label",
-  "/oem",
-  "/fabric-sourcing",
-  "/size-guide",
-  "/wholesale-faq",
   "/shipping",
-  "/contact",
+  "/wholesale-faq",
+  "/sustainability",
+];
+
+// Service pages — priority 0.7
+const SERVICE_PATHS = [
+  "/oem",
+  "/private-label",
+  "/fabric-sourcing",
+  "/quality-control",
+];
+
+// Product category pages — priority 0.8
+const PRODUCT_CATEGORY_PATHS = [
   "/products",
+  "/products/woven-blouses",
+  "/products/cotton-dresses",
+  "/products/linen-shirts",
+  "/products/resort-wear",
+];
+
+// Low-priority utility pages — priority 0.6
+const UTILITY_PATHS = [
   "/catalog",
+  "/contact",
   "/inquiry",
   "/knowledge",
+  "/size-guide",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [];
   const now = new Date();
 
-  // Static pages for all locales
+  // Homepage — all locales, priority 1.0
   for (const locale of locales) {
-    for (const path of staticPaths) {
+    urls.push({
+      url: `${BASE_URL}/${locale.code}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
+    });
+  }
+
+  // Core pages — all locales, priority 0.8
+  for (const locale of locales) {
+    for (const path of CORE_PATHS) {
       urls.push({
         url: `${BASE_URL}/${locale.code}${path}`,
         lastModified: now,
-        changeFrequency: path === "" ? "weekly" : "monthly",
-        priority: path === "" ? 1.0 : 0.8,
+        changeFrequency: "monthly",
+        priority: 0.8,
       });
     }
   }
 
-  // Catalog product pages (en only for dynamic)
-  for (const product of products) {
-    urls.push({
-      url: `${BASE_URL}/en/catalog/${product.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    });
+  // Product category pages — all locales, priority 0.8
+  for (const locale of locales) {
+    for (const path of PRODUCT_CATEGORY_PATHS) {
+      urls.push({
+        url: `${BASE_URL}/${locale.code}${path}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
   }
 
-  // Products category/subcategory pages
-  for (const p of categorySubPages) {
-    urls.push({
-      url: `${BASE_URL}/en/products/${p.category}/${p.subcategory}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    });
+  // Service pages — all locales, priority 0.7
+  for (const locale of locales) {
+    for (const path of SERVICE_PATHS) {
+      urls.push({
+        url: `${BASE_URL}/${locale.code}${path}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
   }
 
-  // Fabric education pages
-  for (const p of fabricPages) {
-    urls.push({
-      url: `${BASE_URL}/en/fabrics/${p.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
+  // Country garment-manufacturer pages — all locales, priority 0.9
+  for (const locale of locales) {
+    for (const c of countryPages) {
+      urls.push({
+        url: `${BASE_URL}/${locale.code}/${c.slug}/garment-manufacturer`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.9,
+      });
+    }
   }
 
-  // Knowledge hub articles
-  for (const a of knowledgeHubArticles) {
-    urls.push({
-      url: `${BASE_URL}/en/knowledge/${a.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
+  // Knowledge hub articles — all locales, priority 0.7
+  for (const locale of locales) {
+    for (const a of knowledgeHubArticles) {
+      urls.push({
+        url: `${BASE_URL}/${locale.code}/knowledge/${a.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
   }
 
-  // SEO knowledge pages
+  // SEO knowledge pages — en only (not translated), priority 0.7
   for (const p of knowledgePages) {
     urls.push({
       url: `${BASE_URL}/en/knowledge/${p.slug}`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     });
   }
 
-  // Country landing pages
-  for (const c of countryPages) {
-    urls.push({
-      url: `${BASE_URL}/en/${c.slug}/garment-manufacturer`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    });
+  // Utility pages — all locales, priority 0.6
+  for (const locale of locales) {
+    for (const path of UTILITY_PATHS) {
+      urls.push({
+        url: `${BASE_URL}/${locale.code}${path}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
   }
 
   return urls;

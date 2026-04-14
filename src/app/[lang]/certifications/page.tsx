@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: "Certifications & Compliance",
     description: "GOTS, OEKO-TEX, GRS, ISO 9001, REACH, BSCI certified. Full compliance documentation with every shipment.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/certifications`, ...buildHreflangAlternates("/certifications") },
+    alternates: buildHreflangAlternates("/certifications"),
   };
 }
 

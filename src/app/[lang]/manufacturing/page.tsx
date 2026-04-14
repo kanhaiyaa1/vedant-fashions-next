@@ -8,11 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { HowToSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Manufacturing Capabilities",
-    description: "State-of-the-art garment manufacturing with 50,000 pcs/month capacity. GOTS certified, vertically integrated production in Gujarat, India.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/manufacturing`, ...buildHreflangAlternates("/manufacturing") },
+    title: "Garment Manufacturing India | Ladies Woven Wear",
+    description: "Vertically integrated ladies woven wear manufacturing in Gujarat, India. GOTS certified. 8,000+ pcs/day. Exporting to UAE, Saudi Arabia & Russia.",
+    alternates: buildHreflangAlternates("/manufacturing"),
   };
 }
 

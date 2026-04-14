@@ -5,11 +5,11 @@ import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Size Guide — EU, UK & US Sizing",
-    description: "Complete garment size guide for European, UK, and US markets. Women's, men's, and unisex sizing with measurements in centimetres.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/size-guide`, ...buildHreflangAlternates("/size-guide") },
+    title: "Size Guide — International Garment Sizing",
+    description: "Garment size guide for GCC, EU, UK & international markets. Ladies woven wear sizing in centimetres. Custom grading available for Middle East buyers.",
+    alternates: buildHreflangAlternates("/size-guide"),
   };
 }
 

@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: "Sitemap — Vedant Fashion | All Pages",
     description: "Complete sitemap of all Vedant Fashion pages. Browse all product categories, export markets, fabric guides, and B2B resources.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/sitemap`, ...buildHreflangAlternates("/sitemap") },
+    alternates: buildHreflangAlternates("/sitemap"),
   };
 }
 

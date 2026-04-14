@@ -1,68 +1,65 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import PageHero from "@/components/vedant/PageHero";
-import ContentBlock from "@/components/vedant/ContentBlock";
-import CTASection from "@/components/vedant/CTASection";
-import { Badge } from "@/components/ui/badge";
+import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
+import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  await params;
   return {
-    title: "Cotton Dresses — Wholesale Manufacturer",
-    description: "Wholesale organic cotton dresses — A-line, shirt dresses, wrap styles. GOTS certified, garment-dyed options. MOQ 300 pcs. EU export ready.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/products/cotton-dresses`, ...buildHreflangAlternates("/products/cotton-dresses") },
+    title: "Cotton Dresses Manufacturer Middle East | Vedant Fashion",
+    description:
+      "GOTS-certified cotton dress manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 6.00–9.50. 18–22 days to Jebel Ali.",
+    keywords:
+      "cotton dresses manufacturer UAE, organic dress supplier Saudi Arabia, wholesale dress exporter India, GOTS certified dress manufacturer, cotton dress MOQ 300 pcs, ladies dress wholesale Middle East, dress supplier Qatar Kuwait, FOB dress manufacturer India, private label dress manufacturer, organic cotton midi dress wholesale",
+    alternates: buildHreflangAlternates("/products/cotton-dresses"),
   };
 }
 
-const styles = [
-  { name: "A-Line Midi Dress", fabric: "100% Organic Cotton Poplin, 110 GSM", sizes: "XS–3XL", colors: "15+ colorways, custom prints available", features: ["Flattering A-line silhouette", "Side seam pockets", "Back zip closure", "Fully lined bodice"], cert: "GOTS" },
-  { name: "Shirt Dress", fabric: "100% Organic Cotton Chambray, 130 GSM", sizes: "XS–2XL", colors: "Indigo, Light Wash, White", features: ["Button-through front", "Adjustable waist belt", "Roll-up tab sleeves", "Chest patch pockets"], cert: "GOTS" },
-  { name: "Wrap Dress", fabric: "100% Tencel™ Lyocell, 105 GSM", sizes: "XS–XL", colors: "Sage, Rust, Navy, Black", features: ["True wrap construction", "Fluid drape", "Knee length", "Low-impact dyes"], cert: "OEKO-TEX" },
-  { name: "Tiered Maxi Dress", fabric: "100% Organic Cotton Voile, 75 GSM", sizes: "S–2XL", colors: "Floral prints, Solid earth tones", features: ["3-tier gathered skirt", "Adjustable straps", "Smocked back bodice", "Block print options"], cert: "GOTS" },
+const FAQS: CategoryFaq[] = [
+  {
+    q: "What cotton dress styles do you manufacture for Middle East wholesale buyers?",
+    a: "Our cotton dress range includes A-line midi dresses, shirt dresses, wrap dresses, tiered maxi dresses, pinafores, smocked-bodice midi dresses, button-front styles, linen-cotton shift dresses, embroidered-bodice dresses, and digital-print midi dresses — 20+ SKUs in total. All styles are available in GOTS-certified organic cotton, with modest-wear adaptations (longer hem, higher neckline, sleeve extensions) available for the GCC market.",
+  },
+  {
+    q: "What is the FOB price range for organic cotton dresses exported to the UAE and GCC?",
+    a: "Indicative FOB pricing at Mumbai is USD 6.00–9.50 per piece at MOQ (300 pcs). Simple A-line and shift dresses sit at the lower end; smocked-bodice, embroidered, and printed styles with higher labour content sit at the upper end. Pricing is confirmed in writing within 24 hours of receiving your style request and target quantity.",
+  },
+  {
+    q: "Can you produce modest-wear adaptations of cotton dresses for Saudi Arabia and the GCC?",
+    a: "Yes. We regularly adapt our core dress silhouettes for GCC modesty requirements — adding full sleeves, raising necklines, extending hem lengths to midi or maxi, and adjusting fit to be less form-fitting. All adaptations are sampled before bulk production at no additional charge for standard modifications.",
+  },
+  {
+    q: "Are your cotton dresses compliant with SASO and ESMA textile labelling standards?",
+    a: "Yes. All dresses destined for Saudi Arabia carry SASO-compliant documentation, and UAE shipments meet ESMA requirements. Woven care labels include fibre composition, care instructions in Arabic and English, country of origin, and manufacturer details — meeting GSO 1956 GCC-wide standards. Third-party testing reports (SGS / Intertek) can be arranged for customs clearance.",
+  },
+  {
+    q: "What is the minimum order for cotton dresses and can we mix styles in one order?",
+    a: "Standard MOQ is 300 pieces per style per colour. For buyers placing multi-style orders, we allow style mixing within a single purchase order. A typical first shipment for a GCC wholesale buyer might be 4 styles × 300 pieces = 1,200 pieces, fitting efficiently into a 20ft container. Contact us for a consolidated order proposal.",
+  },
+  {
+    q: "How long is the production lead time for cotton dresses to GCC markets?",
+    a: "Standard production lead time is 45–55 days from order confirmation and fabric receipt. Sea freight from JNPT Mumbai to Jebel Ali (UAE) adds 18–22 days, Dammam/Jeddah (Saudi Arabia) 20–24 days, and Doha (Qatar) 20–23 days. Total door-to-port timeline is typically 65–80 days. Air freight is available for urgent replenishment orders.",
+  },
 ];
 
-const CottonDressesPage = () => {
+export default async function CottonDressesPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
-    <div className="min-h-screen bg-background font-body">
-      <PageHero
-        subtitle="Cotton Dresses"
-        title="Organic Cotton Dresses for Every Season"
-        description="Versatile dress silhouettes in GOTS-certified organic cotton. From everyday shirt dresses to occasion-ready wrap styles — designed for the European size matrix."
-      />
-
-      <ContentBlock subtitle="Collection" title="Core Dress Styles">
-        <div className="space-y-8">
-          {styles.map((s) => (
-            <div key={s.name} className="grid lg:grid-cols-3 gap-6 border border-border rounded p-6 md:p-8 hover:shadow-md transition-shadow">
-              <div className="aspect-[3/4] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-                <p className="font-display text-lg text-primary/40">{s.name}</p>
-              </div>
-              <div className="lg:col-span-2 space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-xl font-medium text-foreground">{s.name}</h3>
-                  <Badge className="bg-olive text-olive-foreground border-0 text-[10px] uppercase tracking-wider rounded-sm">{s.cert}</Badge>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 text-body-sm">
-                  <div><span className="text-muted-foreground font-medium">Fabric:</span> <span className="text-foreground">{s.fabric}</span></div>
-                  <div><span className="text-muted-foreground font-medium">Sizes:</span> <span className="text-foreground">{s.sizes}</span></div>
-                  <div className="sm:col-span-2"><span className="text-muted-foreground font-medium">Colors:</span> <span className="text-foreground">{s.colors}</span></div>
-                </div>
-                <ul className="grid sm:grid-cols-2 gap-1.5">
-                  {s.features.map((f) => (
-                    <li key={f} className="text-body-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-gold shrink-0" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      <CTASection variant="dark" buttonText="Request Dress Samples" />
-    </div>
+    <ProductCategoryPage
+      categorySlug="cotton-dresses"
+      primaryKeyword="Cotton Dresses Manufacturer for Middle East Wholesale Buyers"
+      heroDescription="GOTS 6.0 certified organic cotton dress manufacturer in India. A-line, shirt, wrap, maxi, and smocked styles. Modest-wear adaptations for GCC. FOB USD 6.00–9.50 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali."
+      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
+      faqs={FAQS}
+      lang={lang}
+    />
   );
-};
-
-export default CottonDressesPage;
+}

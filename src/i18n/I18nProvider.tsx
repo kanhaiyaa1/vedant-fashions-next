@@ -12,8 +12,9 @@ import es from "./locales/es";
 import nl from "./locales/nl";
 import pl from "./locales/pl";
 import ru from "./locales/ru";
+import ar from "./locales/ar";
 
-const translationMap: Record<Locale, Translations> = { en, de, fr, it, es, nl, pl, ru };
+const translationMap: Record<Locale, Translations> = { en, de, fr, it, es, nl, pl, ru, ar };
 
 interface I18nContextValue {
   locale: Locale;

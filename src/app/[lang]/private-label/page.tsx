@@ -7,11 +7,11 @@ import { CheckCircle, Lock, FileText, Palette } from "lucide-react";
 import { ServiceSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Private Label Manufacturing",
-    description: "Full private-label garment manufacturing — your brand, our production. EU-compliant labelling, GOTS certification, NDA protected.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/private-label`, ...buildHreflangAlternates("/private-label") },
+    title: "Private Label Ladies Wear Manufacturing India",
+    description: "Private label ladies woven wear manufacturing India — your brand, our production. GOTS certified. NDA protected. MOQ 300 pcs. FOB Mumbai.",
+    alternates: buildHreflangAlternates("/private-label"),
   };
 }
 

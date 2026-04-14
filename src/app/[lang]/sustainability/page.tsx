@@ -8,11 +8,11 @@ import { WebPageSchema, BreadcrumbSchema } from "@/components/seo/StructuredData
 import { Badge } from "@/components/ui/badge";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Sustainability",
-    description: "Sustainable garment manufacturing — GOTS, OEKO-TEX, GRS certified. Solar energy, zero liquid discharge, organic materials, fair labour.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/sustainability`, ...buildHreflangAlternates("/sustainability") },
+    title: "Sustainable Garment Manufacturing India | Vedant",
+    description: "GOTS, OEKO-TEX & GRS certified sustainable garment manufacturing India. Solar energy, zero liquid discharge. Exporting to UAE, Saudi Arabia & Russia.",
+    alternates: buildHreflangAlternates("/sustainability"),
   };
 }
 

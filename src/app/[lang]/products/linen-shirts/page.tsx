@@ -1,83 +1,71 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import PageHero from "@/components/vedant/PageHero";
-import ContentBlock from "@/components/vedant/ContentBlock";
-import CTASection from "@/components/vedant/CTASection";
-import { Badge } from "@/components/ui/badge";
+import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
+import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  await params;
   return {
-    title: "Linen Shirts — Wholesale Manufacturer",
-    description: "Wholesale linen and linen-blend shirts, enzyme-washed for softness. Men's and women's cuts. OEKO-TEX certified. MOQ 500 pcs, EU export ready.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/products/linen-shirts`, ...buildHreflangAlternates("/products/linen-shirts") },
+    title: "Linen Shirts Manufacturer Middle East | Vedant Fashion",
+    description:
+      "OEKO-TEX linen shirt manufacturer for UAE, Saudi Arabia, Qatar, Kuwait. MOQ 500 pcs. FOB USD 5.50–8.00. European flax. 18–22 days to Jebel Ali.",
+    keywords:
+      "linen shirts manufacturer UAE, linen shirt supplier Saudi Arabia, wholesale linen shirt exporter India, European flax linen shirts wholesale, linen shirt MOQ 500 pcs, ladies linen shirt Middle East, linen shirt Qatar Kuwait, FOB linen manufacturer India, private label linen shirts, enzyme washed linen shirt wholesale",
+    alternates: buildHreflangAlternates("/products/linen-shirts"),
   };
 }
 
-const styles = [
-  { name: "Classic Linen Shirt", fabric: "100% European Flax Linen, 150 GSM", sizes: "XS–3XL (EU 36–54)", colors: "White, Natural, Sky, Sand, Olive", features: ["Single-needle stitching", "Coconut shell buttons", "Enzyme-washed for softness", "Split yoke construction"], cert: "OEKO-TEX" },
-  { name: "Linen-Cotton Blend Shirt", fabric: "55% Linen, 45% Organic Cotton, 130 GSM", sizes: "S–2XL", colors: "8 seasonal colorways", features: ["Reduced wrinkle factor vs. pure linen", "Button-down collar option", "Chest pocket", "Garment-dyed finish"], cert: "GRS" },
-  { name: "Oversized Linen Tunic", fabric: "100% Handloom Linen, 160 GSM", sizes: "One size / S–L", colors: "Natural, Charcoal, Rust", features: ["Relaxed oversized fit", "Side slits", "Hand-finished edges", "Artisanal character"], cert: "GOTS" },
-  { name: "Mandarin Collar Linen", fabric: "100% Belgian Linen, 140 GSM", sizes: "S–2XL", colors: "White, Ecru, Navy", features: ["Band collar", "Concealed placket", "French seams throughout", "Premium mother-of-pearl buttons"], cert: "OEKO-TEX" },
+const FAQS: CategoryFaq[] = [
+  {
+    q: "What linen shirt styles do you manufacture for GCC wholesale buyers?",
+    a: "Our linen shirts range covers 18 SKUs: classic European-cut linen shirts, mandarin collar, camp collar, linen-cotton blend, grandad collar, henley, oversized drop-shoulder, embroidered, yarn-dyed stripe, guayabera, safari, short sleeve, popover, band collar, herringbone weave, western yoke, women's resort linen shirt, and gingham check. All styles are available in European flax linen (Belgian / French origin) or linen-cotton blends, enzyme-washed for softness.",
+  },
+  {
+    q: "Why is Indian-manufactured linen particularly suitable for the UAE and GCC markets?",
+    a: "Linen's natural breathability, moisture-wicking properties, and lightweight feel make it ideal for Gulf climates. Our enzyme-washed linen shirts have a soft hand-feel from the first wear — unlike stiff untreated linen. The classic and camp collar styles are particularly well suited to smart-casual resort and hospitality wear popular across UAE, Qatar, and Bahrain.",
+  },
+  {
+    q: "What is the MOQ and FOB price for linen shirts?",
+    a: "Standard MOQ is 500 pieces per style per colour, with a FOB price range of USD 5.50–8.00 per piece from Mumbai. Simple classic-collar enzyme-washed linen shirts sit at the lower end; embroidered and guayabera styles with higher labour content are priced higher. We provide formal quotations within 24 hours of receiving your style and quantity requirements.",
+  },
+  {
+    q: "What is the difference between your European Flax® linen and standard linen?",
+    a: "European Flax® is a certification mark guaranteeing the linen is sourced from France, Belgium, or the Netherlands — the world's finest flax-growing regions — without irrigation or pesticides. Our European Flax® certified shirts (ls-001, ls-008, ls-010, ls-014) carry the European Flax® hang-tag, which is a significant differentiator for premium retail buyers in the UAE, Saudi Arabia, and Qatar.",
+  },
+  {
+    q: "Can you produce linen shirts with Arabic embroidery or custom prints for the GCC market?",
+    a: "Yes. We offer tonal and contrast embroidery in-house (as on VF-LS-008 Embroidered Linen Shirt), and can execute Arabic script motifs, geometric embroidery, or custom brand embroidery on any shirt style. Screen printing and digital printing on linen are also available for patch or all-over effects. Embroidery samples are provided within 15 working days.",
+  },
+  {
+    q: "How are your linen shirts packed and what documentation is provided for GCC import?",
+    a: "Linen shirts are individually folded, poly-bagged, and packed in export cartons — typically 12 pieces per carton. We provide Commercial Invoice, Packing List, Certificate of Origin, Bill of Lading, OEKO-TEX certificate copy, and (for UAE) ESMA-compliant bilingual care label declaration. Saudi SASO documentation is facilitated via accredited Conformity Assessment Bodies for regulated product lines.",
+  },
 ];
 
-const LinenShirtsPage = () => {
+export default async function LinenShirtsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
-    <div className="min-h-screen bg-background font-body">
-      <PageHero
-        subtitle="Linen Shirts"
-        title="Premium Linen Shirts — European Quality, Indian Value"
-        description="Pure linen and linen-blend shirts crafted for comfort and style. Enzyme-washed for softness, enzyme-finished for minimal shrinkage. Perfect for SS and transitional collections."
-      />
-
-      <ContentBlock subtitle="Collection" title="Linen Shirt Range">
-        <div className="space-y-8">
-          {styles.map((s) => (
-            <div key={s.name} className="grid lg:grid-cols-3 gap-6 border border-border rounded p-6 md:p-8 hover:shadow-md transition-shadow">
-              <div className="aspect-[3/4] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-                <p className="font-display text-lg text-primary/40">{s.name}</p>
-              </div>
-              <div className="lg:col-span-2 space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-xl font-medium text-foreground">{s.name}</h3>
-                  <Badge className="bg-olive text-olive-foreground border-0 text-[10px] uppercase tracking-wider rounded-sm">{s.cert}</Badge>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 text-body-sm">
-                  <div><span className="text-muted-foreground font-medium">Fabric:</span> <span className="text-foreground">{s.fabric}</span></div>
-                  <div><span className="text-muted-foreground font-medium">Sizes:</span> <span className="text-foreground">{s.sizes}</span></div>
-                  <div className="sm:col-span-2"><span className="text-muted-foreground font-medium">Colors:</span> <span className="text-foreground">{s.colors}</span></div>
-                </div>
-                <ul className="grid sm:grid-cols-2 gap-1.5">
-                  {s.features.map((f) => (
-                    <li key={f} className="text-body-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-gold shrink-0" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      <ContentBlock subtitle="Linen Facts" title="Why Our Linen?" bg="cream">
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-          {[
-            { title: "European Flax", desc: "Sourced from Belgium and France — the world's finest linen-growing regions." },
-            { title: "Enzyme Washed", desc: "Pre-washed for a soft, lived-in feel. Minimal shrinkage post-consumer wash." },
-            { title: "Naturally Sustainable", desc: "Linen requires 88% less water than cotton. No irrigation, no pesticides needed." },
-          ].map((f) => (
-            <div key={f.title} className="space-y-2">
-              <h3 className="font-display text-lg font-medium text-foreground">{f.title}</h3>
-              <p className="text-body-sm text-muted-foreground">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      <CTASection variant="dark" buttonText="Request Linen Samples" />
-    </div>
+    <ProductCategoryPage
+      categorySlug="linen-shirts"
+      primaryKeyword="Linen Shirts Manufacturer for Middle East Wholesale Buyers"
+      heroDescription="OEKO-TEX certified European flax linen shirts manufactured in India. Classic, camp collar, guayabera, oversized, and embroidered styles. Enzyme-washed for softness. FOB USD 5.50–8.00 per piece. MOQ 500 pcs. 18–22 days sea freight to Jebel Ali."
+      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
+      gccMarketNotes={[
+        { country: "UAE", note: "Camp collar and short-sleeve linen shirts in high demand for resort retail and hospitality channels across Dubai and Abu Dhabi. 18–22 days to Jebel Ali." },
+        { country: "Saudi Arabia", note: "Long-sleeve classic and guayabera linen shirts suitable for smart-casual and modest-wear retail. SASO compliant. 20–24 days to Dammam / Jeddah." },
+        { country: "Qatar", note: "Premium European flax® shirts well received in Doha's luxury retail sector. GSO 1956 compliant labels. 20–23 days to Hamad Port." },
+        { country: "Kuwait", note: "Linen-cotton blend shirts popular for year-round wear in Kuwait's climate. PAAET/PSNS compliant. 19–22 days to Shuwaikh." },
+      ]}
+      faqs={FAQS}
+      lang={lang}
+    />
   );
-};
-
-export default LinenShirtsPage;
+}

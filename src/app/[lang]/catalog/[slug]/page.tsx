@@ -9,6 +9,7 @@ import ProductSpecifications from "@/components/vedant/catalog/ProductSpecificat
 import ProductInquiryForm from "@/components/vedant/catalog/ProductInquiryForm";
 import CatalogProductCard from "@/components/vedant/catalog/CatalogProductCard";
 import { ProductSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
+import buildHreflangAlternates from "@/i18n/HreflangTags";
 
 interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: product.shortDescription,
     keywords: product.tags.join(", "),
     openGraph: { type: "website", title: product.name, description: product.shortDescription },
-    alternates: { canonical: `https://www.vedantfashion.com/en/catalog/${product.slug}` },
+    alternates: buildHreflangAlternates(`/catalog/${product.slug}`),
   };
 }
 

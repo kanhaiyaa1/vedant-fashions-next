@@ -85,7 +85,7 @@ export const categories: Category[] = [
 
 // ── Shared Data ─────────────────────────────────────────────────────
 
-const standardSizeChart: SizeChartRow[] = [
+export const standardSizeChart: SizeChartRow[] = [
   { size: "XS", eu: "34", uk: "6", us: "2", chest: "80", waist: "62", hip: "88", length: "62" },
   { size: "S", eu: "36", uk: "8", us: "4", chest: "84", waist: "66", hip: "92", length: "64" },
   { size: "M", eu: "38", uk: "10", us: "6", chest: "88", waist: "70", hip: "96", length: "66" },
@@ -753,6 +753,25 @@ export const products: Product[] = [
     hsCode: "6105.10.00", countryOfOrigin: "India",
   })),
 ];
+
+// ── FOB Pricing — injected into every FabricOption by category ──────
+
+export const categoryFobPricing: Record<string, string> = {
+  "woven-blouses":  "FOB USD 4.50–7.00 per piece (MOQ 300 pcs)",
+  "cotton-dresses": "FOB USD 6.00–9.50 per piece (MOQ 300 pcs)",
+  "linen-shirts":   "FOB USD 5.50–8.00 per piece (MOQ 300 pcs)",
+  "resort-wear":    "FOB USD 7.00–12.00 per piece (MOQ 300 pcs)",
+};
+
+// Populate FabricOption.price for all products in the above categories
+products.forEach((p) => {
+  const fob = categoryFobPricing[p.category];
+  if (fob) {
+    p.fabricOptions.forEach((f) => {
+      if (!f.price) f.price = fob;
+    });
+  }
+});
 
 // ── Helper functions ────────────────────────────────────────────────
 

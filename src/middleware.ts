@@ -4,6 +4,36 @@ import { locales, defaultLocale } from "./i18n/types";
 
 const localeCodes = locales.map((l) => l.code);
 
+// Arab country ISO codes → route to /ar/
+const ARAB_COUNTRY_CODES = new Set([
+  "AE", "SA", "QA", "KW", "OM", "BH", "EG",
+  "JO", "IQ", "LB", "SY", "YE", "PS",
+]);
+
+// Russia / CIS country ISO codes → route to /ru/
+const CIS_COUNTRY_CODES = new Set([
+  "RU", "KZ", "BY", "AM", "KG", "TJ", "UZ",
+]);
+
+function detectLocaleFromCountry(countryCode: string | null): string | null {
+  if (!countryCode) return null;
+  const code = countryCode.toUpperCase();
+  if (ARAB_COUNTRY_CODES.has(code)) return "ar";
+  if (CIS_COUNTRY_CODES.has(code)) return "ru";
+  return null;
+}
+
+function detectLocaleFromAcceptLanguage(acceptLang: string | null): string | null {
+  if (!acceptLang) return null;
+  const preferred = acceptLang
+    .split(",")
+    .map((s) => s.split(";")[0].trim().substring(0, 2).toLowerCase());
+  const match = preferred.find((lang) =>
+    localeCodes.includes(lang as (typeof localeCodes)[number])
+  );
+  return match ?? null;
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -27,27 +57,23 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // Detect preferred locale from Accept-Language header (optional enhancement)
+  // 1. CF-IPCountry header (Cloudflare) — most reliable signal
+  const cfCountry = request.headers.get("cf-ipcountry");
+  const countryLocale = detectLocaleFromCountry(cfCountry);
+
+  // 2. Accept-Language fallback
   const acceptLang = request.headers.get("accept-language");
-  let detectedLocale = defaultLocale;
-  if (acceptLang) {
-    const preferred = acceptLang
-      .split(",")
-      .map((s) => s.split(";")[0].trim().substring(0, 2).toLowerCase());
-    const match = preferred.find((lang) =>
-      localeCodes.includes(lang as (typeof localeCodes)[number])
-    );
-    if (match) detectedLocale = match as typeof defaultLocale;
-  }
+  const acceptLocale = detectLocaleFromAcceptLanguage(acceptLang);
+
+  // Priority: CF country code > Accept-Language > default (en)
+  const detectedLocale: string = countryLocale ?? acceptLocale ?? defaultLocale;
 
   // Redirect unprefixed paths to the detected locale
-  // e.g., /about → /en/about  (or /de/about if browser prefers German)
   const url = request.nextUrl.clone();
   url.pathname = `/${detectedLocale}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(url, { status: 307 });
 }
 
 export const config = {
-  // Match everything except static files, api routes, and Next.js internals
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 };

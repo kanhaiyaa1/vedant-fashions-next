@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   return {
     title: "Textile Knowledge Hub — Guides for Garment Buyers",
-    description: "40+ in-depth articles on fabric types, garment manufacturing, sustainability, EU regulations, quality control, export logistics, and private label manufacturing.",
+    description: "40+ guides on fabric types, garment manufacturing, GCC export, OEKO-TEX, MOQ, and shipping to UAE, Saudi Arabia, Russia & Middle East wholesale buyers.",
     keywords: "textile knowledge, garment manufacturing guide, fabric types, EU textile regulations, B2B fashion",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/knowledge`, ...buildHreflangAlternates("/knowledge") },
+    alternates: buildHreflangAlternates("/knowledge"),
   };
 }
 

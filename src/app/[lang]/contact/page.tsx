@@ -7,11 +7,11 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "Contact Us",
-    description: "Contact Vedant Fashion — offices in Hamburg, Ahmedabad, and Moscow. Export sales team for European garment buyers.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/contact`, ...buildHreflangAlternates("/contact") },
+    title: "Contact Vedant Fashion — Export Enquiries",
+    description: "Contact Vedant Fashion export team — Gujarat, India. Wholesale enquiries for UAE, Saudi Arabia, Russia & global buyers. Response within 24 hours.",
+    alternates: buildHreflangAlternates("/contact"),
   };
 }
 

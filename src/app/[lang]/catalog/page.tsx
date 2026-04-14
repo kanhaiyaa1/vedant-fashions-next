@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "Browse our full range of GOTS and OEKO-TEX certified wholesale garments — woven blouses, cotton dresses, linen shirts, and resort wear. MOQ from 300 pcs.",
     keywords:
       "wholesale garments catalogue, GOTS certified clothing, organic cotton wholesale, linen shirts bulk, sustainable fashion manufacturer",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/catalog`, ...buildHreflangAlternates("/catalog") },
+    alternates: buildHreflangAlternates("/catalog"),
   };
 }
 

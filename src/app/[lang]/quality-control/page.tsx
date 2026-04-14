@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: "Quality Control",
     description: "AQL 2.5 inspection, in-house textile lab, ISO-standard testing. Zero-defect philosophy for garment manufacturing.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/quality-control`, ...buildHreflangAlternates("/quality-control") },
+    alternates: buildHreflangAlternates("/quality-control"),
   };
 }
 

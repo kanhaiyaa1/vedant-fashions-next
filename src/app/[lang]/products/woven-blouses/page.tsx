@@ -1,72 +1,65 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import PageHero from "@/components/vedant/PageHero";
-import ContentBlock from "@/components/vedant/ContentBlock";
-import CTASection from "@/components/vedant/CTASection";
-import { Badge } from "@/components/ui/badge";
+import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
+import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  await params;
   return {
-    title: "Woven Blouses — Wholesale Manufacturer",
-    description: "Wholesale woven blouses in organic cotton, Tencel™, and linen blends. GOTS certified. MOQ 500 pcs, 6–8 week lead time. EU export ready.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/products/woven-blouses`, ...buildHreflangAlternates("/products/woven-blouses") },
+    title: "Woven Blouses Manufacturer Middle East | Vedant Fashion",
+    description:
+      "GOTS-certified woven blouse manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 4.50–7.00. 18–22 days to Jebel Ali.",
+    keywords:
+      "woven blouses manufacturer UAE, ladies blouse supplier Saudi Arabia, wholesale blouse exporter India, GOTS certified blouse manufacturer, woven blouse MOQ 300 pcs, organic cotton blouse wholesale, blouse supplier Qatar Kuwait, ladies woven wear Middle East, FOB blouse manufacturer India, private label blouse manufacturer",
+    alternates: buildHreflangAlternates("/products/woven-blouses"),
   };
 }
 
-const styles = [
-  { name: "Classic Oxford Blouse", fabric: "100% Organic Cotton Oxford, 120 GSM", sizes: "XS–3XL (EU 34–52)", colors: "White, Ecru, Powder Blue, Blush", features: ["Mother-of-pearl buttons", "Back yoke with box pleat", "Adjustable cuffs", "Curved hem"], cert: "GOTS" },
-  { name: "Pintuck Poplin Blouse", fabric: "100% Organic Cotton Poplin, 100 GSM", sizes: "XS–2XL", colors: "12 colorways available", features: ["Front pintuck detailing", "Concealed placket", "3/4 puff sleeves", "Enzyme-washed finish"], cert: "GOTS" },
-  { name: "Tencel™ Relaxed Blouse", fabric: "100% Tencel™ Lyocell, 110 GSM", sizes: "XS–3XL", colors: "Sand, Olive, Navy, Black", features: ["Fluid drape", "Drop shoulder", "Sustainable modal hand-feel", "Low-impact dyed"], cert: "OEKO-TEX" },
-  { name: "Linen-Blend Camp Collar", fabric: "55% Linen, 45% Cotton, 140 GSM", sizes: "S–2XL", colors: "Natural, Khaki, Terracotta, Indigo", features: ["Camp collar", "Chest pocket", "Side slits", "Pre-washed for minimal shrinkage"], cert: "GRS" },
-  { name: "Embroidered Peasant Blouse", fabric: "100% Organic Cotton Voile, 80 GSM", sizes: "XS–XL", colors: "White, Off-white", features: ["Hand-guided embroidery", "Smocked waist", "Balloon sleeves", "Artisanal detailing"], cert: "GOTS" },
+const FAQS: CategoryFaq[] = [
+  {
+    q: "What is the minimum order quantity for woven blouses?",
+    a: "Our standard MOQ for woven blouses is 300 pieces per style per colour. For styles requiring hand-embroidery or specialised trims (e.g. VF-WB-003 Embroidered Linen Blouse), the MOQ is 500 pieces due to the additional handcraft time involved. Mixed-colour orders for the same style may be split at 150 pieces per colour subject to a small setup charge.",
+  },
+  {
+    q: "What FOB price range should UAE and Saudi buyers expect for woven blouses?",
+    a: "Indicative FOB pricing at Mumbai is USD 4.50–7.00 per piece for standard organic cotton and Tencel™ blouses at MOQ. Embroidered and artisan-detailed styles (smocked, pintuck, hand-embroidery) sit at the higher end. Final pricing is confirmed after style selection, fabric specification, and quantity. We provide a formal quotation within 24 hours of receiving your product brief.",
+  },
+  {
+    q: "Are your blouses compliant with UAE ESMA and Saudi SASO requirements?",
+    a: "Yes. All blouses exported to the GCC carry bilingual Arabic / English woven care labels and fibre composition tags meeting ESMA (UAE), SASO (Saudi Arabia), and GSO 1956 (GCC-wide) textile labelling requirements. We provide a compliance declaration and can arrange third-party product testing (SGS / Intertek) at your request.",
+  },
+  {
+    q: "How long does sea freight take from India to UAE, Saudi Arabia, and Qatar?",
+    a: "From JNPT Mumbai: Jebel Ali (UAE) 18–22 days, Dammam / Jeddah (Saudi Arabia) 20–24 days, Hamad Port / Doha (Qatar) 20–23 days, Shuwaikh (Kuwait) 19–22 days, Muscat (Oman) 17–20 days. We work with established freight forwarders on all GCC lanes and can provide competitive FCL and LCL rates.",
+  },
+  {
+    q: "Can you produce private label blouses with our brand's labels and packaging?",
+    a: "Yes. We offer full private label and OEM services — custom woven brand labels, hang-tags, polybag printing, shipper carton branding, and inner packaging. Our design studio can also develop exclusive colourways, embroidery patterns, or print designs under NDA. A minimum of 500 pieces is recommended for first private label orders.",
+  },
+  {
+    q: "What certifications do your woven blouses carry?",
+    a: "Depending on the style and fabric, our woven blouses carry GOTS 6.0, OEKO-TEX Standard 100, GRS 4.0, FSC, and EU Ecolabel certifications. All blouses use AZO-free dyes with formaldehyde content below 75 ppm (Category II), meeting EU REACH and GCC import standards. Full certificate copies are provided with each shipment.",
+  },
 ];
 
-const WovenBlousesPage = () => {
+export default async function WovenBlousesPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
-    <div className="min-h-screen bg-background font-body">
-      <PageHero
-        subtitle="Woven Blouses"
-        title="Crafted Blouses for the European Market"
-        description="From classic oxfords to artisanal embroidered pieces — our woven blouse range combines Indian hand-craft with European fit standards. All styles available for private label."
-      />
-
-      <ContentBlock subtitle="Range" title="Core Blouse Styles">
-        <div className="space-y-8">
-          {styles.map((s) => (
-            <div key={s.name} className="grid lg:grid-cols-3 gap-6 border border-border rounded p-6 md:p-8 hover:shadow-md transition-shadow">
-              <div className="aspect-[3/4] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-                <p className="font-display text-lg text-primary/40">{s.name}</p>
-              </div>
-              <div className="lg:col-span-2 space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-xl font-medium text-foreground">{s.name}</h3>
-                  <Badge className="bg-olive text-olive-foreground border-0 text-[10px] uppercase tracking-wider rounded-sm">{s.cert}</Badge>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 text-body-sm">
-                  <div><span className="text-muted-foreground font-medium">Fabric:</span> <span className="text-foreground">{s.fabric}</span></div>
-                  <div><span className="text-muted-foreground font-medium">Sizes:</span> <span className="text-foreground">{s.sizes}</span></div>
-                  <div><span className="text-muted-foreground font-medium">Colors:</span> <span className="text-foreground">{s.colors}</span></div>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">Features</p>
-                  <ul className="grid sm:grid-cols-2 gap-1.5">
-                    {s.features.map((f) => (
-                      <li key={f} className="text-body-sm text-muted-foreground flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-gold shrink-0" /> {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      <CTASection variant="dark" buttonText="Request Blouse Samples" />
-    </div>
+    <ProductCategoryPage
+      categorySlug="woven-blouses"
+      primaryKeyword="Woven Blouses Manufacturer for Middle East Wholesale Buyers"
+      heroDescription="GOTS 6.0 and OEKO-TEX certified ladies woven blouses manufactured in India. Organic cotton poplin, Tencel™ lyocell, linen-cotton blends. FOB USD 4.50–7.00 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali, Dubai."
+      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
+      faqs={FAQS}
+      lang={lang}
+    />
   );
-};
-
-export default WovenBlousesPage;
+}

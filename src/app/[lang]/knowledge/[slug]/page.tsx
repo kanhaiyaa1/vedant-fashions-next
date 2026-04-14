@@ -3,10 +3,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getArticleBySlug, knowledgeHubArticles } from "@/data/knowledge-hub";
 import { knowledgePages } from "@/data/seo-pages";
+import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
-import { CheckCircle, Clock, BookOpen, ArrowLeft } from "lucide-react";
+import { CheckCircle, Clock, BookOpen, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ lang: string; slug: string }>;
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: article.metaTitle,
       description: article.metaDescription,
       keywords: `${article.title}, garment manufacturing, B2B textile`,
-      alternates: { canonical: `https://www.vedantfashion.com/en/knowledge/${slug}` },
+      alternates: buildHreflangAlternates(`/knowledge/${slug}`),
     };
   }
   const page = knowledgePages.find((p) => p.slug === slug);
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: page.metaTitle,
       description: page.metaDescription,
       keywords: `${page.title}, garment manufacturing, B2B textile`,
-      alternates: { canonical: `https://www.vedantfashion.com/en/knowledge/${slug}` },
+      alternates: buildHreflangAlternates(`/knowledge/${slug}`),
     };
   }
   return {};
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // ── Hub Article renderer ─────────────────────────────────────────────────────
 
-function HubArticlePage({ slug }: { slug: string }) {
+function HubArticlePage({ slug, lang }: { slug: string; lang: string }) {
   const article = getArticleBySlug(slug);
   if (!article) return null;
 
@@ -51,24 +52,43 @@ function HubArticlePage({ slug }: { slug: string }) {
     .map((s) => knowledgeHubArticles.find((a) => a.slug === s))
     .filter(Boolean);
 
-  const ctaMap: Record<string, { title: string; desc: string; btn: string }> = {
-    "fabric-types": { title: "Need Fabric Samples?", desc: "Request swatch cards for any fabric in our range.", btn: "Request Swatches" },
-    "garment-manufacturing": { title: "Ready to Start Manufacturing?", desc: "Get a detailed quote and production timeline within 48 hours.", btn: "Get Quote" },
-    sustainability: { title: "Looking for Sustainable Manufacturing?", desc: "GOTS, OEKO-TEX, and GRS certified production.", btn: "Discuss Sustainability" },
-    "eu-regulations": { title: "Need Compliance Support?", desc: "Full certification documentation for every shipment.", btn: "Contact Compliance Team" },
-    "quality-control": { title: "Quality Is Our Priority", desc: "AQL 2.5 inspection with transparent QC reporting.", btn: "Learn About Our QC" },
-    "export-logistics": { title: "Need a Shipping Quote?", desc: "FOB, CIF, and DDP pricing. Response within 24 hours.", btn: "Get Shipping Quote" },
-    "private-label": { title: "Launch Your Private Label Brand", desc: "End-to-end private label service.", btn: "Start Your Brand" },
+  const ctaMap: Record<string, { title: string; desc: string; btn: string; href: string }> = {
+    "fabric-types": { title: "Need Fabric Samples?", desc: "Request swatch cards for any fabric in our range.", btn: "Request Swatches", href: `/${lang}/inquiry` },
+    "garment-manufacturing": { title: "Ready to Start Manufacturing?", desc: "Get a detailed quote and production timeline within 48 hours.", btn: "Get Quote", href: `/${lang}/inquiry` },
+    sustainability: { title: "Looking for Sustainable Manufacturing?", desc: "GOTS, OEKO-TEX, and GRS certified production.", btn: "Discuss Sustainability", href: `/${lang}/inquiry` },
+    "eu-regulations": { title: "Need Compliance Support?", desc: "Full certification documentation for every shipment.", btn: "Contact Compliance Team", href: `/${lang}/inquiry` },
+    "quality-control": { title: "Quality Is Our Priority", desc: "AQL 2.5 inspection with transparent QC reporting.", btn: "Learn About Our QC", href: `/${lang}/quality-control` },
+    "export-logistics": { title: "Need a Shipping Quote?", desc: "FOB, CIF, and DDP pricing. Response within 24 hours.", btn: "Get Shipping Quote", href: `/${lang}/inquiry` },
+    "private-label": { title: "Launch Your Private Label Brand", desc: "End-to-end private label service.", btn: "Start Your Brand", href: `/${lang}/private-label` },
   };
-  const cta = ctaMap[article.cluster] || ctaMap["garment-manufacturing"];
+  const defaultCta = ctaMap["garment-manufacturing"];
+  const cta = article.cta
+    ? { title: article.cta.title, desc: article.cta.description, btn: article.cta.buttonText, href: `/${lang}${article.cta.href}` }
+    : (ctaMap[article.cluster] ?? defaultCta);
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.heroDescription,
+    datePublished: "2025-03-01",
+    dateModified: "2025-04-01",
+    author: { "@type": "Organization", name: "Vedant Fashion Export Team", url: "https://www.vedantfashion.com" },
+    publisher: { "@type": "Organization", name: "Vedant Fashion", url: "https://www.vedantfashion.com" },
+  };
 
   return (
     <div className="min-h-screen bg-background font-body">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       <PageHero subtitle={article.clusterLabel} title={article.title} description={article.heroDescription} />
 
       <div className="container-wide pt-6 pb-2">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <Link href="/knowledge" className="flex items-center gap-2 text-body-sm text-muted-foreground hover:text-gold transition-colors">
+          <Link href={`/${lang}/knowledge`} className="flex items-center gap-2 text-body-sm text-muted-foreground hover:text-gold transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Knowledge Hub
           </Link>
@@ -80,9 +100,9 @@ function HubArticlePage({ slug }: { slug: string }) {
       </div>
 
       {article.sections.map((section, i) => (
-        <ContentBlock key={section.heading} subtitle={`Section ${i + 1}`} title={section.heading} bg={i % 2 === 1 ? "cream" : "default"}>
-          <div className="max-w-2xl mx-auto space-y-4">
-            <p className="text-body text-muted-foreground">{section.content}</p>
+        <ContentBlock key={section.heading} subtitle={`Section ${i + 1}`} title={section.heading} bg={i % 2 === 1 ? "cream" : undefined}>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <p className="text-body text-muted-foreground leading-relaxed">{section.content}</p>
             {section.bullets && (
               <div className="space-y-2 pt-2">
                 {section.bullets.map((bullet) => (
@@ -93,15 +113,63 @@ function HubArticlePage({ slug }: { slug: string }) {
                 ))}
               </div>
             )}
+            {section.table && (
+              <div className="overflow-x-auto mt-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-border">
+                      {section.table.headers.map((h) => (
+                        <th key={h} className="py-3 pr-5 text-caption font-semibold text-foreground uppercase tracking-wider whitespace-nowrap">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row, ri) => (
+                      <tr key={ri} className={`border-b border-border ${ri % 2 === 0 ? "" : "bg-card"}`}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} className={`py-3 pr-5 text-body-sm ${ci === 0 ? "font-medium text-foreground" : "text-muted-foreground"}`}>
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </ContentBlock>
       ))}
 
+      {article.internalLinks && article.internalLinks.length > 0 && (
+        <ContentBlock subtitle="Related Resources" title="Further Reading on This Site" bg="cream">
+          <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
+            {article.internalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={`/${lang}${link.href}`}
+                className="group flex items-center justify-between border border-border rounded p-4 bg-background hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-3">
+                  <BookOpen className="w-4 h-4 text-olive shrink-0" />
+                  <span className="text-body-sm font-medium text-foreground group-hover:text-olive transition-colors">
+                    {link.text}
+                  </span>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-olive transition-colors shrink-0" />
+              </Link>
+            ))}
+          </div>
+        </ContentBlock>
+      )}
+
       {relatedArticles.length > 0 && (
-        <ContentBlock subtitle="Related Articles" title="Further Reading" bg="cream">
+        <ContentBlock subtitle="Related Articles" title="Further Reading">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {relatedArticles.map((ra) => ra && (
-              <Link key={ra.slug} href={`/knowledge/${ra.slug}`} className="bg-card border border-border rounded-lg p-5 hover:shadow-md transition-shadow">
+              <Link key={ra.slug} href={`/${lang}/knowledge/${ra.slug}`} className="bg-card border border-border rounded-lg p-5 hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2 mb-2">
                   <BookOpen className="w-3 h-3 text-gold" />
                   <span className="text-caption text-gold">{ra.clusterLabel}</span>
@@ -117,7 +185,7 @@ function HubArticlePage({ slug }: { slug: string }) {
         </ContentBlock>
       )}
 
-      <CTASection variant="dark" title={cta.title} description={cta.desc} buttonText={cta.btn} />
+      <CTASection variant="dark" title={cta.title} description={cta.desc} buttonText={cta.btn} buttonLink={cta.href} />
     </div>
   );
 }
@@ -183,9 +251,9 @@ function SeoKnowledgePage({ slug }: { slug: string }) {
 // ── Page entry ───────────────────────────────────────────────────────────────
 
 export default async function KnowledgeSlugPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, lang } = await params;
 
-  if (getArticleBySlug(slug)) return <HubArticlePage slug={slug} />;
+  if (getArticleBySlug(slug)) return <HubArticlePage slug={slug} lang={lang} />;
   if (knowledgePages.find((p) => p.slug === slug)) return <SeoKnowledgePage slug={slug} />;
 
   notFound();

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { categorySubPages } from "@/data/seo-pages";
+import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: `${page.subcategoryLabel} ${page.categoryLabel}, garment manufacturer India`,
-    alternates: { canonical: `https://www.vedantfashion.com/en/products/${page.category}/${page.subcategory}` },
+    alternates: buildHreflangAlternates(`/products/${page.category}/${page.subcategory}`),
   };
 }
 

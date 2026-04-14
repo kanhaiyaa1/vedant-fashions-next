@@ -1,4 +1,4 @@
-export type Locale = "en" | "de" | "fr" | "it" | "es" | "nl" | "pl" | "ru";
+export type Locale = "en" | "de" | "fr" | "it" | "es" | "nl" | "pl" | "ru" | "ar";
 
 export interface LocaleConfig {
   code: Locale;
@@ -16,6 +16,7 @@ export const locales: LocaleConfig[] = [
   { code: "nl", label: "NL", nativeName: "Nederlands", flag: "🇳🇱" },
   { code: "pl", label: "PL", nativeName: "Polski", flag: "🇵🇱" },
   { code: "ru", label: "RU", nativeName: "Русский", flag: "🇷🇺" },
+  { code: "ar", label: "AR", nativeName: "العربية", flag: "🇦🇪" },
 ];
 
 export const defaultLocale: Locale = "en";
@@ -196,5 +197,24 @@ export const localizedRoutes: Record<Locale, RouteMap> = {
     contact: "kontakty",
     knowledge: "baza-znanij",
     sitemap: "karta-sajta",
+  },
+  ar: {
+    products: "products",
+    about: "about",
+    manufacturing: "manufacturing",
+    sustainability: "sustainability",
+    certifications: "certifications",
+    qualityControl: "quality-control",
+    privateLabel: "private-label",
+    oem: "oem",
+    fabricSourcing: "fabric-sourcing",
+    sizeGuide: "size-guide",
+    wholesaleFaq: "wholesale-faq",
+    shipping: "shipping",
+    catalog: "catalog",
+    inquiry: "inquiry",
+    contact: "contact",
+    knowledge: "knowledge",
+    sitemap: "sitemap",
   },
 };

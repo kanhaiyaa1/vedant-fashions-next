@@ -1,68 +1,71 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import PageHero from "@/components/vedant/PageHero";
-import ContentBlock from "@/components/vedant/ContentBlock";
-import CTASection from "@/components/vedant/CTASection";
-import { Badge } from "@/components/ui/badge";
+import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
+import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  await params;
   return {
-    title: "Resort Wear — Wholesale Manufacturer",
-    description: "Wholesale resort and holiday wear — kaftans, co-ord sets, wrap skirts, and jumpsuits. GOTS and OEKO-TEX certified. MOQ 300 pcs, EU export ready.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/products/resort-wear`, ...buildHreflangAlternates("/products/resort-wear") },
+    title: "Resort Wear Manufacturer Middle East | India Export | Vedant",
+    description:
+      "GOTS-certified resort wear manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. Kaftans, wide-leg trousers, jumpsuits. MOQ 300 pcs. FOB USD 7.00–12.00.",
+    keywords:
+      "resort wear manufacturer UAE, kaftan supplier Saudi Arabia, wholesale resort wear exporter India, GOTS resort wear manufacturer, wide leg trousers wholesale Middle East, linen resort wear Qatar Kuwait, kaftan MOQ 300 pcs, FOB resort wear India, private label resort wear, beach cover-up wholesale manufacturer",
+    alternates: buildHreflangAlternates("/products/resort-wear"),
   };
 }
 
-const styles = [
-  { name: "Kaftan Dress", fabric: "100% Organic Cotton Voile, 80 GSM", sizes: "One Size / S–XL", colors: "Block print, Tie-dye, Solid pastels", features: ["Relaxed A-line kaftan", "Side slits", "Hand block-printed options", "Perfect for beach / poolside retail"], cert: "GOTS" },
-  { name: "Wide-Leg Co-ord Set", fabric: "55% Linen, 45% Viscose, 130 GSM", sizes: "XS–XL", colors: "Sand, Terracotta, Sage, Ocean", features: ["Cropped top + palazzo pants", "Elasticated waistband", "Packable — wrinkle-resistant", "Cruise & holiday market"], cert: "OEKO-TEX" },
-  { name: "Wrap Skirt", fabric: "100% Tencel™ Lyocell, 105 GSM", sizes: "XS–XL", colors: "Tropical prints, Earth tones", features: ["True wrap with tie closure", "Midi length", "Digital-printed botanicals", "OEKO-TEX certified inks"], cert: "OEKO-TEX" },
-  { name: "Linen Jumpsuit", fabric: "100% European Flax Linen, 150 GSM", sizes: "XS–2XL", colors: "Natural, White, Olive", features: ["Belted waist", "Tapered leg", "Button front", "Enzyme-washed for soft hand"], cert: "GOTS" },
+const FAQS: CategoryFaq[] = [
+  {
+    q: "What resort wear styles do you manufacture for GCC and Middle East buyers?",
+    a: "Our resort wear range covers 15 SKUs: cotton voile kaftans (hand-block printed), wide-leg linen trousers, unstructured linen blazers, printed cotton sarongs, linen jumpsuits, organic cotton palazzo pants, beach cover-ups with crochet trim, linen Bermuda shorts, cotton wrap skirts, tiered maxi skirts, linen cropped tops, drawstring cotton trousers, linen tunic dresses, organic cotton halter tops, and linen shackets. All styles are designed for resort, hospitality, and leisure retail.",
+  },
+  {
+    q: "Are your kaftans and resort styles suitable for the UAE and Gulf retail market?",
+    a: "Yes. Our kaftan and wide-leg trouser styles are particularly well positioned for UAE and GCC resort retail — breathable organic cotton voile and linen are ideal for the Gulf climate. We offer modest-wear adaptations (full coverage, longer lengths, opaque linings) across all styles. Hand block-printed and embroidered kaftans are also popular with UAE and Bahraini boutique buyers.",
+  },
+  {
+    q: "What is the MOQ and FOB price range for resort wear?",
+    a: "Standard MOQ is 300 pieces per style per colour. FOB pricing from Mumbai is USD 7.00–12.00 per piece — kaftans and wide-leg trousers at the lower end, linen blazers and jumpsuits with higher fabric and construction cost at the upper end. We provide formal quotations within 24 hours of receiving your product brief and target quantity.",
+  },
+  {
+    q: "Can resort wear be co-ordinated as sets for wholesale buyers?",
+    a: "Yes. We offer co-ordinated resort sets — matching top + wide-leg trousers, kaftan + palazzo pant, crop top + maxi skirt — designed to be sold as sets or as separates. Co-ord sets are available in matching or complementary colourways. The same fabrication and print runs across both pieces ensure colour consistency.",
+  },
+  {
+    q: "Do your resort wear products comply with UAE ESMA and GCC customs requirements?",
+    a: "Yes. All resort wear exported to the GCC carries bilingual Arabic / English woven care labels with fibre composition, care symbols (ISO 3758), country of origin, and manufacturer details per ESMA, SASO, and GSO 1956 standards. Certificate of Origin for India-UAE CEPA preferential duty is provided with every UAE shipment.",
+  },
+  {
+    q: "Can you produce custom block-printed or digital-printed kaftans for GCC buyers?",
+    a: "Yes. We offer full in-house print development — traditional hand block printing (Jaipur artisans), rotary screen printing, and digital printing. Custom print artwork (buyer-supplied or developed by our studio) can be applied to any resort wear style. Print samples are produced within 15–20 working days. Minimum print run is 300 metres of fabric.",
+  },
 ];
 
-const ResortWearPage = () => {
+export default async function ResortWearPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
-    <div className="min-h-screen bg-background font-body">
-      <PageHero
-        subtitle="Resort Wear"
-        title="Mediterranean-Ready Resort Collections"
-        description="Breathable, packable, effortlessly elegant resort wear. Designed for cruise lines, coastal boutiques, and holiday-focused retailers across Europe."
-      />
-
-      <ContentBlock subtitle="Collection" title="Resort Wear Range">
-        <div className="space-y-8">
-          {styles.map((s) => (
-            <div key={s.name} className="grid lg:grid-cols-3 gap-6 border border-border rounded p-6 md:p-8 hover:shadow-md transition-shadow">
-              <div className="aspect-[3/4] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-                <p className="font-display text-lg text-primary/40">{s.name}</p>
-              </div>
-              <div className="lg:col-span-2 space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-xl font-medium text-foreground">{s.name}</h3>
-                  <Badge className="bg-olive text-olive-foreground border-0 text-[10px] uppercase tracking-wider rounded-sm">{s.cert}</Badge>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 text-body-sm">
-                  <div><span className="text-muted-foreground font-medium">Fabric:</span> <span className="text-foreground">{s.fabric}</span></div>
-                  <div><span className="text-muted-foreground font-medium">Sizes:</span> <span className="text-foreground">{s.sizes}</span></div>
-                  <div className="sm:col-span-2"><span className="text-muted-foreground font-medium">Colors:</span> <span className="text-foreground">{s.colors}</span></div>
-                </div>
-                <ul className="grid sm:grid-cols-2 gap-1.5">
-                  {s.features.map((f) => (
-                    <li key={f} className="text-body-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-gold shrink-0" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </ContentBlock>
-
-      <CTASection variant="dark" title="Planning Your SS 2027 Resort Line?" description="Get ahead with early sampling. We offer resort wear development packages starting from 10 styles." buttonText="Start Resort Development" />
-    </div>
+    <ProductCategoryPage
+      categorySlug="resort-wear"
+      primaryKeyword="Resort Wear Manufacturer for Middle East Wholesale Buyers"
+      heroDescription="GOTS 6.0 certified resort wear manufacturer in India. Kaftans, wide-leg trousers, linen jumpsuits, palazzo pants, and beach cover-ups. Breathable fabrics for Gulf climates. FOB USD 7.00–12.00 per piece. MOQ 300 pcs. 17–22 days sea freight to GCC ports."
+      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
+      gccMarketNotes={[
+        { country: "UAE", note: "Kaftans and wide-leg trousers in high demand for Dubai resort retail, beach clubs, and hospitality uniforms. 18–22 days to Jebel Ali." },
+        { country: "Saudi Arabia", note: "Modest resort wear — covered kaftans and wide-leg trousers — well suited to KSA retail expansion. SASO compliant. 20–24 days to Dammam / Jeddah." },
+        { country: "Qatar", note: "Premium linen jumpsuits and shackets popular in Doha's lifestyle retail. GSO compliant. 20–23 days to Hamad Port." },
+        { country: "Oman", note: "Resort wear for Muscat's growing tourism retail sector. Closest GCC port — 17–20 days from Mumbai. DGSM compliant." },
+      ]}
+      faqs={FAQS}
+      lang={lang}
+    />
   );
-};
-
-export default ResortWearPage;
+}

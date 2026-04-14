@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: "Request a Quote — B2B Inquiry",
     description:
-      "Submit a wholesale inquiry for sustainable garments. General inquiries, product requests, bulk orders, and private label manufacturing. Response within 24 hours.",
+      "Submit a wholesale inquiry for ladies woven wear. MOQ 300 pcs. Samples, bulk orders, private label for UAE, Saudi Arabia & Russia. Response within 24 hours.",
     keywords:
       "wholesale inquiry, bulk order garments, private label manufacturing, B2B fashion inquiry",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/inquiry`, ...buildHreflangAlternates("/inquiry") },
+    alternates: buildHreflangAlternates("/inquiry"),
   };
 }
 

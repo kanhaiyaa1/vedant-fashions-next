@@ -49,6 +49,31 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vedant Fashion",
+  url: "https://www.vedantfashion.com",
+  description:
+    "B2B manufacturer and exporter of ladies woven wear to Middle East, Russia, and global markets. GOTS and OEKO-TEX certified. MOQ 300 pcs. FOB Mumbai.",
+  foundingDate: "2015",
+  areaServed: [
+    "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain",
+    "Egypt", "Russia", "Poland", "France", "Italy", "Netherlands",
+  ],
+  availableLanguage: ["Arabic", "English", "Russian", "Polish", "French", "Italian", "Dutch"],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "IN",
+    addressRegion: "Gujarat",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    availableLanguage: ["Arabic", "English", "Russian"],
+  },
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -59,6 +84,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className={`${cormorant.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col antialiased">{children}</body>
     </html>
   );

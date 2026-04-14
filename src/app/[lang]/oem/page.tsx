@@ -8,11 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { ServiceSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-  const { lang } = await params;
+  await params;
   return {
-    title: "OEM Garment Production",
-    description: "OEM garment manufacturing — FOB, CMT, and ODM services. Full-package production for European fashion brands.",
-    alternates: { canonical: `https://www.vedantfashion.com/${lang}/oem`, ...buildHreflangAlternates("/oem") },
+    title: "OEM Garment Manufacturing India | FOB & CMT",
+    description: "OEM garment manufacturing India — FOB, CMT, ODM for UAE, Saudi Arabia & global brands. GOTS certified. MOQ 300 pcs. Quote in 48 hours.",
+    alternates: buildHreflangAlternates("/oem"),
   };
 }
 
