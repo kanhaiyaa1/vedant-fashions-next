@@ -1,5 +1,12 @@
 "use client";
+import { useParams } from "next/navigation";
 import { Globe } from "lucide-react";
+import { getContent } from "@/data/translations/page-content";
+import { homeContent } from "@/data/translations/home";
+
+interface ExportMarketsProps {
+  lang?: string;
+}
 
 const markets = [
   { region: "DACH", countries: "Germany, Austria, Switzerland", share: "35%", highlight: true },
@@ -17,15 +24,19 @@ const logos = [
   "Hamburg European office & warehouse",
 ];
 
-const ExportMarkets = () => {
+const ExportMarkets = ({ lang }: ExportMarketsProps) => {
+  const params = useParams();
+  const locale = lang ?? (typeof params?.lang === "string" ? params.lang : "en");
+  const c = getContent(homeContent, locale).exportMarkets;
+
   return (
     <section className="section-spacing bg-background">
       <div className="container-wide">
         <div className="text-center mb-16 space-y-4">
-          <p className="text-subheading text-gold">Global Reach</p>
-          <h2 className="text-display-md text-foreground">Export Markets</h2>
+          <p className="text-subheading text-gold">{c.subtitle}</p>
+          <h2 className="text-display-md text-foreground">{c.title}</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Exporting to 25+ countries with dedicated logistics for Europe. Hamburg office ensures local support across DACH and Northern European markets.
+            {c.description}
           </p>
         </div>
 
@@ -34,7 +45,7 @@ const ExportMarkets = () => {
           <div className="lg:col-span-2 aspect-square bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
             <div className="text-center p-8">
               <Globe className="w-16 h-16 text-primary/25 mx-auto mb-4" />
-              <p className="font-display text-lg text-foreground">25+ Countries</p>
+              <p className="font-display text-lg text-foreground">{c.countriesLabel}</p>
               <p className="text-caption mt-1">European & CIS markets</p>
             </div>
           </div>
@@ -49,7 +60,7 @@ const ExportMarkets = () => {
                 </div>
                 <div className="text-right shrink-0">
                   <p className="font-display text-2xl font-semibold text-foreground">{m.share}</p>
-                  <p className="text-caption">of exports</p>
+                  <p className="text-caption">{c.exportShareLabel}</p>
                 </div>
               </div>
             ))}

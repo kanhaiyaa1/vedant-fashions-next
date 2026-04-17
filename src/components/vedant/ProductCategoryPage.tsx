@@ -6,6 +6,8 @@ import {
   categoryFobPricing,
   type Product,
 } from "@/data/products";
+import { getContent } from "@/data/translations/page-content";
+import { productCategoryContent } from "@/data/translations/product-category";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import { Badge } from "@/components/ui/badge";
@@ -88,34 +90,7 @@ function collectFabricRows(categoryProducts: Product[]) {
   return rows;
 }
 
-/** Build the ordering steps list */
-const ORDERING_STEPS = [
-  {
-    step: "01",
-    title: "Enquiry & RFQ",
-    desc: "Send your product brief, target quantity, delivery port, and required certifications. We respond with indicative FOB pricing within 24 hours.",
-  },
-  {
-    step: "02",
-    title: "Sample Approval",
-    desc: "Proto or counter samples dispatched within 12–15 working days. Fabric, construction, and labelling reviewed and approved by the buyer before production sign-off.",
-  },
-  {
-    step: "03",
-    title: "Production",
-    desc: "Bulk fabric sourced, cut, sewn, and finished in our 45,000 sq ft facility. Production updates shared weekly via your dedicated account manager.",
-  },
-  {
-    step: "04",
-    title: "QC — AQL 2.5 (ISO 2859-1)",
-    desc: "In-line and final random inspection per AQL 2.5 standard under ISO 2859-1. Third-party inspection (SGS / Intertek) arranged on request at buyer's cost.",
-  },
-  {
-    step: "05",
-    title: "Shipment — FOB Mumbai",
-    desc: "Export packing, Bill of Lading, Commercial Invoice, Packing List, Certificate of Origin, and compliance declarations prepared. Goods handed to freight forwarder at JNPT Mumbai.",
-  },
-];
+// Ordering steps are now sourced from productCategoryContent per locale.
 
 // ── Component ──────────────────────────────────────────────────────────
 
@@ -133,6 +108,8 @@ export default function ProductCategoryPage({
   const firstProduct = categoryProducts[0];
 
   if (!category || !firstProduct) return null;
+
+  const content = getContent(productCategoryContent, lang);
 
   const fabricRows = collectFabricRows(categoryProducts);
   const fobPrice =
@@ -203,15 +180,18 @@ export default function ProductCategoryPage({
 
       {/* ── 2. CATEGORY OVERVIEW ──────────────────────────────────────── */}
       <ContentBlock
-        subtitle="B2B Overview"
-        title={`${category.name} — Wholesale Manufacturing`}
+        subtitle={content.overview.subtitle}
+        title={`${category.name} — ${content.overview.title}`}
       >
         <div className="max-w-3xl mx-auto space-y-5">
           <p className="text-body text-muted-foreground leading-relaxed">
-            {category.description} Our {category.productCount}+ SKU range covers the full spectrum of wholesale buyer requirements — from basic core styles to fashion-forward seasonal introductions, all produced within our ISO 9001:2015 certified, 45,000 sq ft manufacturing facility in Gujarat, India.
+            {category.description}
           </p>
           <p className="text-body text-muted-foreground leading-relaxed">
-            Every style is available for private label, OEM, and ODM production. GOTS 6.0 and OEKO-TEX Standard 100 certification is maintained across the full range, with BSCI / SEDEX social compliance audits available on request. Minimum order quantities start from 300 pieces per style per colour, with standard production lead times of 45–55 days from order confirmation and fabric receipt. Sea freight from Mumbai / JNPT reaches Middle East ports in 17–22 days, making India one of the most time-efficient manufacturing origins for GCC buyers.
+            {content.overview.paragraph1.replace("{productCount}", String(category.productCount))}
+          </p>
+          <p className="text-body text-muted-foreground leading-relaxed">
+            {content.overview.paragraph2}
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
             {allCerts.map((c) => (
@@ -228,25 +208,15 @@ export default function ProductCategoryPage({
 
       {/* ── 3. FABRIC SPECIFICATION TABLE ─────────────────────────────── */}
       <ContentBlock
-        subtitle="Technical Data"
-        title="Fabric Specification Table"
+        subtitle={content.fabricTable.subtitle}
+        title={content.fabricTable.title}
         bg="cream"
       >
         <div className="overflow-x-auto">
           <table className="w-full text-body-sm border-collapse">
             <thead>
               <tr className="border-b-2 border-border">
-                {[
-                  "Fabric Name",
-                  "Composition",
-                  "GSM",
-                  "Weave",
-                  "Width",
-                  "Shrinkage",
-                  "Colourfastness",
-                  "HS Code",
-                  "FOB Price",
-                ].map((h) => (
+                {content.fabricTable.headers.map((h) => (
                   <th
                     key={h}
                     className="text-left py-3 px-3 text-caption font-semibold text-foreground uppercase tracking-wider whitespace-nowrap"
@@ -277,26 +247,29 @@ export default function ProductCategoryPage({
           </table>
         </div>
         <p className="text-caption text-muted-foreground mt-4">
-          * Prices are indicative FOB Mumbai. Final pricing subject to style complexity, fabric selection, and confirmed order quantity. Request a formal quotation for binding pricing.
+          {content.fabricTable.footnote}
         </p>
       </ContentBlock>
 
       {/* ── 4. TECHNICAL SPECS TABLE ──────────────────────────────────── */}
-      <ContentBlock subtitle="Order Specifications" title="Technical Order Parameters">
+      <ContentBlock
+        subtitle={content.techSpecs.subtitle}
+        title={content.techSpecs.title}
+      >
         <div className="max-w-3xl mx-auto overflow-x-auto">
           <table className="w-full text-body-sm border-collapse">
             <tbody>
               {[
-                { label: "Minimum Order Quantity (MOQ)", value: `${firstProduct.moq} per style per colour` },
-                { label: "Sample Lead Time", value: "12–15 working days (proto / counter sample)" },
-                { label: "Production Lead Time", value: `${firstProduct.leadTime} from order confirmation + fabric receipt` },
-                { label: "Available Size Range", value: sizeRange },
-                { label: "FOB Price Range", value: fobPrice },
-                { label: "Incoterms Available", value: "FOB Mumbai / CIF Destination / DDP" },
-                { label: "Payment Terms", value: "LC at sight · TT 30/70 · SWIFT USD/AED/EUR" },
-                { label: "Country of Origin", value: "India (preferential duty eligible for UAE CEPA, GCC frameworks)" },
-                { label: "Quality Standard", value: "AQL 2.5 per ISO 2859-1 · In-house lab testing" },
-                { label: "Quality Certificates", value: (firstProduct.qualityStandards ?? ["ISO 13934-1", "ISO 105-C06", "ISO 105-X12"]).join(" · ") },
+                { label: content.techSpecs.labels.moq, value: `${firstProduct.moq} per style per colour` },
+                { label: content.techSpecs.labels.sampleLeadTime, value: "12–15 working days (proto / counter sample)" },
+                { label: content.techSpecs.labels.productionLeadTime, value: `${firstProduct.leadTime} from order confirmation + fabric receipt` },
+                { label: content.techSpecs.labels.sizeRange, value: sizeRange },
+                { label: content.techSpecs.labels.fobPrice, value: fobPrice },
+                { label: content.techSpecs.labels.incoterms, value: "FOB Mumbai / CIF Destination / DDP" },
+                { label: content.techSpecs.labels.payment, value: "LC at sight · TT 30/70 · SWIFT USD/AED/EUR" },
+                { label: content.techSpecs.labels.countryOfOrigin, value: "India (preferential duty eligible for UAE CEPA, GCC frameworks)" },
+                { label: content.techSpecs.labels.qualityStandard, value: "AQL 2.5 per ISO 2859-1 · In-house lab testing" },
+                { label: content.techSpecs.labels.qualityCerts, value: (firstProduct.qualityStandards ?? ["ISO 13934-1", "ISO 105-C06", "ISO 105-X12"]).join(" · ") },
               ].map(({ label, value }) => (
                 <tr key={label} className="border-b border-border">
                   <td className="py-3 px-4 font-medium text-foreground w-1/2 align-top">{label}</td>
@@ -310,8 +283,8 @@ export default function ProductCategoryPage({
 
       {/* ── 5. MIDDLE EAST MARKET SUITABILITY ─────────────────────────── */}
       <ContentBlock
-        subtitle="GCC Export Markets"
-        title="Middle East Market Suitability"
+        subtitle={content.gccMarkets.subtitle}
+        title={content.gccMarkets.title}
         bg="cream"
       >
         <div className="max-w-3xl mx-auto space-y-6">
@@ -337,7 +310,7 @@ export default function ProductCategoryPage({
                   href={`/${lang}/${country.toLowerCase().replace(/\s+/g, "-")}/garment-manufacturer`}
                   className="text-caption text-olive hover:underline"
                 >
-                  View {country} export page →
+                  {content.gccMarkets.viewExportPage.replace("{country}", country)}
                 </Link>
               </div>
             ))}
@@ -345,13 +318,9 @@ export default function ProductCategoryPage({
           <div className="bg-card border border-border rounded p-5 flex items-start gap-3">
             <Ship className="w-5 h-5 text-olive shrink-0 mt-0.5" />
             <div>
-              <p className="font-medium text-foreground text-body-sm">Sea Freight — India to GCC</p>
+              <p className="font-medium text-foreground text-body-sm">{content.gccMarkets.seaFreight}</p>
               <p className="text-body-sm text-muted-foreground mt-1">
-                Mumbai / JNPT to Jebel Ali (UAE): <strong className="text-foreground">18–22 days</strong> ·
-                Dammam (KSA): <strong className="text-foreground">20–24 days</strong> ·
-                Doha (Qatar): <strong className="text-foreground">20–23 days</strong> ·
-                Shuwaikh (Kuwait): <strong className="text-foreground">19–22 days</strong> ·
-                Muscat (Oman): <strong className="text-foreground">17–20 days</strong>
+                {content.gccMarkets.seaFreightDesc}
               </p>
             </div>
           </div>
@@ -359,7 +328,10 @@ export default function ProductCategoryPage({
       </ContentBlock>
 
       {/* ── 6. EXPORT COMPLIANCE ──────────────────────────────────────── */}
-      <ContentBlock subtitle="Regulatory Compliance" title="Export Compliance & Standards">
+      <ContentBlock
+        subtitle={content.compliance.subtitle}
+        title={content.compliance.title}
+      >
         <div className="max-w-2xl mx-auto space-y-3">
           {exportCompliance.map((item) => (
             <div
@@ -373,34 +345,36 @@ export default function ProductCategoryPage({
           <div className="flex items-start gap-3 bg-card border border-border rounded p-4">
             <ShieldCheck className="w-4 h-4 text-olive shrink-0 mt-0.5" />
             <span className="text-body-sm text-muted-foreground">
-              GCC / UAE ESMA, Saudi SASO, Qatar GQSM — bilingual Arabic / English care label compliance for all Middle East shipments
+              {content.compliance.gccNote}
             </span>
           </div>
           <div className="flex items-start gap-3 bg-card border border-border rounded p-4">
             <ShieldCheck className="w-4 h-4 text-olive shrink-0 mt-0.5" />
             <span className="text-body-sm text-muted-foreground">
-              India-UAE CEPA Certificate of Origin available — qualifying garments attract preferential / nil import duty into UAE
+              {content.compliance.cepaNote}
             </span>
           </div>
         </div>
       </ContentBlock>
 
       {/* ── 7. SIZE CHART ─────────────────────────────────────────────── */}
-      <ContentBlock subtitle="Size Reference" title="Standard Size Chart" bg="cream">
+      <ContentBlock
+        subtitle={content.sizeChart.subtitle}
+        title={content.sizeChart.title}
+        bg="cream"
+      >
         <div className="overflow-x-auto max-w-3xl mx-auto">
           <table className="w-full text-body-sm border-collapse">
             <thead>
               <tr className="border-b-2 border-border">
-                {["Size", "EU", "UK", "US", "Chest (cm)", "Waist (cm)", "Hip (cm)", "Length (cm)"].map(
-                  (h) => (
-                    <th
-                      key={h}
-                      className="text-left py-3 px-3 text-caption font-semibold text-foreground uppercase tracking-wider whitespace-nowrap"
-                    >
-                      {h}
-                    </th>
-                  )
-                )}
+                {content.sizeChart.headers.map((h) => (
+                  <th
+                    key={h}
+                    className="text-left py-3 px-3 text-caption font-semibold text-foreground uppercase tracking-wider whitespace-nowrap"
+                  >
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -422,18 +396,22 @@ export default function ProductCategoryPage({
             </tbody>
           </table>
           <p className="text-caption text-muted-foreground mt-3">
-            Custom grading available up to size 5XL. GCC / Middle East market sizing available on request — measurements provided in both cm and inches.
+            {content.sizeChart.footnote}
           </p>
         </div>
       </ContentBlock>
 
       {/* ── 8. ORDERING PROCESS ───────────────────────────────────────── */}
-      <ContentBlock subtitle="How to Order" title="B2B Ordering Process" bg="dark">
+      <ContentBlock
+        subtitle={content.ordering.subtitle}
+        title={content.ordering.title}
+        bg="dark"
+      >
         <div className="max-w-3xl mx-auto">
           <div className="space-y-0">
-            {ORDERING_STEPS.map((s, i) => (
+            {content.ordering.steps.map((s, i) => (
               <div key={s.step} className="flex gap-5 pb-8 last:pb-0 relative">
-                {i < ORDERING_STEPS.length - 1 && (
+                {i < content.ordering.steps.length - 1 && (
                   <div className="absolute left-5 top-10 w-px h-full bg-primary-foreground/20" />
                 )}
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-foreground/10 border border-primary-foreground/30 flex items-center justify-center">
@@ -482,14 +460,15 @@ export default function ProductCategoryPage({
       <section className="bg-primary section-spacing">
         <div className="container-wide text-center space-y-6">
           <p className="text-subheading text-primary-foreground/60 uppercase tracking-widest text-xs">
-            Ready to Source?
+            {content.cta.subtitle}
           </p>
           <h2 className="font-display text-display-sm font-medium text-primary-foreground">
-            Source {category.name} from India for{" "}
-            {middleEastMarkets.slice(0, 3).join(", ")}
+            {content.cta.title
+              .replace("{category}", category.name)
+              .replace("{markets}", middleEastMarkets.slice(0, 3).join(", "))}
           </h2>
           <p className="text-body text-primary-foreground/70 max-w-xl mx-auto">
-            Dedicated GCC account team. Respond within 24 hours with FOB pricing, samples, and a production timeline. {fobPrice}.
+            {content.cta.desc.replace("{fobPrice}", fobPrice)}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
@@ -497,14 +476,14 @@ export default function ProductCategoryPage({
               className="inline-flex items-center justify-center gap-2 bg-primary-foreground text-primary font-medium px-8 py-3 rounded-sm hover:bg-primary-foreground/90 transition-colors text-body-sm"
             >
               <BookOpen className="w-4 h-4" />
-              Download Catalogue
+              {content.cta.catalogBtn}
             </Link>
             <Link
               href={`/${lang}/inquiry`}
               className="inline-flex items-center justify-center gap-2 border border-primary-foreground/50 text-primary-foreground font-medium px-8 py-3 rounded-sm hover:bg-primary-foreground/10 transition-colors text-body-sm"
             >
               <Package className="w-4 h-4" />
-              Request Sample — Middle East
+              {content.cta.sampleBtn}
             </Link>
           </div>
         </div>

@@ -1,9 +1,20 @@
 "use client";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { getContent } from "@/data/translations/page-content";
+import { homeContent } from "@/data/translations/home";
 
-const Hero = () => {
+interface HeroProps {
+  lang?: string;
+}
+
+const Hero = ({ lang }: HeroProps) => {
+  const params = useParams();
+  const locale = lang ?? (typeof params?.lang === "string" ? params.lang : "en");
+  const c = getContent(homeContent, locale);
+
   return (
     <section className="relative min-h-screen flex items-center bg-cream overflow-hidden">
       {/* Subtle pattern overlay */}
@@ -16,41 +27,35 @@ const Hero = () => {
           {/* Text */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-2">
-              <p className="text-subheading text-gold">B2B Wholesale · Since 1998</p>
+              <p className="text-subheading text-gold">{c.hero.badge}</p>
               <h1 className="text-display-xl text-charcoal">
-                Sustainable Textiles for European Markets
+                {c.hero.title}
               </h1>
             </div>
             <p className="text-body-lg text-muted-foreground max-w-lg">
-              Premium organic and recycled fabrics crafted with precision. GOTS, OEKO-TEX® and GRS certified. 
-              Trusted by 200+ brands across Germany, France, Italy and the Netherlands.
+              {c.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase text-xs tracking-widest px-8 h-12" asChild>
-                <Link href="/catalog">
-                  Request Catalogue
+                <Link href={`/${locale}/catalog`}>
+                  {c.hero.ctaPrimary}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="uppercase text-xs tracking-widest px-8 h-12 border-foreground/20 hover:bg-foreground/5" asChild>
-                <Link href="/contact">Book a Showroom Visit</Link>
+                <Link href={`/${locale}/contact`}>{c.hero.ctaSecondary}</Link>
               </Button>
             </div>
             <div className="flex items-center gap-8 pt-4 border-t border-border">
-              <div>
-                <p className="font-display text-3xl font-semibold text-charcoal">200+</p>
-                <p className="text-caption">European Brands</p>
-              </div>
-              <div className="w-px h-10 bg-border" />
-              <div>
-                <p className="font-display text-3xl font-semibold text-charcoal">15M+</p>
-                <p className="text-caption">Meters Annually</p>
-              </div>
-              <div className="w-px h-10 bg-border" />
-              <div>
-                <p className="font-display text-3xl font-semibold text-charcoal">27</p>
-                <p className="text-caption">Countries Served</p>
-              </div>
+              {c.stats.map((stat, i) => (
+                <div key={stat.label} className="flex items-center gap-8">
+                  {i > 0 && <div className="w-px h-10 bg-border" />}
+                  <div>
+                    <p className="font-display text-3xl font-semibold text-charcoal">{stat.value}</p>
+                    <p className="text-caption">{stat.label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -62,15 +67,15 @@ const Hero = () => {
                   <div className="w-20 h-20 mx-auto border-2 border-primary/30 rounded-full flex items-center justify-center">
                     <span className="font-display text-2xl text-primary">VF</span>
                   </div>
-                  <p className="text-subheading text-primary/60">SS 2026 Collection</p>
-                  <p className="font-display text-xl text-primary/80">Now Available</p>
+                  <p className="text-subheading text-primary/60">{c.hero.collectionLabel}</p>
+                  <p className="font-display text-xl text-primary/80">{c.hero.collectionAvailable}</p>
                 </div>
               </div>
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded shadow-lg p-4">
-              <p className="text-xs font-medium text-olive uppercase tracking-wider">GOTS Certified</p>
-              <p className="text-caption mt-0.5">100% Organic Cotton</p>
+              <p className="text-xs font-medium text-olive uppercase tracking-wider">{c.hero.certBadge}</p>
+              <p className="text-caption mt-0.5">{c.hero.certBadgeDesc}</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { locales, defaultLocale } from "./i18n/types";
+import { locales, defaultLocale, localizedRoutes } from "./i18n/types";
+import type { Locale } from "./i18n/types";
 
 const localeCodes = locales.map((l) => l.code);
 
@@ -34,6 +35,52 @@ function detectLocaleFromAcceptLanguage(acceptLang: string | null): string | nul
   return match ?? null;
 }
 
+/**
+ * Rewrites a locale-prefixed pathname with translated slugs back to the
+ * equivalent path using English slugs, which match the filesystem layout.
+ *
+ * Examples:
+ *   resolveToEnglishPath("/de/ueber-uns", "de")          → "/de/about"
+ *   resolveToEnglishPath("/ru/kontakty", "ru")            → "/ru/contact"
+ *   resolveToEnglishPath("/de/produkte/woven-blouses", "de") → "/de/products/woven-blouses"
+ *   resolveToEnglishPath("/en/about", "en")               → "/en/about"  (unchanged)
+ *   resolveToEnglishPath("/ar/contact", "ar")             → "/ar/contact" (unchanged — ar uses English slugs)
+ *
+ * Returns the original pathname unchanged if no translation is needed.
+ */
+function resolveToEnglishPath(pathname: string, locale: string): string {
+  const localeRoutes = localizedRoutes[locale as Locale];
+  if (!localeRoutes) return pathname;
+
+  // Homepage — no segments to translate
+  const withoutLocale = pathname.slice(locale.length + 1); // e.g. "/ueber-uns" or ""
+  const segments = withoutLocale.split("/").filter(Boolean);
+  if (segments.length === 0) return pathname;
+
+  const enRoutes = localizedRoutes[defaultLocale];
+  let changed = false;
+
+  const englishSegments = segments.map((seg) => {
+    // Search localizedRoutes[locale] for a key whose translated value equals this segment
+    for (const [key, localSlug] of Object.entries(localeRoutes)) {
+      if (localSlug === seg) {
+        const enSlug = enRoutes[key as keyof typeof enRoutes];
+        if (enSlug && enSlug !== seg) {
+          changed = true;
+          return enSlug;
+        }
+        // Same slug as English (e.g. ar locale, or shared slugs like "contact" in fr)
+        return seg;
+      }
+    }
+    // Unknown segment (dynamic param, product slug, etc.) — pass through untouched
+    return seg;
+  });
+
+  if (!changed) return pathname;
+  return `/${locale}/${englishSegments.join("/")}`;
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -51,7 +98,20 @@ export function middleware(request: NextRequest) {
   const hasLocalePrefix = localeCodes.includes(firstSegment as (typeof localeCodes)[number]);
 
   if (hasLocalePrefix) {
-    // Already locale-prefixed — pass through and expose locale to the root layout
+    // Resolve any translated slug back to the English slug the filesystem uses.
+    // e.g. /de/ueber-uns → internally rewritten to /de/about
+    const englishPathname = resolveToEnglishPath(pathname, firstSegment);
+
+    if (englishPathname !== pathname) {
+      // Internal rewrite — browser URL stays as the translated slug for SEO
+      const rewriteUrl = request.nextUrl.clone();
+      rewriteUrl.pathname = englishPathname;
+      const response = NextResponse.rewrite(rewriteUrl);
+      response.headers.set("x-locale", firstSegment);
+      return response;
+    }
+
+    // Path already uses English slugs — pass through unchanged
     const response = NextResponse.next();
     response.headers.set("x-locale", firstSegment);
     return response;

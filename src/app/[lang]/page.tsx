@@ -36,18 +36,19 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
   };
 }
 
-export default async function HomePage() {
+export default async function HomePage({ params }: HomePageProps) {
+  const { lang } = await params;
   return (
     <main>
       <OrganizationSchema />
       <WebSiteSchema />
-      <Hero />
+      <Hero lang={lang} />
       <FactoryCapacity />
       <ProductGrid />
       <CertificationBadges />
       <QualityProcess />
       <ProductGallery />
-      <ExportMarkets />
+      <ExportMarkets lang={lang} />
       <SustainabilityCommitments />
       <FabricSpecTable />
       <ComplianceStandards />
