@@ -42,10 +42,10 @@ const Footer = () => {
   ];
 
   const bottomLinks = [
-    t("footer.privacyPolicy"),
-    t("footer.termsOfTrade"),
-    t("footer.cookieSettings"),
-    t("footer.imprint"),
+    { label: t("footer.privacyPolicy"),  href: "/privacy-policy" },
+    { label: t("footer.termsOfTrade"),   href: "/terms-of-trade" },
+    { label: t("footer.cookieSettings"), href: "/cookie-settings" },
+    { label: t("footer.imprint"),        href: "/imprint" },
   ];
 
   return (
@@ -63,15 +63,15 @@ const Footer = () => {
             <div className="space-y-2 pt-2">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 opacity-50 shrink-0" />
-                <a href="mailto:export@vedantfashion.com" className="text-sm opacity-70 hover:opacity-100">export@vedantfashion.com</a>
+                <a href="mailto:shravan900@gmail.com" className="text-sm opacity-70 hover:opacity-100">shravan900@gmail.com</a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 opacity-50 shrink-0" />
-                <a href="tel:+494032101234" className="text-sm opacity-70 hover:opacity-100">+49 40 3210 1234 (EU)</a>
+                <a href="tel:+919930968116" className="text-sm opacity-70 hover:opacity-100">+91 99309 68116</a>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 opacity-50 shrink-0 mt-0.5" />
-                <span className="text-sm opacity-70">Hamburg, Germany · Ahmedabad, India</span>
+                <span className="text-sm opacity-70">Asalpha Ghatkopar, Mumbai 400084, India</span>
               </div>
             </div>
           </div>
@@ -100,9 +100,9 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               {bottomLinks.map((link) => (
-                <a key={link} href="#" className="text-xs opacity-40 hover:opacity-70 transition-opacity">
-                  {link}
-                </a>
+                <LocaleLink key={link.href} href={link.href} className="text-xs opacity-40 hover:opacity-70 transition-opacity">
+                  {link.label}
+                </LocaleLink>
               ))}
             </div>
           </div>

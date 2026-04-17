@@ -69,6 +69,7 @@ const Navbar = () => {
   const handleLocaleChange = (newLocale: Locale) => {
     setLocale(newLocale);
     setLangOpen(false);
+    setMobileOpen(false);
   };
 
   return (
@@ -124,18 +125,30 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           {/* Language switcher */}
           <div className="relative">
+            {langOpen && (
+              <div className="fixed inset-0 z-40" aria-hidden="true" onClick={() => setLangOpen(false)} />
+            )}
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Switch language"
+              aria-expanded={langOpen}
+              aria-haspopup="listbox"
+              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors relative z-50"
             >
               <Globe className="w-4 h-4" />
               <span className="uppercase font-medium">{locale}</span>
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded shadow-lg py-1 min-w-[180px] z-50">
+              <div
+                role="listbox"
+                aria-label="Select language"
+                className="absolute right-0 top-full mt-2 bg-card border border-border rounded shadow-lg py-1 min-w-[180px] z-50"
+              >
                 {locales.map((lang) => (
                   <button
                     key={lang.code}
+                    role="option"
+                    aria-selected={locale === lang.code}
                     onClick={() => handleLocaleChange(lang.code as Locale)}
                     className={`flex items-center gap-3 w-full text-left px-4 py-2.5 text-sm hover:bg-accent transition-colors ${
                       locale === lang.code ? "text-foreground font-medium bg-accent/50" : "text-muted-foreground"
@@ -156,7 +169,13 @@ const Navbar = () => {
             </Button>
           </LocaleLink>
 
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="xl:hidden p-2 text-foreground">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            className="xl:hidden p-2 text-foreground"
+          >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
@@ -164,7 +183,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="xl:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto">
+        <div id="mobile-menu" className="xl:hidden bg-background border-t border-border max-h-[80vh] overflow-y-auto">
           <div className="container-wide py-4 space-y-1">
             {navItems.map((item) =>
               item.href ? (
@@ -207,6 +226,27 @@ const Navbar = () => {
                 {t("nav.inquireNow")}
               </Button>
             </LocaleLink>
+
+            {/* Language switcher — mobile */}
+            <div className="pt-4 border-t border-border mt-2">
+              <p className="text-caption text-muted-foreground uppercase tracking-widest mb-2">Language</p>
+              <div className="grid grid-cols-2 gap-1">
+                {locales.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLocaleChange(lang.code as Locale)}
+                    className={`flex items-center gap-2 px-3 py-2 rounded text-sm transition-colors ${
+                      locale === lang.code
+                        ? "bg-accent text-foreground font-medium"
+                        : "text-muted-foreground hover:bg-accent/50"
+                    }`}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.nativeName}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

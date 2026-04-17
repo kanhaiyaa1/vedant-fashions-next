@@ -36,13 +36,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Organic fiber processing — from raw material to finished product",
         validity: "Renewed annually",
         details:
-          "Covers our entire organic cotton and linen supply chain. License No: CU-12345. Scope: processing, manufacturing, trading.",
+          "Covers our entire organic cotton and linen supply chain. License No: Available on request. Scope: processing, manufacturing, trading.",
       },
       {
         scope: "Product safety — tested for harmful substances",
         validity: "Renewed annually",
         details:
-          "All product classes tested. Class I (baby) and Class II (skin contact) certified. Certificate No: OE-54321.",
+          "All product classes tested. Class I (baby) and Class II (skin contact) certified. Certificate No: Available on request.",
       },
       {
         scope: "Recycled content verification and responsible production",
@@ -106,13 +106,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "معالجة الألياف العضوية — من المواد الخام إلى المنتج النهائي",
         validity: "تجديد سنوي",
         details:
-          "يغطي سلسلة توريد القطن العضوي والكتان بالكامل. رقم الترخيص: CU-12345. النطاق: المعالجة والتصنيع والتداول.",
+          "يغطي سلسلة توريد القطن العضوي والكتان بالكامل. رقم الترخيص: Available on request. النطاق: المعالجة والتصنيع والتداول.",
       },
       {
         scope: "سلامة المنتج — اختبار للمواد الضارة",
         validity: "تجديد سنوي",
         details:
-          "اختبار جميع فئات المنتجات. معتمد للفئة الأولى (الرضع) والفئة الثانية (ملامسة الجلد). رقم الشهادة: OE-54321.",
+          "اختبار جميع فئات المنتجات. معتمد للفئة الأولى (الرضع) والفئة الثانية (ملامسة الجلد). رقم الشهادة: Available on request.",
       },
       {
         scope: "التحقق من المحتوى المُعاد تدويره والإنتاج المسؤول",
@@ -176,13 +176,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Переработка органического волокна — от сырья до готового изделия",
         validity: "Ежегодное обновление",
         details:
-          "Охватывает всю цепочку поставок органического хлопка и льна. Лицензия №: CU-12345. Область применения: переработка, производство, торговля.",
+          "Охватывает всю цепочку поставок органического хлопка и льна. Лицензия №: Available on request. Область применения: переработка, производство, торговля.",
       },
       {
         scope: "Безопасность продукции — тестирование на вредные вещества",
         validity: "Ежегодное обновление",
         details:
-          "Протестированы все классы продукции. Сертификаты класса I (для детей) и класса II (контакт с кожей). Сертификат №: OE-54321.",
+          "Протестированы все классы продукции. Сертификаты класса I (для детей) и класса II (контакт с кожей). Сертификат №: Available on request.",
       },
       {
         scope: "Верификация переработанного содержимого и ответственного производства",
@@ -246,13 +246,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Przetwarzanie włókien organicznych — od surowca do gotowego wyrobu",
         validity: "Odnawiane rocznie",
         details:
-          "Obejmuje cały łańcuch dostaw organicznej bawełny i lnu. Nr licencji: CU-12345. Zakres: przetwarzanie, produkcja, handel.",
+          "Obejmuje cały łańcuch dostaw organicznej bawełny i lnu. Nr licencji: Available on request. Zakres: przetwarzanie, produkcja, handel.",
       },
       {
         scope: "Bezpieczeństwo produktu — badanie pod kątem substancji szkodliwych",
         validity: "Odnawiane rocznie",
         details:
-          "Badane wszystkie klasy produktów. Certyfikat klasy I (niemowlęta) i klasy II (kontakt ze skórą). Nr certyfikatu: OE-54321.",
+          "Badane wszystkie klasy produktów. Certyfikat klasy I (niemowlęta) i klasy II (kontakt ze skórą). Nr certyfikatu: Available on request.",
       },
       {
         scope: "Weryfikacja zawartości materiałów z recyklingu i odpowiedzialnej produkcji",
@@ -316,13 +316,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Traitement des fibres biologiques — de la matière première au produit fini",
         validity: "Renouvelée annuellement",
         details:
-          "Couvre l'ensemble de notre chaîne d'approvisionnement en coton biologique et en lin. N° de licence : CU-12345. Périmètre : transformation, fabrication, commerce.",
+          "Couvre l'ensemble de notre chaîne d'approvisionnement en coton biologique et en lin. N° de licence : Available on request. Périmètre : transformation, fabrication, commerce.",
       },
       {
         scope: "Sécurité produit — testé pour les substances nocives",
         validity: "Renouvelée annuellement",
         details:
-          "Toutes les classes de produits testées. Classe I (bébé) et classe II (contact cutané) certifiées. N° de certificat : OE-54321.",
+          "Toutes les classes de produits testées. Classe I (bébé) et classe II (contact cutané) certifiées. N° de certificat : Available on request.",
       },
       {
         scope: "Vérification du contenu recyclé et production responsable",
@@ -386,13 +386,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Lavorazione di fibre biologiche — dalla materia prima al prodotto finito",
         validity: "Rinnovata annualmente",
         details:
-          "Copre l'intera catena di fornitura di cotone biologico e lino. N. licenza: CU-12345. Ambito: lavorazione, produzione, commercio.",
+          "Copre l'intera catena di fornitura di cotone biologico e lino. N. licenza: Available on request. Ambito: lavorazione, produzione, commercio.",
       },
       {
         scope: "Sicurezza del prodotto — testato per sostanze nocive",
         validity: "Rinnovata annualmente",
         details:
-          "Tutte le classi di prodotti testate. Classe I (neonati) e Classe II (contatto con la pelle) certificate. N. certificato: OE-54321.",
+          "Tutte le classi di prodotti testate. Classe I (neonati) e Classe II (contatto con la pelle) certificate. N. certificato: Available on request.",
       },
       {
         scope: "Verifica del contenuto riciclato e produzione responsabile",
@@ -456,13 +456,13 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
         scope: "Verwerking van biologische vezels — van grondstof tot eindproduct",
         validity: "Jaarlijks vernieuwd",
         details:
-          "Dekt onze volledige toeleveringsketen voor biologisch katoen en linnen. Licentie nr.: CU-12345. Scope: verwerking, productie, handel.",
+          "Dekt onze volledige toeleveringsketen voor biologisch katoen en linnen. Licentie nr.: Available on request. Scope: verwerking, productie, handel.",
       },
       {
         scope: "Productveiligheid — getest op schadelijke stoffen",
         validity: "Jaarlijks vernieuwd",
         details:
-          "Alle productklassen getest. Klasse I (baby) en Klasse II (huidcontact) gecertificeerd. Certificaatnr.: OE-54321.",
+          "Alle productklassen getest. Klasse I (baby) en Klasse II (huidcontact) gecertificeerd. Certificaatnr.: Available on request.",
       },
       {
         scope: "Verificatie gerecycled materiaal en verantwoorde productie",

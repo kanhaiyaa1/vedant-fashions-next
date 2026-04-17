@@ -36,7 +36,7 @@ const FACILITY_SPECS = [
 ];
 
 // Non-translatable metric nums
-const METRIC_NUMS = ["50,000", "4", "1,800+", "45 Days"];
+const METRIC_NUMS = ["25,000", "4", "800+", "45 Days"];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   await params;

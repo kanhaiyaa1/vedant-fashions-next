@@ -39,14 +39,23 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   const isValidLocale = locales.some((l) => l.code === lang);
   if (!isValidLocale) notFound();
 
+  const isRtl = lang === "ar";
+
   return (
     <I18nProvider locale={lang as Locale}>
       <Providers>
-        <ScrollToTop />
-        <Navbar />
-        <div className="pt-16 md:pt-20 flex flex-col min-h-screen">
-          <main className="flex-1">{children}</main>
-          <Footer />
+        <div
+          dir={isRtl ? "rtl" : "ltr"}
+          lang={lang}
+          className={isRtl ? "font-sans" : undefined}
+          style={isRtl ? { fontFamily: "'Noto Sans Arabic', 'Segoe UI', sans-serif" } : undefined}
+        >
+          <ScrollToTop />
+          <Navbar />
+          <div className="pt-16 md:pt-20 flex flex-col min-h-screen">
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </div>
       </Providers>
     </I18nProvider>

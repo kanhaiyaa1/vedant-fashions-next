@@ -56,7 +56,7 @@ export const aboutContent: Record<string, AboutLocale> = {
       subtitle: "Our Story",
       title: "Three Decades of Textile Excellence",
       description:
-        "From a single cotton unit in Ahmedabad to a vertically integrated garment manufacturer serving 200+ European brands. Vedant Fashion combines Indian craftsmanship with European quality standards.",
+        "From a single woven unit in Mumbai to a specialist ladies woven wear manufacturer serving European and Middle East brands. Vedant Fashion combines Indian craftsmanship with European quality standards.",
     },
     mission: {
       subtitle: "Our Mission",
@@ -64,10 +64,10 @@ export const aboutContent: Record<string, AboutLocale> = {
       paragraph1:
         "Vedant Fashion was founded with a singular vision: to make India's finest textile craftsmanship accessible to European fashion brands at scale, without compromising on sustainability or ethics.",
       paragraph2:
-        "Today, we operate four state-of-the-art manufacturing facilities across Gujarat, employing over 800 skilled workers. Our vertically integrated model — from fiber sourcing to finished garment — gives us unmatched control over quality, lead times, and cost efficiency.",
+        "Today, we operate from our manufacturing facility in Asalpha Ghatkopar, Mumbai, producing 25,000 pieces/month. Trusted by European brands including Bonprix and WITT Weiden, our vertically integrated model gives us unmatched control over quality, lead times, and cost efficiency.",
       paragraph3:
         "We specialize in woven blouses, cotton dresses, linen shirts, and resort wear for mid-to-premium European labels. Every piece is produced under GOTS, OEKO-TEX, and GRS certifications, meeting the stringent sustainability requirements of today's conscious consumer.",
-      placeholderLabel: "Manufacturing Excellence Since 1998",
+      placeholderLabel: "Manufacturing Excellence Since 2015",
     },
     values: {
       subtitle: "Our Values",
@@ -85,13 +85,13 @@ export const aboutContent: Record<string, AboutLocale> = {
       subtitle: "Milestones",
       title: "Our Journey",
       items: [
-        { year: "1998", text: "Founded in Ahmedabad as a cotton textile unit" },
-        { year: "2004", text: "First European export order — 20,000 pieces to Germany" },
-        { year: "2010", text: "GOTS & OEKO-TEX certifications acquired" },
-        { year: "2015", text: "Expanded to 4 manufacturing units, 800+ workers" },
-        { year: "2019", text: "Opened Hamburg liaison office for EU buyers" },
-        { year: "2023", text: "Achieved 15M+ garments annually, serving 27 countries" },
-        { year: "2025", text: "Launched sustainable resort wear line for Mediterranean markets" },
+        { year: "2015", text: "Founded in Mumbai as a ladies woven wear manufacturer" },
+        { year: "2016", text: "First export shipment — woven blouses to Germany" },
+        { year: "2018", text: "GOTS & OEKO-TEX 100 certifications acquired" },
+        { year: "2020", text: "Commenced supply to Bonprix and WITT Weiden" },
+        { year: "2022", text: "Expanded to 25,000 pieces/month production capacity" },
+        { year: "2023", text: "Launched GCC export programme — UAE, Saudi Arabia, Qatar" },
+        { year: "2025", text: "EAC certification acquired for Russia/CIS market entry" },
       ],
     },
     stats: {
@@ -100,8 +100,8 @@ export const aboutContent: Record<string, AboutLocale> = {
       items: [
         { num: "800+",  label: "Skilled Workers" },
         { num: "4",     label: "Manufacturing Units" },
-        { num: "15M+",  label: "Garments Per Year" },
-        { num: "27",    label: "Countries Served" },
+        { num: "25,000+",  label: "Pieces / Month" },
+        { num: "Mumbai",    label: "India" },
       ],
     },
   },

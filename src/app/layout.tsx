@@ -55,7 +55,7 @@ const organizationSchema = {
   name: "Vedant Fashion",
   url: "https://www.vedantfashion.com",
   description:
-    "B2B manufacturer and exporter of ladies woven wear to Middle East, Russia, and global markets. GOTS and OEKO-TEX certified. MOQ 300 pcs. FOB Mumbai.",
+    "B2B manufacturer and exporter of ladies woven wear — blouses, tops, dresses. 25,000 pieces/month. Exporting to Middle East, Russia, and Europe.",
   foundingDate: "2015",
   areaServed: [
     "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain",

@@ -17,6 +17,7 @@ export interface ManufacturingCapability {
 export interface ManufacturingFacilityUnit {
   name: string;
   desc: string;
+  location?: string;
 }
 
 export interface ManufacturingLocale {
@@ -58,7 +59,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       subtitle: "Manufacturing",
       title: "Vertically Integrated Garment Production",
       description:
-        "Four state-of-the-art facilities in Gujarat with 50,000 pieces/month capacity. From fibre to finished garment — every step under one roof, fully GOTS and BSCI certified.",
+        "State-of-the-art facility in Mumbai with 25,000 pieces/month capacity. From fibre to finished garment — every step under one roof, fully GOTS and BSCI certified.",
     },
     advantages: {
       subtitle: "Why European Buyers Choose Us",
@@ -124,6 +125,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       units: [
         {
           name: "Unit 1 — Woven Garments",
+          location: "Asalpha Ghatkopar, Mumbai",
           desc: "Our flagship facility handles all woven production — blouses, shirts, dresses. 8 stitching lines, automated cutting, in-house lab. Natural lighting and ventilation systems throughout.",
         },
         {
