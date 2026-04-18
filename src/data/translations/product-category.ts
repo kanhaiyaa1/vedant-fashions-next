@@ -87,9 +87,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "B2B Overview",
       title: "Wholesale Manufacturing",
       paragraph1:
-        "Our {productCount}+ SKU range covers the full spectrum of wholesale buyer requirements — from basic core styles to fashion-forward seasonal introductions, all produced within our ISO 9001:2015 certified, 45,000 sq ft manufacturing facility in Gujarat, India.",
+        "Our {productCount}+ SKU range covers the full spectrum of wholesale buyer requirements — from core basics to fashion-forward seasonal styles, all produced in our ISO 9001:2015 certified manufacturing facility in Mumbai, India.",
       paragraph2:
-        "Every style is available for private label, OEM, and ODM production. GOTS 6.0 and OEKO-TEX Standard 100 certification is maintained across the full range, with BSCI / SEDEX social compliance audits available on request. Minimum order quantities start from 300 pieces per style per colour, with standard production lead times of 45–55 days from order confirmation and fabric receipt. Sea freight from Mumbai / JNPT reaches Middle East ports in 17–22 days, making India one of the most time-efficient manufacturing origins for GCC buyers.",
+        "Every style is available for private label, OEM, and ODM production. GOTS 6.0 and OEKO-TEX Standard 100 certification maintained across the full range. MOQ from 300 pieces per style per colour. Sea freight from Mumbai reaches UAE (Jebel Ali) in 18–22 days, Saudi Arabia in 20–24 days, Qatar in 20–23 days — making India one of the most efficient manufacturing origins for GCC buyers.",
     },
     fabricTable: {
       subtitle: "Technical Data",

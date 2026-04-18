@@ -1,5 +1,20 @@
 "use client";
+import { useRef, useState, useEffect } from "react";
 import { Factory, Users, Shirt, Clock, Scissors, Layers } from "lucide-react";
+
+const useInView = (threshold = 0.15) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+};
 
 const stats = [
   { icon: Factory, value: "3", label: "Production Units", detail: "Ahmedabad, Gujarat" },
@@ -21,7 +36,11 @@ const capabilities = [
   "Dedicated sampling room (150 samples/month)",
 ];
 
+const delayClass = ["", "fade-up-delay-1", "fade-up-delay-2", "fade-up-delay-3", "fade-up-delay-4", "fade-up-delay-4"];
+
 const FactoryCapacity = () => {
+  const { ref, inView } = useInView();
+
   return (
     <section className="section-spacing bg-background">
       <div className="container-wide">
@@ -34,9 +53,12 @@ const FactoryCapacity = () => {
         </div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16">
-          {stats.map(({ icon: Icon, value, label, detail }) => (
-            <div key={label} className="text-center p-5 border border-border rounded hover:shadow-md transition-shadow">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16">
+          {stats.map(({ icon: Icon, value, label, detail }, i) => (
+            <div
+              key={label}
+              className={`text-center p-5 border border-border rounded hover:shadow-md transition-shadow fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
+            >
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-olive/10 flex items-center justify-center">
                 <Icon className="w-4 h-4 text-olive" />
               </div>

@@ -37,7 +37,7 @@ const CatalogClient = () => {
       <PageHero
         subtitle="Product Catalogue"
         title="Wholesale Garment Collection"
-        description="Browse our complete range of GOTS and OEKO-TEX certified garments. All products manufactured in-house with full traceability and European export compliance."
+        description="Browse our complete range of GOTS and OEKO-TEX certified garments. All products manufactured in-house with full traceability and GCC & global export compliance."
       />
 
       <section className="section-spacing">

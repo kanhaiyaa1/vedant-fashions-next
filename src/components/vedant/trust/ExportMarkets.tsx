@@ -9,19 +9,19 @@ interface ExportMarketsProps {
 }
 
 const markets = [
-  { region: "DACH", countries: "Germany, Austria, Switzerland", share: "35%", highlight: true },
-  { region: "Western Europe", countries: "France, Netherlands, Belgium", share: "25%", highlight: false },
-  { region: "Southern Europe", countries: "Italy, Spain, Portugal", share: "15%", highlight: false },
-  { region: "Nordics", countries: "Sweden, Denmark, Norway, Finland", share: "10%", highlight: false },
-  { region: "UK & Ireland", countries: "United Kingdom, Ireland", share: "8%", highlight: false },
-  { region: "Eastern Europe & Russia", countries: "Poland, Czech Republic, Russia", share: "7%", highlight: false },
+  { region: "UAE", countries: "Dubai, Abu Dhabi, Sharjah", share: "32%", highlight: true },
+  { region: "Saudi Arabia", countries: "Riyadh, Jeddah, Dammam", share: "24%", highlight: false },
+  { region: "Qatar & Kuwait", countries: "Doha, Kuwait City", share: "18%", highlight: false },
+  { region: "Oman & Bahrain", countries: "Muscat, Manama", share: "12%", highlight: false },
+  { region: "Russia & CIS", countries: "Moscow, St. Petersburg", share: "9%", highlight: false },
+  { region: "Egypt & Others", countries: "Alexandria, Cairo + Global", share: "5%", highlight: false },
 ];
 
 const logos = [
-  "200+ brands served since 1998",
-  "Texworld Paris exhibitor (annual)",
-  "Munich Fabric Start participant",
-  "Hamburg European office & warehouse",
+  "25,000+ pieces manufactured monthly",
+  "18–22 days sea freight to UAE",
+  "GOTS & OEKO-TEX certified production",
+  "FOB Mumbai · CIF · DDP available",
 ];
 
 const ExportMarkets = ({ lang }: ExportMarketsProps) => {
@@ -46,7 +46,7 @@ const ExportMarkets = ({ lang }: ExportMarketsProps) => {
             <div className="text-center p-8">
               <Globe className="w-16 h-16 text-primary/25 mx-auto mb-4" />
               <p className="font-display text-lg text-foreground">{c.countriesLabel}</p>
-              <p className="text-caption mt-1">European & CIS markets</p>
+              <p className="text-caption mt-1">Middle East & Global markets</p>
             </div>
           </div>
 

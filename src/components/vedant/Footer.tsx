@@ -37,6 +37,20 @@ const Footer = () => {
         { label: t("nav.sizeGuide"), href: "/size-guide" },
         { label: t("nav.wholesaleFaq"), href: "/wholesale-faq" },
         { label: t("nav.shippingLogistics"), href: "/shipping" },
+        { label: "Knowledge Hub", href: "/knowledge" },
+        { label: "Inquiry", href: "/inquiry" },
+      ],
+    },
+    {
+      title: "Export Markets",
+      links: [
+        { label: "UAE", href: "/uae/garment-manufacturer" },
+        { label: "Saudi Arabia", href: "/saudi-arabia/garment-manufacturer" },
+        { label: "Qatar", href: "/qatar/garment-manufacturer" },
+        { label: "Kuwait", href: "/kuwait/garment-manufacturer" },
+        { label: "Oman", href: "/oman/garment-manufacturer" },
+        { label: "Russia", href: "/russia/garment-manufacturer" },
+        { label: "Poland", href: "/poland/garment-manufacturer" },
       ],
     },
   ];
@@ -46,12 +60,13 @@ const Footer = () => {
     { label: t("footer.termsOfTrade"),   href: "/terms-of-trade" },
     { label: t("footer.cookieSettings"), href: "/cookie-settings" },
     { label: t("footer.imprint"),        href: "/imprint" },
+    { label: "Sitemap",                  href: "/sitemap-page" },
   ];
 
   return (
     <footer className="bg-charcoal text-primary-foreground">
       <div className="container-wide section-spacing-sm">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
             <LocaleLink href="/" className="font-display text-2xl font-semibold inline-block">

@@ -1,5 +1,6 @@
 "use client";
 import { Leaf, Droplets, Recycle, Sun, TreePine, Heart } from "lucide-react";
+import { FadeUp, StaggerChildren } from "@/components/vedant/animations";
 
 const commitments = [
   {
@@ -50,7 +51,7 @@ const SustainabilityCommitments = () => {
   return (
     <section className="section-spacing bg-primary text-primary-foreground">
       <div className="container-wide">
-        <div className="text-center mb-16 space-y-4">
+        <FadeUp className="text-center mb-16 space-y-4">
           <p className="text-sm font-medium uppercase tracking-[0.15em] text-primary-foreground/60">
             Sustainability
           </p>
@@ -58,9 +59,9 @@ const SustainabilityCommitments = () => {
           <p className="text-base md:text-lg text-primary-foreground/70 max-w-2xl mx-auto">
             Sustainability isn't a marketing claim — it's how we manufacture. Measurable targets, third-party verification, transparent reporting.
           </p>
-        </div>
+        </FadeUp>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" baseDelay={1}>
           {commitments.map(({ icon: Icon, title, metric, detail, description }) => (
             <div key={title} className="border border-primary-foreground/10 rounded p-6 md:p-8 space-y-4 hover:border-primary-foreground/20 transition-colors">
               <div className="flex items-start justify-between">
@@ -76,7 +77,7 @@ const SustainabilityCommitments = () => {
               <p className="text-sm text-primary-foreground/70 leading-relaxed">{description}</p>
             </div>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   );

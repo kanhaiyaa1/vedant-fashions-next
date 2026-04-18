@@ -1,5 +1,20 @@
 "use client";
+import { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+
+const useInView = (threshold = 0.15) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+};
 
 const products = [
   { name: "Milano Twill", category: "Shirting", composition: "100% Organic Cotton", weight: "120 GSM", moq: "500 m", certifications: ["GOTS", "OEKO-TEX"] },
@@ -12,11 +27,16 @@ const products = [
   { name: "Provence Voile", category: "Shirting", composition: "100% Organic Cotton", weight: "80 GSM", moq: "500 m", certifications: ["GOTS", "OEKO-TEX"] },
 ];
 
+const cardDelay = ["", "fade-up-delay-1", "fade-up-delay-2", "fade-up-delay-3", "fade-up-delay-4", "fade-up-delay-4", "fade-up-delay-4", "fade-up-delay-4"];
+
 const ProductGrid = () => {
+  const heading = useInView(0.2);
+  const grid = useInView(0.1);
+
   return (
     <section className="section-spacing bg-background">
       <div className="container-wide">
-        <div className="text-center mb-16 space-y-4">
+        <div ref={heading.ref} className={`text-center mb-16 space-y-4 fade-up ${heading.inView ? "visible" : ""}`}>
           <p className="text-subheading text-gold">Our Collections</p>
           <h2 className="text-display-md text-foreground">Premium Sustainable Fabrics</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
@@ -36,9 +56,11 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.name} {...product} />
+        <div ref={grid.ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+          {products.map((product, i) => (
+            <div key={product.name} className={`fade-up ${cardDelay[i]} ${grid.inView ? "visible" : ""}`}>
+              <ProductCard {...product} />
+            </div>
           ))}
         </div>
       </div>

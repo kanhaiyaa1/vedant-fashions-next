@@ -69,7 +69,7 @@ const itemListSchema = {
   "@type": "ItemList",
   name: "Vedant Fashion — Wholesale Product Categories",
   description:
-    "Ladies woven wear manufacturer in India exporting to Middle East, GCC, and European wholesale buyers.",
+    "Ladies woven wear manufacturer in India exporting to Middle East, GCC, Russia, and global wholesale buyers.",
   numberOfItems: CATEGORY_SLUGS.length,
   itemListElement: CATEGORY_SLUGS.map((slug, i) => ({
     "@type": "ListItem",

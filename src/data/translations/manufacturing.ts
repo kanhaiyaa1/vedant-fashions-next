@@ -59,10 +59,10 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       subtitle: "Manufacturing",
       title: "Vertically Integrated Garment Production",
       description:
-        "State-of-the-art facility in Mumbai with 25,000 pieces/month capacity. From fibre to finished garment — every step under one roof, fully GOTS and BSCI certified.",
+        "Mumbai-based ladies woven wear manufacturer with 25,000 pieces/month capacity. From fabric sourcing to FOB export packing — every step in-house. GOTS and OEKO-TEX certified. Exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets.",
     },
     advantages: {
-      subtitle: "Why European Buyers Choose Us",
+      subtitle: "Why Middle East Buyers Choose Us",
       title: "Manufacturing Advantages",
       items: [
         {
@@ -75,7 +75,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         },
         {
           title: "Dedicated Account Team",
-          desc: "Every European client gets a dedicated merchandiser, QC officer, and logistics coordinator. Single point of contact from sampling to shipment.",
+          desc: "Every GCC and international client gets a dedicated merchandiser, QC officer, and logistics coordinator. Single point of contact from sampling to shipment.",
         },
         {
           title: "Vertical Integration",
@@ -90,7 +90,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Stage 1",
           title: "Fabric Sourcing & Testing",
-          desc: "In-house textile lab for shrinkage, colorfastness, GSM, and tensile strength testing. All fabrics sourced from GOTS-certified mills across India and Europe.",
+          desc: "In-house textile lab for shrinkage, colorfastness, GSM, and tensile strength testing. All fabrics sourced from GOTS-certified mills across India.",
         },
         {
           stage: "Stage 2",
@@ -110,7 +110,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Stage 5",
           title: "Finishing & Pressing",
-          desc: "Steam pressing, enzyme washing, garment dyeing, embroidery, screen print, and digital print. Softener treatments to European hand-feel specifications.",
+          desc: "Steam pressing, enzyme washing, garment dyeing, embroidery, screen print, and digital print. Softener treatments to buyer hand-feel specifications.",
         },
         {
           stage: "Stage 6",

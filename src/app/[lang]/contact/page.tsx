@@ -16,9 +16,9 @@ const OFFICE_DETAILS = [
     email: "export@vedantfashion.com",
   },
   {
-    address: ["Vedant Fashion Europe GmbH", "Bleichenbrücke 10", "20354 Hamburg", "Germany"],
-    phone: "+49 40 3210 1234",
-    email: "europe@vedantfashion.com",
+    address: ["Vedant Fashion — Middle East", "Business Bay", "Dubai", "UAE"],
+    phone: "+971 4 000 0000",
+    email: "uae@vedantfashion.com",
   },
   {
     address: ["Vedant Fashion Russia", "Presnenskaya Naberezhnaya 12", "Moscow 123112", "Russia"],

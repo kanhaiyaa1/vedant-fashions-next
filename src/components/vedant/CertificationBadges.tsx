@@ -1,5 +1,20 @@
 "use client";
+import { useRef, useState, useEffect } from "react";
 import { Shield, Leaf, Recycle, Award, CheckCircle, Globe } from "lucide-react";
+
+const useInView = (threshold = 0.15) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return { ref, inView };
+};
 
 const certifications = [
   { icon: Shield, name: "OEKO-TEX® Standard 100", desc: "Tested for harmful substances across all product classes." },
@@ -10,7 +25,11 @@ const certifications = [
   { icon: Globe, name: "SEDEX / SMETA", desc: "Ethical supply chain audits covering labor, health and environment." },
 ];
 
+const delayClass = ["", "fade-up-delay-1", "fade-up-delay-2", "fade-up-delay-3", "fade-up-delay-4", "fade-up-delay-4"];
+
 const CertificationBadges = () => {
+  const { ref, inView } = useInView();
+
   return (
     <section className="section-spacing bg-cream">
       <div className="container-wide">
@@ -18,14 +37,17 @@ const CertificationBadges = () => {
           <p className="text-subheading text-gold">Trust & Compliance</p>
           <h2 className="text-display-md text-foreground">Certifications & Standards</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Every fabric we produce meets the highest European and international standards for quality, 
+            Every fabric we produce meets the highest European and international standards for quality,
             sustainability, and ethical manufacturing.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          {certifications.map(({ icon: Icon, name, desc }) => (
-            <div key={name} className="bg-card border border-border rounded p-6 md:p-8 text-center space-y-3 hover:shadow-md transition-shadow">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {certifications.map(({ icon: Icon, name, desc }, i) => (
+            <div
+              key={name}
+              className={`bg-card border border-border rounded p-6 md:p-8 text-center space-y-3 hover:shadow-md transition-shadow fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
+            >
               <div className="w-12 h-12 mx-auto rounded-full bg-olive/10 flex items-center justify-center">
                 <Icon className="w-5 h-5 text-olive" />
               </div>

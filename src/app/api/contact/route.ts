@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { Resend } from "resend";
 
-// Accepts all four inquiry form types via a `formType` discriminator field.
-// Validates payload server-side, then hands off to your email/CRM provider.
-// To wire up email: install `nodemailer` (or Resend / SendGrid SDK) and
-// replace the TODO block below with your send logic.
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const baseSchema = z.object({
   formType: z.enum(["general", "product", "bulk", "private-label"]),
@@ -31,6 +29,36 @@ const baseSchema = z.object({
   productId: z.string().max(50).optional(),
 });
 
+function buildEmailText(data: z.infer<typeof baseSchema>): string {
+  const lines: string[] = [
+    `Form Type:         ${data.formType}`,
+    `Name:              ${data.name}`,
+    `Company:           ${data.company}`,
+    `Email:             ${data.email}`,
+    `Phone:             ${data.phone ?? "—"}`,
+    `Country:           ${data.country}`,
+    `Message:           ${data.message ?? "—"}`,
+    ``,
+    `--- Optional Fields ---`,
+    `Product Interest:  ${data.productInterest ?? "—"}`,
+    `Product Name:      ${data.productName ?? "—"}`,
+    `Product ID:        ${data.productId ?? "—"}`,
+    `Quantity:          ${data.quantity ?? "—"}`,
+    `Target Date:       ${data.targetDate ?? "—"}`,
+    `Color Requirements:${data.colorRequirements ?? "—"}`,
+    `Incoterm:          ${data.incoterm ?? "—"}`,
+    `Shipping Port:     ${data.shippingPort ?? "—"}`,
+    `Annual Volume:     ${data.annualVolume ?? "—"}`,
+    `Brand Name:        ${data.brandName ?? "—"}`,
+    `Has Tech Pack:     ${data.hasTechPack ?? "—"}`,
+    `Labeling Needs:    ${data.labelingNeeds ?? "—"}`,
+    `Target Price:      ${data.targetPrice ?? "—"}`,
+    ``,
+    `Received at: ${new Date().toISOString()}`,
+  ];
+  return lines.join("\n");
+}
+
 export async function POST(request: Request) {
   let body: unknown;
 
@@ -51,25 +79,17 @@ export async function POST(request: Request) {
 
   const data = result.data;
 
-  // TODO: replace this block with your email / CRM integration.
-  // Example with Resend:
-  //   import { Resend } from "resend";
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({
-  //     from: "noreply@vedantfashion.com",
-  //     to: "sales@vedantfashion.com",
-  //     subject: `New ${data.formType} inquiry from ${data.company}`,
-  //     text: JSON.stringify(data, null, 2),
-  //   });
-
-  // For now: log to server console (visible in Vercel/Railway logs)
-  console.log("[contact API]", {
-    formType: data.formType,
-    company: data.company,
-    email: data.email,
-    country: data.country,
-    receivedAt: new Date().toISOString(),
+  const { error } = await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: "contact@vedantfashion.com",
+    subject: `New B2B Enquiry — ${data.formType} from ${data.name}, ${data.company}`,
+    text: buildEmailText(data),
   });
+
+  if (error) {
+    console.error("[contact API] Resend error:", error);
+    return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+  }
 
   return NextResponse.json({ success: true }, { status: 200 });
 }

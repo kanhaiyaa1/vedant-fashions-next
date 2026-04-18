@@ -1,5 +1,6 @@
 "use client";
 import { ReactNode } from "react";
+import { FadeUp } from "@/components/vedant/animations";
 
 interface ContentBlockProps {
   subtitle?: string;
@@ -17,8 +18,14 @@ const ContentBlock = ({ subtitle, title, children, className = "", bg = "default
       <div className="container-wide">
         {(subtitle || title) && (
           <div className="text-center mb-16 space-y-4">
-            {subtitle && <p className={`text-subheading ${bg === "dark" ? "text-primary-foreground/50" : "text-gold"}`}>{subtitle}</p>}
-            <h2 className={`text-display-md ${bg === "dark" ? "" : "text-foreground"}`}>{title}</h2>
+            {subtitle && (
+              <FadeUp delay={0}>
+                <p className={`text-subheading ${bg === "dark" ? "text-primary-foreground/50" : "text-gold"}`}>{subtitle}</p>
+              </FadeUp>
+            )}
+            <FadeUp delay={1}>
+              <h2 className={`text-display-md ${bg === "dark" ? "" : "text-foreground"}`}>{title}</h2>
+            </FadeUp>
           </div>
         )}
         {children}

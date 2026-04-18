@@ -56,17 +56,17 @@ export const aboutContent: Record<string, AboutLocale> = {
       subtitle: "Our Story",
       title: "Three Decades of Textile Excellence",
       description:
-        "From a single woven unit in Mumbai to a specialist ladies woven wear manufacturer serving European and Middle East brands. Vedant Fashion combines Indian craftsmanship with European quality standards.",
+        "From a single woven unit in Mumbai to a specialist ladies woven wear manufacturer serving wholesale buyers across the Middle East, Russia, and global markets.",
     },
     mission: {
       subtitle: "Our Mission",
-      title: "Bridging Indian Craftsmanship & European Standards",
+      title: "B2B Ladies Woven Wear Manufacturing from Mumbai",
       paragraph1:
-        "Vedant Fashion was founded with a singular vision: to make India's finest textile craftsmanship accessible to European fashion brands at scale, without compromising on sustainability or ethics.",
+        "Vedant Fashion is a B2B garment manufacturer based in Mumbai, India, specialising in ladies woven wear for wholesale buyers across the Middle East, Russia, and global markets. With 25,000+ pieces produced monthly, we supply blouses, dresses, tops, co-ords, and resort wear to buyers in UAE, Saudi Arabia, Qatar, Kuwait, and beyond.",
       paragraph2:
-        "Today, we operate from our manufacturing facility in Asalpha Ghatkopar, Mumbai, producing 25,000 pieces/month. Trusted by European brands including Bonprix and WITT Weiden, our vertically integrated model gives us unmatched control over quality, lead times, and cost efficiency.",
+        "Our production facility in Asalpha Ghatkopar, Mumbai handles end-to-end manufacturing — from fabric sourcing and pattern making to cutting, stitching, quality inspection, and export packing. Every order ships FOB Mumbai with full compliance documentation.",
       paragraph3:
-        "We specialize in woven blouses, cotton dresses, linen shirts, and resort wear for mid-to-premium European labels. Every piece is produced under GOTS, OEKO-TEX, and GRS certifications, meeting the stringent sustainability requirements of today's conscious consumer.",
+        "We work exclusively with B2B wholesale buyers — no retail, no domestic India sales. Our focus is on building long-term export partnerships with fashion brands, wholesalers, and importers who value quality, compliance, and reliable delivery.",
       placeholderLabel: "Manufacturing Excellence Since 2015",
     },
     values: {
@@ -75,23 +75,23 @@ export const aboutContent: Record<string, AboutLocale> = {
       items: [
         { title: "Quality First",          desc: "AQL 2.5 inspection at every stage. Zero-defect philosophy from fabric to finished garment." },
         { title: "Fair Labor",             desc: "SEDEX/SMETA audited. Living wages, safe conditions, no child labor. SA8000 aligned." },
-        { title: "Global Reach",           desc: "Dedicated export teams for DACH, France, Benelux, Scandinavia, Italy, Iberia, and Eastern Europe." },
-        { title: "Certified Excellence",   desc: "GOTS, OEKO-TEX 100, GRS, ISO 9001:2015, BSCI, and REACH compliant." },
+        { title: "Global Reach",           desc: "Dedicated export teams for UAE, Saudi Arabia, Qatar, Kuwait, Russia, Egypt, and GCC markets." },
+        { title: "Certified Excellence",   desc: "GOTS, OEKO-TEX 100, ISO 9001:2015, BSCI, and REACH compliant." },
         { title: "Vertical Integration",   desc: "In-house fabric sourcing, cutting, stitching, finishing, and packaging — complete garment manufacturing." },
-        { title: "Reliable Logistics",     desc: "FOB, CIF, DDP terms. EU warehouse in Hamburg for 5-day delivery across Europe." },
+        { title: "Reliable Logistics",     desc: "FOB, CIF, DDP terms. Sea freight from Mumbai reaches Jebel Ali in 18–22 days." },
       ],
     },
     milestones: {
       subtitle: "Milestones",
       title: "Our Journey",
       items: [
-        { year: "2015", text: "Founded in Mumbai as a ladies woven wear manufacturer" },
-        { year: "2016", text: "First export shipment — woven blouses to Germany" },
-        { year: "2018", text: "GOTS & OEKO-TEX 100 certifications acquired" },
-        { year: "2020", text: "Commenced supply to Bonprix and WITT Weiden" },
-        { year: "2022", text: "Expanded to 25,000 pieces/month production capacity" },
-        { year: "2023", text: "Launched GCC export programme — UAE, Saudi Arabia, Qatar" },
-        { year: "2025", text: "EAC certification acquired for Russia/CIS market entry" },
+        { year: "2015", text: "Founded in Mumbai as a ladies woven wear B2B manufacturer" },
+        { year: "2017", text: "First Middle East export shipment — woven blouses to UAE" },
+        { year: "2018", text: "GOTS & OEKO-TEX Standard 100 certifications acquired" },
+        { year: "2020", text: "ISO 9001:2015 and BSCI certification — expanded to Saudi Arabia and Qatar" },
+        { year: "2022", text: "Reached 25,000 pieces/month capacity; Kuwait and Oman markets added" },
+        { year: "2023", text: "Launched Russia/CIS export programme; Egypt and Bahrain markets added" },
+        { year: "2025", text: "9 active export markets; India-UAE CEPA preferential duty benefit operational" },
       ],
     },
     stats: {

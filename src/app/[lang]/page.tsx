@@ -27,11 +27,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
   const { lang } = await params;
   return {
-    title: "Vedant Fashion — Premium Sustainable Garment Manufacturer",
+    title: "Ladies Woven Wear Manufacturer India | Middle East & Global Export | Vedant Fashion",
     description:
-      "GOTS, OEKO-TEX & GRS certified garment manufacturer exporting premium sustainable apparel to Europe and Russia. Private label, OEM & wholesale.",
+      "GOTS and OEKO-TEX certified ladies woven wear manufacturer in Mumbai, India. Exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets. MOQ 300 pcs. FOB Mumbai.",
     keywords:
-      "garment manufacturer India, sustainable fashion, GOTS certified, OEKO-TEX, private label, organic cotton, wholesale garments Europe",
+      "ladies woven wear manufacturer India, garment manufacturer Mumbai, wholesale garments UAE, woven blouses Saudi Arabia, GOTS certified manufacturer India, MOQ 300 pcs, FOB Mumbai, private label garment India Middle East",
     alternates: buildHreflangAlternates("/"),
   };
 }

@@ -45,11 +45,27 @@ const navItems: NavItem[] = [
     ],
   },
   {
+    labelKey: "Export Markets",
+    children: [
+      { labelKey: "UAE", href: "/uae/garment-manufacturer" },
+      { labelKey: "Saudi Arabia", href: "/saudi-arabia/garment-manufacturer" },
+      { labelKey: "Qatar", href: "/qatar/garment-manufacturer" },
+      { labelKey: "Kuwait", href: "/kuwait/garment-manufacturer" },
+      { labelKey: "Oman", href: "/oman/garment-manufacturer" },
+      { labelKey: "Bahrain", href: "/bahrain/garment-manufacturer" },
+      { labelKey: "Egypt", href: "/egypt/garment-manufacturer" },
+      { labelKey: "Russia", href: "/russia/garment-manufacturer" },
+      { labelKey: "Poland", href: "/poland/garment-manufacturer" },
+    ],
+  },
+  {
     labelKey: "nav.resources",
     children: [
       { labelKey: "nav.sizeGuide", href: "/size-guide" },
       { labelKey: "nav.wholesaleFaq", href: "/wholesale-faq" },
       { labelKey: "nav.shippingLogistics", href: "/shipping" },
+      { labelKey: "Knowledge Hub", href: "/knowledge" },
+      { labelKey: "Sitemap", href: "/sitemap-page" },
     ],
   },
   {
