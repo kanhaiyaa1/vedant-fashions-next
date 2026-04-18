@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const baseSchema = z.object({
   formType: z.enum(["general", "product", "bulk", "private-label"]),
   name: z.string().trim().min(1).max(100),
@@ -79,6 +77,7 @@ export async function POST(request: Request) {
 
   const data = result.data;
 
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: "contact@vedantfashion.com",
