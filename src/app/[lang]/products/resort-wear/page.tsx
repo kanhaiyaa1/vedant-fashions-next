@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
 import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
+import { getActiveProducts } from "@/lib/supabase/products";
 
 export async function generateMetadata({
   params,
@@ -52,6 +53,8 @@ export default async function ResortWearPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const dbProducts = await getActiveProducts("resort-wear");
+  const first = dbProducts[0];
   return (
     <ProductCategoryPage
       categorySlug="resort-wear"
@@ -66,6 +69,9 @@ export default async function ResortWearPage({
       ]}
       faqs={FAQS}
       lang={lang}
+      moqOverride={first?.moq ?? undefined}
+      leadTimeOverride={first?.lead_time ?? undefined}
+      fobPriceOverride={first?.fob_price ?? undefined}
     />
   );
 }

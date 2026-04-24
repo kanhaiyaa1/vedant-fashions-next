@@ -1,6 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
+import NewsletterSignup from "@/components/vedant/NewsletterSignup";
 import { useI18n } from "@/i18n/I18nProvider";
 import LocaleLink from "@/i18n/LocaleLink";
 
@@ -69,12 +71,19 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
-            <LocaleLink href="/" className="font-display text-2xl font-semibold inline-block">
-              Vedant<span className="font-light opacity-60 ml-1">Fashion</span>
+            <LocaleLink href="/">
+              <Image
+                src="/images/Vedant-Fashion-logo.png"
+                alt="Vedant Fashion"
+                width={140}
+                height={42}
+                className="h-9 w-auto object-contain"
+              />
             </LocaleLink>
             <p className="text-sm leading-relaxed opacity-70 max-w-sm">
               {t("footer.tagline")}
             </p>
+            <NewsletterSignup />
             <div className="space-y-2 pt-2">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 opacity-50 shrink-0" />

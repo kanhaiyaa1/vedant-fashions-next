@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
+import { createClient } from "@/lib/supabase/server";
 import CatalogClient from "./CatalogClient";
+import CatalogDownloadSection from "./CatalogDownloadSection";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -18,6 +20,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function CatalogPage() {
-  return <CatalogClient />;
+export default async function CatalogPage({ params }: PageProps) {
+  const { lang } = await params;
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
+  return (
+    <>
+      <CatalogClient />
+      <CatalogDownloadSection
+        lang={lang}
+        userId={user?.id ?? null}
+        userEmail={user?.email ?? null}
+      />
+    </>
+  );
 }

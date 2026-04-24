@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
 import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
+import { getActiveProducts } from "@/lib/supabase/products";
 
 export async function generateMetadata({
   params,
@@ -52,6 +53,8 @@ export default async function CottonDressesPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const dbProducts = await getActiveProducts("cotton-dresses");
+  const first = dbProducts[0];
   return (
     <ProductCategoryPage
       categorySlug="cotton-dresses"
@@ -60,6 +63,9 @@ export default async function CottonDressesPage({
       middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
       faqs={FAQS}
       lang={lang}
+      moqOverride={first?.moq ?? undefined}
+      leadTimeOverride={first?.lead_time ?? undefined}
+      fobPriceOverride={first?.fob_price ?? undefined}
     />
   );
 }

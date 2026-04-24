@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { locales } from "@/i18n/types";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/StructuredData";
@@ -15,6 +16,11 @@ import QualityProcess from "@/components/vedant/trust/QualityProcess";
 import ExportMarkets from "@/components/vedant/trust/ExportMarkets";
 import SustainabilityCommitments from "@/components/vedant/trust/SustainabilityCommitments";
 import ComplianceStandards from "@/components/vedant/trust/ComplianceStandards";
+import {
+  SkeletonProductGrid,
+  SkeletonBlock,
+  SkeletonCard,
+} from "@/components/vedant/skeletons";
 
 interface HomePageProps {
   params: Promise<{ lang: string }>;
@@ -43,18 +49,42 @@ export default async function HomePage({ params }: HomePageProps) {
       <OrganizationSchema />
       <WebSiteSchema />
       <Hero lang={lang} />
-      <FactoryCapacity />
-      <ProductGrid />
-      <CertificationBadges />
-      <QualityProcess />
-      <ProductGallery />
-      <ExportMarkets lang={lang} />
-      <SustainabilityCommitments />
-      <FabricSpecTable />
-      <ComplianceStandards />
-      <Testimonials />
-      <FAQ />
-      <InquiryForm />
+      <Suspense fallback={<SkeletonBlock height="400px" />}>
+        <FactoryCapacity />
+      </Suspense>
+      <Suspense fallback={<SkeletonProductGrid />}>
+        <ProductGrid />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="200px" />}>
+        <CertificationBadges />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="480px" />}>
+        <QualityProcess />
+      </Suspense>
+      <Suspense fallback={<SkeletonProductGrid />}>
+        <ProductGallery />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="360px" />}>
+        <ExportMarkets lang={lang} />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="400px" />}>
+        <SustainabilityCommitments />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="320px" />}>
+        <FabricSpecTable />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="280px" />}>
+        <ComplianceStandards />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="360px" />}>
+        <Testimonials />
+      </Suspense>
+      <Suspense fallback={<SkeletonBlock height="480px" />}>
+        <FAQ />
+      </Suspense>
+      <Suspense fallback={<SkeletonCard />}>
+        <InquiryForm />
+      </Suspense>
     </main>
   );
 }

@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/i18n/I18nProvider";
 import { locales } from "@/i18n/types";
 import type { Locale } from "@/i18n/types";
 import LocaleLink from "@/i18n/LocaleLink";
+import { createClient } from "@/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 type NavItem = {
   labelKey: string;
@@ -76,10 +80,24 @@ const navItems: NavItem[] = [
 
 const Navbar = () => {
   const { locale, setLocale, t } = useI18n();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [langOpen, setLangOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+  }, []);
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    setUser(null);
+    router.push(`/${locale}`);
+  };
 
   // setLocale already handles navigation via router.push in I18nProvider
   const handleLocaleChange = (newLocale: Locale) => {
@@ -92,8 +110,15 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <nav className="container-wide flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <LocaleLink href="/" className="font-display text-xl md:text-2xl font-semibold tracking-tight text-foreground shrink-0">
-          Vedant<span className="font-light text-muted-foreground ml-1">Fashion</span>
+        <LocaleLink href="/">
+          <Image
+            src="/images/Vedant-Fashion-logo.png"
+            alt="Vedant Fashion"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </LocaleLink>
 
         {/* Desktop Nav */}
@@ -179,6 +204,30 @@ const Navbar = () => {
             )}
           </div>
 
+          {user ? (
+            <div className="hidden md:flex items-center gap-2">
+              <LocaleLink
+                href="/dashboard"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+              >
+                Dashboard
+              </LocaleLink>
+              <button
+                onClick={handleSignOut}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <LocaleLink
+              href="/login"
+              className="hidden md:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+            >
+              Login
+            </LocaleLink>
+          )}
+
           <LocaleLink href="/contact">
             <Button size="sm" className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 uppercase text-xs tracking-widest">
               {t("nav.inquireNow")}
@@ -242,6 +291,32 @@ const Navbar = () => {
                 {t("nav.inquireNow")}
               </Button>
             </LocaleLink>
+
+            {user ? (
+              <div className="flex gap-2 mt-2">
+                <LocaleLink
+                  href="/dashboard"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 text-center border border-border rounded py-2 text-sm font-medium text-foreground"
+                >
+                  Dashboard
+                </LocaleLink>
+                <button
+                  onClick={() => { setMobileOpen(false); handleSignOut(); }}
+                  className="flex-1 text-center border border-border rounded py-2 text-sm font-medium text-muted-foreground"
+                >
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <LocaleLink
+                href="/login"
+                onClick={() => setMobileOpen(false)}
+                className="block text-center border border-border rounded py-2 mt-2 text-sm font-medium text-foreground"
+              >
+                Login
+              </LocaleLink>
+            )}
 
             {/* Language switcher — mobile */}
             <div className="pt-4 border-t border-border mt-2">

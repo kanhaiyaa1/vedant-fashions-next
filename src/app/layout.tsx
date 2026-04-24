@@ -47,6 +47,11 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+  icons: {
+    icon: "/images/Vedant-Fashion-Favicon.png",
+    shortcut: "/images/Vedant-Fashion-Favicon.png",
+    apple: "/images/Vedant-Fashion-Favicon.png",
+  },
 };
 
 const organizationSchema = {

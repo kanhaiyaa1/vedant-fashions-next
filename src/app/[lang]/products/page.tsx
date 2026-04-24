@@ -6,6 +6,7 @@ import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { getProductsByCategory, categoryFobPricing } from "@/data/products";
+import { getActiveProducts } from "@/lib/supabase/products";
 
 export async function generateMetadata({
   params,
@@ -97,18 +98,24 @@ export default async function ProductCategoriesPage({
 }) {
   const { lang } = await params;
 
-  // Pull live counts and first-product specs from real data
+  const dbProducts = await getActiveProducts();
+  const useDatabase = dbProducts.length > 0;
+
   const categoryData = CATEGORY_SLUGS.map((slug) => {
-    const prods = getProductsByCategory(slug);
-    const first = prods[0];
+    const hardcodedProds = getProductsByCategory(slug);
+    const dbCategoryProds = dbProducts.filter((p) => p.category === slug);
+    const useDb = useDatabase && dbCategoryProds.length > 0;
+    const first = useDb ? dbCategoryProds[0] : hardcodedProds[0];
     return {
       slug,
       ...CATEGORY_META[slug],
-      productCount: prods.length,
-      moq: first?.moq ?? "300 pcs",
-      leadTime: first?.leadTime ?? "6–8 weeks",
-      fob: categoryFobPricing[slug] ?? "On request",
-      certifications: [...new Set(prods.flatMap((p) => p.certifications))].slice(0, 3),
+      productCount: useDb ? dbCategoryProds.length : hardcodedProds.length,
+      moq: (useDb ? first?.moq : first?.moq) ?? 300,
+      leadTime: (useDb ? first?.lead_time : first?.leadTime) ?? "6–8 weeks",
+      fob: (useDb ? first?.fob_price : null) ?? categoryFobPricing[slug] ?? "On request",
+      certifications: useDb
+        ? (dbCategoryProds[0]?.certifications ?? []).slice(0, 3)
+        : [...new Set(hardcodedProds.flatMap((p) => p.certifications))].slice(0, 3),
     };
   });
 
@@ -199,7 +206,7 @@ export default async function ProductCategoriesPage({
                 </div>
                 {cat.certifications.length > 0 && (
                   <div className="flex flex-wrap gap-1">
-                    {cat.certifications.map((c) => (
+                    {cat.certifications.map((c: string) => (
                       <span
                         key={c}
                         className="bg-olive/10 text-olive text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-sm"

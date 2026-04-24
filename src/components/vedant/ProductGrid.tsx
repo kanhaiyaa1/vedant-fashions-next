@@ -29,9 +29,34 @@ const products = [
 
 const cardDelay = ["", "fade-up-delay-1", "fade-up-delay-2", "fade-up-delay-3", "fade-up-delay-4", "fade-up-delay-4", "fade-up-delay-4", "fade-up-delay-4"];
 
-const ProductGrid = () => {
+interface DbProduct {
+  id: string;
+  name: string;
+  category: string;
+  moq?: number | null;
+  fob_price?: string | null;
+  certifications?: string[] | null;
+  description?: string | null;
+}
+
+interface ProductGridProps {
+  dbProducts?: DbProduct[];
+}
+
+const ProductGrid = ({ dbProducts }: ProductGridProps = {}) => {
   const heading = useInView(0.2);
   const grid = useInView(0.1);
+
+  const displayProducts = (dbProducts && dbProducts.length > 0)
+    ? dbProducts.map((p) => ({
+        name: p.name,
+        category: p.category.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+        composition: p.description ?? "—",
+        weight: "—",
+        moq: p.moq ? `${p.moq} pcs` : "300 pcs",
+        certifications: p.certifications ?? [],
+      }))
+    : products;
 
   return (
     <section className="section-spacing bg-background">
@@ -57,8 +82,8 @@ const ProductGrid = () => {
         </div>
 
         <div ref={grid.ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.map((product, i) => (
-            <div key={product.name} className={`fade-up ${cardDelay[i]} ${grid.inView ? "visible" : ""}`}>
+          {displayProducts.map((product, i) => (
+            <div key={product.name} className={`fade-up ${cardDelay[i] ?? "fade-up-delay-4"} ${grid.inView ? "visible" : ""}`}>
               <ProductCard {...product} />
             </div>
           ))}

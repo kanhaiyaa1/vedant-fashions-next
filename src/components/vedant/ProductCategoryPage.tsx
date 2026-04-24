@@ -49,6 +49,9 @@ interface Props {
   gccMarketNotes?: GccMarketNote[];
   faqs: CategoryFaq[];
   lang: string;
+  moqOverride?: number;
+  leadTimeOverride?: string;
+  fobPriceOverride?: string;
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────
@@ -102,6 +105,9 @@ export default function ProductCategoryPage({
   gccMarketNotes,
   faqs,
   lang,
+  moqOverride,
+  leadTimeOverride,
+  fobPriceOverride,
 }: Props) {
   const category = categories.find((c) => c.slug === categorySlug);
   const categoryProducts = products.filter((p) => p.category === categorySlug);
@@ -113,7 +119,7 @@ export default function ProductCategoryPage({
 
   const fabricRows = collectFabricRows(categoryProducts);
   const fobPrice =
-    categoryFobPricing[categorySlug] ?? firstProduct.fabricOptions[0]?.price ?? "On request";
+    fobPriceOverride ?? categoryFobPricing[categorySlug] ?? firstProduct.fabricOptions[0]?.price ?? "On request";
   const exportCompliance = firstProduct.exportCompliance;
   const allCerts = [
     ...new Set(categoryProducts.flatMap((p) => p.certifications)),
@@ -260,9 +266,9 @@ export default function ProductCategoryPage({
           <table className="w-full text-body-sm border-collapse">
             <tbody>
               {[
-                { label: content.techSpecs.labels.moq, value: `${firstProduct.moq} per style per colour` },
+                { label: content.techSpecs.labels.moq, value: `${moqOverride ?? firstProduct.moq} per style per colour` },
                 { label: content.techSpecs.labels.sampleLeadTime, value: "12–15 working days (proto / counter sample)" },
-                { label: content.techSpecs.labels.productionLeadTime, value: `${firstProduct.leadTime} from order confirmation + fabric receipt` },
+                { label: content.techSpecs.labels.productionLeadTime, value: `${leadTimeOverride ?? firstProduct.leadTime} from order confirmation + fabric receipt` },
                 { label: content.techSpecs.labels.sizeRange, value: sizeRange },
                 { label: content.techSpecs.labels.fobPrice, value: fobPrice },
                 { label: content.techSpecs.labels.incoterms, value: "FOB Mumbai / CIF Destination / DDP" },

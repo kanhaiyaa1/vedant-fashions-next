@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
 import { locales, defaultLocale, localizedRoutes } from "./i18n/types";
 import type { Locale } from "./i18n/types";
 
@@ -81,7 +82,9 @@ function resolveToEnglishPath(pathname: string, locale: string): string {
   return `/${locale}/${englishSegments.join("/")}`;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  const supabaseResponse = await updateSession(request);
+
   const { pathname } = request.nextUrl;
 
   // Let Next.js internals pass through
@@ -90,7 +93,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.includes(".")
   ) {
-    return NextResponse.next();
+    return supabaseResponse;
   }
 
   // Check if the path already starts with a valid locale prefix
@@ -112,9 +115,8 @@ export function middleware(request: NextRequest) {
     }
 
     // Path already uses English slugs — pass through unchanged
-    const response = NextResponse.next();
-    response.headers.set("x-locale", firstSegment);
-    return response;
+    supabaseResponse.headers.set("x-locale", firstSegment);
+    return supabaseResponse;
   }
 
   // 1. CF-IPCountry header (Cloudflare) — most reliable signal
