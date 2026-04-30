@@ -91,26 +91,26 @@ export const CLIENT_LOGOS = [
 ]
 
 export const FACTORY_IMAGES = [
-  { src: "/images/Site Files/silai-machine.JPG", alt: "Sewing machines at Vedant Fashion" },
-  { src: "/images/Site Files/Straight-knife-cutting-machine.png", alt: "Fabric cutting machine" },
-  { src: "/images/Site Files/cloth-crafting.png", alt: "Garment crafting process" },
-  { src: "/images/Site Files/colth-crafting.JPG", alt: "In-house stitching" },
-  { src: "/images/Site Files/cloth-measurement.JPG", alt: "Measurement quality check" },
-  { src: "/images/Site Files/cloth-parcel.JPG", alt: "Export packing process" },
-  { src: "/images/Site Files/cloth-internation-packages.JPG", alt: "International packaging" },
-  { src: "/images/Site Files/new-cotton-lawns-the-list-group.jpg", alt: "Fabric sourcing" },
-  { src: "/images/Site Files/high fashion women garment.jpg", alt: "Premium ladies garments" },
+  { src: "/images/Site-Files/silai-machine.JPG", alt: "Sewing machines at Vedant Fashion" },
+  { src: "/images/Site-Files/Straight-knife-cutting-machine.png", alt: "Fabric cutting machine" },
+  { src: "/images/Site-Files/cloth-crafting.png", alt: "Garment crafting process" },
+  { src: "/images/Site-Files/colth-crafting.JPG", alt: "In-house stitching" },
+  { src: "/images/Site-Files/cloth-measurement.JPG", alt: "Measurement quality check" },
+  { src: "/images/Site-Files/cloth-parcel.JPG", alt: "Export packing process" },
+  { src: "/images/Site-Files/cloth-internation-packages.JPG", alt: "International packaging" },
+  { src: "/images/Site-Files/new-cotton-lawns-the-list-group.jpg", alt: "Fabric sourcing" },
+  { src: "/images/Site-Files/high fashion women garment.jpg", alt: "Premium ladies garments" },
 ]
 
 export const CERTIFICATIONS_DOCS = [
   { src: "/images/Docs/GST-Certificate.jpeg", alt: "GST Certificate" },
-  { src: "/images/Docs/Udyam Registration Certificate.jpg", alt: "Udyam Registration" },
-  { src: "/images/Docs/Registration Certificate.jpg", alt: "Registration Certificate" },
+  { src: "/images/Docs/Udyam-Registration-Certificate.jpg", alt: "Udyam Registration" },
+  { src: "/images/Docs/Registration-Certificate.jpg", alt: "Registration Certificate" },
 ]
 
 export const FOUNDER_IMAGE = "/images/Docs/shravan-diwan.png"
 
-export const MAKE_IN_INDIA = "/images/Site Files/make-in-india.png"
+export const MAKE_IN_INDIA = "/images/Site-Files/make-in-india.png"
 
 export function getImages(arr: string[], count: number, offset = 0): string[] {
   return arr.slice(offset, offset + count)
