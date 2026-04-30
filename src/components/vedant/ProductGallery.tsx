@@ -1,13 +1,17 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import { PRODUCT_IMAGES } from "@/data/images";
 
 const galleryImages = [
-  { id: 1, label: "Organic Cotton Rolls", aspect: "aspect-[4/3]" },
-  { id: 2, label: "Weaving Detail", aspect: "aspect-square" },
-  { id: 3, label: "Natural Dyes", aspect: "aspect-[3/4]" },
-  { id: 4, label: "Finished Fabric", aspect: "aspect-[4/3]" },
-  { id: 5, label: "Texture Close-up", aspect: "aspect-square" },
-  { id: 6, label: "Production Line", aspect: "aspect-[3/4]" },
+  { src: PRODUCT_IMAGES.blouses[4],  alt: "Cream bell sleeve blouse" },
+  { src: PRODUCT_IMAGES.blouses[16], alt: "Pink embroidered blouse" },
+  { src: PRODUCT_IMAGES.dresses[6],  alt: "Maroon floral midi dress" },
+  { src: PRODUCT_IMAGES.dresses[2],  alt: "Dark floral kaftan" },
+  { src: PRODUCT_IMAGES.tops[8],     alt: "Dark sequin blouse" },
+  { src: PRODUCT_IMAGES.tops[22],    alt: "Red floral blouse" },
+  { src: PRODUCT_IMAGES.skirts[0],   alt: "Red floral maxi skirt" },
+  { src: PRODUCT_IMAGES.pants[1],    alt: "Wide leg pants" },
 ];
 
 const ProductGallery = () => {
@@ -21,27 +25,31 @@ const ProductGallery = () => {
           <h2 className="text-display-md text-foreground">From Fiber to Fabric</h2>
         </div>
 
-        {/* Main display */}
         <div className="grid lg:grid-cols-5 gap-6">
-          <div className="lg:col-span-3 aspect-[16/10] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded overflow-hidden flex items-center justify-center">
-            <div className="text-center p-8">
-              <div className="w-16 h-16 mx-auto mb-4 border border-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-2xl font-display text-primary/50">{selected + 1}</span>
-              </div>
-              <p className="font-display text-xl text-foreground">{galleryImages[selected].label}</p>
-              <p className="text-caption mt-2">Click thumbnails to preview</p>
-            </div>
+          <div className="lg:col-span-3 aspect-[16/10] rounded overflow-hidden relative bg-secondary">
+            <Image
+              src={galleryImages[selected].src}
+              alt={galleryImages[selected].alt}
+              fill
+              className="object-cover transition-opacity duration-300"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              priority
+            />
           </div>
-          <div className="lg:col-span-2 grid grid-cols-3 gap-3">
+          <div className="lg:col-span-2 grid grid-cols-4 gap-3">
             {galleryImages.map((img, i) => (
               <button
-                key={img.id}
+                key={img.src}
                 onClick={() => setSelected(i)}
-                className={`aspect-square rounded overflow-hidden transition-all ${selected === i ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : "opacity-70 hover:opacity-100"}`}
+                className={`aspect-square rounded overflow-hidden relative transition-all ${selected === i ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : "opacity-70 hover:opacity-100"}`}
               >
-                <div className="w-full h-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground font-medium">{img.label}</span>
-                </div>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="15vw"
+                />
               </button>
             ))}
           </div>

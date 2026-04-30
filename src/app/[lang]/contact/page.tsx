@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import CTASection from "@/components/vedant/CTASection";
@@ -11,19 +12,14 @@ import { contactContent } from "@/data/translations/contact";
 // Non-translatable contact data (addresses, phones, emails)
 const OFFICE_DETAILS = [
   {
-    address: ["Vedant Fashion Pvt. Ltd.", "Survey No. 147, GIDC Industrial Estate", "Phase III, Vatva", "Ahmedabad 382445, Gujarat, India"],
-    phone: "+91 79 2583 1234",
-    email: "export@vedantfashion.com",
+    address: ["Vedant Fashion", "Building B 12, 1st Floor, Sheetal Nagar", "Asalpha Ghatkopar, Mumbai 400084", "India"],
+    phone: "+91 99309 68116",
+    email: "contact@vedantfashion.com",
   },
   {
-    address: ["Vedant Fashion — Middle East", "Business Bay", "Dubai", "UAE"],
-    phone: "+971 4 000 0000",
-    email: "uae@vedantfashion.com",
-  },
-  {
-    address: ["Vedant Fashion Russia", "Presnenskaya Naberezhnaya 12", "Moscow 123112", "Russia"],
-    phone: "+7 495 123 4567",
-    email: "russia@vedantfashion.com",
+    address: ["Shravan Diwan — Director", "WhatsApp / Call / Email", "Mon–Sat 9:30am–6:00pm IST", ""],
+    phone: "+91 99309 68116",
+    email: "contact@vedantfashion.com",
   },
 ];
 
@@ -31,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   await params;
   return {
     title: "Contact Vedant Fashion — Export Enquiries",
-    description: "Contact Vedant Fashion export team — Gujarat, India. Wholesale enquiries for UAE, Saudi Arabia, Russia & global buyers. Response within 24 hours.",
+    description: "Contact Shravan Diwan, Director at Vedant Fashion Mumbai. Wholesale enquiries for UAE, Russia, Poland & global buyers. MOQ 100 pcs. Response within 24 hours.",
     alternates: buildHreflangAlternates("/contact"),
   };
 }
@@ -53,7 +49,31 @@ const ContactPage = async ({ params }: { params: Promise<{ lang: string }> }) =>
       {/* Contact Cards */}
       <section className="section-spacing bg-background">
         <div className="container-wide">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {/* Founder card */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 mb-12 p-6 md:p-8 bg-cream rounded-xl border border-border">
+            <div className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full overflow-hidden shadow-md">
+              <Image
+                src="/images/Docs/shravan-diwan.png"
+                alt="Shravan Diwan, Director — Vedant Fashion"
+                width={112}
+                height={112}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="font-display text-xl font-semibold text-foreground">Shravan Diwan</p>
+              <p className="text-muted-foreground text-sm mb-3">Director, Vedant Fashion</p>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <a href="tel:+919930968116" className="flex items-center gap-2 text-olive hover:underline font-medium">
+                  <Phone className="w-4 h-4" /> +91 99309 68116
+                </a>
+                <a href="mailto:contact@vedantfashion.com" className="flex items-center gap-2 text-olive hover:underline font-medium">
+                  <Mail className="w-4 h-4" /> contact@vedantfashion.com
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
             {OFFICE_DETAILS.map((office, i) => {
               const translated = c.offices[i];
               return (

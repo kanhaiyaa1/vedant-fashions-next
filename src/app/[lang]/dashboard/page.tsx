@@ -268,7 +268,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
             {[
               { label: "Send New Enquiry", href: `/${lang}/inquiry`, primary: true },
               { label: "Request a Sample", href: `/${lang}/dashboard/samples/new`, primary: false },
-              { label: "Download Catalogue", href: `/${lang}/catalog`, primary: false },
+              { label: "Download Catalogue", href: "/api/generate-catalogue", primary: false },
               { label: "View Products", href: `/${lang}/products`, primary: false },
             ].map((action) => (
               <Link

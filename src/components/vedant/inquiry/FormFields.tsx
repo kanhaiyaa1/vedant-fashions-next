@@ -126,12 +126,13 @@ interface FormShellProps {
   description: string;
   submitted: boolean;
   submitting?: boolean;
+  submittingLabel?: string;
   successMessage?: string;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void | Promise<void>;
   children: ReactNode;
 }
 
-export const FormShell = ({ subtitle, title, description, submitted, submitting, successMessage, onSubmit, children }: FormShellProps) => {
+export const FormShell = ({ subtitle, title, description, submitted, submitting, submittingLabel, successMessage, onSubmit, children }: FormShellProps) => {
   if (submitted) {
     return (
       <div className="bg-card border border-olive/20 rounded p-8 md:p-12 text-center space-y-4">
@@ -162,7 +163,7 @@ export const FormShell = ({ subtitle, title, description, submitted, submitting,
             By submitting, you agree to our privacy policy. We never share your data.
           </p>
           <Button type="submit" disabled={submitting} className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase text-xs tracking-widest px-8 h-12 shrink-0">
-            {submitting ? "Sending…" : "Submit Inquiry"}
+            {submitting ? (submittingLabel ?? "Sending…") : "Submit Inquiry"}
             <Send className="w-4 h-4 ml-2" />
           </Button>
         </div>

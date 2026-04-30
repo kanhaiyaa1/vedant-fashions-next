@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
+import { trackEvent, GA_EVENTS } from "@/lib/analytics";
 
 const COUNTRIES = [
   "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt",
@@ -50,7 +51,10 @@ export default function CatalogueGateModal({
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "Request failed");
-      onSuccess(json.downloadUrl ?? "#");
+      trackEvent(GA_EVENTS.CATALOGUE_DOWNLOADED, { country: form.country });
+      const url = json.downloadUrl ?? "#";
+      if (url !== "#") window.open(url, "_blank");
+      onSuccess(url);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong. Please try again.");
     } finally {

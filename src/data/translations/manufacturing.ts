@@ -59,27 +59,27 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       subtitle: "Manufacturing",
       title: "Vertically Integrated Garment Production",
       description:
-        "Mumbai-based ladies woven wear manufacturer with 25,000 pieces/month capacity. From fabric sourcing to FOB export packing — every step in-house. GOTS and OEKO-TEX certified. Exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets.",
+        "5,000 sq ft manufacturing facility in Mumbai with 60 machines and 15 skilled workers. In-house cutting, stitching, and finishing. 60–90 day bulk lead time. Exporting ladies woven wear to UAE, Russia, Poland, and South Africa.",
     },
     advantages: {
-      subtitle: "Why Middle East Buyers Choose Us",
+      subtitle: "Why Middle East & Global Buyers Choose Us",
       title: "Manufacturing Advantages",
       items: [
         {
-          title: "Lead Time Guarantee",
-          desc: "45-day standard lead time from order confirmation. 30-day express available for repeat orders. Penalty clause accepted for late delivery.",
+          title: "Reliable Lead Times",
+          desc: "60–90 days bulk production from order confirmation. 2-week sample turnaround. We plan production carefully and communicate updates throughout.",
         },
         {
-          title: "Quality Assurance",
-          desc: "AQL 2.5 at every stage. 100% needle detection. Buyer QC teams welcome on-site. Third-party inspection arranged on request.",
+          title: "Quality at Every Stage",
+          desc: "10-step quality control process covering fabric inspection, in-line stitching checks, measurement verification, finishing, and final inspection before packing.",
         },
         {
-          title: "Dedicated Account Team",
-          desc: "Every GCC and international client gets a dedicated merchandiser, QC officer, and logistics coordinator. Single point of contact from sampling to shipment.",
+          title: "Direct Communication",
+          desc: "Every client works directly with Shravan Diwan, Director. No middlemen, no miscommunication. WhatsApp: +91 9930968116",
         },
         {
-          title: "Vertical Integration",
-          desc: "Fabric sourcing, dyeing, cutting, stitching, finishing, and packing — all under one management. No sub-contracting without buyer approval.",
+          title: "Flexible MOQ",
+          desc: "Minimum 100 pieces per design per colour — lower than most Indian manufacturers. Private label and custom packaging available.",
         },
       ],
     },
@@ -124,21 +124,21 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Manufacturing Infrastructure",
       units: [
         {
-          name: "Unit 1 — Woven Garments",
+          name: "Vedant Fashion — Mumbai Facility",
           location: "Asalpha Ghatkopar, Mumbai",
-          desc: "Our flagship facility handles all woven production — blouses, shirts, dresses. 8 stitching lines, automated cutting, in-house lab. Natural lighting and ventilation systems throughout.",
+          desc: "5,000 sq ft production facility in Asalpha Ghatkopar, Mumbai. Houses all in-house operations: fabric inspection, cutting room, 60-machine stitching floor, finishing section, and QC area. Fabric printing outsourced to specialist printers.",
         },
         {
-          name: "Unit 2 — Finishing & Embellishment",
-          desc: "Dedicated to garment washing, dyeing, embroidery, and specialty finishes. Enzyme wash, stone wash, and eco-friendly softener treatments. Zero Liquid Discharge plant operational since 2021.",
+          name: "Cutting & Fabric Section",
+          desc: "Dedicated cutting room with careful pattern placement, size-wise cutting, and fabric defect checking before production begins. Handles viscose, linen blends, rayon, georgette, and crepe fabrics.",
         },
         {
-          name: "Unit 3 — Sampling & R&D",
-          desc: "Rapid prototyping centre for buyer samples. 48-hour sample turnaround for urgent requests. CAD pattern room, textile lab with spectrophotometer, and seasonal trend library.",
+          name: "Stitching & Finishing Floor",
+          desc: "60 machines covering single-needle lockstitch, overlock, and finishing. In-line quality checks at every stitching stage. Embroidery and sequin work handled in-house.",
         },
         {
-          name: "Unit 4 — Knits & Jersey",
-          desc: "Circular knit processing for T-shirts, polo shirts, and jersey dresses. 4 production lines with 15,000 pcs/month capacity. Specialising in organic cotton jersey and Tencel blends.",
+          name: "QC & Packing Section",
+          desc: "Final inspection, measurement checking, thread trimming, ironing, folding, and packing as per client specifications. Private label tags and custom packaging available.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Factory Floor", cuttingRoom: "Cutting Room", qualityLab: "Quality Lab" },
@@ -162,17 +162,17 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       subtitle: "At a Glance",
       title: "Production Capacity",
       items: [
-        { label: "Pieces / Month" },
-        { label: "Manufacturing Units" },
+        { label: "Pieces / Month capacity" },
+        { label: "Production Unit" },
         { label: "Skilled Workers" },
-        { label: "Standard Lead Time" },
+        { label: "Days Bulk Lead Time" },
       ],
     },
     cta: {
-      title: "Schedule a Virtual Factory Tour",
+      title: "Request a Sample or Quote",
       description:
-        "See our production lines in action. We offer live video tours for prospective buyers across all four facilities.",
-      buttonText: "Book a Tour",
+        "Send us your design brief or sample requirement. We will respond within 24 hours with lead time, FOB pricing, and production availability.",
+      buttonText: "Get a Quote",
     },
   },
 

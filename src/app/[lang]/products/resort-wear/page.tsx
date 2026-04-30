@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
 import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 import { getActiveProducts } from "@/lib/supabase/products";
+import { getProductsByCategory } from "@/data/products";
+import { PRODUCT_IMAGES } from "@/data/images";
 
 export async function generateMetadata({
   params,
@@ -55,23 +59,71 @@ export default async function ResortWearPage({
   const { lang } = await params;
   const dbProducts = await getActiveProducts("resort-wear");
   const first = dbProducts[0];
+  const staticProducts = getProductsByCategory("resort-wear");
   return (
-    <ProductCategoryPage
-      categorySlug="resort-wear"
-      primaryKeyword="Resort Wear Manufacturer for Middle East Wholesale Buyers"
-      heroDescription="GOTS 6.0 certified resort wear manufacturer in India. Kaftans, wide-leg trousers, linen jumpsuits, palazzo pants, and beach cover-ups. Breathable fabrics for Gulf climates. FOB USD 7.00–12.00 per piece. MOQ 300 pcs. 17–22 days sea freight to GCC ports."
-      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
-      gccMarketNotes={[
-        { country: "UAE", note: "Kaftans and wide-leg trousers in high demand for Dubai resort retail, beach clubs, and hospitality uniforms. 18–22 days to Jebel Ali." },
-        { country: "Saudi Arabia", note: "Modest resort wear — covered kaftans and wide-leg trousers — well suited to KSA retail expansion. SASO compliant. 20–24 days to Dammam / Jeddah." },
-        { country: "Qatar", note: "Premium linen jumpsuits and shackets popular in Doha's lifestyle retail. GSO compliant. 20–23 days to Hamad Port." },
-        { country: "Oman", note: "Resort wear for Muscat's growing tourism retail sector. Closest GCC port — 17–20 days from Mumbai. DGSM compliant." },
-      ]}
-      faqs={FAQS}
-      lang={lang}
-      moqOverride={first?.moq ?? undefined}
-      leadTimeOverride={first?.lead_time ?? undefined}
-      fobPriceOverride={first?.fob_price ?? undefined}
-    />
+    <>
+      <ProductCategoryPage
+        categorySlug="resort-wear"
+        primaryKeyword="Resort Wear Manufacturer for Middle East Wholesale Buyers"
+        heroDescription="GOTS 6.0 certified resort wear manufacturer in India. Kaftans, wide-leg trousers, linen jumpsuits, palazzo pants, and beach cover-ups. Breathable fabrics for Gulf climates. FOB USD 7.00–12.00 per piece. MOQ 300 pcs. 17–22 days sea freight to GCC ports."
+        middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
+        gccMarketNotes={[
+          { country: "UAE", note: "Kaftans and wide-leg trousers in high demand for Dubai resort retail, beach clubs, and hospitality uniforms. 18–22 days to Jebel Ali." },
+          { country: "Saudi Arabia", note: "Modest resort wear — covered kaftans and wide-leg trousers — well suited to KSA retail expansion. SASO compliant. 20–24 days to Dammam / Jeddah." },
+          { country: "Qatar", note: "Premium linen jumpsuits and shackets popular in Doha's lifestyle retail. GSO compliant. 20–23 days to Hamad Port." },
+          { country: "Oman", note: "Resort wear for Muscat's growing tourism retail sector. Closest GCC port — 17–20 days from Mumbai. DGSM compliant." },
+        ]}
+        faqs={FAQS}
+        lang={lang}
+        moqOverride={first?.moq ?? undefined}
+        leadTimeOverride={first?.lead_time ?? undefined}
+        fobPriceOverride={first?.fob_price ?? undefined}
+      />
+      {staticProducts.length > 0 && (
+        <section className="section-spacing bg-secondary/30">
+          <div className="container-wide">
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-10">
+              Our Resort Wear Collection
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {(() => {
+                const resortImgs = [...PRODUCT_IMAGES.skirts, ...PRODUCT_IMAGES.pants];
+                return staticProducts.map((p, idx) => (
+                <Link
+                  key={p.slug}
+                  href={`/${lang}/products/${p.category}/${p.slug}`}
+                  className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div className="aspect-square overflow-hidden relative bg-secondary">
+                    <Image
+                      src={resortImgs[idx % resortImgs.length]}
+                      alt={p.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-5 space-y-2">
+                    <h3 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                      {p.name}
+                    </h3>
+                    {p.fabricOptions[0] && (
+                      <p className="text-xs text-muted-foreground font-body">
+                        {p.fabricOptions[0].composition} · {p.fabricOptions[0].gsm} GSM
+                      </p>
+                    )}
+                    <p className="text-xs text-muted-foreground font-body">MOQ {p.moq}</p>
+                    <span className="inline-block text-xs uppercase tracking-widest text-primary font-medium mt-1">
+                      View Details →
+                    </span>
+                  </div>
+                </Link>
+              ));
+              })()}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 }

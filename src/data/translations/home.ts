@@ -40,7 +40,7 @@ export const homeContent: Record<string, HomeLocale> = {
       title: "Ladies Woven Wear Manufacturer — Exporting to Middle East & Global",
       subtitle: "B2B Wholesale Garment Manufacturer",
       description:
-        "Premium ladies woven wear manufactured in India. GOTS and OEKO-TEX certified. Supplying wholesale buyers in UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets. MOQ 300 pcs. FOB Mumbai.",
+        "Ladies woven wear manufacturer based in Mumbai, India. Viscose, rayon, georgette, linen blends, and crepe. MOQ 100 pieces. FOB USD 5–8. Exporting to UAE, Russia, Poland, and South Africa.",
       ctaPrimary: "View Our Collections",
       ctaSecondary: "Send Enquiry",
       collectionLabel: "SS 2026 Collection",
@@ -49,17 +49,17 @@ export const homeContent: Record<string, HomeLocale> = {
       certBadgeDesc: "100% Organic Cotton",
     },
     stats: [
-      { value: "25,000+", label: "Pieces / Month" },
-      { value: "300", label: "MOQ per Style" },
-      { value: "9", label: "Export Markets" },
+      { value: "10,000+", label: "Pieces / Month" },
+      { value: "100", label: "MOQ per Style" },
+      { value: "4", label: "Export Markets" },
       { value: "18-22", label: "Days to UAE" },
     ],
     exportMarkets: {
       subtitle: "Middle East & Global",
       title: "Export Markets",
       description:
-        "Exporting ladies woven wear to UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Egypt, Russia and Poland. Sea freight from Mumbai reaches Jebel Ali in 18–22 days.",
-      countriesLabel: "9 Markets",
+        "Exporting ladies woven wear to UAE, Russia, Poland, and South Africa. Sea freight from Mumbai reaches Jebel Ali in 18–22 days.",
+      countriesLabel: "4 Markets",
       exportShareLabel: "of exports",
     },
   },

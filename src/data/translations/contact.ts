@@ -33,18 +33,17 @@ export const contactContent: Record<string, ContactLocale> = {
       subtitle: "Contact",
       title: "Let's Start a Conversation",
       description:
-        "Whether you're a boutique buyer or a major retail chain, our export team is ready to discuss your requirements. Samples dispatched within 3 business days.",
+        "Ready to discuss your requirements. Contact Shravan Diwan, Director, directly by phone or email. Sample lead time: 2 weeks. Bulk lead time: 60–90 days.",
     },
     offices: [
-      { name: "India — Head Office & Factory", hours: "Mon–Sat: 9:30–18:30 IST" },
-      { name: "Germany — European Office",     hours: "Mon–Fri: 9:00–18:00 CET" },
-      { name: "Russia — Moscow Representative", hours: "Mon–Fri: 10:00–19:00 MSK" },
+      { name: "Shravan Diwan — Director, Vedant Fashion", hours: "Mon–Sat: 9:30am–6:00pm IST" },
+      { name: "Mumbai Factory — Asalpha Ghatkopar", hours: "Mon–Sat: 9:30am–6:00pm IST" },
     ],
     cta: {
-      title: "Trade Shows 2026",
+      title: "Get a Quote or Sample",
       description:
-        "Meet us at Texworld Paris (Feb), Munich Fabric Start (Mar), and Première Vision Paris (Sep). Schedule a meeting in advance.",
-      buttonText: "Book a Meeting",
+        "Send us your product brief and we will respond within 24 hours. FOB USD 5–8 per piece. MOQ 100 pcs per design per colour. 2-week sample lead time.",
+      buttonText: "Send Enquiry",
     },
     breadcrumb: { home: "Home", contact: "Contact" },
   },

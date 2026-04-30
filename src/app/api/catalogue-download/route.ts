@@ -4,7 +4,7 @@ import { Resend } from "resend";
 import { createServiceClient } from "@/lib/supabase/server";
 const FROM = "notifications@vedantfashion.com";
 const ADMIN_EMAIL = "contact@vedantfashion.com";
-const cataloguePdfExists = false; // set to true when PDF is placed at public/catalogues/vedant-fashion-catalogue.pdf
+const cataloguePdfExists = true;
 
 const schema = z.object({
   name: z.string().trim().min(1).max(100),
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
 
   return NextResponse.json({
     success: true,
-    downloadUrl: cataloguePdfExists ? "/catalogues/vedant-fashion-catalogue.pdf" : null,
+    downloadUrl: cataloguePdfExists ? "/api/generate-catalogue" : null,
     message: cataloguePdfExists
       ? "Download starting..."
       : "Thank you! Our team will email you the catalogue within 24 hours.",

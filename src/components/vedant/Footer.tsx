@@ -60,8 +60,7 @@ const Footer = () => {
   const bottomLinks = [
     { label: t("footer.privacyPolicy"),  href: "/privacy-policy" },
     { label: t("footer.termsOfTrade"),   href: "/terms-of-trade" },
-    { label: t("footer.cookieSettings"), href: "/cookie-settings" },
-    { label: t("footer.imprint"),        href: "/imprint" },
+    { label: t("footer.cookieSettings"), href: "/cookie-policy" },
     { label: "Sitemap",                  href: "/sitemap-page" },
   ];
 

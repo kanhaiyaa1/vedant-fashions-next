@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
@@ -8,6 +9,7 @@ import { Shield, Leaf, Recycle, Award, CheckCircle, Globe, FileCheck, Scale } fr
 import { WebPageSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { getContent } from "@/data/translations/page-content";
 import { certificationsContent } from "@/data/translations/certifications";
+import { CERTIFICATIONS_DOCS } from "@/data/images";
 
 // Non-translatable cert data: icon, name, auditor
 const CERT_DATA = [
@@ -73,6 +75,32 @@ const CertificationsPage = async ({ params }: { params: Promise<{ lang: string }
           })}
         </div>
       </ContentBlock>
+
+      {/* Our Documents */}
+      <section className="section-spacing bg-secondary/30">
+        <div className="container-wide">
+          <h2 className="font-display text-2xl font-semibold text-foreground mb-10">Our Documents</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {CERTIFICATIONS_DOCS.map((doc) => (
+              <div key={doc.src} className="bg-card border border-border rounded-lg overflow-hidden">
+                <div className="relative h-[200px] bg-secondary">
+                  <Image
+                    src={doc.src}
+                    alt={doc.alt}
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-4 space-y-1">
+                  <p className="font-display text-sm font-semibold text-foreground">{doc.alt}</p>
+                  <p className="text-xs text-muted-foreground font-body">Available on request</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CTASection
         title={c.cta.title}

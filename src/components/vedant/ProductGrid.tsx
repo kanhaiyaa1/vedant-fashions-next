@@ -1,6 +1,18 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+import { PRODUCT_IMAGES } from "@/data/images";
+
+const CARD_IMAGES = [
+  PRODUCT_IMAGES.blouses[0],
+  PRODUCT_IMAGES.dresses[0],
+  PRODUCT_IMAGES.tops[0],
+  PRODUCT_IMAGES.skirts[0],
+  PRODUCT_IMAGES.blouses[1],
+  PRODUCT_IMAGES.dresses[1],
+  PRODUCT_IMAGES.tops[1],
+  PRODUCT_IMAGES.blouses[2],
+];
 
 const useInView = (threshold = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -84,7 +96,7 @@ const ProductGrid = ({ dbProducts }: ProductGridProps = {}) => {
         <div ref={grid.ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {displayProducts.map((product, i) => (
             <div key={product.name} className={`fade-up ${cardDelay[i] ?? "fade-up-delay-4"} ${grid.inView ? "visible" : ""}`}>
-              <ProductCard {...product} />
+              <ProductCard {...product} image={CARD_IMAGES[i % CARD_IMAGES.length]} />
             </div>
           ))}
         </div>

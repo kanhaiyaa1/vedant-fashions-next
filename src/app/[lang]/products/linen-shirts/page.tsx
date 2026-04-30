@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import ProductCategoryPage from "@/components/vedant/ProductCategoryPage";
 import type { CategoryFaq } from "@/components/vedant/ProductCategoryPage";
 import { getActiveProducts } from "@/lib/supabase/products";
+import { getProductsByCategory } from "@/data/products";
+import { PRODUCT_IMAGES } from "@/data/images";
 
 export async function generateMetadata({
   params,
@@ -55,23 +59,68 @@ export default async function LinenShirtsPage({
   const { lang } = await params;
   const dbProducts = await getActiveProducts("linen-shirts");
   const first = dbProducts[0];
+  const staticProducts = getProductsByCategory("linen-shirts");
   return (
-    <ProductCategoryPage
-      categorySlug="linen-shirts"
-      primaryKeyword="Linen Shirts Manufacturer for Middle East Wholesale Buyers"
-      heroDescription="OEKO-TEX certified European flax linen shirts manufactured in India. Classic, camp collar, guayabera, oversized, and embroidered styles. Enzyme-washed for softness. FOB USD 5.50–8.00 per piece. MOQ 500 pcs. 18–22 days sea freight to Jebel Ali."
-      middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
-      gccMarketNotes={[
-        { country: "UAE", note: "Camp collar and short-sleeve linen shirts in high demand for resort retail and hospitality channels across Dubai and Abu Dhabi. 18–22 days to Jebel Ali." },
-        { country: "Saudi Arabia", note: "Long-sleeve classic and guayabera linen shirts suitable for smart-casual and modest-wear retail. SASO compliant. 20–24 days to Dammam / Jeddah." },
-        { country: "Qatar", note: "Premium European flax® shirts well received in Doha's luxury retail sector. GSO 1956 compliant labels. 20–23 days to Hamad Port." },
-        { country: "Kuwait", note: "Linen-cotton blend shirts popular for year-round wear in Kuwait's climate. PAAET/PSNS compliant. 19–22 days to Shuwaikh." },
-      ]}
-      faqs={FAQS}
-      lang={lang}
-      moqOverride={first?.moq ?? undefined}
-      leadTimeOverride={first?.lead_time ?? undefined}
-      fobPriceOverride={first?.fob_price ?? undefined}
-    />
+    <>
+      <ProductCategoryPage
+        categorySlug="linen-shirts"
+        primaryKeyword="Linen Shirts Manufacturer for Middle East Wholesale Buyers"
+        heroDescription="OEKO-TEX certified European flax linen shirts manufactured in India. Classic, camp collar, guayabera, oversized, and embroidered styles. Enzyme-washed for softness. FOB USD 5.50–8.00 per piece. MOQ 500 pcs. 18–22 days sea freight to Jebel Ali."
+        middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
+        gccMarketNotes={[
+          { country: "UAE", note: "Camp collar and short-sleeve linen shirts in high demand for resort retail and hospitality channels across Dubai and Abu Dhabi. 18–22 days to Jebel Ali." },
+          { country: "Saudi Arabia", note: "Long-sleeve classic and guayabera linen shirts suitable for smart-casual and modest-wear retail. SASO compliant. 20–24 days to Dammam / Jeddah." },
+          { country: "Qatar", note: "Premium European flax® shirts well received in Doha's luxury retail sector. GSO 1956 compliant labels. 20–23 days to Hamad Port." },
+          { country: "Kuwait", note: "Linen-cotton blend shirts popular for year-round wear in Kuwait's climate. PAAET/PSNS compliant. 19–22 days to Shuwaikh." },
+        ]}
+        faqs={FAQS}
+        lang={lang}
+        moqOverride={first?.moq ?? undefined}
+        leadTimeOverride={first?.lead_time ?? undefined}
+        fobPriceOverride={first?.fob_price ?? undefined}
+      />
+      {staticProducts.length > 0 && (
+        <section className="section-spacing bg-secondary/30">
+          <div className="container-wide">
+            <h2 className="font-display text-2xl font-semibold text-foreground mb-10">
+              Our Linen Shirts Collection
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {staticProducts.map((p, idx) => (
+                <Link
+                  key={p.slug}
+                  href={`/${lang}/products/${p.category}/${p.slug}`}
+                  className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                >
+                  <div className="aspect-square overflow-hidden relative bg-secondary">
+                    <Image
+                      src={PRODUCT_IMAGES.tops[idx % PRODUCT_IMAGES.tops.length]}
+                      alt={p.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-5 space-y-2">
+                    <h3 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                      {p.name}
+                    </h3>
+                    {p.fabricOptions[0] && (
+                      <p className="text-xs text-muted-foreground font-body">
+                        {p.fabricOptions[0].composition} · {p.fabricOptions[0].gsm} GSM
+                      </p>
+                    )}
+                    <p className="text-xs text-muted-foreground font-body">MOQ {p.moq}</p>
+                    <span className="inline-block text-xs uppercase tracking-widest text-primary font-medium mt-1">
+                      View Details →
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 }

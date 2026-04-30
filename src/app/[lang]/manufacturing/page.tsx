@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { Scissors, Ruler, Shirt, Package, Layers, Zap, Clock, ShieldCheck, Users, Factory } from "lucide-react";
+import { FACTORY_IMAGES } from "@/data/images";
 import { Badge } from "@/components/ui/badge";
 import { HowToSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { getContent } from "@/data/translations/page-content";
@@ -36,7 +38,7 @@ const FACILITY_SPECS = [
 ];
 
 // Non-translatable metric nums
-const METRIC_NUMS = ["25,000", "4", "800+", "45 Days"];
+const METRIC_NUMS = ["10,000+", "1", "15", "60-90 Days"];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   await params;
@@ -129,15 +131,33 @@ const ManufacturingPage = async ({ params }: { params: Promise<{ lang: string }>
             })}
           </div>
           <div className="space-y-6">
-            <div className="aspect-[4/3] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-              <p className="font-display text-xl text-primary/50">{c.facilities.imagePlaceholders.factoryFloor}</p>
+            <div className="aspect-[4/3] rounded overflow-hidden relative bg-secondary">
+              <Image
+                src={FACTORY_IMAGES[0].src}
+                alt={FACTORY_IMAGES[0].alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square bg-gradient-to-br from-accent to-secondary rounded flex items-center justify-center">
-                <p className="text-caption">{c.facilities.imagePlaceholders.cuttingRoom}</p>
+              <div className="aspect-square rounded overflow-hidden relative bg-secondary">
+                <Image
+                  src={FACTORY_IMAGES[1].src}
+                  alt={FACTORY_IMAGES[1].alt}
+                  fill
+                  className="object-cover"
+                  sizes="25vw"
+                />
               </div>
-              <div className="aspect-square bg-gradient-to-br from-accent to-secondary rounded flex items-center justify-center">
-                <p className="text-caption">{c.facilities.imagePlaceholders.qualityLab}</p>
+              <div className="aspect-square rounded overflow-hidden relative bg-secondary">
+                <Image
+                  src={FACTORY_IMAGES[4].src}
+                  alt={FACTORY_IMAGES[4].alt}
+                  fill
+                  className="object-cover"
+                  sizes="25vw"
+                />
               </div>
             </div>
           </div>

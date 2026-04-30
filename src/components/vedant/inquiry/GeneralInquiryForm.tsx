@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { generalInquirySchema, type GeneralInquiryData } from "@/lib/inquiry-schemas";
+import { trackEvent, GA_EVENTS } from "@/lib/analytics";
 import { FormShell, TextField, TextAreaField, CountrySelect, ProductInterestSelect } from "./FormFields";
 import type { ZodError } from "zod";
 
@@ -36,6 +37,7 @@ const GeneralInquiryForm = () => {
         body: JSON.stringify({ ...form, formType: "general" }),
       });
       setSubmitted(true);
+      trackEvent(GA_EVENTS.ENQUIRY_SUBMITTED, { form_type: "general", country: form.country });
     } finally {
       setSubmitting(false);
     }

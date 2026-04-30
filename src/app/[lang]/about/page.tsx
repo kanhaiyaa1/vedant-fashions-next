@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
@@ -42,10 +43,18 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
             <p className="text-body text-muted-foreground">{c.mission.paragraph2}</p>
             <p className="text-body text-muted-foreground">{c.mission.paragraph3}</p>
           </div>
-          <div className="aspect-[4/3] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-            <div className="text-center p-8">
-              <p className="font-display text-5xl font-semibold text-primary/30">VF</p>
-              <p className="text-caption mt-2">{c.mission.placeholderLabel}</p>
+          <div className="relative overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src="/images/Docs/shravan-diwan.png"
+              alt="Shravan Diwan, Director — Vedant Fashion"
+              width={600}
+              height={480}
+              className="w-full h-full object-cover"
+              priority
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+              <p className="text-white font-semibold text-lg">Shravan Diwan</p>
+              <p className="text-white/80 text-sm">Director, Vedant Fashion</p>
             </div>
           </div>
         </div>

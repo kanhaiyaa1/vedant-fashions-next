@@ -1,6 +1,8 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { Factory, Users, Shirt, Clock, Scissors, Layers } from "lucide-react";
+import { FACTORY_IMAGES } from "@/data/images";
 
 const useInView = (threshold = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -71,12 +73,14 @@ const FactoryCapacity = () => {
 
         {/* Capabilities */}
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="aspect-[4/3] bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-            <div className="text-center p-8">
-              <Factory className="w-12 h-12 text-primary/30 mx-auto mb-3" />
-              <p className="font-display text-lg text-foreground">Factory Floor</p>
-              <p className="text-caption mt-1">Ahmedabad, India</p>
-            </div>
+          <div className="aspect-[4/3] rounded overflow-hidden relative bg-secondary">
+            <Image
+              src={FACTORY_IMAGES[0].src}
+              alt={FACTORY_IMAGES[0].alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
           <div>
             <h3 className="font-display text-xl font-medium text-foreground mb-6">Production Capabilities</h3>

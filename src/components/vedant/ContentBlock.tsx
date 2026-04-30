@@ -4,13 +4,13 @@ import { FadeUp } from "@/components/vedant/animations";
 
 interface ContentBlockProps {
   subtitle?: string;
-  title: string;
+  title?: string;
   children: ReactNode;
   className?: string;
   bg?: "default" | "cream" | "dark";
 }
 
-const ContentBlock = ({ subtitle, title, children, className = "", bg = "default" }: ContentBlockProps) => {
+const ContentBlock = ({ subtitle, title = "", children, className = "", bg = "default" }: ContentBlockProps) => {
   const bgClass = bg === "cream" ? "bg-cream" : bg === "dark" ? "bg-primary text-primary-foreground" : "bg-background";
 
   return (

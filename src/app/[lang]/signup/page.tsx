@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import { trackEvent, GA_EVENTS } from "@/lib/analytics";
 
 const COUNTRIES = [
   "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt",
@@ -82,6 +83,7 @@ export default function SignupPage({ params }: SignupPageProps) {
 
     setSuccess(true);
     setLoading(false);
+    trackEvent(GA_EVENTS.ACCOUNT_CREATED, { country: form.country });
   }
 
   if (success) {
