@@ -99,7 +99,7 @@ export const FACTORY_IMAGES = [
   { src: "/images/Site-Files/cloth-parcel.JPG", alt: "Export packing process" },
   { src: "/images/Site-Files/cloth-internation-packages.JPG", alt: "International packaging" },
   { src: "/images/Site-Files/new-cotton-lawns-the-list-group.jpg", alt: "Fabric sourcing" },
-  { src: "/images/Site-Files/high fashion women garment.jpg", alt: "Premium ladies garments" },
+  { src: "/images/Site-Files/high-fashion-women-garment.jpg", alt: "Premium ladies garments" },
 ]
 
 export const CERTIFICATIONS_DOCS = [
