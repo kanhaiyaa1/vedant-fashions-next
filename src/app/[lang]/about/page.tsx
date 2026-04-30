@@ -45,7 +45,7 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
           </div>
           <div className="relative overflow-hidden rounded-xl shadow-lg">
             <Image
-              src="/images/Docs/shravan-diwan.png"
+              src="/images/docs/shravan-diwan.png"
               alt="Shravan Diwan, Director — Vedant Fashion"
               width={600}
               height={480}

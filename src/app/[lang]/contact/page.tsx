@@ -53,7 +53,7 @@ const ContactPage = async ({ params }: { params: Promise<{ lang: string }> }) =>
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-12 p-6 md:p-8 bg-cream rounded-xl border border-border">
             <div className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full overflow-hidden shadow-md">
               <Image
-                src="/images/Docs/shravan-diwan.png"
+                src="/images/docs/shravan-diwan.png"
                 alt="Shravan Diwan, Director — Vedant Fashion"
                 width={112}
                 height={112}
