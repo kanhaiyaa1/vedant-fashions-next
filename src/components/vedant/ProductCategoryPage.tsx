@@ -462,7 +462,99 @@ export default function ProductCategoryPage({
         </div>
       </ContentBlock>
 
-      {/* ── 10. CTA ───────────────────────────────────────────────────── */}
+      {/* ── 10. Fabric Sourcing ───────────────────────────────────────── */}
+      {content.fabricSourcing && (
+        <ContentBlock bg="cream">
+          <div className="space-y-8">
+            <div className="text-center space-y-3">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">{content.fabricSourcing.subtitle}</p>
+              <h2 className="font-display text-display-sm font-medium">{content.fabricSourcing.title}</h2>
+            </div>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {content.fabricSourcing.story.split("\n\n").map((para, i) => (
+                <p key={i} className="text-body text-muted-foreground leading-relaxed">{para}</p>
+              ))}
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-border">
+                    <th className="text-left py-3 px-4 font-medium text-xs uppercase tracking-wider">Fabric</th>
+                    <th className="text-left py-3 px-4 font-medium text-xs uppercase tracking-wider">Origin</th>
+                    <th className="text-left py-3 px-4 font-medium text-xs uppercase tracking-wider">GSM</th>
+                    <th className="text-left py-3 px-4 font-medium text-xs uppercase tracking-wider">Best For</th>
+                    <th className="text-left py-3 px-4 font-medium text-xs uppercase tracking-wider">MOQ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.fabricSourcing.fabricDetails.map((row, i) => (
+                    <tr key={i} className="border-b border-border hover:bg-background/50 transition-colors">
+                      <td className="py-3 px-4 font-medium">{row.name}</td>
+                      <td className="py-3 px-4 text-muted-foreground">{row.origin}</td>
+                      <td className="py-3 px-4 text-muted-foreground">{row.gsm}</td>
+                      <td className="py-3 px-4 text-muted-foreground">{row.bestFor}</td>
+                      <td className="py-3 px-4 text-muted-foreground">{row.moqNote}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </ContentBlock>
+      )}
+
+      {/* ── 11. Seasonal Guide ────────────────────────────────────────── */}
+      {content.seasonalGuide && (
+        <ContentBlock>
+          <div className="space-y-8">
+            <div className="text-center space-y-3">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">{content.seasonalGuide.subtitle}</p>
+              <h2 className="font-display text-display-sm font-medium">{content.seasonalGuide.title}</h2>
+              <p className="text-body text-muted-foreground max-w-2xl mx-auto">{content.seasonalGuide.intro}</p>
+            </div>
+            <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+              {content.seasonalGuide.seasons.map((s, i) => (
+                <div key={i} className="border border-border rounded-lg p-5 space-y-3">
+                  <div className="space-y-1">
+                    <h3 className="font-display font-medium text-body">{s.season}</h3>
+                    <p className="text-xs text-muted-foreground">{s.months}</p>
+                  </div>
+                  <Badge variant="secondary" className="text-xs">{s.demand}</Badge>
+                  <p className="text-sm text-muted-foreground">{s.styles}</p>
+                  <p className="text-xs text-olive font-medium">{s.orderAdvice}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-secondary/50 border border-border rounded-lg p-5 max-w-2xl mx-auto text-center">
+              <p className="text-body-sm text-muted-foreground">{content.seasonalGuide.bookingNote}</p>
+            </div>
+          </div>
+        </ContentBlock>
+      )}
+
+      {/* ── 12. Why Vedant ────────────────────────────────────────────── */}
+      {content.whyVedant && (
+        <ContentBlock bg="dark">
+          <div className="space-y-8">
+            <div className="text-center space-y-3">
+              <p className="text-xs uppercase tracking-widest text-primary-foreground/60">{content.whyVedant.subtitle}</p>
+              <h2 className="font-display text-display-sm font-medium text-primary-foreground">{content.whyVedant.title}</h2>
+              <p className="text-body text-primary-foreground/70 max-w-2xl mx-auto">{content.whyVedant.intro}</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {content.whyVedant.points.map((pt, i) => (
+                <div key={i} className="space-y-2">
+                  <h3 className="font-medium text-primary-foreground">{pt.title}</h3>
+                  <p className="text-sm text-primary-foreground/70">{pt.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-sm text-primary-foreground/60 pt-2">{content.whyVedant.closingNote}</p>
+          </div>
+        </ContentBlock>
+      )}
+
+      {/* ── 13. CTA ───────────────────────────────────────────────────── */}
       <section className="bg-primary section-spacing">
         <div className="container-wide text-center space-y-6">
           <p className="text-subheading text-primary-foreground/60 uppercase tracking-widest text-xs">
