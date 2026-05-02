@@ -65,6 +65,8 @@ const navItems: NavItem[] = [
       { labelKey: "Egypt", href: "/egypt/garment-manufacturer" },
       { labelKey: "Russia", href: "/russia/garment-manufacturer" },
       { labelKey: "Poland", href: "/poland/garment-manufacturer" },
+      { labelKey: "South Africa", href: "/south-africa/garment-manufacturer" },
+      { labelKey: "Turkey", href: "/turkey/garment-manufacturer" },
     ],
   },
   {

@@ -53,6 +53,8 @@ const Footer = () => {
         { label: "Oman", href: "/oman/garment-manufacturer" },
         { label: "Russia", href: "/russia/garment-manufacturer" },
         { label: "Poland", href: "/poland/garment-manufacturer" },
+        { label: "South Africa", href: "/south-africa/garment-manufacturer" },
+        { label: "Turkey", href: "/turkey/garment-manufacturer" },
       ],
     },
   ];
