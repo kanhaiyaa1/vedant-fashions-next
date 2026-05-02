@@ -4,8 +4,29 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ShieldCheck } from "lucide-react";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import { products, getProductBySlug, getProductsByCategory } from "@/data/products";
+import { products, getProductBySlug, standardSizeChart } from "@/data/products";
+import type { Product } from "@/data/products";
 import { getCategoryImages } from "@/data/images";
+import ProductImageGallery from "@/components/vedant/ProductImageGallery";
+
+const BASE_URL = "https://www.vedantfashion.com";
+
+const DEFAULT_COMPLIANCE = [
+  "REACH Regulation (EC) No. 1907/2006 — AZO-free dyes, formaldehyde below 75 ppm",
+  "EU Textile Regulation No. 1007/2011 — fibre composition labelling",
+  "GCC / UAE ESMA textile labelling — bilingual Arabic/English care labels",
+  "Saudi SASO compliance documentation available on request",
+  "Certificate of Origin (GSP) provided with every shipment",
+  "India-UAE CEPA Certificate of Origin — 0% import duty into UAE",
+];
+
+const STEPS = [
+  { n: "01", title: "Inquiry", body: "Submit your brief — style, quantity, target price, destination port." },
+  { n: "02", title: "Quotation", body: "Receive formal quotation within 24 hours with fabric specs and lead time." },
+  { n: "03", title: "Sample", body: "Approve sealed sample before bulk. Digital lab-dip approval available." },
+  { n: "04", title: "Production", body: "In-line and final QC at our ISO 9001 facility. AQL 2.5." },
+  { n: "05", title: "Shipment", body: "FOB JNPT Mumbai. FCL/LCL on all GCC, EU, and CIS lanes." },
+];
 
 export function generateStaticParams() {
   return products.map((p) => ({ category: p.category, slug: p.slug }));
@@ -30,13 +51,92 @@ export async function generateMetadata({
   };
 }
 
-const STEPS = [
-  { n: "01", title: "Inquiry", body: "Submit your brief — style, quantity, target price, destination port." },
-  { n: "02", title: "Quotation", body: "Receive formal quotation within 24 hours with fabric specs and lead time." },
-  { n: "03", title: "Sample", body: "Approve sealed sample before bulk. Digital lab-dip approval available." },
-  { n: "04", title: "Production", body: "In-line and final QC at our ISO 9001 facility. AQL 2.5." },
-  { n: "05", title: "Shipment", body: "FOB JNPT Mumbai. FCL/LCL on all GCC, EU, and CIS lanes." },
-];
+function buildDescription(product: Product) {
+  const fabric = product.fabricOptions[0];
+  const comp = fabric?.composition ?? "premium woven fabric";
+  const gsm = fabric?.gsm ?? 120;
+  const weave = fabric?.weave ?? "plain";
+  const price = fabric?.price ?? "USD 5–8 per piece";
+
+  return (
+    <div className="space-y-6 font-body text-muted-foreground leading-relaxed">
+      <p className="text-foreground text-base">{product.description}</p>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Fabric &amp; Construction</h3>
+        <p>
+          This style is crafted from <strong className="text-foreground">{comp}</strong> at{" "}
+          <strong className="text-foreground">{gsm} GSM</strong>, offering the ideal weight for
+          comfortable all-day wear. The {weave} weave construction ensures consistent texture and
+          excellent drape. Fabric is sourced from certified mills and tested for GSM accuracy,
+          colour fastness, shrinkage, and tensile strength before cutting begins.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Design Details</h3>
+        <p>
+          Every {product.name} is produced in our Gujarat facility with attention to construction
+          details that matter to wholesale buyers: balanced seam allowances, reinforced stress
+          points, consistent stitch density, and clean finishing throughout. Embellishments,
+          prints, and surface treatments are applied after quality inspection of the base fabric.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Export Suitability — Middle East &amp; GCC Markets</h3>
+        <p>
+          This style is well-suited to wholesale buyers in UAE, Saudi Arabia, Qatar, Kuwait, Oman,
+          and Bahrain. The fabric weight and construction meet the quality expectations of GCC
+          fashion retail buyers. Bilingual Arabic and English woven care labels are included as
+          standard for all Middle East shipments. ESMA (UAE) and SASO (Saudi Arabia) compliance
+          documentation provided.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Size &amp; Fit</h3>
+        <p>
+          Available in XS to 3XL following international sizing standards. Full measurement
+          specifications provided on order confirmation. Custom grading available on request.
+          GCC and Middle East sizing conversions available — contact us for region-specific
+          size charts.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Minimum Order &amp; Pricing</h3>
+        <p>
+          Minimum order quantity is <strong className="text-foreground">{product.moq}</strong>{" "}
+          pieces per style per colour. FOB price:{" "}
+          <strong className="text-foreground">{price}</strong> at MOQ. Sample lead time: 2 weeks.
+          Bulk production: <strong className="text-foreground">{product.leadTime}</strong> from
+          order confirmation. Sample charges credited 100% against bulk order value.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Quality Assurance</h3>
+        <p>
+          Every {product.name} passes our 10-step quality control process: fabric inspection →
+          fabric testing → pattern approval → cutting check → in-line stitching inspection →
+          measurement verification → finishing check → final inspection → packing check →
+          dispatch documentation. AQL 2.5 standard applied on final inspection.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Private Label &amp; Customisation</h3>
+        <p>
+          Available for private label production — supply your brand labels, hang-tags, and
+          packaging specifications. Custom colourways, embroidery, prints, and design
+          modifications available under NDA. ODM development available from concept to
+          finished garment.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default async function ProductDetailPage({
   params,
@@ -53,13 +153,28 @@ export default async function ProductDetailPage({
     .join(" ");
 
   const fobPrice = product.fabricOptions[0]?.price ?? "Contact for pricing";
+
   const categoryImgs = getCategoryImages(product.category);
-  const productIndex = products.findIndex((p) => p.slug === product.slug);
-  const mainImg = categoryImgs[productIndex % categoryImgs.length];
-  const thumbImgs = [1, 2, 3].map((offset) => categoryImgs[(productIndex + offset) % categoryImgs.length]);
-  const related = getProductsByCategory(product.category)
-    .filter((p) => p.slug !== product.slug)
-    .slice(0, 3);
+  const allImages =
+    categoryImgs.length >= 8
+      ? categoryImgs
+      : [...categoryImgs, ...categoryImgs].slice(0, 8);
+
+  const compliance =
+    product.exportCompliance && product.exportCompliance.length > 0
+      ? product.exportCompliance
+      : DEFAULT_COMPLIANCE;
+
+  const sameCategory = products.filter(
+    (p) => p.category === product.category && p.slug !== product.slug
+  );
+  const fillProducts = products
+    .filter((p) => p.category !== product.category)
+    .slice(0, 4 - sameCategory.slice(0, 4).length);
+  const related = [...sameCategory.slice(0, 4), ...fillProducts].slice(0, 4);
+
+  const sizeChart =
+    product.category === "linen-shirts" ? product.sizeChart : standardSizeChart;
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -67,28 +182,53 @@ export default async function ProductDetailPage({
     name: product.name,
     description: product.shortDescription,
     sku: product.sku,
+    image: allImages.map((img) => `${BASE_URL}${img}`),
+    material: product.fabricOptions[0]?.composition,
     brand: { "@type": "Brand", name: "Vedant Fashion" },
-    manufacturer: { "@type": "Organization", name: "Vedant Fashion" },
+    manufacturer: {
+      "@type": "Organization",
+      name: "Vedant Fashion",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mumbai",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
+      },
+    },
     countryOfOrigin: "IN",
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
+      price: "5",
+      priceValidUntil: "2026-12-31",
       availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
       seller: { "@type": "Organization", name: "Vedant Fashion" },
     },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/${lang}` },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${BASE_URL}/${lang}/products` },
+      { "@type": "ListItem", position: 3, name: categoryLabel, item: `${BASE_URL}/${lang}/products/${product.category}` },
+      { "@type": "ListItem", position: 4, name: product.name },
+    ],
+  };
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Breadcrumb */}
       <div className="border-b border-border bg-secondary/40">
-        <div className="container-wide py-3 text-xs text-muted-foreground flex gap-2">
+        <div className="container-wide py-3 text-xs text-muted-foreground flex gap-2 flex-wrap">
           <Link href={`/${lang}`} className="hover:text-foreground">Home</Link>
+          <span>/</span>
+          <Link href={`/${lang}/products`} className="hover:text-foreground">Products</Link>
           <span>/</span>
           <Link href={`/${lang}/products/${product.category}`} className="hover:text-foreground">{categoryLabel}</Link>
           <span>/</span>
@@ -99,42 +239,12 @@ export default async function ProductDetailPage({
       {/* SECTION 1 — Hero */}
       <section className="section-spacing">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left: Image gallery */}
-            <div className="space-y-4">
-              <div className="aspect-square rounded-lg overflow-hidden relative bg-secondary">
-                <Image
-                  src={mainImg}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                {thumbImgs.map((src, i) => (
-                  <div key={i} className="aspect-square rounded overflow-hidden relative bg-secondary">
-                    <Image
-                      src={src}
-                      alt={`${product.name} view ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="20vw"
-                    />
-                  </div>
-                ))}
-              </div>
-              <Link
-                href={`/${lang}/dashboard/samples/new`}
-                className="block w-full text-center border border-primary text-primary rounded px-4 py-2.5 text-xs uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
-              >
-                Request Sample
-              </Link>
-            </div>
+            <ProductImageGallery images={allImages} productName={product.name} />
 
-            {/* Right: Details */}
-            <div className="space-y-6">
+            {/* Right: Details — sticky on desktop */}
+            <div className="lg:sticky lg:top-24 space-y-6">
               <div>
                 <span className="text-xs uppercase tracking-widest text-gold font-medium">
                   {categoryLabel}
@@ -232,8 +342,18 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* SECTION 2 — Fabric Specifications */}
+      {/* SECTION 2 — Product Description */}
       <section className="section-spacing bg-secondary/30">
+        <div className="container-wide max-w-4xl">
+          <h2 className="font-display text-2xl font-semibold text-foreground mb-8">
+            Product Description
+          </h2>
+          {buildDescription(product)}
+        </div>
+      </section>
+
+      {/* SECTION 3 — Fabric Specifications */}
+      <section className="section-spacing">
         <div className="container-wide">
           <h2 className="font-display text-2xl font-semibold text-foreground mb-8">
             Fabric Specifications
@@ -275,38 +395,37 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* SECTION 3 — Size Chart */}
-      <section className="section-spacing">
+      {/* SECTION 4 — Size Chart */}
+      <section className="section-spacing bg-secondary/30">
         <div className="container-wide">
           <h2 className="font-display text-2xl font-semibold text-foreground mb-2">
             Size Chart
           </h2>
           <p className="text-sm text-muted-foreground font-body mb-8">
-            Custom grading available. GCC sizing on request.
+            Custom grading available. GCC sizing on request. Contact us for measurements in inches.
           </p>
           <div className="overflow-x-auto rounded-lg border border-border">
             <table className="w-full text-sm font-body">
               <thead>
                 <tr className="border-b border-border bg-card">
-                  {product.sizeChart.length > 0 &&
-                    Object.keys(product.sizeChart[0]).map((key) => (
-                      <th
-                        key={key}
-                        className="px-4 py-3 text-left text-xs uppercase tracking-widest text-muted-foreground font-medium whitespace-nowrap"
-                      >
-                        {key}
-                      </th>
-                    ))}
+                  {["Size", "EU", "UK", "US", "Chest (cm)", "Waist (cm)", "Hip (cm)", "Length (cm)"].map((h) => (
+                    <th key={h} className="px-4 py-3 text-left text-xs uppercase tracking-widest text-muted-foreground font-medium whitespace-nowrap">
+                      {h}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                {product.sizeChart.map((row, i) => (
+                {sizeChart.map((row, i) => (
                   <tr key={i} className="border-b border-border last:border-0 hover:bg-secondary/20">
-                    {Object.values(row).map((val, j) => (
-                      <td key={j} className={`px-4 py-3 ${j === 0 ? "font-medium" : "text-muted-foreground"}`}>
-                        {String(val)}
-                      </td>
-                    ))}
+                    <td className="px-4 py-3 font-medium">{row.size}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.eu}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.uk}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.us}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.chest ?? "—"}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.waist ?? "—"}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.hip ?? "—"}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{row.length ?? "—"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -315,18 +434,14 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* SECTION 4 — Export Compliance */}
-      <section className="section-spacing bg-secondary/30">
+      {/* SECTION 5 — Export Compliance */}
+      <section className="section-spacing">
         <div className="container-wide">
           <h2 className="font-display text-2xl font-semibold text-foreground mb-8">
             Export Compliance
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {[
-              ...product.exportCompliance,
-              "Bilingual Arabic/English care labels for GCC markets",
-              "India-UAE CEPA Certificate of Origin available",
-            ].map((item, i) => (
+            {compliance.map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border">
                 <ShieldCheck className="w-4 h-4 text-olive shrink-0 mt-0.5" />
                 <span className="text-sm font-body text-foreground">{item}</span>
@@ -336,8 +451,8 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* SECTION 5 — Ordering Process */}
-      <section className="section-spacing">
+      {/* SECTION 6 — Ordering Process */}
+      <section className="section-spacing bg-secondary/30">
         <div className="container-wide">
           <h2 className="font-display text-2xl font-semibold text-foreground mb-10 text-center">
             Ordering Process
@@ -356,52 +471,57 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
-      {/* SECTION 6 — Related Products */}
+      {/* SECTION 7 — Related Products */}
       {related.length > 0 && (
-        <section className="section-spacing bg-secondary/30">
+        <section className="section-spacing">
           <div className="container-wide">
             <h2 className="font-display text-2xl font-semibold text-foreground mb-10">
-              More {categoryLabel}
+              You May Also Like
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {related.map((rp) => (
-                <Link
-                  key={rp.slug}
-                  href={`/${lang}/products/${rp.category}/${rp.slug}`}
-                  className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  <div className="aspect-square overflow-hidden relative bg-secondary">
-                    {(() => {
-                      const imgs = getCategoryImages(rp.category);
-                      const idx = products.findIndex((p) => p.slug === rp.slug);
-                      return (
-                        <Image
-                          src={imgs[idx % imgs.length]}
-                          alt={rp.name}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          sizes="33vw"
-                        />
-                      );
-                    })()}
-                  </div>
-                  <div className="p-5 space-y-2">
-                    <h3 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                      {rp.name}
-                    </h3>
-                    <p className="text-xs text-muted-foreground font-body">MOQ {rp.moq}</p>
-                    <span className="inline-block text-xs uppercase tracking-widest text-primary font-medium mt-1">
-                      View Details →
-                    </span>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {related.map((rp) => {
+                const relImgs = getCategoryImages(rp.category);
+                const relIdx = products.findIndex((p) => p.slug === rp.slug);
+                const relCategoryLabel = rp.category
+                  .split("-")
+                  .map((w) => w[0].toUpperCase() + w.slice(1))
+                  .join(" ");
+                return (
+                  <Link
+                    key={rp.slug}
+                    href={`/${lang}/products/${rp.category}/${rp.slug}`}
+                    className="group block bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                  >
+                    <div className="aspect-square overflow-hidden relative bg-secondary">
+                      <Image
+                        src={relImgs[relIdx % relImgs.length]}
+                        alt={rp.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="p-4 space-y-2">
+                      <span className="text-xs uppercase tracking-widest text-muted-foreground font-body">
+                        {relCategoryLabel}
+                      </span>
+                      <h3 className="font-display text-sm font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                        {rp.name}
+                      </h3>
+                      <p className="text-xs text-muted-foreground font-body">MOQ {rp.moq}</p>
+                      <span className="inline-block text-xs uppercase tracking-widest text-primary font-medium">
+                        View Details →
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
       )}
 
-      {/* SECTION 7 — CTA Block */}
+      {/* SECTION 8 — CTA Block */}
       <section className="bg-foreground text-background py-20">
         <div className="container-wide text-center space-y-6">
           <h2 className="font-display text-3xl font-semibold">
