@@ -34,6 +34,11 @@ const CATEGORY_SLUGS = [
   "cotton-dresses",
   "linen-shirts",
   "resort-wear",
+  "coord-sets",
+  "kurtis",
+  "embroidery",
+  "sequin-occasion",
+  "bottoms",
 ] as const;
 
 type CategorySlug = (typeof CATEGORY_SLUGS)[number];
@@ -61,6 +66,31 @@ const CATEGORY_META: Record<
     label: "Resort Wear",
     href: "/products/resort-wear",
     tagline: "Kaftans, wide-leg trousers, jumpsuits, palazzo pants, and beach cover-ups.",
+  },
+  "coord-sets": {
+    label: "Co-ord Sets",
+    href: "/products/coord-sets",
+    tagline: "Matching top and bottom co-ord sets in rayon, georgette, viscose, and crepe fabrics.",
+  },
+  "kurtis": {
+    label: "Kurtis",
+    href: "/products/kurtis",
+    tagline: "Ladies kurtis — straight, A-line, asymmetric, and anarkali styles in cotton, rayon, and georgette.",
+  },
+  "embroidery": {
+    label: "Embroidery Styles",
+    href: "/products/embroidery",
+    tagline: "Hand and machine embroidered blouses, tops, kurtis, and dresses from our in-house embroidery unit.",
+  },
+  "sequin-occasion": {
+    label: "Sequin & Occasion Wear",
+    href: "/products/sequin-occasion",
+    tagline: "Fully sequined tops, occasion dresses, and embellished co-ords for evening and celebration markets.",
+  },
+  "bottoms": {
+    label: "Western Bottoms",
+    href: "/products/bottoms",
+    tagline: "Wide-leg palazzo, printed maxi skirts, linen trousers, and crepe midi skirts for wholesale buyers.",
   },
 };
 

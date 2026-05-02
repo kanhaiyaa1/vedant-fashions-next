@@ -38,6 +38,11 @@ const navItems: NavItem[] = [
       { labelKey: "nav.cottonDresses", href: "/products/cotton-dresses" },
       { labelKey: "nav.linenShirts", href: "/products/linen-shirts" },
       { labelKey: "nav.resortWear", href: "/products/resort-wear" },
+      { labelKey: "Co-ord Sets", href: "/products/coord-sets" },
+      { labelKey: "Kurtis", href: "/products/kurtis" },
+      { labelKey: "Embroidery", href: "/products/embroidery" },
+      { labelKey: "Sequin & Occasion", href: "/products/sequin-occasion" },
+      { labelKey: "Western Bottoms", href: "/products/bottoms" },
     ],
   },
   {

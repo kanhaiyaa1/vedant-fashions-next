@@ -30,6 +30,11 @@ const PRODUCT_CATEGORY_PATHS = [
   "/products/cotton-dresses",
   "/products/linen-shirts",
   "/products/resort-wear",
+  "/products/coord-sets",
+  "/products/kurtis",
+  "/products/embroidery",
+  "/products/sequin-occasion",
+  "/products/bottoms",
 ];
 
 // Low-priority utility pages — priority 0.6

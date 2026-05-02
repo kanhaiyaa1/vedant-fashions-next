@@ -62,7 +62,12 @@ export type CategorySlug =
   | "co-ord-sets"
   | "kaftans"
   | "loungewear"
-  | "polo-shirts";
+  | "polo-shirts"
+  | "coord-sets"
+  | "kurtis"
+  | "embroidery"
+  | "sequin-occasion"
+  | "bottoms";
 
 export interface Category {
   slug: CategorySlug;
@@ -81,6 +86,11 @@ export const categories: Category[] = [
   { slug: "kaftans", name: "Kaftans", description: "Hand-printed and embroidered kaftans for resort and loungewear.", productCount: 9 },
   { slug: "loungewear", name: "Loungewear", description: "Organic cotton loungewear sets — jersey, interlock, and woven.", productCount: 8 },
   { slug: "polo-shirts", name: "Polo Shirts", description: "Premium piqué polo shirts in organic cotton for corporate and retail.", productCount: 4 },
+  { slug: "coord-sets", name: "Co-ord Sets", description: "Matching top and bottom sets in coordinated fabrics and prints. Perfect for wholesale buyers looking for ready-to-wear co-ordinated fashion. Available in viscose, rayon, georgette, and crepe.", productCount: 12 },
+  { slug: "kurtis", name: "Kurtis", description: "Ladies kurtis in woven fabrics — straight, A-line, asymmetric, and flared styles. Ideal for Middle East and South Asian fashion markets. Available in cotton, rayon, and georgette.", productCount: 15 },
+  { slug: "embroidery", name: "Embroidery Styles", description: "Hand and machine embroidered ladies garments — blouses, tops, kurtis, and dresses with intricate embroidery work. Speciality of Vedant Fashion with dedicated embroidery section.", productCount: 8 },
+  { slug: "sequin-occasion", name: "Sequin & Occasion Wear", description: "Sequin and occasion wear for evening, party, and celebration markets. Fully sequined tops, dresses, and co-ords in a range of colours and designs.", productCount: 10 },
+  { slug: "bottoms", name: "Western Bottoms", description: "Ladies western wear bottoms — wide-leg pants, palazzo, printed skirts, and casual trousers. Coordinated with our tops range for complete outfit solutions.", productCount: 8 },
 ];
 
 // ── Shared Data ─────────────────────────────────────────────────────
@@ -752,15 +762,240 @@ export const products: Product[] = [
     features: ["Rib-knit collar", "Side vents", "Embroidery-ready", "Pre-shrunk"], tags: ["polo", "piqué", s.sub.toLowerCase().replace(/[^a-z0-9]/g, "-"), "corporate"],
     hsCode: "6105.10.00", countryOfOrigin: "India",
   })),
+
+  // ═══════════════════════════════════════════════════════════════════
+  // CO-ORD SETS (4 products) — cs-001 to cs-004
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "cs-001", sku: "VF-CS-001", slug: "floral-rayon-coord-set", name: "Floral Rayon Co-ord Set", category: "coord-sets",
+    description: "Matching floral-print rayon top and wide-leg trouser co-ord set. Lightweight and fluid, ideal for resort and leisure markets.",
+    shortDescription: "Floral rayon co-ord set — matching top and wide-leg trouser.",
+    galleryImages: [], colorOptions: ["Coral Floral", "Blue Floral", "Black Floral", "Green Floral"],
+    fabricOptions: [{ name: "Rayon Challis", composition: "100% Viscose Rayon", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–5%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Matching print across top and trouser", "Elasticated waistband", "Side pockets", "Fluid drape"], tags: ["coord-set", "rayon", "floral", "matching", "resort"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "cs-002", sku: "VF-CS-002", slug: "georgette-printed-coord-set", name: "Georgette Printed Co-ord Set", category: "coord-sets",
+    description: "Two-piece georgette co-ord set with abstract digital print. Crop top with wide-leg palazzo trousers for a modern, fashion-forward look.",
+    shortDescription: "Georgette co-ord — abstract print crop top and palazzo trousers.",
+    galleryImages: [], colorOptions: ["Teal Abstract", "Mustard Abstract", "Rose Abstract", "Navy Abstract"],
+    fabricOptions: [{ name: "Georgette", composition: "100% Polyester Georgette", gsm: 90, weave: "Plain", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Crop top with button detail", "Palazzo trouser silhouette", "Digital print", "Fully lined top"], tags: ["coord-set", "georgette", "palazzo", "crop-top", "occasion"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "cs-003", sku: "VF-CS-003", slug: "crepe-solid-coord-set", name: "Crepe Solid Co-ord Set", category: "coord-sets",
+    description: "Solid colour crepe blazer and trouser co-ord set. Structured look for occasion and smart-casual retail markets.",
+    shortDescription: "Solid crepe blazer and trouser co-ord — occasion and smart-casual.",
+    galleryImages: [], colorOptions: ["Black", "Ivory", "Sage Green", "Dusty Rose", "Navy"],
+    fabricOptions: [{ name: "Crepe", composition: "95% Polyester 5% Elastane", gsm: 150, weave: "Crepe", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Structured blazer", "Tailored trouser", "Contrast button detail", "Fully lined"], tags: ["coord-set", "crepe", "blazer", "occasion", "smart-casual"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "cs-004", sku: "VF-CS-004", slug: "viscose-tie-dye-coord-set", name: "Viscose Tie-Dye Co-ord Set", category: "coord-sets",
+    description: "Tie-dye viscose co-ord set with relaxed fit top and wide-leg trousers. Boho-resort aesthetic popular with UAE and Gulf retail buyers.",
+    shortDescription: "Tie-dye viscose co-ord set — boho resort aesthetic.",
+    galleryImages: [], colorOptions: ["Teal Tie-Dye", "Orange Tie-Dye", "Purple Tie-Dye", "Blue Tie-Dye"],
+    fabricOptions: [{ name: "Viscose Challis", composition: "100% Viscose", gsm: 105, weave: "Plain", width: "58\"", shrinkage: "4–5%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Tie-dye hand-finished", "Relaxed unstructured fit", "Elasticated wide-leg trouser", "Resort-ready"], tags: ["coord-set", "viscose", "tie-dye", "resort", "boho"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // KURTIS (4 products) — ku-001 to ku-004
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "ku-001", sku: "VF-KU-001", slug: "straight-cotton-kurti", name: "Straight Cut Cotton Kurti", category: "kurtis",
+    description: "Classic straight cut kurti in 100% cotton with mandarin collar and side slits. Versatile staple for Middle East and South Asian wholesale buyers.",
+    shortDescription: "Straight cut cotton kurti with mandarin collar and side slits.",
+    galleryImages: [], colorOptions: ["White", "Black", "Indigo", "Teal", "Mustard", "Coral"],
+    fabricOptions: [{ name: "Cotton Cambric", composition: "100% Cotton", gsm: 100, weave: "Plain", width: "58\"", shrinkage: "3–4%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Mandarin collar", "Side slits", "3/4 sleeves", "Block print options"], tags: ["kurti", "cotton", "straight", "mandarin", "ethnic"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "ku-002", sku: "VF-KU-002", slug: "aline-rayon-kurti", name: "A-Line Rayon Kurti", category: "kurtis",
+    description: "Flared A-line kurti in soft rayon with floral digital print. Feminine silhouette popular with UAE and Bahraini boutique buyers.",
+    shortDescription: "A-line flared rayon kurti with floral digital print.",
+    galleryImages: [], colorOptions: ["Pink Floral", "Blue Floral", "Green Floral", "Ivory Floral"],
+    fabricOptions: [{ name: "Rayon Challis", composition: "100% Viscose Rayon", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–5%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["A-line flared hem", "Round neck with placket", "Digital floral print", "Knee length"], tags: ["kurti", "rayon", "a-line", "floral", "ethnic"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "ku-003", sku: "VF-KU-003", slug: "asymmetric-georgette-kurti", name: "Asymmetric Georgette Kurti", category: "kurtis",
+    description: "Asymmetric hem georgette kurti with embroidery neckline detail. Contemporary fusion styling for modern ethnic fashion markets.",
+    shortDescription: "Asymmetric georgette kurti with embroidery neckline.",
+    galleryImages: [], colorOptions: ["Black", "Navy", "Bottle Green", "Maroon", "Royal Blue"],
+    fabricOptions: [{ name: "Georgette", composition: "100% Polyester Georgette", gsm: 90, weave: "Plain", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Asymmetric hem", "Embroidery neckline", "3/4 sleeves", "Contemporary fusion style"], tags: ["kurti", "georgette", "asymmetric", "embroidery", "fusion"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "ku-004", sku: "VF-KU-004", slug: "flared-anarkali-kurti", name: "Flared Anarkali Kurti", category: "kurtis",
+    description: "Full-flared anarkali-style kurti in printed georgette. Long silhouette with churidar-friendly length for GCC and South Asian markets.",
+    shortDescription: "Full-flared anarkali kurti in printed georgette.",
+    galleryImages: [], colorOptions: ["Red Print", "Blue Print", "Purple Print", "Green Print"],
+    fabricOptions: [{ name: "Printed Georgette", composition: "100% Polyester Georgette", gsm: 95, weave: "Plain", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Full anarkali flare", "Churidar-compatible length", "Concealed zip", "Printed all-over"], tags: ["kurti", "anarkali", "georgette", "flared", "ethnic"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // EMBROIDERY (4 products) — em-001 to em-004
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "em-001", sku: "VF-EM-001", slug: "hand-embroidered-cotton-blouse", name: "Hand Embroidered Cotton Blouse", category: "embroidery",
+    description: "Hand embroidered 100% cotton blouse with intricate floral thread work. Each piece features artisan hand embroidery from Vedant Fashion's in-house embroidery unit.",
+    shortDescription: "Hand embroidered cotton blouse — artisan floral thread work.",
+    galleryImages: [], colorOptions: ["White with Multicolour", "Ivory with Gold", "Pink with Ivory", "Blue with White"],
+    fabricOptions: [{ name: "Organic Cotton Poplin", composition: "100% Organic Cotton", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–4%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["GOTS", "OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Hand embroidery", "Artisan-made", "Floral thread work", "Each piece unique"], tags: ["embroidery", "hand-embroidery", "cotton", "artisan", "blouse"],
+    hsCode: "6206.30.00", countryOfOrigin: "India",
+  },
+  {
+    id: "em-002", sku: "VF-EM-002", slug: "machine-embroidered-georgette-top", name: "Machine Embroidered Georgette Top", category: "embroidery",
+    description: "Machine embroidered georgette top with dense floral embroidery across the bodice. Popular for occasion and festive retail in the GCC market.",
+    shortDescription: "Machine embroidered georgette top with dense floral bodice.",
+    galleryImages: [], colorOptions: ["Black with Gold", "Navy with Silver", "Maroon with Gold", "Teal with Gold"],
+    fabricOptions: [{ name: "Georgette", composition: "100% Polyester Georgette", gsm: 90, weave: "Plain", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Machine embroidery", "Dense floral bodice", "Occasion-ready", "Fully lined"], tags: ["embroidery", "machine-embroidery", "georgette", "occasion", "top"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "em-003", sku: "VF-EM-003", slug: "embroidered-linen-tunic", name: "Embroidered Linen Tunic", category: "embroidery",
+    description: "European flax linen tunic with tonal hand embroidery at neckline and cuffs. Understated luxury for premium resort and lifestyle retail.",
+    shortDescription: "Linen tunic with tonal hand embroidery at neckline and cuffs.",
+    galleryImages: [], colorOptions: ["Natural Linen", "White", "Sage", "Sky Blue"],
+    fabricOptions: [{ name: "European Flax Linen", composition: "100% Linen", gsm: 155, weave: "Plain", width: "58\"", shrinkage: "4–6%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["European Flax®", "OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Tonal hand embroidery", "Neckline and cuff detail", "Linen relaxed fit", "Premium resort styling"], tags: ["embroidery", "linen", "tunic", "resort", "luxury"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "em-004", sku: "VF-EM-004", slug: "embroidered-cotton-dress", name: "Embroidered Cotton Midi Dress", category: "embroidery",
+    description: "A-line midi dress in organic cotton with hand embroidery across the bodice. Combines casual silhouette with artisan detailing for boutique retail.",
+    shortDescription: "Organic cotton midi dress with hand embroidery bodice.",
+    galleryImages: [], colorOptions: ["White", "Ivory", "Pale Blue", "Soft Pink"],
+    fabricOptions: [{ name: "Organic Cotton Poplin", composition: "100% Organic Cotton", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–4%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["GOTS", "OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Hand embroidery bodice", "A-line midi silhouette", "3/4 sleeves", "GOTS organic cotton"], tags: ["embroidery", "dress", "cotton", "midi", "artisan"],
+    hsCode: "6204.41.00", countryOfOrigin: "India",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // SEQUIN & OCCASION WEAR (4 products) — sq-001 to sq-004
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "sq-001", sku: "VF-SQ-001", slug: "fully-sequined-top", name: "Fully Sequined Party Top", category: "sequin-occasion",
+    description: "Fully sequined ladies top in allover pailette sequin fabric. High-impact festive and occasion wear for GCC and Eastern European party retail markets.",
+    shortDescription: "Allover pailette sequin top — festive and occasion wear.",
+    galleryImages: [], colorOptions: ["Black", "Gold", "Silver", "Rose Gold", "Red", "Navy"],
+    fabricOptions: [{ name: "Pailette Sequin", composition: "80% Polyester 20% Nylon Sequin", gsm: 220, weave: "Knit base", width: "52\"", shrinkage: "0–1%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Allover sequin", "Lined bodice", "Invisible zip closure", "Occasion and party wear"], tags: ["sequin", "occasion", "party", "festive", "top"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "sq-002", sku: "VF-SQ-002", slug: "sequin-midi-dress", name: "Sequin Midi Occasion Dress", category: "sequin-occasion",
+    description: "Knee-length sequin midi dress with fitted bodice and flared skirt. Designed for evening, party, and celebration retail in UAE and Saudi Arabia.",
+    shortDescription: "Sequin midi dress — fitted bodice, flared skirt, evening wear.",
+    galleryImages: [], colorOptions: ["Gold", "Silver", "Black", "Champagne", "Red"],
+    fabricOptions: [{ name: "Sequin Mesh", composition: "100% Polyester Sequin Mesh", gsm: 200, weave: "Mesh base", width: "52\"", shrinkage: "0%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Fitted bodice", "Flared midi skirt", "Fully lined", "Back zip closure"], tags: ["sequin", "dress", "occasion", "evening", "party"],
+    hsCode: "6204.43.00", countryOfOrigin: "India",
+  },
+  {
+    id: "sq-003", sku: "VF-SQ-003", slug: "sequin-coord-set-occasion", name: "Sequin Co-ord Occasion Set", category: "sequin-occasion",
+    description: "Matching sequin top and wide-leg trouser occasion co-ord set. Versatile — sold as a set or as separates for evening and celebration markets.",
+    shortDescription: "Matching sequin co-ord set — top and wide-leg trouser.",
+    galleryImages: [], colorOptions: ["Gold", "Silver", "Black", "Rose Gold"],
+    fabricOptions: [{ name: "Pailette Sequin", composition: "80% Polyester 20% Nylon Sequin", gsm: 220, weave: "Knit base", width: "52\"", shrinkage: "0–1%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Matching top and trouser", "Sold as set or separates", "Elasticated waist trouser", "Lined bodice"], tags: ["sequin", "coord-set", "occasion", "evening", "party"],
+    hsCode: "6211.42.00", countryOfOrigin: "India",
+  },
+  {
+    id: "sq-004", sku: "VF-SQ-004", slug: "embellished-occasion-blouse", name: "Embellished Occasion Blouse", category: "sequin-occasion",
+    description: "Georgette blouse with front sequin and bead embellishment panel. Mixed embellishment technique combining sequin, bead, and thread work for premium occasion retail.",
+    shortDescription: "Georgette blouse with sequin and bead embellishment panel.",
+    galleryImages: [], colorOptions: ["Black/Gold", "Navy/Silver", "Maroon/Gold", "Teal/Silver"],
+    fabricOptions: [{ name: "Georgette", composition: "100% Polyester Georgette", gsm: 90, weave: "Plain", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Sequin and bead embellishment", "Mixed embellishment panel", "Occasion-ready", "Fully lined"], tags: ["sequin", "embellishment", "occasion", "georgette", "blouse"],
+    hsCode: "6206.40.00", countryOfOrigin: "India",
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // BOTTOMS (4 products) — bt-001 to bt-004
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    id: "bt-001", sku: "VF-BT-001", slug: "wide-leg-rayon-palazzo", name: "Wide-Leg Rayon Palazzo Trousers", category: "bottoms",
+    description: "Wide-leg palazzo trousers in printed rayon challis. Elasticated waistband and fluid drape for resort and casual wear retail across the GCC.",
+    shortDescription: "Wide-leg palazzo trousers in printed rayon — elasticated waist.",
+    galleryImages: [], colorOptions: ["Floral Coral", "Floral Blue", "Geometric Navy", "Stripe Multi"],
+    fabricOptions: [{ name: "Rayon Challis", composition: "100% Viscose Rayon", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–5%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Wide-leg palazzo silhouette", "Elasticated waistband", "Side pockets", "Fluid drape"], tags: ["bottoms", "palazzo", "wide-leg", "rayon", "resort"],
+    hsCode: "6204.61.00", countryOfOrigin: "India",
+  },
+  {
+    id: "bt-002", sku: "VF-BT-002", slug: "printed-maxi-skirt", name: "Printed Rayon Maxi Skirt", category: "bottoms",
+    description: "Flowy maxi skirt in printed rayon with elasticated waistband. A-line silhouette with tiered hem detail. Modest-length suitable for GCC wholesale retail.",
+    shortDescription: "Printed rayon maxi skirt — tiered hem, modest GCC-suitable length.",
+    galleryImages: [], colorOptions: ["Floral Red", "Floral Blue", "Geometric Multi", "Tropical Green"],
+    fabricOptions: [{ name: "Rayon Challis", composition: "100% Viscose Rayon", gsm: 110, weave: "Plain", width: "58\"", shrinkage: "3–5%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Maxi length", "Tiered hem", "Elasticated waist", "A-line silhouette"], tags: ["bottoms", "skirt", "maxi", "rayon", "modest"],
+    hsCode: "6204.51.00", countryOfOrigin: "India",
+  },
+  {
+    id: "bt-003", sku: "VF-BT-003", slug: "linen-wide-leg-trousers", name: "Linen Wide-Leg Trousers", category: "bottoms",
+    description: "Tailored wide-leg linen trousers in European flax linen. Flat front with side pockets and invisible zip. Premium resort and smart-casual wholesale.",
+    shortDescription: "Tailored wide-leg linen trousers — flat front, European flax.",
+    galleryImages: [], colorOptions: ["Natural", "White", "Navy", "Khaki", "Sage", "Black"],
+    fabricOptions: [{ name: "European Flax Linen", composition: "100% Linen", gsm: 180, weave: "Plain", width: "58\"", shrinkage: "4–6%", colorfastness: "Grade 4 (ISO 105)" }],
+    certifications: ["European Flax®", "OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Flat front", "Side and back pockets", "Invisible zip", "European flax linen"], tags: ["bottoms", "linen", "wide-leg", "trousers", "smart-casual"],
+    hsCode: "6204.61.00", countryOfOrigin: "India",
+  },
+  {
+    id: "bt-004", sku: "VF-BT-004", slug: "crepe-midi-skirt", name: "Crepe Midi Skirt", category: "bottoms",
+    description: "Solid colour crepe midi skirt with invisible zip and front split detail. Versatile occasion and smart-casual bottom for wholesale buyers in UAE and Russia.",
+    shortDescription: "Solid crepe midi skirt — invisible zip, front split.",
+    galleryImages: [], colorOptions: ["Black", "Navy", "Emerald", "Burgundy", "Camel"],
+    fabricOptions: [{ name: "Crepe", composition: "95% Polyester 5% Elastane", gsm: 150, weave: "Crepe", width: "58\"", shrinkage: "1–2%", colorfastness: "Grade 4–5 (ISO 105)" }],
+    certifications: ["OEKO-TEX Standard 100"], moq: "100 pcs", leadTime: "60-90 days", sizeChart: standardSizeChart, exportCompliance,
+    features: ["Invisible back zip", "Front split", "Midi length", "Occasion and smart-casual"], tags: ["bottoms", "skirt", "midi", "crepe", "occasion"],
+    hsCode: "6204.51.00", countryOfOrigin: "India",
+  },
 ];
 
 // ── FOB Pricing — injected into every FabricOption by category ──────
 
 export const categoryFobPricing: Record<string, string> = {
-  "woven-blouses":  "FOB USD 4.50–7.00 per piece (MOQ 300 pcs)",
-  "cotton-dresses": "FOB USD 6.00–9.50 per piece (MOQ 300 pcs)",
-  "linen-shirts":   "FOB USD 5.50–8.00 per piece (MOQ 300 pcs)",
-  "resort-wear":    "FOB USD 7.00–12.00 per piece (MOQ 300 pcs)",
+  "woven-blouses":   "FOB USD 4.50–7.00 per piece (MOQ 300 pcs)",
+  "cotton-dresses":  "FOB USD 6.00–9.50 per piece (MOQ 300 pcs)",
+  "linen-shirts":    "FOB USD 5.50–8.00 per piece (MOQ 300 pcs)",
+  "resort-wear":     "FOB USD 7.00–12.00 per piece (MOQ 300 pcs)",
+  "coord-sets":      "FOB USD 7.00–12.00 per piece (MOQ 100 pcs)",
+  "kurtis":          "FOB USD 5.00–9.00 per piece (MOQ 100 pcs)",
+  "embroidery":      "FOB USD 8.00–15.00 per piece (MOQ 100 pcs)",
+  "sequin-occasion": "FOB USD 10.00–18.00 per piece (MOQ 100 pcs)",
+  "bottoms":         "FOB USD 5.00–9.00 per piece (MOQ 100 pcs)",
 };
 
 // Populate FabricOption.price for all products in the above categories
