@@ -36,6 +36,7 @@ export interface Product {
   description: string;
   shortDescription: string;
   heroImage?: string;
+  images?: string[];
   galleryImages: string[];
   fabricOptions: FabricOption[];
   certifications: string[];

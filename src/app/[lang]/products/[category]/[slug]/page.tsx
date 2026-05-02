@@ -6,7 +6,7 @@ import { ShieldCheck } from "lucide-react";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import { products, getProductBySlug, standardSizeChart } from "@/data/products";
 import type { Product } from "@/data/products";
-import { getCategoryImages } from "@/data/images";
+import { getProductImages } from "@/data/images";
 import ProductImageGallery from "@/components/vedant/ProductImageGallery";
 
 const BASE_URL = "https://www.vedantfashion.com";
@@ -28,6 +28,10 @@ const STEPS = [
   { n: "05", title: "Shipment", body: "FOB JNPT Mumbai. FCL/LCL on all GCC, EU, and CIS lanes." },
 ];
 
+function extractPrice(product: Product): string {
+  return product.fabricOptions[0]?.price?.replace("FOB USD ", "").split(" ")[0] ?? "5–8"
+}
+
 export function generateStaticParams() {
   return products.map((p) => ({ category: p.category, slug: p.slug }));
 }
@@ -45,8 +49,8 @@ export async function generateMetadata({
     .map((w) => w[0].toUpperCase() + w.slice(1))
     .join(" ");
   return {
-    title: `${product.name} | ${categoryName} | Vedant Fashion`,
-    description: `${product.shortDescription} — MOQ ${product.moq}. FOB USD 5–8. Export to UAE, Saudi Arabia, Russia.`,
+    title: `${product.name} | ${categoryName} | Vedant Fashion India`,
+    description: `${product.shortDescription} MOQ ${product.moq} pcs. FOB USD ${extractPrice(product)}. Export to UAE, Saudi Arabia, GCC. 18–22 days to Jebel Ali. Contact: contact@vedantfashion.com`,
     alternates: buildHreflangAlternates(`/products/${category}/${slug}`),
   };
 }
@@ -134,6 +138,54 @@ function buildDescription(product: Product) {
           finished garment.
         </p>
       </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Ordering Process</h3>
+        <p>
+          Ordering from Vedant Fashion is straightforward. Send us your product interest, target
+          quantity, and delivery port — we respond with FOB pricing within 24 hours. Proto samples
+          take 2 weeks. Bulk production runs {product.leadTime} from order confirmation. We provide
+          weekly production updates and share pre-shipment inspection reports before goods are
+          released to the freight forwarder.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Packaging &amp; Labelling</h3>
+        <p>
+          All garments are individually folded and poly-bagged. Export cartons are double-walled
+          and clearly marked with style number, colour, size ratio, and PO number. For GCC markets,
+          bilingual Arabic/English woven care labels are attached as standard for all Middle East
+          shipments. Private label packaging — your brand labels, hang-tags, and custom carton
+          printing — available from MOQ of {product.moq} per style.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Why India for This Product</h3>
+        <p>
+          India is one of the world&apos;s most competitive manufacturing origins for ladies woven wear.
+          Mumbai&apos;s textile ecosystem gives us access to a wide range of fabrics — viscose, rayon,
+          georgette, crepe, linen blends — from established certified mills. Labour costs are
+          competitive, production expertise is deep, and sea freight to GCC ports is fast: Jebel
+          Ali in 18–22 days, Dammam in 20–24 days. Under India–UAE CEPA, shipments attract 0%
+          import duty into the UAE.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Contact &amp; Next Steps</h3>
+        <p>
+          To receive a formal FOB quotation for this product, share your target quantity, delivery
+          port, and any label/packaging requirements. We respond within 24 business hours with
+          pricing, sample availability, and a production calendar.
+        </p>
+        <ul className="mt-2 space-y-1 text-sm">
+          <li><strong className="text-foreground">Email:</strong> contact@vedantfashion.com</li>
+          <li><strong className="text-foreground">WhatsApp:</strong> +91 99309 68116</li>
+          <li className="text-muted-foreground">Or submit via our enquiry form — link in the sidebar.</li>
+        </ul>
+      </div>
     </div>
   );
 }
@@ -154,11 +206,14 @@ export default async function ProductDetailPage({
 
   const fobPrice = product.fabricOptions[0]?.price ?? "Contact for pricing";
 
-  const categoryImgs = getCategoryImages(product.category);
-  const allImages =
-    categoryImgs.length >= 8
-      ? categoryImgs
-      : [...categoryImgs, ...categoryImgs].slice(0, 8);
+  const categoryProducts = products.filter((p) => p.category === product.category);
+  const productIndex = categoryProducts.findIndex((p) => p.slug === product.slug);
+  const productImages =
+    product.images && product.images.length >= 8
+      ? product.images
+      : product.images && product.images.length > 0
+        ? [...product.images, ...getProductImages(product.category, productIndex)].slice(0, 8)
+        : getProductImages(product.category, productIndex);
 
   const compliance =
     product.exportCompliance && product.exportCompliance.length > 0
@@ -182,7 +237,7 @@ export default async function ProductDetailPage({
     name: product.name,
     description: product.shortDescription,
     sku: product.sku,
-    image: allImages.map((img) => `${BASE_URL}${img}`),
+    image: productImages.map((img) => `${BASE_URL}${img}`),
     material: product.fabricOptions[0]?.composition,
     brand: { "@type": "Brand", name: "Vedant Fashion" },
     manufacturer: {
@@ -241,7 +296,7 @@ export default async function ProductDetailPage({
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left: Image gallery */}
-            <ProductImageGallery images={allImages} productName={product.name} />
+            <ProductImageGallery images={productImages} productName={product.name} />
 
             {/* Right: Details — sticky on desktop */}
             <div className="lg:sticky lg:top-24 space-y-6">
@@ -480,8 +535,8 @@ export default async function ProductDetailPage({
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {related.map((rp) => {
-                const relImgs = getCategoryImages(rp.category);
-                const relIdx = products.findIndex((p) => p.slug === rp.slug);
+                const relIdx = products.filter((p) => p.category === rp.category).findIndex((p) => p.slug === rp.slug);
+                const relImgs = rp.images ?? getProductImages(rp.category, relIdx);
                 const relCategoryLabel = rp.category
                   .split("-")
                   .map((w) => w[0].toUpperCase() + w.slice(1))

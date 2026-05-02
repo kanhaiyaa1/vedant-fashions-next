@@ -116,6 +116,38 @@ export function getImages(arr: string[], count: number, offset = 0): string[] {
   return arr.slice(offset, offset + count)
 }
 
+export function getProductImages(category: string, index: number): string[] {
+  const cycle = (arr: string[], off: number, count = 8): string[] => {
+    if (arr.length === 0) return []
+    const start = off % arr.length
+    const extended = [...arr, ...arr, ...arr]
+    return extended.slice(start, start + count)
+  }
+  const offset = index * 4
+  if (category === "woven-blouses") return cycle(PRODUCT_IMAGES.blouses, offset)
+  if (category === "cotton-dresses") return cycle(PRODUCT_IMAGES.dresses, offset)
+  if (category === "linen-shirts") return cycle(PRODUCT_IMAGES.tops, offset)
+  if (category === "resort-wear") {
+    const pool = [...PRODUCT_IMAGES.skirts, ...PRODUCT_IMAGES.pants, ...PRODUCT_IMAGES.dresses]
+    return cycle(pool, offset)
+  }
+  if (category === "coord-sets") return cycle(PRODUCT_IMAGES.tops, offset)
+  if (category === "kurtis") return cycle(PRODUCT_IMAGES.tops, 10 + offset)
+  if (category === "embroidery") {
+    const pool = [PRODUCT_IMAGES.blouses[16], ...PRODUCT_IMAGES.blouses, ...PRODUCT_IMAGES.tops]
+    return cycle(pool, offset)
+  }
+  if (category === "sequin-occasion") {
+    const pool = [PRODUCT_IMAGES.tops[8], ...PRODUCT_IMAGES.tops]
+    return cycle(pool, offset)
+  }
+  if (category === "bottoms") {
+    const pool = [...PRODUCT_IMAGES.pants, ...PRODUCT_IMAGES.skirts, ...PRODUCT_IMAGES.tops]
+    return cycle(pool, offset)
+  }
+  return cycle(PRODUCT_IMAGES.blouses, offset)
+}
+
 export function getCategoryImages(category: string): string[] {
   if (category === "woven-blouses") return PRODUCT_IMAGES.blouses
   if (category === "cotton-dresses") return PRODUCT_IMAGES.dresses
