@@ -1,1 +1,12 @@
-{}
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/server.js": {
+      "includeFiles": "dist/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/server" }
+  ]
+}
