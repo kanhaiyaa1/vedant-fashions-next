@@ -1,5 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import { Globe } from "lucide-react";
 import { getContent } from "@/data/translations/page-content";
 import { homeContent } from "@/data/translations/home";
@@ -42,8 +43,15 @@ const ExportMarkets = ({ lang }: ExportMarketsProps) => {
 
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           {/* Map placeholder */}
-          <div className="lg:col-span-2 aspect-square bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center">
-            <div className="text-center p-8">
+          <div className="lg:col-span-2 aspect-square bg-gradient-to-br from-primary/8 via-accent to-secondary rounded flex items-center justify-center relative overflow-hidden">
+            <Image
+              src="/images/site-files/high-fashion-women-garment.jpg"
+              alt="Ladies fashion export"
+              fill
+              className="object-cover opacity-20"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            <div className="relative z-10 text-center p-8">
               <Globe className="w-16 h-16 text-primary/25 mx-auto mb-4" />
               <p className="font-display text-lg text-foreground">{c.countriesLabel}</p>
               <p className="text-caption mt-1">Middle East & Global markets</p>

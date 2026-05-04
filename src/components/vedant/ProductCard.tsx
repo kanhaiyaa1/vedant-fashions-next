@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import { getCategoryImages } from "@/data/images";
 
 interface ProductCardProps {
   name: string;
@@ -13,20 +14,20 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ name, category, composition, weight, moq, certifications, image }: ProductCardProps) => {
+  const cardImage = image ?? getCategoryImages(category)[0];
   return (
     <div className="group cursor-pointer">
       <div className="aspect-[3/4] rounded overflow-hidden mb-4 relative bg-secondary">
-        {image ? (
+        {cardImage && (
           <Image
-            src={image}
+            src={cardImage}
             alt={name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 50vw, 25vw"
           />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/60 to-secondary" />
         )}
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-secondary/60" />
         <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-charcoal/60 to-transparent">
           <span className="text-sm text-primary-foreground font-medium">View Details →</span>
         </div>

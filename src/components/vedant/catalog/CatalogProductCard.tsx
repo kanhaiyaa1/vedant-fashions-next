@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import type { Product } from "@/data/products";
+import { getCategoryImages } from "@/data/images";
 
 interface CatalogProductCardProps {
   product: Product;
@@ -8,11 +10,22 @@ interface CatalogProductCardProps {
 
 const CatalogProductCard = ({ product }: CatalogProductCardProps) => {
   const primaryFabric = product.fabricOptions[0];
+  const cardImage = product.images?.[0] ?? getCategoryImages(product.category)[0];
 
   return (
     <Link href={`/catalog/${product.slug}`} className="group block">
       {/* Image */}
-      <div className="aspect-[3/4] bg-gradient-to-b from-accent/60 to-secondary rounded overflow-hidden mb-4 relative">
+      <div className="aspect-[3/4] rounded overflow-hidden mb-4 relative bg-secondary">
+        {cardImage && (
+          <Image
+            src={cardImage}
+            alt={product.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-secondary/60" />
         <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-charcoal/60 to-transparent">
           <span className="text-sm text-primary-foreground font-medium">View Details →</span>
         </div>

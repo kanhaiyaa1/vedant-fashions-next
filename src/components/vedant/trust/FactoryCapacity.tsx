@@ -75,8 +75,8 @@ const FactoryCapacity = () => {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="aspect-[4/3] rounded overflow-hidden relative bg-secondary">
             <Image
-              src={FACTORY_IMAGES[0].src}
-              alt={FACTORY_IMAGES[0].alt}
+              src={FACTORY_IMAGES[6].src}
+              alt={FACTORY_IMAGES[6].alt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import { CLIENT_LOGOS } from "@/data/images";
 const testimonials = [
   {
     quote: "Vedant Fashion has been our go-to supplier for three years. The quality of their organic cotton is unmatched and their delivery timelines are impeccable.",
@@ -46,6 +48,15 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Trusted By */}
+      <div className="flex items-center justify-center gap-8 flex-wrap mt-12 pt-10 border-t border-primary-foreground/10">
+        {CLIENT_LOGOS.map((logo) => (
+          <div key={logo.name} className="relative h-10 w-28 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+            <Image src={logo.src} alt={logo.name} fill className="object-contain" />
+          </div>
+        ))}
       </div>
     </section>
   );

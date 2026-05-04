@@ -133,8 +133,8 @@ const ManufacturingPage = async ({ params }: { params: Promise<{ lang: string }>
           <div className="space-y-6">
             <div className="aspect-[4/3] rounded overflow-hidden relative bg-secondary">
               <Image
-                src={FACTORY_IMAGES[0].src}
-                alt={FACTORY_IMAGES[0].alt}
+                src={FACTORY_IMAGES[2].src}
+                alt={FACTORY_IMAGES[2].alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -143,8 +143,8 @@ const ManufacturingPage = async ({ params }: { params: Promise<{ lang: string }>
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square rounded overflow-hidden relative bg-secondary">
                 <Image
-                  src={FACTORY_IMAGES[1].src}
-                  alt={FACTORY_IMAGES[1].alt}
+                  src={FACTORY_IMAGES[3].src}
+                  alt={FACTORY_IMAGES[3].alt}
                   fill
                   className="object-cover"
                   sizes="25vw"
@@ -152,8 +152,8 @@ const ManufacturingPage = async ({ params }: { params: Promise<{ lang: string }>
               </div>
               <div className="aspect-square rounded overflow-hidden relative bg-secondary">
                 <Image
-                  src={FACTORY_IMAGES[4].src}
-                  alt={FACTORY_IMAGES[4].alt}
+                  src={FACTORY_IMAGES[5].src}
+                  alt={FACTORY_IMAGES[5].alt}
                   fill
                   className="object-cover"
                   sizes="25vw"

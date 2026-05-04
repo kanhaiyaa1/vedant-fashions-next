@@ -100,6 +100,8 @@ export const FACTORY_IMAGES = [
   { src: "/images/site-files/cloth-internation-packages.JPG", alt: "International packaging" },
   { src: "/images/site-files/new-cotton-lawns-the-list-group.jpg", alt: "Fabric sourcing" },
   { src: "/images/site-files/high-fashion-women-garment.jpg", alt: "Premium ladies garments" },
+  { src: "/images/site-files/CLO-Masha-Coat-3D-and-2D-View.png", alt: "3D garment design view" },
+  { src: "/images/site-files/hermes-rivera-.jpg", alt: "Ladies fashion garment" },
 ]
 
 export const CERTIFICATIONS_DOCS = [
