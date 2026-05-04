@@ -87,30 +87,108 @@ export function SkeletonTable({
 
 // ---------------------------------------------------------------------------
 // ContentBlock skeleton — mirrors ContentBlock exactly
-// section-spacing > container-wide > text-center mb-16 + children
+// section-spacing > container-wide > text-center mb-16 + typed content area
 // ---------------------------------------------------------------------------
 
 export function SkeletonContentBlock({
-  contentHeight = "120px",
+  contentType = "paragraphs",
   bg = "default",
   className = "",
 }: {
-  contentHeight?: string;
+  contentType?: "paragraphs" | "cards-2" | "cards-3" | "cards-4" | "table" | "list" | "steps" | "faq";
   bg?: "default" | "cream" | "dark";
   className?: string;
 }) {
   const bgClass = bg === "cream" ? "bg-cream" : bg === "dark" ? "bg-primary" : "bg-background";
-  const lineOpacity = bg === "dark" ? "opacity-30" : "";
+  const op = bg === "dark" ? "opacity-30" : "";
+
+  const renderContent = () => {
+    switch (contentType) {
+      case "cards-2":
+        return (
+          <div className="grid md:grid-cols-2 gap-6">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <SkeletonCard key={i} className={op} />
+            ))}
+          </div>
+        );
+      case "cards-3":
+        return (
+          <div className="grid md:grid-cols-3 gap-6">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <SkeletonCard key={i} className={op} />
+            ))}
+          </div>
+        );
+      case "cards-4":
+        return (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <SkeletonCard key={i} className={op} />
+            ))}
+          </div>
+        );
+      case "table":
+        return <SkeletonTable rows={5} cols={5} />;
+      case "list":
+        return (
+          <div className="max-w-2xl mx-auto space-y-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <SkeletonLine width="20px" height="20px" className={`shrink-0 mt-0.5 ${op}`} />
+                <SkeletonLine width={`${70 + (i % 3) * 10}%`} height="16px" className={op} />
+              </div>
+            ))}
+          </div>
+        );
+      case "steps":
+        return (
+          <div className="grid md:grid-cols-4 gap-6">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="space-y-3">
+                <SkeletonLine width="32px" height="32px" className={`rounded-full ${op}`} />
+                <SkeletonLine width="70%" height="18px" className={op} />
+                <SkeletonLine height="14px" className={op} />
+                <SkeletonLine width="80%" height="14px" className={op} />
+              </div>
+            ))}
+          </div>
+        );
+      case "faq":
+        return (
+          <div className="max-w-3xl mx-auto space-y-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="border border-border rounded px-6 flex items-center justify-between"
+                style={{ height: "56px" }}
+              >
+                <SkeletonLine width={`${50 + (i % 4) * 10}%`} height="18px" className={op} />
+                <SkeletonLine width="20px" height="20px" className={`shrink-0 ml-4 ${op}`} />
+              </div>
+            ))}
+          </div>
+        );
+      default:
+        return (
+          <div className="max-w-2xl mx-auto space-y-3">
+            <SkeletonLine height="16px" className={op} />
+            <SkeletonLine width="90%" height="16px" className={op} />
+            <SkeletonLine height="16px" className={op} />
+            <SkeletonLine width="70%" height="16px" className={op} />
+          </div>
+        );
+    }
+  };
+
   return (
     <section className={`section-spacing ${bgClass} ${className}`}>
       <div className="container-wide">
         <div className="text-center mb-16 space-y-4">
-          {/* subtitle: text-subheading ~12px */}
-          <SkeletonLine width="120px" height="12px" className={`mx-auto ${lineOpacity}`} />
-          {/* h2: text-display-md ~40px */}
-          <SkeletonLine width="55%" height="40px" className={`mx-auto ${lineOpacity}`} />
+          <SkeletonLine width="120px" height="12px" className={`mx-auto ${op}`} />
+          <SkeletonLine width="55%" height="40px" className={`mx-auto ${op}`} />
         </div>
-        <SkeletonBlock height={contentHeight} className={lineOpacity} />
+        {renderContent()}
       </div>
     </section>
   );
@@ -118,7 +196,6 @@ export function SkeletonContentBlock({
 
 // ---------------------------------------------------------------------------
 // PageHero skeleton — mirrors PageHero exactly
-// relative pt-20 md:pt-24 > bg-cream > container-wide section-spacing > max-w-3xl space-y-6
 // ---------------------------------------------------------------------------
 
 export function SkeletonPageHero() {
@@ -127,16 +204,12 @@ export function SkeletonPageHero() {
       <div className="bg-cream">
         <div className="container-wide section-spacing">
           <div className="max-w-3xl space-y-6">
-            {/* subtitle: text-subheading — small uppercase tracking */}
             <SkeletonLine width="160px" height="12px" />
-            {/* h1: text-display-xl */}
             <SkeletonLine width="80%" height="56px" />
-            {/* description: text-body-lg max-w-2xl */}
             <div className="max-w-2xl space-y-2">
               <SkeletonLine height="20px" />
               <SkeletonLine width="75%" height="20px" />
             </div>
-            {/* gold divider: w-16 h-px */}
             <div className="skeleton rounded !w-16 !h-0.5 pt-2" />
           </div>
         </div>
@@ -147,41 +220,31 @@ export function SkeletonPageHero() {
 
 // ---------------------------------------------------------------------------
 // Hero skeleton — mirrors Hero exactly
-// relative min-h-screen flex col center bg-[#1a1a1a]
-// max-w-4xl center column: badge > h1 > description > 2 CTAs > stats row
-// + 2 floating cards bottom-left / bottom-right
 // ---------------------------------------------------------------------------
 
 export function SkeletonHero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1a1a1a]">
-      {/* overlay */}
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-      {/* Center content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
-        {/* Badge pill */}
         <div className="skeleton rounded-full opacity-30" style={{ width: "280px", height: "32px" }} />
 
-        {/* H1: text-5xl → text-7xl */}
         <div className="w-full space-y-3">
           <SkeletonLine width="90%" height="72px" className="mx-auto opacity-40" />
           <SkeletonLine width="70%" height="72px" className="mx-auto opacity-40" />
         </div>
 
-        {/* Description: text-base md:text-lg max-w-2xl */}
         <div className="max-w-2xl w-full space-y-2">
           <SkeletonLine height="20px" className="opacity-30" />
           <SkeletonLine width="80%" height="20px" className="mx-auto opacity-30" />
         </div>
 
-        {/* CTA buttons: h-12 */}
         <div className="flex flex-col sm:flex-row gap-4 pt-2">
           <div className="skeleton rounded opacity-30" style={{ width: "192px", height: "48px" }} />
           <div className="skeleton rounded opacity-20" style={{ width: "176px", height: "48px" }} />
         </div>
 
-        {/* Stats row with dividers */}
         <div className="flex flex-wrap items-center justify-center gap-0 pt-8 border-t border-white/10 w-full">
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="flex items-center">
@@ -195,13 +258,11 @@ export function SkeletonHero() {
         </div>
       </div>
 
-      {/* Floating card — bottom left */}
       <div className="absolute bottom-8 left-6 z-10 bg-black/60 border border-white/10 rounded px-4 py-3 space-y-1">
         <SkeletonLine width="80px" height="10px" className="opacity-20" />
         <SkeletonLine width="120px" height="14px" className="opacity-30" />
       </div>
 
-      {/* Floating card — bottom right */}
       <div className="absolute bottom-8 right-6 z-10 bg-black/60 border border-white/10 rounded px-4 py-3 space-y-1">
         <SkeletonLine width="80px" height="10px" className="opacity-20" />
         <SkeletonLine width="100px" height="14px" className="opacity-30" />
@@ -235,91 +296,21 @@ export function SkeletonProductGrid() {
 // Full page skeletons
 // ---------------------------------------------------------------------------
 
-// Mirrors a full product category page structure
 export function SkeletonProductPage() {
   return (
     <div className="min-h-screen bg-background">
       <SkeletonPageHero />
-
-      {/* Overview ContentBlock */}
-      <SkeletonContentBlock contentHeight="100px" />
-
-      {/* Fabric spec table: 9 cols, 6 rows */}
-      <section className="section-spacing bg-background">
-        <div className="container-wide space-y-6">
-          <div className="text-center space-y-4 mb-10">
-            <SkeletonLine width="140px" height="12px" className="mx-auto" />
-            <SkeletonLine width="50%" height="40px" className="mx-auto" />
-          </div>
-          <SkeletonTable rows={6} cols={9} />
-        </div>
-      </section>
-
-      {/* Tech specs table: 2 cols, 10 rows */}
-      <section className="section-spacing bg-cream">
-        <div className="container-wide space-y-6">
-          <div className="text-center space-y-4 mb-10">
-            <SkeletonLine width="120px" height="12px" className="mx-auto" />
-            <SkeletonLine width="45%" height="40px" className="mx-auto" />
-          </div>
-          <SkeletonTable rows={10} cols={2} />
-        </div>
-      </section>
-
-      {/* GCC markets: ContentBlock with 4 cards */}
-      <section className="section-spacing bg-background">
-        <div className="container-wide">
-          <div className="text-center mb-16 space-y-4">
-            <SkeletonLine width="100px" height="12px" className="mx-auto" />
-            <SkeletonLine width="55%" height="40px" className="mx-auto" />
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="border border-border rounded p-5 space-y-3">
-                <SkeletonLine width="60%" height="20px" />
-                <SkeletonLine height="14px" />
-                <SkeletonLine width="80%" height="14px" />
-                <SkeletonLine width="50%" height="14px" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance ContentBlock */}
-      <SkeletonContentBlock contentHeight="80px" bg="cream" />
-
-      {/* Size chart: 8 cols, 6 rows */}
-      <section className="section-spacing bg-background">
-        <div className="container-wide">
-          <div className="text-center mb-10 space-y-4">
-            <SkeletonLine width="100px" height="12px" className="mx-auto" />
-            <SkeletonLine width="40%" height="40px" className="mx-auto" />
-          </div>
-          <SkeletonTable rows={6} cols={8} />
-        </div>
-      </section>
-
-      {/* Ordering steps ContentBlock */}
-      <SkeletonContentBlock contentHeight="120px" />
-
-      {/* FAQ accordion — 6 items */}
-      <section className="section-spacing bg-cream">
-        <div className="container-wide max-w-3xl mx-auto space-y-4">
-          <div className="text-center space-y-4 mb-10">
-            <SkeletonLine width="80px" height="12px" className="mx-auto" />
-            <SkeletonLine width="50%" height="40px" className="mx-auto" />
-          </div>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="border border-border rounded px-6 py-4 flex items-center justify-between">
-              <SkeletonLine width={`${55 + (i % 3) * 10}%`} height="18px" />
-              <SkeletonLine width="20px" height="20px" className="shrink-0 ml-4" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Dark CTA block */}
+      <SkeletonContentBlock contentType="paragraphs" />
+      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock contentType="table" />
+      <SkeletonContentBlock contentType="cards-4" bg="cream" />
+      <SkeletonContentBlock contentType="paragraphs" />
+      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock contentType="steps" />
+      <SkeletonContentBlock contentType="faq" bg="cream" />
+      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock contentType="cards-4" />
+      <SkeletonContentBlock contentType="cards-3" bg="dark" />
       <section className="section-spacing bg-primary">
         <div className="container-wide text-center space-y-6">
           <SkeletonLine width="50%" height="40px" className="mx-auto opacity-30" />
@@ -331,11 +322,9 @@ export function SkeletonProductPage() {
   );
 }
 
-// Mirrors admin page: p-6 md:p-10, title, stats row, filter bar, table
 export function SkeletonAdminPage() {
   return (
     <div className="p-6 md:p-10 space-y-8">
-      {/* Title + subtitle */}
       <div className="flex items-center justify-between">
         <div className="space-y-2">
           <SkeletonLine width="200px" height="28px" />
@@ -343,33 +332,28 @@ export function SkeletonAdminPage() {
         </div>
         <SkeletonLine width="120px" height="38px" />
       </div>
-      {/* Stats row — 4 cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="bg-gray-900 rounded-lg p-5 space-y-2">
+          <div key={i} className="bg-muted/40 rounded-lg p-5 space-y-2">
             <SkeletonLine width="60px" height="28px" />
             <SkeletonLine width="80px" height="12px" />
           </div>
         ))}
       </div>
-      {/* Filter bar: 3 inputs + button */}
       <div className="flex flex-wrap gap-3">
         <SkeletonLine width="180px" height="38px" />
         <SkeletonLine width="150px" height="38px" />
         <SkeletonLine width="180px" height="38px" />
         <SkeletonLine width="110px" height="38px" />
       </div>
-      {/* Table: 8 rows × 6 cols */}
       <SkeletonTable rows={8} cols={6} />
     </div>
   );
 }
 
-// Mirrors dashboard page exactly
 export function SkeletonDashboard() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Welcome header */}
       <div className="border-b border-border px-6 py-5 flex items-center justify-between">
         <div className="space-y-2">
           <SkeletonLine width="240px" height="28px" />
@@ -379,7 +363,6 @@ export function SkeletonDashboard() {
       </div>
 
       <div className="container-wide py-10 space-y-10">
-        {/* 4 stat cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="border border-border rounded p-5 space-y-2">
@@ -390,7 +373,6 @@ export function SkeletonDashboard() {
           ))}
         </div>
 
-        {/* Recent enquiries: 5 rows, 5 cols */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <SkeletonLine width="160px" height="20px" />
@@ -399,16 +381,14 @@ export function SkeletonDashboard() {
           <SkeletonTable rows={5} cols={5} />
         </div>
 
-        {/* Sample requests: 5 rows, 4 cols */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <SkeletonLine width="180px" height="20px" />
             <SkeletonLine width="80px" height="14px" />
           </div>
-          <SkeletonTable rows={5} cols={4} />
+          <SkeletonTable rows={4} cols={4} />
         </div>
 
-        {/* Quick actions: 4 button skeletons */}
         <div className="flex flex-wrap gap-3">
           {Array.from({ length: 4 }).map((_, i) => (
             <SkeletonLine key={i} width="180px" height="44px" />
@@ -419,48 +399,49 @@ export function SkeletonDashboard() {
   );
 }
 
-// Mirrors wholesale-faq page: PageHero + 8 sections, each heading + 3-5 accordions (56px closed)
 export function SkeletonFAQ() {
-  const sections = [4, 5, 3, 4, 5, 3, 4, 5];
   return (
     <div className="min-h-screen bg-background">
       <SkeletonPageHero />
-      <div className="container-wide section-spacing space-y-16 max-w-3xl mx-auto">
-        {sections.map((count, s) => (
-          <div key={s} className="space-y-4">
-            {/* Section heading */}
-            <SkeletonLine width={`${160 + (s % 3) * 40}px`} height="24px" />
-            <div className="space-y-3">
-              {Array.from({ length: count }).map((_, i) => (
-                <div key={i} className="border border-border rounded px-6 flex items-center justify-between" style={{ height: "56px" }}>
-                  <SkeletonLine width={`${50 + (i % 4) * 10}%`} height="18px" />
-                  <SkeletonLine width="20px" height="20px" className="shrink-0 ml-4" />
-                </div>
-              ))}
-            </div>
+      {Array.from({ length: 8 }).map((_, i) => (
+        <SkeletonContentBlock
+          key={i}
+          contentType="faq"
+          bg={i % 2 === 1 ? "cream" : "default"}
+        />
+      ))}
+      <section className="section-spacing bg-background">
+        <div className="container-wide">
+          <div className="text-center mb-10 space-y-4">
+            <SkeletonLine width="100px" height="12px" className="mx-auto" />
+            <SkeletonLine width="45%" height="40px" className="mx-auto" />
           </div>
-        ))}
-      </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="border border-border rounded p-4 space-y-2">
+                <SkeletonLine width="70%" height="16px" />
+                <SkeletonLine width="50%" height="12px" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
 
-// Mirrors country landing page: PageHero + 5 ContentBlocks + dark CTA + 8 link cards
 export function SkeletonCountryPage() {
   return (
     <div className="min-h-screen bg-background">
       <SkeletonPageHero />
-
-      {/* 5 ContentBlock skeletons alternating bg */}
-      {Array.from({ length: 5 }).map((_, i) => (
-        <SkeletonContentBlock
-          key={i}
-          bg={i % 2 === 1 ? "cream" : "default"}
-          contentHeight={i === 2 ? "200px" : "100px"}
-        />
-      ))}
-
-      {/* Dark CTA block */}
+      <SkeletonContentBlock contentType="paragraphs" />
+      <SkeletonContentBlock contentType="cards-4" bg="cream" />
+      <SkeletonContentBlock contentType="table" />
+      <SkeletonContentBlock contentType="cards-3" bg="cream" />
+      <SkeletonContentBlock contentType="steps" />
+      <SkeletonContentBlock contentType="paragraphs" bg="cream" />
+      <SkeletonContentBlock contentType="cards-2" />
+      <SkeletonContentBlock contentType="faq" bg="cream" />
       <section className="section-spacing bg-primary">
         <div className="container-wide text-center space-y-6">
           <SkeletonLine width="50%" height="40px" className="mx-auto opacity-30" />
@@ -468,8 +449,6 @@ export function SkeletonCountryPage() {
           <SkeletonLine width="160px" height="48px" className="mx-auto opacity-30" />
         </div>
       </section>
-
-      {/* Grid of 8 small link cards */}
       <section className="section-spacing bg-background">
         <div className="container-wide">
           <div className="text-center mb-10 space-y-4">

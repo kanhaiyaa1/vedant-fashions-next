@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { createServiceClient } from "@/lib/supabase/server";
+import { createClient, createServiceClient } from "@/lib/supabase/server";
 import {
   welcomeEmail,
   day2FollowupEmail,
@@ -22,12 +22,11 @@ const TEMPLATE_NAMES: Record<number, string> = {
   4: "day30ReengagementEmail",
 };
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const secret = searchParams.get("secret");
-  if (secret !== process.env.CRON_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+export async function GET() {
+  const authClient = await createClient();
+  const { data: { user } } = await authClient.auth.getUser();
+  const { data: admin } = await authClient.from("admins").select("id").eq("id", user?.id).single();
+  if (!admin) return Response.json({ error: "Unauthorized" }, { status: 401 });
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const supabase = createServiceClient();
