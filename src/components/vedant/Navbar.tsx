@@ -93,16 +93,31 @@ const Navbar = () => {
   const [langOpen, setLangOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
     const supabase = createClient();
-    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+      setAuthLoading(false);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+        setAuthLoading(false);
+      }
+    );
+
+    return () => subscription.unsubscribe();
   }, []);
 
   const handleSignOut = async () => {
+    setUser(null);
+    setAuthLoading(false);
     const supabase = createClient();
     await supabase.auth.signOut();
-    setUser(null);
     router.push(`/${locale}`);
   };
 
@@ -211,7 +226,9 @@ const Navbar = () => {
             )}
           </div>
 
-          {user ? (
+          {authLoading ? (
+            <div className="hidden md:block w-16 h-8" />
+          ) : user ? (
             <div className="hidden md:flex items-center gap-2">
               <LocaleLink
                 href="/dashboard"
@@ -299,7 +316,9 @@ const Navbar = () => {
               </Button>
             </LocaleLink>
 
-            {user ? (
+            {authLoading ? (
+              <div className="h-10 mt-2" />
+            ) : user ? (
               <div className="flex gap-2 mt-2">
                 <LocaleLink
                   href="/dashboard"
