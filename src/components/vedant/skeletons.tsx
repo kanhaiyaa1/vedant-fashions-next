@@ -95,7 +95,7 @@ export function SkeletonContentBlock({
   bg = "default",
   className = "",
 }: {
-  contentType?: "paragraphs" | "cards-2" | "cards-3" | "cards-4" | "table" | "list" | "steps" | "faq";
+  contentType?: "paragraphs" | "cards-2" | "cards-3" | "cards-4" | "table" | "list" | "steps" | "faq" | "grid-2" | "grid-3" | "timeline" | "stats-row";
   bg?: "default" | "cream" | "dark";
   className?: string;
 }) {
@@ -165,6 +165,69 @@ export function SkeletonContentBlock({
               >
                 <SkeletonLine width={`${50 + (i % 4) * 10}%`} height="18px" className={op} />
                 <SkeletonLine width="20px" height="20px" className={`shrink-0 ml-4 ${op}`} />
+              </div>
+            ))}
+          </div>
+        );
+      case "grid-2":
+        return (
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-4">
+              <SkeletonLine height="20px" className={op} />
+              <SkeletonLine height="20px" width="90%" className={op} />
+              <SkeletonLine height="20px" width="85%" className={op} />
+              <SkeletonLine height="20px" width="70%" className={op} />
+              <div className="pt-4 space-y-3">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <div className={`skeleton rounded-full w-5 h-5 shrink-0 mt-0.5 ${op}`} />
+                    <SkeletonLine height="16px" className={op} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className={`skeleton rounded aspect-[4/3] w-full ${op}`} />
+          </div>
+        );
+      case "grid-3":
+        return (
+          <div className="grid md:grid-cols-3 gap-8">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="space-y-4">
+                <div className={`skeleton rounded-full w-12 h-12 ${op}`} />
+                <SkeletonLine width="70%" height="20px" className={op} />
+                <SkeletonLine height="16px" className={op} />
+                <SkeletonLine width="85%" height="16px" className={op} />
+                <SkeletonLine width="60%" height="16px" className={op} />
+              </div>
+            ))}
+          </div>
+        );
+      case "timeline":
+        return (
+          <div className="relative max-w-3xl mx-auto space-y-0">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex gap-6 pb-10">
+                <div className="flex flex-col items-center">
+                  <div className={`skeleton rounded-full w-10 h-10 shrink-0 ${op}`} />
+                  {i < 4 && <div className={`skeleton w-0.5 flex-1 mt-2 ${op}`} />}
+                </div>
+                <div className="space-y-2 flex-1 pt-2">
+                  <SkeletonLine width="120px" height="14px" className={op} />
+                  <SkeletonLine width="70%" height="20px" className={op} />
+                  <SkeletonLine height="16px" className={op} />
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      case "stats-row":
+        return (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="text-center space-y-2">
+                <SkeletonLine width="80px" height="48px" className={`mx-auto ${op}`} />
+                <SkeletonLine width="100px" height="16px" className={`mx-auto ${op}`} />
               </div>
             ))}
           </div>
@@ -300,22 +363,68 @@ export function SkeletonProductPage() {
   return (
     <div className="min-h-screen bg-background">
       <SkeletonPageHero />
-      <SkeletonContentBlock contentType="paragraphs" />
-      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock contentType="grid-2" />
+      <SkeletonContentBlock bg="cream" contentType="table" />
       <SkeletonContentBlock contentType="table" />
-      <SkeletonContentBlock contentType="cards-4" bg="cream" />
-      <SkeletonContentBlock contentType="paragraphs" />
-      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock bg="cream" contentType="cards-3" />
+      <SkeletonContentBlock contentType="list" />
+      <SkeletonContentBlock bg="cream" contentType="table" />
       <SkeletonContentBlock contentType="steps" />
-      <SkeletonContentBlock contentType="faq" bg="cream" />
-      <SkeletonContentBlock contentType="table" bg="cream" />
+      <SkeletonContentBlock bg="cream" contentType="grid-2" />
       <SkeletonContentBlock contentType="cards-4" />
-      <SkeletonContentBlock contentType="cards-3" bg="dark" />
-      <section className="section-spacing bg-primary">
-        <div className="container-wide text-center space-y-6">
+      <SkeletonContentBlock bg="dark" contentType="cards-4" />
+      <SkeletonContentBlock bg="cream" contentType="faq" />
+      <section className="bg-primary section-spacing">
+        <div className="container-wide">
+          <div className="text-center space-y-6">
+            <SkeletonLine width="160px" height="12px" className="mx-auto opacity-30" />
+            <SkeletonLine width="55%" height="44px" className="mx-auto opacity-30" />
+            <SkeletonLine width="35%" height="20px" className="mx-auto opacity-30" />
+            <div className="flex gap-4 justify-center pt-2">
+              <div className="skeleton rounded-sm w-44 h-12 opacity-30" />
+              <div className="skeleton rounded-sm w-44 h-12 opacity-30" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export function SkeletonAbout() {
+  return (
+    <div className="min-h-screen bg-background">
+      <SkeletonPageHero />
+      <SkeletonContentBlock contentType="grid-2" />
+      <SkeletonContentBlock bg="cream" contentType="grid-3" />
+      <SkeletonContentBlock contentType="timeline" />
+      <SkeletonContentBlock bg="cream" contentType="stats-row" />
+      <section className="bg-primary section-spacing">
+        <div className="container-wide text-center space-y-4">
+          <SkeletonLine width="200px" height="12px" className="mx-auto opacity-30" />
           <SkeletonLine width="50%" height="40px" className="mx-auto opacity-30" />
-          <SkeletonLine width="40%" height="20px" className="mx-auto opacity-20" />
-          <SkeletonLine width="160px" height="48px" className="mx-auto opacity-30" />
+          <div className="flex gap-4 justify-center">
+            <div className="skeleton rounded-sm w-40 h-12 opacity-30" />
+            <div className="skeleton rounded-sm w-40 h-12 opacity-30" />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export function SkeletonManufacturing() {
+  return (
+    <div className="min-h-screen bg-background">
+      <SkeletonPageHero />
+      <SkeletonContentBlock contentType="stats-row" />
+      <SkeletonContentBlock bg="cream" contentType="grid-3" />
+      <SkeletonContentBlock contentType="steps" />
+      <SkeletonContentBlock bg="cream" contentType="grid-2" />
+      <SkeletonContentBlock contentType="cards-3" />
+      <section className="bg-primary section-spacing">
+        <div className="container-wide text-center">
+          <SkeletonLine width="50%" height="40px" className="mx-auto opacity-30" />
         </div>
       </section>
     </div>
