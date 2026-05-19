@@ -800,7 +800,6 @@ export const knowledgePages: KnowledgePage[] = [
       { heading: "Regulatory Documents", content: "Compliance and certification documents for customs clearance.", bullets: ["Certificate of Origin (GSP)", "EUR.1 Movement Certificate", "GOTS Transaction Certificate", "OEKO-TEX / GRS Certificate copies", "Fabric test reports (shrinkage, colorfastness)", "AQL Final Inspection Report"] },
     ],
   },
-  {
   // -- Buyer Resource Pages --
   {
     slug: "size-charts", cluster: "buyer",
