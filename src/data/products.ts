@@ -765,10 +765,10 @@ export const products: Product[] = [
   })),
 
   // ═══════════════════════════════════════════════════════════════════
-  // CO-ORD SETS (4 products) — cs-001 to cs-004
+  // CO-ORD SETS (4 products) — cs-011 to cs-014
   // ═══════════════════════════════════════════════════════════════════
   {
-    id: "cs-001", sku: "VF-CS-001", slug: "floral-rayon-coord-set", name: "Floral Rayon Co-ord Set", category: "coord-sets",
+    id: "cs-011", sku: "VF-CS-011", slug: "floral-rayon-coord-set", name: "Floral Rayon Co-ord Set", category: "coord-sets",
     description: "Matching floral-print rayon top and wide-leg trouser co-ord set. Lightweight and fluid, ideal for resort and leisure markets.",
     shortDescription: "Floral rayon co-ord set — matching top and wide-leg trouser.",
     galleryImages: [], colorOptions: ["Coral Floral", "Blue Floral", "Black Floral", "Green Floral"],
@@ -778,7 +778,7 @@ export const products: Product[] = [
     hsCode: "6211.42.00", countryOfOrigin: "India",
   },
   {
-    id: "cs-002", sku: "VF-CS-002", slug: "georgette-printed-coord-set", name: "Georgette Printed Co-ord Set", category: "coord-sets",
+    id: "cs-012", sku: "VF-CS-012", slug: "georgette-printed-coord-set", name: "Georgette Printed Co-ord Set", category: "coord-sets",
     description: "Two-piece georgette co-ord set with abstract digital print. Crop top with wide-leg palazzo trousers for a modern, fashion-forward look.",
     shortDescription: "Georgette co-ord — abstract print crop top and palazzo trousers.",
     galleryImages: [], colorOptions: ["Teal Abstract", "Mustard Abstract", "Rose Abstract", "Navy Abstract"],
@@ -788,7 +788,7 @@ export const products: Product[] = [
     hsCode: "6211.42.00", countryOfOrigin: "India",
   },
   {
-    id: "cs-003", sku: "VF-CS-003", slug: "crepe-solid-coord-set", name: "Crepe Solid Co-ord Set", category: "coord-sets",
+    id: "cs-013", sku: "VF-CS-013", slug: "crepe-solid-coord-set", name: "Crepe Solid Co-ord Set", category: "coord-sets",
     description: "Solid colour crepe blazer and trouser co-ord set. Structured look for occasion and smart-casual retail markets.",
     shortDescription: "Solid crepe blazer and trouser co-ord — occasion and smart-casual.",
     galleryImages: [], colorOptions: ["Black", "Ivory", "Sage Green", "Dusty Rose", "Navy"],
@@ -798,7 +798,7 @@ export const products: Product[] = [
     hsCode: "6211.42.00", countryOfOrigin: "India",
   },
   {
-    id: "cs-004", sku: "VF-CS-004", slug: "viscose-tie-dye-coord-set", name: "Viscose Tie-Dye Co-ord Set", category: "coord-sets",
+    id: "cs-014", sku: "VF-CS-014", slug: "viscose-tie-dye-coord-set", name: "Viscose Tie-Dye Co-ord Set", category: "coord-sets",
     description: "Tie-dye viscose co-ord set with relaxed fit top and wide-leg trousers. Boho-resort aesthetic popular with UAE and Gulf retail buyers.",
     shortDescription: "Tie-dye viscose co-ord set — boho resort aesthetic.",
     galleryImages: [], colorOptions: ["Teal Tie-Dye", "Orange Tie-Dye", "Purple Tie-Dye", "Blue Tie-Dye"],
@@ -886,7 +886,7 @@ export const products: Product[] = [
     hsCode: "6211.42.00", countryOfOrigin: "India",
   },
   {
-    id: "em-004", sku: "VF-EM-004", slug: "embroidered-cotton-dress", name: "Embroidered Cotton Midi Dress", category: "embroidery",
+    id: "em-004", sku: "VF-EM-004", slug: "embroidered-cotton-dress-b", name: "Embroidered Cotton Midi Dress", category: "embroidery",
     description: "A-line midi dress in organic cotton with hand embroidery across the bodice. Combines casual silhouette with artisan detailing for boutique retail.",
     shortDescription: "Organic cotton midi dress with hand embroidery bodice.",
     galleryImages: [], colorOptions: ["White", "Ivory", "Pale Blue", "Soft Pink"],
