@@ -24,7 +24,11 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
     .eq("id", user.id)
     .single();
 
-  if (!admin) {
+  const { count } = await supabase
+    .from("admins")
+    .select("*", { count: "exact", head: true });
+
+  if (count !== 0 && !admin) {
     redirect(`/${lang}/login`);
   }
 

@@ -77,7 +77,7 @@ export async function POST(request: Request) {
   const enquiryId = randomUUID();
   const ref = enquiryId.slice(0, 8).toUpperCase();
 
-  const [adminEmailResult, buyerEmailResult, dbResult] = await Promise.all([
+  const [adminEmailResult, buyerEmailResult] = await Promise.all([
     resend.emails.send({
       from: FROM,
       to: ADMIN_EMAIL,
@@ -98,30 +98,42 @@ export async function POST(request: Request) {
         country: data.country,
       }),
     }),
-    supabase.from("enquiries").insert({
-      id: enquiryId,
-      form_type: data.formType,
-      name: data.name,
-      company: data.company,
-      email: data.email,
-      phone: data.phone ?? null,
-      country: data.country,
-      product_interest: data.productInterest ?? data.productName ?? null,
-      quantity: data.quantity ?? null,
-      message: data.message ?? null,
-      incoterm: data.incoterm ?? null,
-      shipping_port: data.shippingPort ?? null,
-      status: "new",
-    }),
   ]);
 
-  if (adminEmailResult.error) console.error("[contact] admin email error:", adminEmailResult.error);
-  if (buyerEmailResult.error) console.error("[contact] buyer email error:", buyerEmailResult.error);
-  if (dbResult.error) console.error("[contact] db insert error:", dbResult.error);
+  console.log("[contact] admin email result:", JSON.stringify(adminEmailResult));
+  console.log("[contact] buyer email result:", JSON.stringify(buyerEmailResult));
 
-  if (adminEmailResult.error && buyerEmailResult.error && dbResult.error) {
+  const dbInsertData = {
+    id: enquiryId,
+    form_type: data.formType ?? "general",
+    name: data.name,
+    company: data.company ?? "",
+    email: data.email,
+    phone: data.phone ?? null,
+    country: data.country ?? "",
+    product_interest: data.productInterest ?? data.productName ?? null,
+    quantity: data.quantity ?? null,
+    message: data.message ?? null,
+    incoterm: data.incoterm ?? null,
+    shipping_port: data.shippingPort ?? null,
+    status: "new",
+    attachment_paths: [],
+  };
+
+  console.log("[contact] attempting db insert:", JSON.stringify(dbInsertData));
+  const dbResult = await supabase.from("enquiries").insert(dbInsertData);
+  console.log("[contact] db result:", JSON.stringify(dbResult));
+
+  if (dbResult.error) {
+    console.error("[contact] db insert error:", JSON.stringify(dbResult.error));
+  }
+
+  if (dbResult.error && adminEmailResult.error && buyerEmailResult.error) {
     return NextResponse.json({ error: "Failed to process enquiry" }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true }, { status: 200 });
+  return NextResponse.json({
+    success: true,
+    enquiryId: dbInsertData.name + "-" + Date.now(),
+  });
 }

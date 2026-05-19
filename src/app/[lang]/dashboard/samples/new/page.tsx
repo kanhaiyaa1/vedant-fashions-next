@@ -47,18 +47,23 @@ export default function NewSampleRequestPage() {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) { router.push(`/${lang}/login`); return; }
 
-    const { error: dbError } = await supabase.from("sample_requests").insert({
-      buyer_id: user.id,
-      product_category: form.category,
-      styles: form.styles || null,
-      quantity: form.quantity,
-      delivery_address: form.delivery_address,
-      notes: form.notes || null,
-      status: "pending",
-    });
+    console.log("[samples] inserting for user:", user.id);
+    const { data: insertData, error: dbError } = await supabase
+      .from("sample_requests")
+      .insert({
+        buyer_id: user.id,
+        product_category: form.category,
+        styles: form.styles || null,
+        quantity: form.quantity,
+        delivery_address: form.delivery_address,
+        notes: form.notes || null,
+        status: "pending",
+      })
+      .select();
+    console.log("[samples] result:", JSON.stringify({ data: insertData, error: dbError }));
 
     if (dbError) {
-      setError("Failed to submit request. Please try again.");
+      setError("Database error: " + dbError.message + " Code: " + dbError.code);
       setLoading(false);
       return;
     }
