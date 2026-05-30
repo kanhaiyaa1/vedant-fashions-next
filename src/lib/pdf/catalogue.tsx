@@ -1,3 +1,5 @@
+/** @jsxRuntime classic */
+/** @jsx React.createElement */
 import React from "react";
 import {
   Document,
@@ -394,33 +396,33 @@ export function CataloguePDF({ products, categories, generatedDate }: CatalogueP
           <View style={styles.categoryHeader}>
             <Text style={styles.categoryName}>{formatCategoryName(group.category)}</Text>
             <Text style={styles.categoryMeta}>
-              {group.products.length} styles · FOB Mumbai · MOQ from 100 pcs
+              {String(group.products.length)} styles · FOB Mumbai · MOQ from 100 pcs
             </Text>
           </View>
 
           <View style={styles.grid2}>
             {group.products.map((p) => (
               <View key={p.sku ?? p.name} style={styles.gridCard}>
-                <Text style={styles.productName}>{p.name}</Text>
-                <Text style={styles.productDesc}>{p.shortDescription}</Text>
+                <Text style={styles.productName}>{p.name ?? "Unnamed Product"}</Text>
+                <Text style={styles.productDesc}>{p.shortDescription ?? p.description ?? "Premium ladies woven wear from India."}</Text>
                 <View style={styles.specsRow}>
                   <View style={styles.specBadge}>
-                    <Text style={{ fontSize: 8, color: "#444444" }}>MOQ: {p.moq}</Text>
+                    <Text style={{ fontSize: 8, color: "#444444" }}>MOQ: {String(p.moq ?? 100)}</Text>
                   </View>
                   <View style={styles.specBadge}>
-                    <Text style={{ fontSize: 8, color: "#444444" }}>{p.leadTime}</Text>
+                    <Text style={{ fontSize: 8, color: "#444444" }}>{p.leadTime ?? "60-90 days"}</Text>
                   </View>
-                  {p.fabricOptions[0] && (
+                  {(p.fabricOptions ?? []).length > 0 && (
                     <View style={styles.specBadge}>
                       <Text style={{ fontSize: 8, color: "#444444" }}>
-                        {p.fabricOptions[0].composition} · {p.fabricOptions[0].gsm} GSM
+                        {String(p.fabricOptions?.[0]?.composition ?? "Woven fabric")} · {String(p.fabricOptions?.[0]?.gsm ?? "100")} GSM
                       </Text>
                     </View>
                   )}
                 </View>
-                {p.certifications.length > 0 && (
+                {(p.certifications ?? []).length > 0 && (
                   <View style={[styles.specsRow, { marginTop: 6 }]}>
-                    {p.certifications.map((cert) => (
+                    {(p.certifications ?? []).map((cert) => (
                       <View key={cert} style={[styles.specBadge, { backgroundColor: "#f0f4ec" }]}>
                         <Text style={{ fontSize: 7, color: "#5a7a4a" }}>{cert}</Text>
                       </View>

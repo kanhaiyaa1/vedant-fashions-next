@@ -6,7 +6,6 @@ import { randomUUID } from "crypto";
 import { enquiryConfirmationEmail } from "@/lib/email/templates";
 
 const FROM = "notifications@vedantfashion.com";
-const ADMIN_EMAIL = "contact@vedantfashion.com";
 
 const baseSchema = z.object({
   formType: z.enum(["general", "product", "bulk", "private-label"]),
@@ -31,30 +30,6 @@ const baseSchema = z.object({
   productId: z.string().max(50).optional(),
 });
 
-function buildAdminText(data: z.infer<typeof baseSchema>): string {
-  return [
-    `New enquiry received on vedantfashion.com`,
-    ``,
-    `Name:              ${data.name}`,
-    `Company:           ${data.company}`,
-    `Email:             ${data.email}`,
-    `Phone:             ${data.phone ?? "—"}`,
-    `Country:           ${data.country}`,
-    `Type:              ${data.formType}`,
-    `Product Interest:  ${data.productInterest ?? data.productName ?? "—"}`,
-    `Quantity:          ${data.quantity ?? "—"}`,
-    `Incoterm:          ${data.incoterm ?? "—"}`,
-    `Shipping Port:     ${data.shippingPort ?? "—"}`,
-    `Annual Volume:     ${data.annualVolume ?? "—"}`,
-    `Message:           ${data.message ?? "—"}`,
-    ``,
-    `Reply directly to this email to respond to the buyer.`,
-    `---`,
-    `Vedant Fashion Admin Notifications`,
-  ].join("\n");
-}
-
-
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -71,69 +46,79 @@ export async function POST(request: Request) {
     );
   }
 
-  const data = result.data;
+  const validatedData = result.data;
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const supabase = createServiceClient();
   const enquiryId = randomUUID();
-  const ref = enquiryId.slice(0, 8).toUpperCase();
+  const supabase = await createServiceClient();
 
-  const [adminEmailResult, buyerEmailResult] = await Promise.all([
-    resend.emails.send({
-      from: FROM,
-      to: ADMIN_EMAIL,
-      replyTo: data.email,
-      subject: `🆕 New ${data.formType} Enquiry — ${data.company}, ${data.country}`,
-      text: buildAdminText(data),
-    }),
-    resend.emails.send({
-      from: `Vedant Fashion <${FROM}>`,
-      to: data.email,
-      subject: `Enquiry received — Vedant Fashion (Ref: ${ref})`,
-      html: enquiryConfirmationEmail({
-        name: data.name,
-        company: data.company,
-        enquiryId: ref,
-        productInterest: data.productInterest ?? data.productName ?? "—",
-        quantity: data.quantity ?? "—",
-        country: data.country,
-      }),
-    }),
-  ]);
+  const { error: dbError } = await supabase
+    .from("enquiries")
+    .insert({
+      id: enquiryId,
+      form_type: validatedData.formType ?? "general",
+      name: validatedData.name,
+      company: validatedData.company,
+      email: validatedData.email,
+      phone: validatedData.phone ?? null,
+      country: validatedData.country,
+      product_interest: validatedData.productInterest ?? null,
+      quantity: validatedData.quantity ?? null,
+      message: validatedData.message ?? null,
+      incoterm: validatedData.incoterm ?? null,
+      shipping_port: validatedData.shippingPort ?? null,
+      status: "new",
+    });
 
-  console.log("[contact] admin email result:", JSON.stringify(adminEmailResult));
-  console.log("[contact] buyer email result:", JSON.stringify(buyerEmailResult));
-
-  const dbInsertData = {
-    id: enquiryId,
-    form_type: data.formType ?? "general",
-    name: data.name,
-    company: data.company ?? "",
-    email: data.email,
-    phone: data.phone ?? null,
-    country: data.country ?? "",
-    product_interest: data.productInterest ?? data.productName ?? null,
-    quantity: data.quantity ?? null,
-    message: data.message ?? null,
-    incoterm: data.incoterm ?? null,
-    shipping_port: data.shippingPort ?? null,
-    status: "new",
-    attachment_paths: [],
-  };
-
-  console.log("[contact] attempting db insert:", JSON.stringify(dbInsertData));
-  const dbResult = await supabase.from("enquiries").insert(dbInsertData);
-  console.log("[contact] db result:", JSON.stringify(dbResult));
-
-  if (dbResult.error) {
-    console.error("[contact] db insert error:", JSON.stringify(dbResult.error));
+  if (dbError) {
+    console.error("[contact] DB insert failed:", JSON.stringify(dbError));
+    return NextResponse.json(
+      { error: "Failed to save enquiry: " + dbError.message },
+      { status: 500 }
+    );
   }
 
-  if (dbResult.error && adminEmailResult.error && buyerEmailResult.error) {
-    return NextResponse.json({ error: "Failed to process enquiry" }, { status: 500 });
+  console.log("[contact] DB insert success, enquiryId:", enquiryId);
+
+  try {
+    await Promise.all([
+      resend.emails.send({
+        from: FROM,
+        to: "contact@vedantfashion.com",
+        replyTo: validatedData.email,
+        subject: `New ${validatedData.formType} enquiry — ${validatedData.company}, ${validatedData.country}`,
+        html: `<p>Name: ${validatedData.name}</p>
+               <p>Company: ${validatedData.company}</p>
+               <p>Email: ${validatedData.email}</p>
+               <p>Phone: ${validatedData.phone ?? "N/A"}</p>
+               <p>Country: ${validatedData.country}</p>
+               <p>Form Type: ${validatedData.formType}</p>
+               <p>Product Interest: ${validatedData.productInterest ?? "N/A"}</p>
+               <p>Quantity: ${validatedData.quantity ?? "N/A"}</p>
+               <p>Message: ${validatedData.message ?? "N/A"}</p>
+               <p>Enquiry ID: ${enquiryId}</p>`,
+      }),
+      resend.emails.send({
+        from: FROM,
+        to: validatedData.email,
+        replyTo: "contact@vedantfashion.com",
+        subject: `Enquiry received — Vedant Fashion (Ref: ${enquiryId.slice(0, 8).toUpperCase()})`,
+        html: enquiryConfirmationEmail({
+          name: validatedData.name,
+          company: validatedData.company,
+          enquiryId: enquiryId.slice(0, 8).toUpperCase(),
+          productInterest: validatedData.productInterest ?? "General enquiry",
+          quantity: validatedData.quantity ?? "Not specified",
+          country: validatedData.country,
+        }),
+      }),
+    ]);
+    console.log("[contact] emails sent successfully");
+  } catch (emailError) {
+    console.error("[contact] email send failed:", emailError);
   }
 
   return NextResponse.json({
     success: true,
-    enquiryId: dbInsertData.name + "-" + Date.now(),
+    enquiryId: enquiryId.slice(0, 8).toUpperCase(),
   });
 }

@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: ["@react-pdf/renderer"],
+
   // Strict mode for catching potential issues early
   reactStrictMode: true,
 

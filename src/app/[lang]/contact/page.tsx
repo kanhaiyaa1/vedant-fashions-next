@@ -3,7 +3,7 @@ import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import CTASection from "@/components/vedant/CTASection";
-import InquiryForm from "@/components/vedant/InquiryForm";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { getContent } from "@/data/translations/page-content";
@@ -112,8 +112,28 @@ const ContactPage = async ({ params }: { params: Promise<{ lang: string }> }) =>
         </div>
       </section>
 
-      {/* Inquiry Form */}
-      <InquiryForm />
+      {/* Inquiry CTA */}
+      <section className="section-spacing bg-cream">
+        <div className="container-tight">
+          <div className="text-center space-y-6">
+            <p className="text-body text-muted-foreground">
+              Ready to discuss your wholesale requirements? Use our detailed enquiry form for fastest response.
+            </p>
+            <Link
+              href={`/${lang}/inquiry`}
+              className="btn-primary inline-block"
+            >
+              Send an Enquiry →
+            </Link>
+            <p className="text-body-sm text-muted-foreground">
+              Or email us directly at{" "}
+              <a href="mailto:contact@vedantfashion.com" className="text-gold hover:underline">
+                contact@vedantfashion.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
 
       <CTASection
         variant="dark"
