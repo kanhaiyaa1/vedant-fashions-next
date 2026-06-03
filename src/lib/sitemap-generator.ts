@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { getAllPagePaths } from "@/data/seo-pages";
 import { products } from "@/data/products";
 import { knowledgeHubArticles } from "@/data/knowledge-hub";

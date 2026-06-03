@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
+import { getContent } from "@/data/translations/page-content";
+import { cookiePolicyContent } from "@/data/translations/cookie-policy";
 
 export async function generateMetadata({
   params,
@@ -22,17 +24,22 @@ export default async function CookiePolicyPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  void lang;
+  const c = getContent(cookiePolicyContent, lang);
 
   return (
     <>
       <PageHero
-        subtitle="Legal"
-        title="Cookie Policy"
-        description="How and why Vedant Fashion uses cookies on this website."
+        subtitle={c.hero.subtitle}
+        title={c.hero.title}
+        description={c.hero.description}
       />
 
       <ContentBlock bg="default">
+        {c.langNote && (
+          <p className="text-sm text-muted-foreground italic border border-border rounded p-3 bg-cream max-w-4xl mx-auto mb-8">
+            {c.langNote}
+          </p>
+        )}
         <div className="max-w-4xl mx-auto space-y-10 text-gray-700">
 
           <section>

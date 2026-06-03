@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FAQSchema } from "@/components/seo/StructuredData";
+import { getContent } from "@/data/translations/page-content";
+import { wholesaleFaqContent } from "@/data/translations/wholesale-faq";
 
 // ── Metadata ──────────────────────────────────────────────────────────
 
@@ -245,29 +247,32 @@ export default async function WholesaleFAQPage({
 }: {
   params: Promise<{ lang: string }>;
 }) {
-  await params;
+  const { lang } = await params;
+  const c = getContent(wholesaleFaqContent, lang);
 
-  // Flatten all Q&A for the FAQPage JSON-LD schema
   const allFaqs = SECTIONS.flatMap((s) =>
     s.items.map((item) => ({ question: item.q, answer: item.a }))
   );
+
+  const translatedSections = SECTIONS.map((section, i) => ({
+    ...section,
+    heading: c.sectionHeadings[i] ?? section.heading,
+  }));
 
   return (
     <div className="min-h-screen bg-background font-body">
       <FAQSchema items={allFaqs} />
 
-      {/* HERO */}
       <PageHero
-        subtitle="Wholesale FAQ"
-        title="B2B Buyer Questions — Answered"
-        description="30+ detailed answers covering ordering, sampling, quality, certifications, shipping to UAE and GCC, payment terms, Middle East compliance, and Russia / CIS trade. Vedant Fashion export team."
+        subtitle={c.hero.subtitle}
+        title={c.hero.title}
+        description={c.hero.description}
       />
 
-      {/* SECTIONS */}
-      {SECTIONS.map((section, si) => (
+      {translatedSections.map((section, si) => (
         <ContentBlock
           key={section.id}
-          subtitle={`Section ${si + 1} of ${SECTIONS.length}`}
+          subtitle={c.sectionOf.replace("{n}", String(si + 1)).replace("{total}", String(SECTIONS.length))}
           title={`${section.icon}  ${section.heading}`}
           bg={si % 2 === 0 ? undefined : "cream"}
         >
@@ -292,10 +297,9 @@ export default async function WholesaleFAQPage({
         </ContentBlock>
       ))}
 
-      {/* SECTION INDEX — quick navigation */}
-      <ContentBlock subtitle="Quick Navigation" title="Browse by Topic" bg="dark">
+      <ContentBlock subtitle={c.nav.subtitle} title={c.nav.title} bg="dark">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          {SECTIONS.map((s) => (
+          {translatedSections.map((s) => (
             <a
               key={s.id}
               href={`#${s.id}`}
@@ -304,7 +308,7 @@ export default async function WholesaleFAQPage({
               <p className="text-lg mb-1">{s.icon}</p>
               <p className="text-body-sm font-medium text-primary-foreground">{s.heading}</p>
               <p className="text-caption text-primary-foreground/60 mt-1">
-                {s.items.length} question{s.items.length !== 1 ? "s" : ""}
+                {s.items.length} {c.questionsLabel}
               </p>
             </a>
           ))}
@@ -313,9 +317,9 @@ export default async function WholesaleFAQPage({
 
       <CTASection
         variant="dark"
-        title="Still Have Questions?"
-        description="Our GCC and Middle East export team responds within 24 hours — Monday to Friday, 09:00–18:00 IST."
-        buttonText="Contact Export Team"
+        title={c.cta.title}
+        description={c.cta.description}
+        buttonText={c.cta.buttonText}
       />
     </div>
   );

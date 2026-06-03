@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
+import { getContent } from "@/data/translations/page-content";
+import { privacyPolicyContent } from "@/data/translations/privacy-policy";
 
 export async function generateMetadata({
   params,
@@ -22,17 +24,23 @@ export default async function PrivacyPolicyPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const c = getContent(privacyPolicyContent, lang);
 
   return (
     <>
       <PageHero
-        subtitle="Legal"
-        title="Privacy Policy"
-        description="How Vedant Fashion collects, uses, and protects your personal data."
+        subtitle={c.hero.subtitle}
+        title={c.hero.title}
+        description={c.hero.description}
       />
 
       <ContentBlock bg="default">
         <div className="max-w-4xl mx-auto space-y-12 text-gray-700">
+          {c.langNote && (
+            <p className="text-sm text-muted-foreground italic border border-border rounded p-3 bg-cream">
+              {c.langNote}
+            </p>
+          )}
 
           {/* 1. Who We Are */}
           <section>

@@ -890,7 +890,10 @@ export function getAllPagePaths(): { path: string; title: string; cluster: strin
     { path: "/catalog", title: "Catalogue", cluster: "products" },
     { path: "/inquiry", title: "Inquiry", cluster: "main" },
     { path: "/contact", title: "Contact", cluster: "main" },
-    { path: "/sitemap", title: "Sitemap", cluster: "main" },
+    { path: "/sitemap-page", title: "Sitemap", cluster: "main" },
+    { path: "/privacy-policy", title: "Privacy Policy", cluster: "main" },
+    { path: "/terms-of-trade", title: "Terms of Trade", cluster: "main" },
+    { path: "/cookie-policy", title: "Cookie Policy", cluster: "main" },
   ];
   pages.push(...staticPages);
 
