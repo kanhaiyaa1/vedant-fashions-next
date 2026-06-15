@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
-import PageHero from "@/components/vedant/PageHero";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { FAQSchema } from "@/components/seo/StructuredData";
@@ -14,10 +13,10 @@ import { Ship, Plane, FileCheck, ShieldCheck } from "lucide-react";
 import { getContent } from "@/data/translations/page-content";
 import { shippingContent } from "@/data/translations/shipping";
 
-// INCOTERM codes — not translated
+// ── Static data ────────────────────────────────────────────────────────
+
 const INCOTERM_CODES = ["FOB", "CIF", "DDP"];
 
-// Non-translatable route/docs/codes data
 const SEA_ROUTES = [
   { country: "UAE",          port: "Jebel Ali",                    transit: "18–22 days", frequency: "Weekly" },
   { country: "Saudi Arabia", port: "Dammam",                       transit: "20–24 days", frequency: "Weekly" },
@@ -40,16 +39,16 @@ const AIR_ROUTES = [
 ];
 
 const EXPORT_DOCS = [
-  { name: "Commercial Invoice",                desc: "Itemised invoice with FOB value, HS codes, buyer/seller details, and unit prices." },
-  { name: "Packing List",                      desc: "Carton-wise breakdown: style, colour, size ratio, gross/net weight, and dimensions." },
-  { name: "Bill of Lading",                    desc: "Original negotiable B/L or seawaybill issued by the shipping line (original or telex release)." },
-  { name: "Certificate of Origin (GSP)",       desc: "Issued by FIEO / Export Inspection Council for GSP preferential duty in eligible markets." },
-  { name: "CEPA Certificate of Origin (UAE)",  desc: "India-UAE CEPA preferential origin certificate — reduces UAE import duty to 0% on qualifying garments." },
+  { name: "Commercial Invoice",                 desc: "Itemised invoice with FOB value, HS codes, buyer/seller details, and unit prices." },
+  { name: "Packing List",                       desc: "Carton-wise breakdown: style, colour, size ratio, gross/net weight, and dimensions." },
+  { name: "Bill of Lading",                     desc: "Original negotiable B/L or seawaybill issued by the shipping line (original or telex release)." },
+  { name: "Certificate of Origin (GSP)",        desc: "Issued by FIEO / Export Inspection Council for GSP preferential duty in eligible markets." },
+  { name: "CEPA Certificate of Origin (UAE)",   desc: "India-UAE CEPA preferential origin certificate — reduces UAE import duty to 0% on qualifying garments." },
   { name: "GOTS / OEKO-TEX Certificate Copies", desc: "Current scope certificate or transaction certificate per shipment for GOTS-certified orders." },
-  { name: "AZO-Free Test Report",              desc: "Third-party lab report (SGS / Intertek) confirming absence of restricted azo dyes per EN 14362-1." },
-  { name: "Formaldehyde Test Report",          desc: "Test confirming formaldehyde levels within OEKO-TEX / REACH limits for all age categories." },
+  { name: "AZO-Free Test Report",               desc: "Third-party lab report (SGS / Intertek) confirming absence of restricted azo dyes per EN 14362-1." },
+  { name: "Formaldehyde Test Report",           desc: "Test confirming formaldehyde levels within OEKO-TEX / REACH limits for all age categories." },
   { name: "ESMA / SASO Compliance Declaration", desc: "Self-declaration or third-party conformity assessment for UAE ESMA and Saudi SASO textile regulations." },
-  { name: "Arabic / English Care Label Samples", desc: "Pre-production woven label samples with bilingual care symbols per ISO 3758 for GCC buyer approval." },
+  { name: "Arabic / English Care Label Samples",desc: "Pre-production woven label samples with bilingual care symbols per ISO 3758 for GCC buyer approval." },
 ];
 
 const HS_CODES = [
@@ -61,6 +60,8 @@ const HS_CODES = [
   { category: "Ladies woven trousers",                   hs: "6204.62.00", desc: "Women's trousers and breeches — cotton" },
   { category: "Jumpsuits / dungarees",                   hs: "6204.69.00", desc: "Women's dungarees and jumpsuits — other materials" },
 ];
+
+// ── Metadata ───────────────────────────────────────────────────────────
 
 export async function generateMetadata({
   params,
@@ -76,6 +77,8 @@ export async function generateMetadata({
   };
 }
 
+// ── Page ───────────────────────────────────────────────────────────────
+
 export default async function ShippingPage({
   params,
 }: {
@@ -90,11 +93,130 @@ export default async function ShippingPage({
         items={c.faqs.items.map((f) => ({ question: f.q, answer: f.a }))}
       />
 
-      <PageHero
-        subtitle={c.hero.subtitle}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      {/* ── Hero with decorative background art ── */}
+      <section className="relative pt-20 md:pt-24 bg-cream overflow-hidden">
+
+        {/* Decorative SVG background art */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+          <svg
+            viewBox="0 0 1200 600"
+            className="absolute inset-0 w-full h-full opacity-[0.04]"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            {/* Large cargo ship silhouette — right side */}
+            <g transform="translate(650, 200)" fill="white">
+              <ellipse cx="200" cy="180" rx="280" ry="45" />
+              <rect x="-60" y="100" width="520" height="80" rx="8" />
+              <rect x="80" y="20" width="120" height="90" rx="4" />
+              <rect x="100" y="0" width="80" height="30" rx="2" />
+              <rect x="-40" y="60" width="70" height="45" rx="2" />
+              <rect x="40" y="60" width="70" height="45" rx="2" />
+              <rect x="220" y="60" width="70" height="45" rx="2" />
+              <rect x="300" y="60" width="70" height="45" rx="2" />
+              <line x1="350" y1="100" x2="350" y2="-40" stroke="white" strokeWidth="4" />
+              <line x1="350" y1="-40" x2="450" y2="-40" stroke="white" strokeWidth="3" />
+              <line x1="450" y1="-40" x2="450" y2="60" stroke="white" strokeWidth="2" />
+            </g>
+
+            {/* Fabric wavy lines — top left */}
+            <g opacity="0.8">
+              <path d="M-50,80 Q100,40 200,90 Q300,140 400,80 Q500,20 600,70" stroke="white" strokeWidth="2" fill="none" />
+              <path d="M-50,110 Q100,70 200,120 Q300,170 400,110 Q500,50 600,100" stroke="white" strokeWidth="1.5" fill="none" />
+              <path d="M-50,140 Q100,100 200,150 Q300,200 400,140 Q500,80 600,130" stroke="white" strokeWidth="1" fill="none" />
+            </g>
+
+            {/* Garment silhouette — far right */}
+            <g transform="translate(1050, 50)" fill="white" opacity="0.7">
+              <path d="M50,0 L80,0 L90,30 L110,20 L100,80 L90,200 L10,200 L0,80 L-10,20 L10,30 Z" />
+              <ellipse cx="50" cy="0" rx="30" ry="15" />
+            </g>
+
+            {/* Compass rose */}
+            <g transform="translate(900, 100)" stroke="white" fill="none" opacity="0.5">
+              <circle cx="0" cy="0" r="60" strokeWidth="1" />
+              <circle cx="0" cy="0" r="40" strokeWidth="0.5" />
+              <line x1="0" y1="-65" x2="0" y2="65" strokeWidth="1" />
+              <line x1="-65" y1="0" x2="65" y2="0" strokeWidth="1" />
+              <line x1="-46" y1="-46" x2="46" y2="46" strokeWidth="0.5" />
+              <line x1="46" y1="-46" x2="-46" y2="46" strokeWidth="0.5" />
+              <polygon points="0,-60 -8,-40 8,-40" fill="white" stroke="none" />
+            </g>
+
+            {/* Dotted shipping route arcs */}
+            <path d="M200,400 Q500,100 1000,300" stroke="white" strokeWidth="1" fill="none" strokeDasharray="8 8" opacity="0.3" />
+            <path d="M150,420 Q480,130 980,320" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="4 12" opacity="0.2" />
+
+            {/* Anchor — bottom left */}
+            <g transform="translate(80, 420)" stroke="white" fill="none" strokeWidth="3" opacity="0.6">
+              <circle cx="0" cy="-30" r="10" />
+              <line x1="0" y1="-20" x2="0" y2="40" />
+              <line x1="-25" y1="-10" x2="25" y2="-10" />
+              <path d="M-25,40 Q-40,30 -25,20" />
+              <path d="M25,40 Q40,30 25,20" />
+            </g>
+
+            {/* Scattered dots */}
+            <g fill="white" opacity="0.4">
+              {[80,160,240,320,400,480,560,640,720,800].map((x, i) => (
+                <g key={i}>
+                  <circle cx={x} cy={30 + (i % 3) * 20} r="2" />
+                  <circle cx={x + 40} cy={50 + (i % 4) * 15} r="1.5" />
+                  <circle cx={x + 20} cy={70 + (i % 2) * 25} r="1" />
+                </g>
+              ))}
+            </g>
+
+            {/* Sewing needle and thread — top right */}
+            <g transform="translate(700, 30)" stroke="white" opacity="0.5">
+              <line x1="0" y1="0" x2="80" y2="120" strokeWidth="2" />
+              <ellipse cx="0" cy="0" rx="4" ry="8" fill="white" stroke="none" transform="rotate(-55)" />
+              <path d="M80,120 Q120,100 110,140 Q100,180 140,170" strokeWidth="1.5" fill="none" />
+            </g>
+          </svg>
+
+          {/* Radial vignette */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "radial-gradient(ellipse at center, transparent 30%, #f5f0e8 100%)" }}
+          />
+        </div>
+
+        {/* Hero content — centered single column */}
+        <div className="container-wide section-spacing relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <p className="text-subheading text-[#c9a96e]">Export Logistics</p>
+            <h1 className="text-display-xl text-foreground">
+              Shipping &amp; Export from India to Middle East, Russia &amp; Global
+            </h1>
+            <p className="text-body-lg text-muted-foreground max-w-xl mx-auto">
+              Direct sea freight from JNPT Mumbai to 8 destination ports.
+              18–22 days to Jebel Ali. FOB, CIF, and DDP available.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
+              <span className="border border-[#c9a96e]/40 text-[#c9a96e] text-sm px-4 py-2 rounded-sm">FOB Mumbai</span>
+              <span className="border border-border text-muted-foreground text-sm px-4 py-2 rounded-sm">8 Destination Ports</span>
+              <span className="border border-border text-muted-foreground text-sm px-4 py-2 rounded-sm">Weekly Sailings</span>
+            </div>
+            <div className="w-16 h-px bg-[#c9a96e] mx-auto" />
+
+            {/* Stats row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2 max-w-2xl mx-auto">
+              {[
+                { v: "18–22d", l: "UAE" },
+                { v: "20–24d", l: "Saudi" },
+                { v: "25–32d", l: "Russia" },
+                { v: "FOB/CIF/DDP", l: "Incoterms" },
+              ].map((s) => (
+                <div key={s.l} className="text-center border border-border rounded p-3">
+                  <p className="font-display text-sm font-semibold text-[#c9a96e]">{s.v}</p>
+                  <p className="text-[10px] text-muted-foreground/60 uppercase tracking-widest mt-0.5">{s.l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* INCOTERMS */}
       <ContentBlock subtitle={c.incoterms.subtitle} title={c.incoterms.title}>
@@ -139,10 +261,7 @@ export default async function ShippingPage({
             </thead>
             <tbody>
               {SEA_ROUTES.map((row, i) => (
-                <tr
-                  key={`${row.country}-${row.port}`}
-                  className={`border-b border-border ${i % 2 === 0 ? "" : "bg-card"}`}
-                >
+                <tr key={`${row.country}-${row.port}`} className={`border-b border-border ${i % 2 === 0 ? "" : "bg-card"}`}>
                   <td className="py-3 pr-6 text-body-sm font-medium text-foreground">{row.country}</td>
                   <td className="py-3 pr-6 text-body-sm text-muted-foreground">{row.port}</td>
                   <td className="py-3 pr-6 text-body-sm font-medium text-olive">{row.transit}</td>
@@ -200,10 +319,7 @@ export default async function ShippingPage({
             </thead>
             <tbody>
               {HS_CODES.map((row, i) => (
-                <tr
-                  key={row.hs}
-                  className={`border-b border-border ${i % 2 === 0 ? "" : "bg-card"}`}
-                >
+                <tr key={row.hs} className={`border-b border-border ${i % 2 === 0 ? "" : "bg-card"}`}>
                   <td className="py-3 pr-6 text-body-sm font-medium text-foreground">{row.category}</td>
                   <td className="py-3 pr-6 text-body-sm font-mono text-olive">{row.hs}</td>
                   <td className="py-3 text-body-sm text-muted-foreground">{row.desc}</td>

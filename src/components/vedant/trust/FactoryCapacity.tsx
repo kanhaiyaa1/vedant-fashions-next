@@ -55,11 +55,11 @@ const FactoryCapacity = () => {
         </div>
 
         {/* Stats grid */}
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16 stagger-children">
           {stats.map(({ icon: Icon, value, label, detail }, i) => (
             <div
               key={label}
-              className={`text-center p-5 border border-border rounded hover:shadow-md transition-shadow fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
+              className={`text-center p-5 border border-border rounded hover:shadow-md transition-shadow hover-card fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
             >
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-olive/10 flex items-center justify-center">
                 <Icon className="w-4 h-4 text-olive" />

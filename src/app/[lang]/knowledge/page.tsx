@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import Link from "next/link";
+import Image from "next/image";
 import { knowledgeHubClusters, getArticlesByCluster } from "@/data/knowledge-hub";
+import { FACTORY_IMAGES } from "@/data/images";
 import PageHero from "@/components/vedant/PageHero";
 import { BookOpen, Clock } from "lucide-react";
 
@@ -59,6 +61,19 @@ const KnowledgeHubIndex = () => {
               </div>
             );
           })}
+        </div>
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mt-12">
+          {FACTORY_IMAGES.slice(0, 6).map((img, i) => (
+            <div key={i} className="relative aspect-square rounded overflow-hidden">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover opacity-70 hover:opacity-100 transition-opacity"
+                sizes="(max-width: 768px) 33vw, 16vw"
+              />
+            </div>
+          ))}
         </div>
       </section>
     </div>

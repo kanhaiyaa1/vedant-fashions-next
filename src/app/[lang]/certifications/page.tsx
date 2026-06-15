@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { Badge } from "@/components/ui/badge";
@@ -41,11 +42,14 @@ const CertificationsPage = async ({ params }: { params: Promise<{ lang: string }
     <div className="min-h-screen bg-background font-body">
       <WebPageSchema title="Certifications & Compliance" description="Third-party verified certifications for organic, chemical safety, and social compliance." url="/certifications" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }]} />
-      <PageHero
-        subtitle={c.hero.subtitle}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHeroArt image="/images/site-files/new-cotton-lawns-the-list-group.jpg" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle={c.hero.subtitle}
+          title={c.hero.title}
+          description={c.hero.description}
+          transparent
+        />
+      </PageHeroArt>
 
       <ContentBlock subtitle={c.section.subtitle} title={c.section.title}>
         <div className="space-y-6">

@@ -57,7 +57,7 @@ const Hero = ({ lang }: HeroProps) => {
         <div className="flex flex-col sm:flex-row gap-4 pt-2">
           <Button
             size="lg"
-            className="bg-white text-black hover:bg-white/90 uppercase text-xs tracking-widest px-10 h-12 font-medium"
+            className="bg-white text-black hover:bg-white/90 uppercase text-xs tracking-widest px-10 h-12 font-medium animate-pulse-gold"
             asChild
           >
             <Link href={`/${locale}/catalog`}>Request Catalogue</Link>
@@ -80,7 +80,7 @@ const Hero = ({ lang }: HeroProps) => {
           {c.stats.map((stat, i) => (
             <div key={stat.label} className="flex items-center">
               {i > 0 && <div className="w-px h-10 bg-white/20 mx-6 md:mx-10" />}
-              <div className="text-center">
+              <div className="text-center animate-float" style={{ animationDelay: `${i * 0.5}s` }}>
                 <p className="font-display text-2xl md:text-3xl font-semibold text-gold">{stat.value}</p>
                 <p className="text-xs text-white/50 uppercase tracking-widest mt-0.5">{stat.label}</p>
               </div>

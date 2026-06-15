@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { Scissors, Ruler, Shirt, Package, Layers, Zap, Clock, ShieldCheck, Users, Factory } from "lucide-react";
@@ -61,11 +62,14 @@ const ManufacturingPage = async ({ params }: { params: Promise<{ lang: string }>
         steps={c.process.items.map((item) => ({ name: item.title, text: item.desc }))}
       />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Manufacturing", url: "/manufacturing" }]} />
-      <PageHero
-        subtitle={c.hero.subtitle}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHeroArt image="/images/site-files/silai-machine.JPG" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle={c.hero.subtitle}
+          title={c.hero.title}
+          description={c.hero.description}
+          transparent
+        />
+      </PageHeroArt>
 
       {/* Why Vedant */}
       <ContentBlock subtitle={c.advantages.subtitle} title={c.advantages.title}>

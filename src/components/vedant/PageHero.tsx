@@ -6,12 +6,13 @@ interface PageHeroProps {
   title: string;
   description: string;
   image?: string;
+  transparent?: boolean;
 }
 
-const PageHero = ({ subtitle, title, description }: PageHeroProps) => {
+const PageHero = ({ subtitle, title, description, transparent }: PageHeroProps) => {
   return (
     <section className="relative pt-20 md:pt-24">
-      <div className="bg-cream">
+      <div className={transparent ? "bg-transparent" : "bg-cream"}>
         <div className="container-wide section-spacing">
           <div className="max-w-3xl space-y-6">
             <FadeIn>

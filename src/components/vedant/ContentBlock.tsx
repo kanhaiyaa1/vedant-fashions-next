@@ -20,7 +20,7 @@ const ContentBlock = ({ subtitle, title = "", children, className = "", bg = "de
           <div className="text-center mb-16 space-y-4">
             {subtitle && (
               <FadeUp delay={0}>
-                <p className={`text-subheading ${bg === "dark" ? "text-primary-foreground/50" : "text-gold"}`}>{subtitle}</p>
+                <p className={`text-subheading ${bg === "dark" ? "text-primary-foreground/50" : "text-gradient-animate"}`}>{subtitle}</p>
               </FadeUp>
             )}
             <FadeUp delay={1}>

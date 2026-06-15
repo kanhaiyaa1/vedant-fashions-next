@@ -114,6 +114,29 @@ export const FOUNDER_IMAGE = "/images/docs/shravan-diwan.png"
 
 export const MAKE_IN_INDIA = "/images/site-files/make-in-india.png"
 
+export const ALL_PRODUCT_IMAGES: string[] = [
+  ...PRODUCT_IMAGES.blouses,
+  ...PRODUCT_IMAGES.dresses,
+  ...PRODUCT_IMAGES.tops.slice(0, 20),
+  ...PRODUCT_IMAGES.skirts,
+  ...PRODUCT_IMAGES.pants,
+]
+
+export const HERO_GALLERY_IMAGES: string[] = [
+  "/images/blouses/pink-embroidered-blouse.jpeg",
+  "/images/blouses/teal-patterned-blouse.jpeg",
+  "/images/dresses/maroon-floral-midi-dress.jpeg",
+  "/images/dresses/dark-floral-kaftan-dress.jpeg",
+  "/images/tops/dark-sequin-blouse.jpeg",
+  "/images/tops/yellow-blue-embroidered-blouse.jpeg",
+  "/images/skirts/red-floral-print-maxi-skirt.jpeg",
+  "/images/pants/dark-grey-wide-leg-pants.jpeg",
+  "/images/blouses/cream-bell-sleeve-tassel-blouse.jpeg",
+  "/images/dresses/pink-satin-wrap-dress.jpeg",
+  "/images/tops/royal-blue-ruffle-blouse.jpeg",
+  "/images/dresses/teal-tie-dye-dress.jpeg",
+]
+
 export function getImages(arr: string[], count: number, offset = 0): string[] {
   return arr.slice(offset, offset + count)
 }

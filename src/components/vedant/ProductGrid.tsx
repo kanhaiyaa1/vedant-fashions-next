@@ -93,9 +93,9 @@ const ProductGrid = ({ dbProducts }: ProductGridProps = {}) => {
           ))}
         </div>
 
-        <div ref={grid.ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div ref={grid.ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 stagger-children">
           {displayProducts.map((product, i) => (
-            <div key={product.name} className={`fade-up ${cardDelay[i] ?? "fade-up-delay-4"} ${grid.inView ? "visible" : ""}`}>
+            <div key={product.name} className={`fade-up hover-card hover-zoom rounded ${cardDelay[i] ?? "fade-up-delay-4"} ${grid.inView ? "visible" : ""}`}>
               <ProductCard {...product} image={CARD_IMAGES[i % CARD_IMAGES.length]} />
             </div>
           ))}

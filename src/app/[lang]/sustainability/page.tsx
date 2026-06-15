@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { Leaf, Droplets, Sun, Recycle, TreePine, Heart, FileCheck, Award } from "lucide-react";
@@ -57,11 +58,14 @@ const SustainabilityPage = async ({ params }: { params: Promise<{ lang: string }
     <div className="min-h-screen bg-background font-body">
       <WebPageSchema title="Sustainability Commitment" description="Sustainable fashion manufacturing with verified certifications and transparent reporting." url="/sustainability" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Sustainability", url: "/sustainability" }]} />
-      <PageHero
-        subtitle={c.hero.subtitle}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHeroArt image="/images/site-files/new-cotton-lawns-the-list-group.jpg" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle={c.hero.subtitle}
+          title={c.hero.title}
+          description={c.hero.description}
+          transparent
+        />
+      </PageHeroArt>
 
       {/* Pillars */}
       <ContentBlock subtitle={c.pillars.subtitle} title={c.pillars.title}>

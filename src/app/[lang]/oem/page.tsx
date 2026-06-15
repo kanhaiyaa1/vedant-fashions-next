@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { CheckCircle, Layers, Scissors, Lightbulb } from "lucide-react";
@@ -30,7 +31,9 @@ export default async function OEMPage({ params }: { params: Promise<{ lang: stri
     <div className="min-h-screen bg-background font-body">
       <ServiceSchema name={c.hero.title} description={c.hero.description} url="/oem" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: c.hero.subtitle, url: "/oem" }]} />
-      <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} />
+      <PageHeroArt image="/images/tops/floral-multi-color-blouse.jpeg" opacity={0.15} blur={1}>
+        <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} transparent />
+      </PageHeroArt>
 
       {/* Services */}
       <ContentBlock subtitle={c.services.subtitle} title={c.services.title}>

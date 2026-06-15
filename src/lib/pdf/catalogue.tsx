@@ -241,6 +241,7 @@ interface GroupedCategory {
   products: Array<{
     name: string;
     shortDescription: string;
+    description?: string;
     moq: string;
     leadTime: string;
     certifications: string[];

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { Shield, Users, Globe, Award, Factory, Truck } from "lucide-react";
@@ -29,11 +30,14 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
     <div className="min-h-screen bg-background font-body">
       <WebPageSchema title="About Vedant Fashion" description="Mumbai-based B2B ladies woven wear manufacturer exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets since 2015." url="/about" type="AboutPage" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]} />
-      <PageHero
-        subtitle={c.hero.subtitle}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHeroArt image="/images/site-files/cloth-crafting.png" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle={c.hero.subtitle}
+          title={c.hero.title}
+          description={c.hero.description}
+          transparent
+        />
+      </PageHeroArt>
 
       {/* Mission */}
       <ContentBlock subtitle={c.mission.subtitle} title={c.mission.title}>
@@ -82,7 +86,7 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
       <ContentBlock subtitle={c.milestones.subtitle} title={c.milestones.title}>
         <div className="max-w-2xl mx-auto">
           {c.milestones.items.map((m, i) => (
-            <div key={m.year} className="flex gap-6 pb-8 last:pb-0">
+            <div key={`${m.year}-${i}`} className="flex gap-6 pb-8 last:pb-0">
               <div className="flex flex-col items-center">
                 <div className="w-3 h-3 rounded-full bg-gold shrink-0" />
                 {i < c.milestones.items.length - 1 && <div className="w-px flex-1 bg-border mt-2" />}

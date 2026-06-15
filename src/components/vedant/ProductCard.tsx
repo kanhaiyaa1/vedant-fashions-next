@@ -16,8 +16,8 @@ interface ProductCardProps {
 const ProductCard = ({ name, category, composition, weight, moq, certifications, image }: ProductCardProps) => {
   const cardImage = image ?? getCategoryImages(category)[0];
   return (
-    <div className="group cursor-pointer">
-      <div className="aspect-[3/4] rounded overflow-hidden mb-4 relative bg-secondary">
+    <div className="group cursor-pointer hover-card rounded">
+      <div className="aspect-[3/4] rounded overflow-hidden mb-4 relative bg-secondary hover-zoom">
         {cardImage && (
           <Image
             src={cardImage}
@@ -42,7 +42,7 @@ const ProductCard = ({ name, category, composition, weight, moq, certifications,
       {/* Info */}
       <div className="space-y-1.5">
         <p className="text-caption uppercase tracking-wider">{category}</p>
-        <h3 className="font-display text-lg font-medium text-foreground group-hover:text-primary transition-colors">
+        <h3 className="font-display text-lg font-medium text-foreground group-hover:text-primary transition-colors hover-gold inline-block">
           {name}
         </h3>
         <p className="text-body-sm text-muted-foreground">{composition}</p>

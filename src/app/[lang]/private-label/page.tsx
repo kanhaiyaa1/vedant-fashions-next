@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { CheckCircle, Lock, FileText, Palette } from "lucide-react";
@@ -30,7 +31,9 @@ export default async function PrivateLabelPage({ params }: { params: Promise<{ l
     <div className="min-h-screen bg-background font-body">
       <ServiceSchema name={c.hero.title} description={c.hero.description} url="/private-label" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: c.hero.subtitle, url: "/private-label" }]} />
-      <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} />
+      <PageHeroArt image="/images/blouses/cream-bell-sleeve-tassel-blouse.jpeg" opacity={0.15} blur={1}>
+        <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} transparent />
+      </PageHeroArt>
 
       {/* Advantages */}
       <ContentBlock subtitle={c.advantages.subtitle} title={c.advantages.title}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { CheckCircle, ShieldCheck, AlertTriangle } from "lucide-react";
@@ -46,7 +47,9 @@ export default async function QualityControlPage({ params }: { params: Promise<{
     <div className="min-h-screen bg-background font-body">
       <WebPageSchema title={c.hero.title} description={c.hero.description} url="/quality-control" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: c.hero.subtitle, url: "/quality-control" }]} />
-      <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} />
+      <PageHeroArt image="/images/site-files/cloth-measurement.JPG" opacity={0.15} blur={1}>
+        <PageHero subtitle={c.hero.subtitle} title={c.hero.title} description={c.hero.description} transparent />
+      </PageHeroArt>
 
       {/* QC Process */}
       <ContentBlock subtitle={c.process.subtitle} title={c.process.title}>

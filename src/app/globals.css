@@ -6,7 +6,7 @@
   :root {
     /* Luxury sustainable textile palette */
     --background: 40 20% 97%;
-    --foreground: 220 15% 15%;
+    --foreground: 220 15% 8%;
 
     --card: 40 15% 99%;
     --card-foreground: 220 15% 15%;
@@ -23,7 +23,7 @@
     --secondary-foreground: 220 15% 15%;
 
     --muted: 35 12% 93%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 10% 35%;
 
     /* Soft sand accent */
     --accent: 35 30% 88%;
@@ -143,26 +143,26 @@
 @layer components {
   .text-display-xl {
     font-family: var(--font-display);
-    @apply text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
   }
   .text-display-lg {
     font-family: var(--font-display);
-    @apply text-4xl md:text-5xl font-light leading-tight tracking-tight;
+    @apply text-4xl md:text-5xl font-bold leading-tight tracking-tight;
   }
   .text-display-md {
     font-family: var(--font-display);
-    @apply text-3xl md:text-4xl font-light leading-snug;
+    @apply text-3xl md:text-4xl font-semibold leading-snug tracking-tight;
   }
   .text-display-sm {
     font-family: var(--font-display);
-    @apply text-2xl md:text-3xl font-normal leading-snug;
+    @apply text-2xl md:text-3xl font-semibold leading-snug;
   }
   .text-heading {
     font-family: var(--font-display);
-    @apply text-xl md:text-2xl font-medium leading-snug;
+    @apply text-xl md:text-2xl font-semibold leading-snug;
   }
   .text-subheading {
-    @apply text-sm font-medium uppercase tracking-[0.15em] text-muted-foreground;
+    @apply text-xs sm:text-sm font-semibold tracking-widest uppercase;
   }
   .text-body-lg {
     @apply text-base md:text-lg leading-relaxed;
@@ -231,3 +231,145 @@
 
 .skeleton { background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground)/0.1) 50%, hsl(var(--muted)) 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s infinite; }
 @keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* CHANGE 2 — Text visibility fix */
+.text-foreground {
+  color: hsl(var(--foreground));
+  opacity: 1 !important;
+}
+
+/* CHANGE 3 — Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.hover-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: hsl(var(--gold));
+}
+
+.hover-zoom img,
+.hover-zoom .next-image {
+  transition: transform 0.5s ease;
+}
+.hover-zoom:hover img,
+.hover-zoom:hover .next-image {
+  transform: scale(1.05);
+}
+
+.hover-gold {
+  position: relative;
+  text-decoration: none;
+}
+.hover-gold::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: hsl(var(--gold));
+  transition: width 0.3s ease;
+}
+.hover-gold:hover::after {
+  width: 100%;
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-shimmer:hover::before {
+  left: 150%;
+}
+
+/* CHANGE 4 — Self-animating elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(201, 169, 110, 0); }
+}
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-count {
+  animation: count-up 0.6s ease-out forwards;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.text-gradient-animate {
+  background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--foreground)), hsl(var(--gold)));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fade-up 0.5s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* CHANGE 5 — Button classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide bg-primary text-primary-foreground rounded-sm hover-lift btn-shimmer cursor-pointer;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide border border-primary text-primary bg-transparent rounded-sm hover-lift cursor-pointer;
+  }
+}

@@ -44,7 +44,7 @@ export async function GET() {
           p.shortDescription ?? p.description ?? "Premium ladies woven wear.",
         moq: p.moq ?? 100,
         leadTime: p.leadTime ?? "60-90 days",
-        fobPrice: p.fobPrice ?? "USD 5-8",
+
         certifications: p.certifications ?? [],
         fabricOptions: p.fabricOptions ?? [],
         sku: p.sku ?? p.slug ?? p.id ?? "VF-001",
@@ -66,7 +66,7 @@ export async function GET() {
     );
 
     const pdfBuffer = await renderToBuffer(testPdf);
-    return new Response(pdfBuffer, {
+    return new Response(new Uint8Array(pdfBuffer), {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition": 'attachment; filename="Vedant-Fashion-Catalogue.pdf"',

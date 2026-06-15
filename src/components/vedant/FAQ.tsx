@@ -21,7 +21,7 @@ const FAQ = () => {
           <h2 className="text-display-md text-foreground">Frequently Asked Questions</h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-2">
+        <Accordion type="single" collapsible className="space-y-2 stagger-children">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border border-border rounded px-6 data-[state=open]:bg-cream">
               <AccordionTrigger className="text-left font-display text-base md:text-lg font-medium hover:no-underline py-5">

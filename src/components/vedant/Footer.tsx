@@ -108,7 +108,7 @@ const Footer = () => {
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <LocaleLink href={link.href} className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+                    <LocaleLink href={link.href} className="text-sm opacity-70 hover:opacity-100 transition-opacity hover-gold">
                       {link.label}
                     </LocaleLink>
                   </li>

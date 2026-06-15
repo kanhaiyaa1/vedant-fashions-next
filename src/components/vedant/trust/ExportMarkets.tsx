@@ -59,9 +59,9 @@ const ExportMarkets = ({ lang }: ExportMarketsProps) => {
           </div>
 
           {/* Market breakdown */}
-          <div className="lg:col-span-3 space-y-3">
+          <div className="lg:col-span-3 space-y-3 stagger-children">
             {markets.map((m) => (
-              <div key={m.region} className={`border rounded p-4 md:p-5 flex items-center justify-between gap-4 ${m.highlight ? "border-primary bg-primary/5" : "border-border"}`}>
+              <div key={m.region} className={`border rounded p-4 md:p-5 flex items-center justify-between gap-4 hover-card ${m.highlight ? "border-primary bg-primary/5" : "border-border"}`}>
                 <div>
                   <p className="font-display text-base font-medium text-foreground">{m.region}</p>
                   <p className="text-caption mt-0.5">{m.countries}</p>

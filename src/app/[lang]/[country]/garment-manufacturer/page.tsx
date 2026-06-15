@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { countryPages } from "@/data/seo-pages";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import {
   CheckCircle,
@@ -86,11 +87,14 @@ export default async function CountryLandingPage({ params }: PageProps) {
       )}
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <PageHero
-        subtitle={`Export to ${page.country}`}
-        title={page.h1Title ?? page.heroTitle}
-        description={page.heroDescription}
-      />
+      <PageHeroArt image="/images/tops/dark-sequin-blouse.jpeg" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle={`Export to ${page.country}`}
+          title={page.h1Title ?? page.heroTitle}
+          description={page.heroDescription}
+          transparent
+        />
+      </PageHeroArt>
 
       {/* ── H1 PAGE TITLE (semantic SEO) ─────────────────────────────── */}
       {page.h1Title && (

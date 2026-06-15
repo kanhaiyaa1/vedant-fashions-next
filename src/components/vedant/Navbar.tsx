@@ -150,7 +150,7 @@ const Navbar = () => {
               <LocaleLink
                 key={item.labelKey}
                 href={item.href}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase hover-gold"
               >
                 {t(item.labelKey)}
               </LocaleLink>
@@ -171,7 +171,7 @@ const Navbar = () => {
                       <LocaleLink
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                        className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors hover-gold"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {t(child.labelKey)}

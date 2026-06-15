@@ -42,11 +42,11 @@ const CertificationBadges = () => {
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 stagger-children">
           {certifications.map(({ icon: Icon, name, desc }, i) => (
             <div
               key={name}
-              className={`bg-card border border-border rounded p-6 md:p-8 text-center space-y-3 hover:shadow-md transition-shadow fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
+              className={`bg-card border border-border rounded p-6 md:p-8 text-center space-y-3 hover:shadow-md transition-shadow hover-lift fade-up ${delayClass[i]} ${inView ? "visible" : ""}`}
             >
               <div className="w-12 h-12 mx-auto rounded-full bg-olive/10 flex items-center justify-center">
                 <Icon className="w-5 h-5 text-olive" />

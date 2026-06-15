@@ -1,3 +1,5 @@
+import { getProductImages } from "@/data/images";
+
 // ── Product Data Model ──────────────────────────────────────────────
 
 export interface FabricOption {
@@ -1007,6 +1009,16 @@ products.forEach((p) => {
       if (!f.price) f.price = fob;
     });
   }
+});
+
+// Populate galleryImages for all products by cycling category images
+const _catIdx: Record<string, number> = {};
+products.forEach((p) => {
+  const i = _catIdx[p.category] ?? 0;
+  if (!p.galleryImages || p.galleryImages.length === 0) {
+    p.galleryImages = getProductImages(p.category, i);
+  }
+  _catIdx[p.category] = i + 1;
 });
 
 // ── Helper functions ────────────────────────────────────────────────

@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
+import PageHeroArt from "@/components/vedant/PageHeroArt";
 import ContentBlock from "@/components/vedant/ContentBlock";
 import CTASection from "@/components/vedant/CTASection";
 import { getProductsByCategory, categoryFobPricing } from "@/data/products";
 import { getActiveProducts } from "@/lib/supabase/products";
+import { getProductImages } from "@/data/images";
 
 export async function generateMetadata({
   params,
@@ -146,6 +149,7 @@ export default async function ProductCategoriesPage({
       certifications: useDb
         ? (dbCategoryProds[0]?.certifications ?? []).slice(0, 3)
         : [...new Set(hardcodedProds.flatMap((p) => p.certifications))].slice(0, 3),
+      image: getProductImages(slug, 0)[0] ?? null,
     };
   });
 
@@ -157,11 +161,14 @@ export default async function ProductCategoriesPage({
       />
 
       {/* HERO */}
-      <PageHero
-        subtitle="Product Categories"
-        title="Ladies Woven Wear — Wholesale Manufacturing from India"
-        description="GOTS and OEKO-TEX certified ladies woven garments manufactured in India for Middle East, GCC, and global wholesale buyers. MOQ from 300 pcs. FOB Mumbai."
-      />
+      <PageHeroArt image="/images/blouses/pink-embroidered-blouse.jpeg" opacity={0.15} blur={1}>
+        <PageHero
+          subtitle="Product Categories"
+          title="Ladies Woven Wear — Wholesale Manufacturing from India"
+          description="GOTS and OEKO-TEX certified ladies woven garments manufactured in India for Middle East, GCC, and global wholesale buyers. MOQ from 300 pcs. FOB Mumbai."
+          transparent
+        />
+      </PageHeroArt>
 
       {/* MARKET INTRO */}
       <ContentBlock subtitle="Export Markets" title="We Export Ladies Woven Wear To">
@@ -204,10 +211,20 @@ export default async function ProductCategoriesPage({
               href={`/${lang}${cat.href}`}
               className="group bg-card border border-border rounded overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="aspect-[16/9] bg-gradient-to-br from-primary/8 via-accent to-secondary flex items-center justify-center">
-                <p className="font-display text-xl text-primary/40 group-hover:text-primary/60 transition-colors">
-                  {cat.label}
-                </p>
+              <div className="aspect-[16/9] relative overflow-hidden bg-secondary">
+                {cat.image ? (
+                  <Image
+                    src={cat.image}
+                    alt={cat.label}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary/8 via-accent to-secondary flex items-center justify-center">
+                    <p className="font-display text-xl text-primary/40">{cat.label}</p>
+                  </div>
+                )}
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
