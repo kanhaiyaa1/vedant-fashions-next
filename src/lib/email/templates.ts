@@ -73,8 +73,8 @@ export function welcomeEmail({ name, company, country }: { name: string; company
         <td style="width:33%;padding:4px;">
           <div style="border:1px solid #c9a96e;border-radius:6px;padding:20px;text-align:center;">
             <p style="margin:0 0 8px 0;font-size:22px;">🏆</p>
-            <p style="margin:0 0 4px 0;font-size:14px;font-weight:700;color:#1a1a1a;">GOTS &amp; OEKO-TEX</p>
-            <p style="margin:0;font-size:12px;color:#666;line-height:1.5;">Internationally certified sustainable production</p>
+            <p style="margin:0 0 4px 0;font-size:14px;font-weight:700;color:#1a1a1a;">ISO 9001:2015</p>
+            <p style="margin:0;font-size:12px;color:#666;line-height:1.5;">Certified quality-managed production</p>
           </div>
         </td>
       </tr>
@@ -155,7 +155,7 @@ export function day5ReminderEmail({ name, company, country }: { name: string; co
         </td>
       </tr>
     </table>
-    <p style="margin:0;font-size:13px;color:#888;text-align:center;">✓ GOTS Certified &nbsp;·&nbsp; ✓ OEKO-TEX &nbsp;·&nbsp; ✓ FOB Mumbai &nbsp;·&nbsp; ✓ 18-22 Days to UAE</p>
+    <p style="margin:0;font-size:13px;color:#888;text-align:center;">✓ ISO 9001:2015 &nbsp;·&nbsp; ✓ FOB Mumbai &nbsp;·&nbsp; ✓ 18-22 Days to UAE</p>
   `;
   return emailBase({ previewText: "Download our full product range with pricing and specs", content });
 }

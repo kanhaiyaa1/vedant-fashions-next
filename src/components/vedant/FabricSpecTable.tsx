@@ -6,12 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { FadeUp, FadeIn } from "@/components/vedant/animations";
 
 const specs = [
-  { fabric: "Milano Twill", composition: "100% Organic Cotton", weight: "120 GSM", width: "150 cm", shrinkage: "< 3%", colorfastness: "4-5", cert: "GOTS" },
-  { fabric: "Nordic Linen", composition: "55% Linen, 45% Tencel™", weight: "180 GSM", width: "145 cm", shrinkage: "< 5%", colorfastness: "4", cert: "GRS" },
-  { fabric: "Alpine Fleece", composition: "70% rPET, 30% Organic Cotton", weight: "280 GSM", width: "160 cm", shrinkage: "< 2%", colorfastness: "4-5", cert: "GRS" },
-  { fabric: "Riviera Chambray", composition: "100% Organic Cotton", weight: "150 GSM", width: "150 cm", shrinkage: "< 3%", colorfastness: "4-5", cert: "GOTS" },
-  { fabric: "Côte Satin", composition: "100% Tencel™ Lyocell", weight: "95 GSM", width: "140 cm", shrinkage: "< 2%", colorfastness: "4-5", cert: "OEKO-TEX" },
-  { fabric: "Fjord Jersey", composition: "95% OC, 5% EA", weight: "200 GSM", width: "155 cm", shrinkage: "< 4%", colorfastness: "4", cert: "GOTS" },
+  { fabric: "Milano Twill", composition: "100% Organic Cotton", weight: "120 GSM", width: "150 cm", shrinkage: "< 3%", colorfastness: "4-5", cert: "" },
+  { fabric: "Nordic Linen", composition: "55% Linen, 45% Tencel™", weight: "180 GSM", width: "145 cm", shrinkage: "< 5%", colorfastness: "4", cert: "" },
+  { fabric: "Alpine Fleece", composition: "70% rPET, 30% Organic Cotton", weight: "280 GSM", width: "160 cm", shrinkage: "< 2%", colorfastness: "4-5", cert: "" },
+  { fabric: "Riviera Chambray", composition: "100% Organic Cotton", weight: "150 GSM", width: "150 cm", shrinkage: "< 3%", colorfastness: "4-5", cert: "" },
+  { fabric: "Côte Satin", composition: "100% Tencel™ Lyocell", weight: "95 GSM", width: "140 cm", shrinkage: "< 2%", colorfastness: "4-5", cert: "" },
+  { fabric: "Fjord Jersey", composition: "95% OC, 5% EA", weight: "200 GSM", width: "155 cm", shrinkage: "< 4%", colorfastness: "4", cert: "" },
 ];
 
 const FabricSpecTable = () => {

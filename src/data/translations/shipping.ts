@@ -57,7 +57,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Shipping & Logistics",
       title: "Shipping & Export from India to Middle East, Russia & Global",
       description:
-        "FOB Mumbai sea freight to GCC ports in 17–24 days. Full export documentation including CEPA, GOTS certificates, and GCC compliance declarations. FOB, CIF, and DDP Incoterms available.",
+        "FOB Mumbai sea freight to GCC ports in 17–24 days. Full export documentation including CEPA certificates and GCC compliance declarations. FOB, CIF, and DDP Incoterms available.",
     },
     incoterms: {
       subtitle: "Trade Terms",
@@ -97,7 +97,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Air Freight",
       title: "Express Delivery by Air",
       description:
-        "Air freight is recommended for orders under 500 kg — typically sample sets, urgent replenishment, or high-value garment categories where speed outweighs cost. We ship from Ahmedabad (AMD) or Mumbai (BOM) to all major GCC and European hubs.",
+        "Air freight is recommended for orders under 500 kg — typically sample sets, urgent replenishment, or high-value garment categories where speed outweighs cost. We ship from Mumbai (BOM) to all major GCC and European hubs.",
       footnote:
         "Air freight pricing provided on request alongside sea freight quotation. Airway bill, commercial invoice, and certificate of origin included with all air shipments.",
     },
@@ -157,7 +157,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "الشحن واللوجستيات",
       title: "الشحن والتصدير من الهند إلى الشرق الأوسط وروسيا والعالم",
       description:
-        "شحن بحري FOB من مومباي إلى موانئ دول مجلس التعاون الخليجي في 17–24 يوماً. وثائق تصدير كاملة تشمل شهادات CEPA وGOTS وإقرارات الامتثال الخليجي. شروط FOB وCIF وDDP متاحة.",
+        "شحن بحري FOB من مومباي إلى موانئ دول مجلس التعاون الخليجي في 17–24 يوماً. وثائق تصدير كاملة تشمل شهادات CEPA وإقرارات الامتثال الخليجي. شروط FOB وCIF وDDP متاحة.",
     },
     incoterms: {
       subtitle: "شروط التجارة",
@@ -197,7 +197,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "الشحن الجوي",
       title: "التسليم السريع جواً",
       description:
-        "يُوصى بالشحن الجوي للطلبيات التي تقل عن 500 كغ — عادةً مجموعات العينات أو التجديد العاجل أو فئات الملابس عالية القيمة حيث تتفوق السرعة على التكلفة. نشحن من أحمد آباد (AMD) أو مومباي (BOM) إلى جميع مراكز دول مجلس التعاون الخليجي وأوروبا الكبرى.",
+        "يُوصى بالشحن الجوي للطلبيات التي تقل عن 500 كغ — عادةً مجموعات العينات أو التجديد العاجل أو فئات الملابس عالية القيمة حيث تتفوق السرعة على التكلفة. نشحن من مومباي (BOM) إلى جميع مراكز دول مجلس التعاون الخليجي وأوروبا الكبرى.",
       footnote:
         "يُقدَّم سعر الشحن الجوي عند الطلب جنباً إلى جنب مع عرض أسعار الشحن البحري. يشمل كل شحنة جوية بوليصة الشحن الجوي والفاتورة التجارية وشهادة المنشأ.",
     },
@@ -257,7 +257,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Доставка и логистика",
       title: "Доставка и экспорт из Индии на Ближний Восток, в Россию и по всему миру",
       description:
-        "Морской фрахт FOB из Мумбаи до портов GCC за 17–24 дня. Полный комплект экспортных документов включая CEPA, сертификаты GOTS и декларации соответствия GCC. Доступны условия FOB, CIF и DDP.",
+        "Морской фрахт FOB из Мумбаи до портов GCC за 17–24 дня. Полный комплект экспортных документов включая CEPA и декларации соответствия GCC. Доступны условия FOB, CIF и DDP.",
     },
     incoterms: {
       subtitle: "Торговые условия",
@@ -357,7 +357,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Wysyłka i logistyka",
       title: "Wysyłka i eksport z Indii na Bliski Wschód, do Rosji i na cały świat",
       description:
-        "Morski transport FOB z Mumbaju do portów GCC w 17–24 dni. Pełna dokumentacja eksportowa, w tym certyfikaty CEPA i GOTS oraz deklaracje zgodności GCC. Dostępne warunki FOB, CIF i DDP.",
+        "Morski transport FOB z Mumbaju do portów GCC w 17–24 dni. Pełna dokumentacja eksportowa, w tym certyfikaty CEPA oraz deklaracje zgodności GCC. Dostępne warunki FOB, CIF i DDP.",
     },
     incoterms: {
       subtitle: "Warunki handlu",
@@ -397,7 +397,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Transport lotniczy",
       title: "Ekspresowa dostawa lotnicza",
       description:
-        "Transport lotniczy jest zalecany dla zamówień poniżej 500 kg — zazwyczaj zestawy wzorców, pilne uzupełnienia lub kategorie odzieży o wysokiej wartości, gdzie szybkość jest ważniejsza od kosztu. Wysyłamy z Ahmedabadu (AMD) lub Mumbaju (BOM) do wszystkich głównych hubów GCC i Europy.",
+        "Transport lotniczy jest zalecany dla zamówień poniżej 500 kg — zazwyczaj zestawy wzorców, pilne uzupełnienia lub kategorie odzieży o wysokiej wartości, gdzie szybkość jest ważniejsza od kosztu. Wysyłamy z Mumbaju (BOM) do wszystkich głównych hubów GCC i Europy.",
       footnote:
         "Ceny frachtu lotniczego są podawane na życzenie wraz z ofertą frachtu morskiego. Do każdej przesyłki lotniczej dołączany jest list lotniczy, faktura handlowa i certyfikat pochodzenia.",
     },
@@ -457,7 +457,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Expédition et logistique",
       title: "Expédition et export d'Inde vers le Moyen-Orient, la Russie et le monde",
       description:
-        "Fret maritime FOB depuis Mumbai vers les ports GCC en 17–24 jours. Documentation d'export complète incluant certificats CEPA, GOTS et déclarations de conformité GCC. Incoterms FOB, CIF et DDP disponibles.",
+        "Fret maritime FOB depuis Mumbai vers les ports GCC en 17–24 jours. Documentation d'export complète incluant certificats CEPA et déclarations de conformité GCC. Incoterms FOB, CIF et DDP disponibles.",
     },
     incoterms: {
       subtitle: "Conditions commerciales",
@@ -497,7 +497,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Fret aérien",
       title: "Livraison express par avion",
       description:
-        "Le fret aérien est recommandé pour les commandes inférieures à 500 kg — généralement des ensembles d'échantillons, des réassortiments urgents ou des catégories de vêtements à forte valeur où la rapidité prime sur le coût. Nous expédions depuis Ahmedabad (AMD) ou Mumbai (BOM) vers tous les grands hubs GCC et européens.",
+        "Le fret aérien est recommandé pour les commandes inférieures à 500 kg — généralement des ensembles d'échantillons, des réassortiments urgents ou des catégories de vêtements à forte valeur où la rapidité prime sur le coût. Nous expédions depuis Mumbai (BOM) vers tous les grands hubs GCC et européens.",
       footnote:
         "Le prix du fret aérien est fourni sur demande avec le devis du fret maritime. Lettre de transport aérien, facture commerciale et certificat d'origine inclus dans toutes les expéditions aériennes.",
     },
@@ -557,7 +557,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Spedizione e logistica",
       title: "Spedizione ed esportazione dall'India verso Medio Oriente, Russia e tutto il mondo",
       description:
-        "Nolo marittimo FOB da Mumbai ai porti GCC in 17–24 giorni. Documentazione di esportazione completa inclusi certificati CEPA e GOTS e dichiarazioni di conformità GCC. Incoterms FOB, CIF e DDP disponibili.",
+        "Nolo marittimo FOB da Mumbai ai porti GCC in 17–24 giorni. Documentazione di esportazione completa inclusi certificati CEPA e dichiarazioni di conformità GCC. Incoterms FOB, CIF e DDP disponibili.",
     },
     incoterms: {
       subtitle: "Condizioni commerciali",
@@ -597,7 +597,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Trasporto aereo",
       title: "Consegna express via aerea",
       description:
-        "Il trasporto aereo è raccomandato per ordini inferiori a 500 kg — tipicamente set di campioni, rifornimenti urgenti o categorie di capi ad alto valore dove la velocità supera il costo. Spediamo da Ahmedabad (AMD) o Mumbai (BOM) verso tutti i principali hub GCC ed europei.",
+        "Il trasporto aereo è raccomandato per ordini inferiori a 500 kg — tipicamente set di campioni, rifornimenti urgenti o categorie di capi ad alto valore dove la velocità supera il costo. Spediamo da Mumbai (BOM) verso tutti i principali hub GCC ed europei.",
       footnote:
         "Il prezzo del nolo aereo viene fornito su richiesta insieme al preventivo del nolo marittimo. Lettera di trasporto aereo, fattura commerciale e certificato d'origine inclusi in tutte le spedizioni aeree.",
     },
@@ -657,7 +657,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Verzending en logistiek",
       title: "Verzending en export vanuit India naar Midden-Oosten, Rusland en de wereld",
       description:
-        "FOB Mumbai zeevracht naar GCC-havens in 17–24 dagen. Volledige exportdocumentatie inclusief CEPA- en GOTS-certificaten en GCC-nalevingsverklaringen. FOB, CIF en DDP Incoterms beschikbaar.",
+        "FOB Mumbai zeevracht naar GCC-havens in 17–24 dagen. Volledige exportdocumentatie inclusief CEPA-certificaten en GCC-nalevingsverklaringen. FOB, CIF en DDP Incoterms beschikbaar.",
     },
     incoterms: {
       subtitle: "Handelsvoorwaarden",
@@ -697,7 +697,7 @@ export const shippingContent: Record<string, ShippingLocale> = {
       subtitle: "Luchtvracht",
       title: "Express levering per lucht",
       description:
-        "Luchtvracht wordt aanbevolen voor bestellingen onder de 500 kg — doorgaans monstersets, urgente aanvulling of hoge waarde kledingcategorieën waarbij snelheid zwaarder weegt dan kosten. Wij verzenden vanuit Ahmedabad (AMD) of Mumbai (BOM) naar alle grote GCC- en Europese hubs.",
+        "Luchtvracht wordt aanbevolen voor bestellingen onder de 500 kg — doorgaans monstersets, urgente aanvulling of hoge waarde kledingcategorieën waarbij snelheid zwaarder weegt dan kosten. Wij verzenden vanuit Mumbai (BOM) naar alle grote GCC- en Europese hubs.",
       footnote:
         "Luchtvrachttarieven worden op aanvraag verstrekt samen met de zeevrachtoffer. Luchtvrachtbrief, handelsfactuur en oorsprongscertificaat inbegrepen bij alle luchtzendingen.",
     },

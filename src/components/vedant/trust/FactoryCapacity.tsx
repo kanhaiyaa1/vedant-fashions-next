@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { Factory, Users, Shirt, Clock, Scissors, Layers } from "lucide-react";
+import { Factory, Users, Shirt, Clock } from "lucide-react";
 import { FACTORY_IMAGES } from "@/data/images";
 
 const useInView = (threshold = 0.15) => {
@@ -19,23 +19,17 @@ const useInView = (threshold = 0.15) => {
 };
 
 const stats = [
-  { icon: Factory, value: "3", label: "Production Units", detail: "Ahmedabad, Gujarat" },
-  { icon: Shirt, value: "1.2M+", label: "Garments / Year", detail: "Across all categories" },
-  { icon: Users, value: "1,800+", label: "Skilled Workers", detail: "80% women workforce" },
-  { icon: Scissors, value: "24", label: "Production Lines", detail: "Automated cutting & sewing" },
-  { icon: Layers, value: "200+", label: "Brands Served", detail: "Since 1998" },
+  { icon: Factory, value: "1", label: "Production Unit", detail: "Mumbai, India — Expanding" },
+  { icon: Shirt, value: "200,000+", label: "Garments / Year", detail: "Across all categories" },
+  { icon: Users, value: "100+", label: "Skilled Workers", detail: "Across all departments" },
   { icon: Clock, value: "6–8", label: "Weeks Lead Time", detail: "Standard production" },
 ];
 
 const capabilities = [
   "Automated CAD pattern making & marker planning",
-  "Gerber computerised cutting with ±1mm accuracy",
   "Single-needle & double-needle lockstitch lines",
-  "In-house embroidery (Schiffli & computerised)",
-  "Garment dyeing & enzyme washing plant",
+  "In-house flat lock machines",
   "Steam finishing & vacuum pressing",
-  "In-house fabric testing laboratory",
-  "Dedicated sampling room (150 samples/month)",
 ];
 
 const delayClass = ["", "fade-up-delay-1", "fade-up-delay-2", "fade-up-delay-3", "fade-up-delay-4", "fade-up-delay-4"];
@@ -50,12 +44,12 @@ const FactoryCapacity = () => {
           <p className="text-subheading text-gold">Our Capacity</p>
           <h2 className="text-display-md text-foreground">Manufacturing at Scale</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Three vertically integrated facilities with end-to-end capabilities — from fabric sourcing to finished, packed garments ready for EU import.
+            End-to-end in-house capabilities — from fabric sourcing, pattern making, and design to quality checks and export-quality packing on every finished garment.
           </p>
         </div>
 
         {/* Stats grid */}
-        <div ref={ref} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 mb-16 stagger-children">
+        <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 stagger-children">
           {stats.map(({ icon: Icon, value, label, detail }, i) => (
             <div
               key={label}

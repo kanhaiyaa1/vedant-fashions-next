@@ -7,7 +7,6 @@ import Hero from "@/components/vedant/Hero";
 import ProductGrid from "@/components/vedant/ProductGrid";
 import ProductGallery from "@/components/vedant/ProductGallery";
 import FabricSpecTable from "@/components/vedant/FabricSpecTable";
-import CertificationBadges from "@/components/vedant/CertificationBadges";
 import Testimonials from "@/components/vedant/Testimonials";
 import FAQ from "@/components/vedant/FAQ";
 import InquiryForm from "@/components/vedant/InquiryForm";
@@ -35,9 +34,9 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
   return {
     title: "Ladies Woven Wear Manufacturer India | Middle East & Global Export | Vedant Fashion",
     description:
-      "GOTS and OEKO-TEX certified ladies woven wear manufacturer in Mumbai, India. Exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets. MOQ 300 pcs. FOB Mumbai.",
+      "Ladies woven wear manufacturer in Mumbai, India. Exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets. MOQ 300 pcs. FOB Mumbai.",
     keywords:
-      "ladies woven wear manufacturer India, garment manufacturer Mumbai, wholesale garments UAE, woven blouses Saudi Arabia, GOTS certified manufacturer India, MOQ 300 pcs, FOB Mumbai, private label garment India Middle East",
+      "ladies woven wear manufacturer India, garment manufacturer Mumbai, wholesale garments UAE, woven blouses Saudi Arabia, garment manufacturer India, MOQ 300 pcs, FOB Mumbai, private label garment India Middle East",
     alternates: buildHreflangAlternates("/"),
   };
 }
@@ -54,9 +53,6 @@ export default async function HomePage({ params }: HomePageProps) {
       </Suspense>
       <Suspense fallback={<SkeletonProductGrid />}>
         <ProductGrid />
-      </Suspense>
-      <Suspense fallback={<SkeletonBlock height="200px" />}>
-        <CertificationBadges />
       </Suspense>
       <Suspense fallback={<SkeletonBlock height="480px" />}>
         <QualityProcess />

@@ -17,9 +17,9 @@ export async function generateMetadata({
   return {
     title: "Resort Wear Manufacturer Middle East | India Export | Vedant",
     description:
-      "GOTS-certified resort wear manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. Kaftans, wide-leg trousers, jumpsuits. MOQ 300 pcs. FOB USD 7.00–12.00.",
+      "Resort wear manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. Kaftans, wide-leg trousers, jumpsuits. MOQ 300 pcs. FOB USD 7.00–12.00.",
     keywords:
-      "resort wear manufacturer UAE, kaftan supplier Saudi Arabia, wholesale resort wear exporter India, GOTS resort wear manufacturer, wide leg trousers wholesale Middle East, linen resort wear Qatar Kuwait, kaftan MOQ 300 pcs, FOB resort wear India, private label resort wear, beach cover-up wholesale manufacturer",
+      "resort wear manufacturer UAE, kaftan supplier Saudi Arabia, wholesale resort wear exporter India, resort wear manufacturer India, wide leg trousers wholesale Middle East, linen resort wear Qatar Kuwait, kaftan MOQ 300 pcs, FOB resort wear India, private label resort wear, beach cover-up wholesale manufacturer",
     alternates: buildHreflangAlternates("/products/resort-wear"),
   };
 }
@@ -65,7 +65,7 @@ export default async function ResortWearPage({
       <ProductCategoryPage
         categorySlug="resort-wear"
         primaryKeyword="Resort Wear Manufacturer for Middle East Wholesale Buyers"
-        heroDescription="GOTS 6.0 certified resort wear manufacturer in India. Kaftans, wide-leg trousers, linen jumpsuits, palazzo pants, and beach cover-ups. Breathable fabrics for Gulf climates. FOB USD 7.00–12.00 per piece. MOQ 300 pcs. 17–22 days sea freight to GCC ports."
+        heroDescription="Resort wear manufacturer in India. Kaftans, wide-leg trousers, linen jumpsuits, palazzo pants, and beach cover-ups. Breathable fabrics for Gulf climates. FOB USD 7.00–12.00 per piece. MOQ 300 pcs. 17–22 days sea freight to GCC ports."
         middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
         gccMarketNotes={[
           { country: "UAE", note: "Kaftans and wide-leg trousers in high demand for Dubai resort retail, beach clubs, and hospitality uniforms. 18–22 days to Jebel Ali." },

@@ -670,15 +670,15 @@ export const knowledgeHubArticles: KnowledgeArticle[] = [
     title: "How to Import Ladies Woven Wear from India to UAE — Complete Buyer Guide",
     metaTitle: "Import Ladies Woven Wear India to UAE — CEPA, Duty & Documentation Guide",
     metaDescription: "Complete guide to importing ladies woven wear from India to UAE. CEPA duty savings, ESMA compliance, HS codes, Jebel Ali process, and finding a reliable Indian supplier.",
-    heroDescription: "Importing ladies woven wear from India to the UAE is one of the most cost-effective sourcing decisions a GCC wholesale buyer can make. India-UAE CEPA reduces import duty to 0%, sea freight reaches Jebel Ali in 18–22 days, and Gujarat manufacturers like Vedant Fashion carry full GOTS and OEKO-TEX certification. This guide covers every step.",
+    heroDescription: "Importing ladies woven wear from India to the UAE is one of the most cost-effective sourcing decisions a GCC wholesale buyer can make. India-UAE CEPA reduces import duty to 0%, sea freight reaches Jebel Ali in 18–22 days, and Mumbai-based manufacturers like Vedant Fashion offer competitive FOB pricing. This guide covers every step.",
     readTime: "10 min",
     sections: [
       {
         heading: "Why Source Ladies Woven Wear from India for the UAE Market",
-        content: "India is the UAE's largest garment supplier by volume, accounting for over 35% of textile imports. The combination of skilled labour, vertically integrated mills, GOTS-certified organic cotton, and the India-UAE CEPA preferential duty agreement makes India the default sourcing destination for UAE wholesale buyers of ladies woven wear. Vedant Fashion exports woven blouses, cotton dresses, linen shirts, and resort wear directly from Gujarat to Jebel Ali on a weekly sailing cycle.",
+        content: "India is the UAE's largest garment supplier by volume, accounting for over 35% of textile imports. The combination of skilled labour, vertically integrated mills, organic cotton sourcing, and the India-UAE CEPA preferential duty agreement makes India the default sourcing destination for UAE wholesale buyers of ladies woven wear. Vedant Fashion exports woven blouses, cotton dresses, linen shirts, and resort wear directly from Mumbai to Jebel Ali on a weekly sailing cycle.",
         bullets: [
           "India is UAE's #1 garment import source — over 35% of textile imports",
-          "GOTS and OEKO-TEX certified production widely available in Gujarat",
+          "Competitive FOB pricing with organic cotton sourcing available on request",
           "India-UAE CEPA: 0% import duty vs 5% standard GCC tariff",
           "Jebel Ali (Dubai) accepts Indian exports on weekly sailings from JNPT Mumbai",
           "MOQ from 300 pieces per style — suitable for mid-size UAE wholesale buyers",

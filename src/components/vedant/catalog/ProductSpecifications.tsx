@@ -254,8 +254,6 @@ const ProductSpecifications = ({ product }: ProductSpecificationsProps) => {
                 "Packing List",
                 "Bill of Lading / Airway Bill",
                 "Certificate of Origin (GSP Form A)",
-                "GOTS Transaction Certificate",
-                "OEKO-TEX Test Report",
                 "AQL Inspection Report",
                 "Fabric Test Reports (ISO/EN)",
               ].map((doc, i) => (

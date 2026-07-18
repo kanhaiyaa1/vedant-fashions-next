@@ -26,13 +26,13 @@ const GOALS_DATA = [
   { target: "2030", statusKey: "committed" },
 ];
 
-// Non-translatable cert static data: name (cert code) + number
+// Non-translatable practice static data: name + reference tag
 const CERT_STATIC = [
-  { name: "GOTS 6.0",              number: "CU 1234567" },
-  { name: "OEKO-TEX Standard 100", number: "SH012 345678" },
-  { name: "GRS 4.0",               number: "CU 7654321" },
-  { name: "SEDEX / SMETA",         number: "ZC12345678" },
-  { name: "ISO 14001:2015",        number: "EMS-2023-IN" },
+  { name: "Fabric Sourcing",   number: "In-house" },
+  { name: "Product Safety",    number: "In-house" },
+  { name: "Recycled Materials", number: "Growing" },
+  { name: "Ethical Workplace", number: "In-house" },
+  { name: "Environmental Care", number: "In-house" },
 ];
 
 const statusColor = (statusKey: string) => {
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   await params;
   return {
     title: "Sustainable Garment Manufacturing India | Vedant",
-    description: "GOTS, OEKO-TEX & GRS certified sustainable garment manufacturing India. Solar energy, zero liquid discharge. Exporting to UAE, Saudi Arabia & Russia.",
+    description: "Sustainable fabric sourcing and responsible garment manufacturing in Mumbai, India. Exporting to UAE, Russia, Poland & South Africa.",
     alternates: buildHreflangAlternates("/sustainability"),
   };
 }

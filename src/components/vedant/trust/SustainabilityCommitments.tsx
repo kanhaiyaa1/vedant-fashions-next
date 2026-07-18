@@ -5,10 +5,10 @@ import { FadeUp, StaggerChildren } from "@/components/vedant/animations";
 const commitments = [
   {
     icon: Leaf,
-    title: "Organic Sourcing",
-    metric: "72%",
-    detail: "of fabrics are GOTS-certified organic",
-    description: "We source from certified organic cotton farms across India. Full traceability from field to finished garment.",
+    title: "Sustainable Sourcing",
+    metric: "Growing",
+    detail: "share of sustainable and recycled fabrics",
+    description: "We're expanding our sourcing of sustainable and recycled fabrics from trusted mills across India as we grow.",
   },
   {
     icon: Droplets,
@@ -20,9 +20,9 @@ const commitments = [
   {
     icon: Recycle,
     title: "Recycled Materials",
-    metric: "28%",
-    detail: "of production uses recycled inputs",
-    description: "GRS-certified recycled polyester and regenerated cotton. Fabric waste recycled into industrial yarn.",
+    metric: "Growing",
+    detail: "use of recycled inputs in production",
+    description: "Increasing use of recycled polyester and regenerated cotton blends. Fabric offcuts reused wherever possible.",
   },
   {
     icon: Sun,
@@ -42,8 +42,8 @@ const commitments = [
     icon: Heart,
     title: "Fair Labour",
     metric: "100%",
-    detail: "living wage across all facilities",
-    description: "SEDEX/SMETA audited. 80% women workforce with on-site childcare and skill development programs.",
+    detail: "living wage at our Mumbai facility",
+    description: "A majority-women workforce with on-site skill development programs and a respectful working environment.",
   },
 ];
 

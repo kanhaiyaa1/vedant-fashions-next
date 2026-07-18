@@ -13,9 +13,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: "Product Catalogue — Wholesale Sustainable Garments",
     description:
-      "Browse our full range of GOTS and OEKO-TEX certified wholesale garments — woven blouses, cotton dresses, linen shirts, and resort wear. MOQ from 300 pcs.",
+      "Browse our full range of wholesale garments — woven blouses, cotton dresses, linen shirts, and resort wear. MOQ from 300 pcs.",
     keywords:
-      "wholesale garments catalogue, GOTS certified clothing, organic cotton wholesale, linen shirts bulk, sustainable fashion manufacturer",
+      "wholesale garments catalogue, organic cotton wholesale, linen shirts bulk, sustainable fashion manufacturer",
     alternates: buildHreflangAlternates("/catalog"),
   };
 }

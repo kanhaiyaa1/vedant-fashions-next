@@ -109,7 +109,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       paragraph1:
         "Our {productCount}+ SKU range covers the full spectrum of wholesale buyer requirements — from core basics to fashion-forward seasonal styles, all produced in our ISO 9001:2015 certified manufacturing facility in Mumbai, India.",
       paragraph2:
-        "Every style is available for private label, OEM, and ODM production. GOTS 6.0 and OEKO-TEX Standard 100 certification maintained across the full range. MOQ from 300 pieces per style per colour. Sea freight from Mumbai reaches UAE (Jebel Ali) in 18–22 days, Saudi Arabia in 20–24 days, Qatar in 20–23 days — making India one of the most efficient manufacturing origins for GCC buyers.",
+        "Every style is available for private label, OEM, and ODM production. MOQ from 300 pieces per style per colour. Sea freight from Mumbai reaches UAE (Jebel Ali) in 18–22 days, Saudi Arabia in 20–24 days, Qatar in 20–23 days — making India one of the most efficient manufacturing origins for GCC buyers.",
     },
     fabricTable: {
       subtitle: "Technical Data",
@@ -251,7 +251,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Lead Times That Hold", desc: "Our production calendar is committed at PO stage — not renegotiated at dispatch. 94% of our shipments leave within 3 days of the agreed FOB date." },
         { title: "Sampling Without Drama", desc: "Proto samples dispatched within 12–15 working days. Counter samples (post-approval revisions) within 7 days. No 6-week sample loops." },
         { title: "FOB Pricing That's Actually FOB", desc: "The price we quote includes export packing, labelling, all pre-shipment documentation, and Customs clearance at JNPT Mumbai. No hidden freight or handling surprises." },
-        { title: "GCC Compliance Built In", desc: "OEKO-TEX 100, GOTS-traceable cotton, and Gulf standard-ready documentation are part of our default process — not premium add-ons that inflate the price." },
+        { title: "GCC Compliance Built In", desc: "AZO-free dyes, fabric testing, and Gulf standard-ready documentation are part of our default process — not premium add-ons that inflate the price." },
         { title: "Private Label That Scales", desc: "Woven labels, hang tags, tissue wrapping, and custom packaging available from 300 pcs per style. Brand-ready retail packaging for omnichannel sellers." },
         { title: "One Account Manager", desc: "You deal with one person from RFQ to shipment — not a rotating helpdesk. They know your sizing, your market, your QC preferences." },
       ],
@@ -265,9 +265,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "نظرة عامة B2B",
       title: "التصنيع بالجملة",
       paragraph1:
-        "تغطي مجموعتنا التي تضم أكثر من {productCount} SKU كامل متطلبات مشتري الجملة — من التصاميم الأساسية الثابتة إلى المجموعات الموسمية العصرية، وكلها تُنتَج في منشأتنا المعتمدة بشهادة ISO 9001:2015 بمساحة 45,000 قدم مربع في غوجارات بالهند.",
+        "تغطي مجموعتنا التي تضم أكثر من {productCount} SKU كامل متطلبات مشتري الجملة — من التصاميم الأساسية الثابتة إلى المجموعات الموسمية العصرية، وكلها تُنتَج في منشأتنا المعتمدة بشهادة ISO 9001:2015 في مومباي بالهند.",
       paragraph2:
-        "جميع التصاميم متاحة لإنتاج العلامة الخاصة وOEM وODM. يتم الحفاظ على شهادات GOTS 6.0 وOEKO-TEX Standard 100 عبر المجموعة الكاملة، مع إمكانية طلب تدقيقات الامتثال الاجتماعي BSCI / SEDEX. يبدأ الحد الأدنى للطلب من 300 قطعة لكل تصميم ولون، مع مهل إنتاج قياسية تتراوح بين 45 و55 يوماً. يصل الشحن البحري من مومباي / JNPT إلى موانئ الشرق الأوسط في 17–22 يوماً.",
+        "جميع التصاميم متاحة لإنتاج العلامة الخاصة وOEM وODM. يبدأ الحد الأدنى للطلب من 300 قطعة لكل تصميم ولون، مع مهل إنتاج قياسية تتراوح بين 45 و55 يوماً. يصل الشحن البحري من مومباي / JNPT إلى موانئ الشرق الأوسط في 17–22 يوماً.",
     },
     fabricTable: {
       subtitle: "البيانات التقنية",
@@ -409,7 +409,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "مواعيد تسليم ثابتة", desc: "يتم الالتزام بتقويم الإنتاج عند مرحلة أمر الشراء — لا إعادة تفاوض عند الشحن. 94% من شحناتنا تغادر خلال 3 أيام من تاريخ FOB المتفق عليه." },
         { title: "عينات بدون تعقيدات", desc: "ترسل العينات الأولية خلال 12-15 يوم عمل. العينات المضادة خلال 7 أيام. لا حلقات عينات تمتد 6 أسابيع." },
         { title: "أسعار FOB حقيقية", desc: "السعر الذي نقتبسه يشمل التغليف للتصدير والتسمية وجميع وثائق ما قبل الشحن وتخليص الجمارك في JNPT مومباي. لا مفاجآت." },
-        { title: "امتثال خليجي مدمج", desc: "OEKO-TEX 100، قطن يمكن تتبعه وفق GOTS، ووثائق جاهزة لمعايير الخليج — كلها جزء من عمليتنا الافتراضية." },
+        { title: "امتثال خليجي مدمج", desc: "أصباغ خالية من AZO، اختبار الأقمشة، ووثائق جاهزة لمعايير الخليج — كلها جزء من عمليتنا الافتراضية." },
         { title: "علامة خاصة قابلة للتوسع", desc: "التسميات المنسوجة وبطاقات الشنق وتغليف الأنسجة والتعبئة المخصصة متاحة من 300 قطعة لكل تصميم." },
         { title: "مدير حساب واحد", desc: "تتعامل مع شخص واحد من طلب عرض الأسعار حتى الشحن — لا مكتب مساعدة متناوب. يعرف مقاساتك وسوقك وتفضيلات مراقبة الجودة لديك." },
       ],
@@ -423,9 +423,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "Обзор B2B",
       title: "Оптовое производство",
       paragraph1:
-        "Наш ассортимент включает более {productCount} SKU и охватывает весь спектр потребностей оптовых покупателей — от базовых классических стилей до модных сезонных новинок. Всё производится на нашем предприятии площадью 45 000 кв. футов в штате Гуджарат, Индия, сертифицированном по ISO 9001:2015.",
+        "Наш ассортимент включает более {productCount} SKU и охватывает весь спектр потребностей оптовых покупателей — от базовых классических стилей до модных сезонных новинок. Всё производится на нашем предприятии в Мумбаи, Индия, сертифицированном по ISO 9001:2015.",
       paragraph2:
-        "Каждый стиль доступен для производства под частной торговой маркой, по схемам OEM и ODM. Сертификация GOTS 6.0 и OEKO-TEX Standard 100 поддерживается по всему ассортименту; проверки BSCI / SEDEX проводятся по запросу. Минимальный заказ — от 300 единиц на стиль и цвет, стандартные сроки производства — 45–55 дней. Доставка морем из Мумбаи / JNPT в порты Ближнего Востока занимает 17–22 дня.",
+        "Каждый стиль доступен для производства под частной торговой маркой, по схемам OEM и ODM. Минимальный заказ — от 300 единиц на стиль и цвет, стандартные сроки производства — 45–55 дней. Доставка морем из Мумбаи / JNPT в порты Ближнего Востока занимает 17–22 дня.",
     },
     fabricTable: {
       subtitle: "Технические данные",
@@ -567,7 +567,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Сроки, которые соблюдаются", desc: "Производственный календарь фиксируется на этапе оформления заказа — не пересматривается при отгрузке. 94% наших отправлений уходят в течение 3 дней от согласованной даты FOB." },
         { title: "Образцы без задержек", desc: "Прото-образцы отправляются в течение 12–15 рабочих дней. Контрольные образцы в течение 7 дней. Никаких 6-недельных циклов согласования." },
         { title: "Цены FOB без скрытых доплат", desc: "Наша цена включает экспортную упаковку, маркировку, все документы перед отгрузкой и таможенное оформление в JNPT Мумбаи." },
-        { title: "Соответствие стандартам Залива", desc: "OEKO-TEX 100, отслеживаемый по GOTS хлопок и документация для стандартов Залива — всё это часть нашего стандартного процесса." },
+        { title: "Соответствие стандартам Залива", desc: "Красители без AZO, тестирование тканей и документация для стандартов Залива — всё это часть нашего стандартного процесса." },
         { title: "Частная марка с масштабированием", desc: "Тканые этикетки, бирки, тканевая обёртка и индивидуальная упаковка доступны от 300 единиц на артикул." },
         { title: "Один аккаунт-менеджер", desc: "Вы общаетесь с одним человеком от запроса до отгрузки. Он знает ваши размеры, ваш рынок, ваши предпочтения по контролю качества." },
       ],
@@ -581,9 +581,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "Przegląd B2B",
       title: "Produkcja hurtowa",
       paragraph1:
-        "Nasz asortyment obejmuje ponad {productCount} SKU i pokrywa pełne spektrum potrzeb hurtowników — od podstawowych stylów kolekcji stałej po modne nowości sezonowe. Całość produkowana jest w naszym zakładzie w stanie Gudźarat w Indiach, certyfikowanym wg ISO 9001:2015, o powierzchni 45 000 stóp kwadratowych.",
+        "Nasz asortyment obejmuje ponad {productCount} SKU i pokrywa pełne spektrum potrzeb hurtowników — od podstawowych stylów kolekcji stałej po modne nowości sezonowe. Całość produkowana jest w naszym zakładzie w Mumbaju w Indiach, certyfikowanym wg ISO 9001:2015.",
       paragraph2:
-        "Każdy styl dostępny jest do produkcji pod marką własną, OEM i ODM. Certyfikacja GOTS 6.0 i OEKO-TEX Standard 100 obowiązuje w całym asortymencie; audyty BSCI / SEDEX dostępne na żądanie. Minimalny poziom zamówienia to 300 szt. na styl i kolor, standardowy czas realizacji wynosi 45–55 dni. Transport morski z Mumbaju / JNPT dociera do portów Bliskiego Wschodu w 17–22 dni.",
+        "Każdy styl dostępny jest do produkcji pod marką własną, OEM i ODM. Minimalny poziom zamówienia to 300 szt. na styl i kolor, standardowy czas realizacji wynosi 45–55 dni. Transport morski z Mumbaju / JNPT dociera do portów Bliskiego Wschodu w 17–22 dni.",
     },
     fabricTable: {
       subtitle: "Dane techniczne",
@@ -725,7 +725,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Terminy, które są dotrzymywane", desc: "Harmonogram produkcji jest zatwierdzany na etapie zamówienia — nie renegocjowany przy wysyłce. 94% naszych przesyłek opuszcza magazyn w ciągu 3 dni od uzgodnionej daty FOB." },
         { title: "Próbki bez dramatów", desc: "Próbki prototypowe wysyłane w ciągu 12–15 dni roboczych. Próbki kontrowe w ciągu 7 dni. Żadnych 6-tygodniowych pętli próbek." },
         { title: "Ceny FOB, które są naprawdę FOB", desc: "Nasza cena obejmuje opakowanie eksportowe, etykietowanie, całą dokumentację przed wysyłką i odprawę celną w JNPT Mumbai." },
-        { title: "Zgodność z normami Zatoki wbudowana", desc: "OEKO-TEX 100, bawełna z certyfikatem GOTS i dokumentacja gotowa do standardów Zatoki Perskiej są częścią naszego standardowego procesu." },
+        { title: "Zgodność z normami Zatoki wbudowana", desc: "Barwniki wolne od AZO, testowanie tkanin i dokumentacja gotowa do standardów Zatoki Perskiej są częścią naszego standardowego procesu." },
         { title: "Marka własna, która się skaluje", desc: "Etykiety tkane, metki, opakowania z bibuły i indywidualne pakowanie dostępne od 300 szt. na styl." },
         { title: "Jeden opiekun konta", desc: "Masz do czynienia z jedną osobą od zapytania ofertowego do wysyłki. Zna Twoje rozmiary, Twój rynek, Twoje preferencje QC." },
       ],
@@ -739,9 +739,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "Aperçu B2B",
       title: "Fabrication en gros",
       paragraph1:
-        "Notre gamme de plus de {productCount} SKU couvre l'ensemble des besoins des acheteurs en gros — des styles de base intemporels aux nouveautés saisonnières tendance, tous fabriqués dans notre atelier certifié ISO 9001:2015 de 45 000 pieds carrés au Gujarat, en Inde.",
+        "Notre gamme de plus de {productCount} SKU couvre l'ensemble des besoins des acheteurs en gros — des styles de base intemporels aux nouveautés saisonnières tendance, tous fabriqués dans notre atelier certifié ISO 9001:2015 à Mumbai, en Inde.",
       paragraph2:
-        "Chaque style est disponible en marque privée, OEM et ODM. La certification GOTS 6.0 et OEKO-TEX Standard 100 est maintenue sur toute la gamme ; les audits BSCI / SEDEX sont disponibles sur demande. Les quantités minimales commencent à 300 pièces par style et couleur, avec des délais de production standards de 45 à 55 jours. Le fret maritime depuis Mumbai / JNPT atteint les ports du Moyen-Orient en 17 à 22 jours.",
+        "Chaque style est disponible en marque privée, OEM et ODM. Les quantités minimales commencent à 300 pièces par style et couleur, avec des délais de production standards de 45 à 55 jours. Le fret maritime depuis Mumbai / JNPT atteint les ports du Moyen-Orient en 17 à 22 jours.",
     },
     fabricTable: {
       subtitle: "Données techniques",
@@ -883,7 +883,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Des délais qui tiennent", desc: "Notre calendrier de production est fixé au stade du bon de commande — pas renégocié à l'expédition. 94 % de nos envois partent dans les 3 jours suivant la date FOB convenue." },
         { title: "Des échantillons sans complications", desc: "Échantillons proto expédiés dans 12 à 15 jours ouvrables. Contre-échantillons dans 7 jours. Pas de cycles d'échantillons de 6 semaines." },
         { title: "Des prix FOB vraiment FOB", desc: "Le prix que nous proposons comprend l'emballage export, l'étiquetage, toute la documentation pré-expédition et le dédouanement à JNPT Mumbai." },
-        { title: "Conformité CCG intégrée", desc: "OEKO-TEX 100, coton traçable GOTS et documentation prête pour les normes du Golfe font partie de notre processus standard." },
+        { title: "Conformité CCG intégrée", desc: "Teintures sans AZO, tests des tissus et documentation prête pour les normes du Golfe font partie de notre processus standard." },
         { title: "Marque propre évolutive", desc: "Étiquettes tissées, étiquettes volantes, emballage papier de soie et emballage personnalisé disponibles dès 300 pcs par style." },
         { title: "Un seul responsable de compte", desc: "Vous traitez avec une seule personne de la demande de devis à l'expédition. Il connaît vos tailles, votre marché, vos préférences QC." },
       ],
@@ -897,9 +897,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "Panoramica B2B",
       title: "Produzione all'ingrosso",
       paragraph1:
-        "La nostra gamma di oltre {productCount} SKU copre l'intero spettro delle esigenze degli acquirenti all'ingrosso — dagli stili di base perennemente richiesti alle novità stagionali più attuali. Tutto prodotto nel nostro stabilimento certificato ISO 9001:2015 di 45.000 piedi quadrati nel Gujarat, India.",
+        "La nostra gamma di oltre {productCount} SKU copre l'intero spettro delle esigenze degli acquirenti all'ingrosso — dagli stili di base perennemente richiesti alle novità stagionali più attuali. Tutto prodotto nel nostro stabilimento certificato ISO 9001:2015 a Mumbai, India.",
       paragraph2:
-        "Ogni stile è disponibile per la produzione a marchio privato, OEM e ODM. La certificazione GOTS 6.0 e OEKO-TEX Standard 100 è mantenuta su tutta la gamma; gli audit BSCI / SEDEX sono disponibili su richiesta. Il quantitativo minimo parte da 300 pezzi per stile e colore, con tempi di produzione standard di 45–55 giorni. La spedizione via mare da Mumbai / JNPT raggiunge i porti del Medio Oriente in 17–22 giorni.",
+        "Ogni stile è disponibile per la produzione a marchio privato, OEM e ODM. Il quantitativo minimo parte da 300 pezzi per stile e colore, con tempi di produzione standard di 45–55 giorni. La spedizione via mare da Mumbai / JNPT raggiunge i porti del Medio Oriente in 17–22 giorni.",
     },
     fabricTable: {
       subtitle: "Dati tecnici",
@@ -1041,7 +1041,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Tempistiche che reggono", desc: "Il calendario di produzione è confermato nella fase dell'ordine — non rinegoziato alla spedizione. Il 94% delle nostre spedizioni parte entro 3 giorni dalla data FOB concordata." },
         { title: "Campioni senza problemi", desc: "Campioni proto spediti entro 12–15 giorni lavorativi. Controcampioni entro 7 giorni. Nessun ciclo di campioni da 6 settimane." },
         { title: "Prezzi FOB che sono davvero FOB", desc: "Il prezzo che quotiamo include imballaggio export, etichettatura, tutta la documentazione pre-spedizione e lo sdoganamento a JNPT Mumbai." },
-        { title: "Conformità CCG integrata", desc: "OEKO-TEX 100, cotone tracciabile GOTS e documentazione pronta per gli standard del Golfo fanno parte del nostro processo standard." },
+        { title: "Conformità CCG integrata", desc: "Coloranti privi di AZO, test sui tessuti e documentazione pronta per gli standard del Golfo fanno parte del nostro processo standard." },
         { title: "Private label che scala", desc: "Etichette tessute, cartellini, carta velina e imballaggi personalizzati disponibili da 300 pz per stile." },
         { title: "Un unico account manager", desc: "Hai a che fare con una sola persona dal preventivo alla spedizione. Conosce le tue taglie, il tuo mercato, le tue preferenze di QC." },
       ],
@@ -1055,9 +1055,9 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
       subtitle: "B2B Overzicht",
       title: "Groothandelsproductie",
       paragraph1:
-        "Ons assortiment van meer dan {productCount} SKU's dekt het volledige spectrum van groothandelsbehoeften — van basiscollecties tot modegerichte seizoensintr​oducties, allemaal geproduceerd in onze ISO 9001:2015-gecertificeerde fabriek van 45.000 vierkante voet in Gujarat, India.",
+        "Ons assortiment van meer dan {productCount} SKU's dekt het volledige spectrum van groothandelsbehoeften — van basiscollecties tot modegerichte seizoensintr​oducties, allemaal geproduceerd in onze ISO 9001:2015-gecertificeerde fabriek in Mumbai, India.",
       paragraph2:
-        "Elk model is beschikbaar voor private label-, OEM- en ODM-productie. GOTS 6.0- en OEKO-TEX Standard 100-certificering geldt voor het gehele assortiment; BSCI / SEDEX sociale compliance-audits op verzoek beschikbaar. Minimale bestelhoeveelheid vanaf 300 stuks per model per kleur, standaard doorlooptijd 45–55 dagen. Zeevracht van Mumbai / JNPT bereikt Midden-Oostenpoorten in 17–22 dagen.",
+        "Elk model is beschikbaar voor private label-, OEM- en ODM-productie. Minimale bestelhoeveelheid vanaf 300 stuks per model per kleur, standaard doorlooptijd 45–55 dagen. Zeevracht van Mumbai / JNPT bereikt Midden-Oostenpoorten in 17–22 dagen.",
     },
     fabricTable: {
       subtitle: "Technische gegevens",
@@ -1199,7 +1199,7 @@ export const productCategoryContent: Record<string, ProductCategoryLocale> = {
         { title: "Doorlooptijden die standhouden", desc: "Onze productiekalender wordt vastgelegd bij de orderfase — niet heronderhandeld bij verzending. 94% van onze zendingen vertrekt binnen 3 dagen na de overeengekomen FOB-datum." },
         { title: "Monsters zonder drama", desc: "Proto-monsters verzonden binnen 12–15 werkdagen. Contrastmonsters binnen 7 dagen. Geen 6-weekse monstercycli." },
         { title: "FOB-prijzen die echt FOB zijn", desc: "De prijs die we offreren omvat exportverpakking, etikettering, alle pre-verzendingsdocumentatie en douaneklaring bij JNPT Mumbai." },
-        { title: "GCC-compliance ingebouwd", desc: "OEKO-TEX 100, GOTS-traceerbaar katoen en Golf-standaard documentatie maken deel uit van ons standaard proces." },
+        { title: "GCC-compliance ingebouwd", desc: "AZO-vrije kleurstoffen, stoftesten en Golf-standaard documentatie maken deel uit van ons standaard proces." },
         { title: "Private label dat schaalt", desc: "Geweven labels, hangtags, tissuepapier en aangepaste verpakkingen beschikbaar vanaf 300 stuks per stijl." },
         { title: "Één accountmanager", desc: "U heeft met één persoon te maken van offerteaanvraag tot verzending. Hij kent uw maatvoering, uw markt, uw QC-voorkeuren." },
       ],

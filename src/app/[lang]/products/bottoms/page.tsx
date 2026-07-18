@@ -43,7 +43,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "What fabrics are your ladies bottoms made from?",
-    a: "Our bottoms are available in rayon challis (110 GSM), European flax linen (180 GSM), crepe (150 GSM), cotton cambric (100 GSM), and georgette (90 GSM). All fabrics carry OEKO-TEX Standard 100 certification. Rayon and linen are most popular for GCC buyers due to their breathability and fluid drape.",
+    a: "Our bottoms are available in rayon challis (110 GSM), European flax linen (180 GSM), crepe (150 GSM), cotton cambric (100 GSM), and georgette (90 GSM). All fabrics undergo in-house quality testing. Rayon and linen are most popular for GCC buyers due to their breathability and fluid drape.",
   },
   {
     q: "Do your bottoms comply with ESMA and SASO textile labelling requirements?",

@@ -40,7 +40,7 @@ const Hero = ({ lang }: HeroProps) => {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/10 text-gold text-xs uppercase tracking-[0.2em] font-medium"
           style={{ animation: "pulse 3s ease-in-out infinite" }}
         >
-          B2B Wholesale Manufacturer · Mumbai, India
+          Manufacturer and Exporter in Mumbai, India
         </div>
 
         {/* H1 */}
@@ -93,12 +93,6 @@ const Hero = ({ lang }: HeroProps) => {
       <div className="absolute bottom-8 left-6 z-10 bg-black/60 backdrop-blur-sm border border-white/10 rounded px-4 py-3">
         <p className="text-[10px] text-white/50 uppercase tracking-widest mb-1">{c.hero.certBadge}</p>
         <p className="text-xs font-medium text-white">{c.hero.certBadgeDesc}</p>
-      </div>
-
-      {/* Floating card — bottom right */}
-      <div className="absolute bottom-8 right-6 z-10 bg-black/60 backdrop-blur-sm border border-white/10 rounded px-4 py-3">
-        <p className="text-[10px] text-white/50 uppercase tracking-widest mb-1">{c.stats[0].label}</p>
-        <p className="text-xs font-medium text-white">{c.stats[0].value}</p>
       </div>
 
       {/* Scroll indicator */}

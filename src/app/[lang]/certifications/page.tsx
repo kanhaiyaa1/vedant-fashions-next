@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import buildHreflangAlternates from "@/i18n/HreflangTags";
 import PageHero from "@/components/vedant/PageHero";
 import PageHeroArt from "@/components/vedant/PageHeroArt";
@@ -10,26 +9,25 @@ import { Shield, Leaf, Recycle, Award, CheckCircle, Globe, FileCheck, Scale } fr
 import { WebPageSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { getContent } from "@/data/translations/page-content";
 import { certificationsContent } from "@/data/translations/certifications";
-import { CERTIFICATIONS_DOCS } from "@/data/images";
 
-// Non-translatable cert data: icon, name, auditor
+// Non-translatable practice data: icon, name, responsibility
 const CERT_DATA = [
-  { icon: Leaf,        name: "GOTS (Global Organic Textile Standard)",      auditor: "Control Union" },
-  { icon: Shield,      name: "OEKO-TEX® Standard 100",                      auditor: "Hohenstein Institute" },
-  { icon: Recycle,     name: "GRS (Global Recycled Standard)",              auditor: "Textile Exchange" },
-  { icon: Award,       name: "ISO 9001:2015",                               auditor: "TÜV SÜD" },
-  { icon: CheckCircle, name: "REACH Compliance",                            auditor: "In-house + SGS" },
-  { icon: Globe,       name: "SEDEX / SMETA 4-Pillar",                     auditor: "Elevate / Intertek" },
-  { icon: FileCheck,   name: "BSCI (Business Social Compliance Initiative)", auditor: "amfori" },
-  { icon: Scale,       name: "BCI (Better Cotton Initiative)",              auditor: "BCI" },
+  { icon: Leaf,        name: "Fabric Inspection",             auditor: "In-house Textile Lab" },
+  { icon: Shield,      name: "Product Safety Awareness",       auditor: "In-house QC Team" },
+  { icon: Recycle,     name: "Sustainable Fabric Sourcing",    auditor: "In-house Sourcing Team" },
+  { icon: Award,       name: "Quality Management",             auditor: "In-house QC Team" },
+  { icon: CheckCircle, name: "Chemical Safety Awareness",      auditor: "In-house QC Team" },
+  { icon: Globe,       name: "Fair Labour Practices",          auditor: "Management" },
+  { icon: FileCheck,   name: "Responsible Waste Handling",     auditor: "In-house Team" },
+  { icon: Scale,       name: "Export & Customs Documentation", auditor: "In-house Export Team" },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   void lang;
   return {
-    title: "Certifications & Compliance",
-    description: "GOTS, OEKO-TEX, GRS, ISO 9001, REACH, BSCI certified. Full compliance documentation with every shipment.",
+    title: "Compliance & Quality Practices",
+    description: "We're transparent about where we stand: no third-party certifications yet, but real in-house quality checks, sustainable fabric sourcing, and compliance practices at our Mumbai facility.",
     alternates: buildHreflangAlternates("/certifications"),
   };
 }
@@ -40,7 +38,7 @@ const CertificationsPage = async ({ params }: { params: Promise<{ lang: string }
 
   return (
     <div className="min-h-screen bg-background font-body">
-      <WebPageSchema title="Certifications & Compliance" description="Third-party verified certifications for organic, chemical safety, and social compliance." url="/certifications" />
+      <WebPageSchema title="Compliance & Quality Practices" description="In-house quality checks, sustainable fabric sourcing, and compliance practices at our Mumbai facility." url="/certifications" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "Certifications", url: "/certifications" }]} />
       <PageHeroArt image="/images/site-files/new-cotton-lawns-the-list-group.jpg" opacity={0.15} blur={1}>
         <PageHero
@@ -79,32 +77,6 @@ const CertificationsPage = async ({ params }: { params: Promise<{ lang: string }
           })}
         </div>
       </ContentBlock>
-
-      {/* Our Documents */}
-      <section className="section-spacing bg-secondary/30">
-        <div className="container-wide">
-          <h2 className="font-display text-2xl font-semibold text-foreground mb-10">Our Documents</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {CERTIFICATIONS_DOCS.map((doc) => (
-              <div key={doc.src} className="bg-card border border-border rounded-lg overflow-hidden">
-                <div className="relative h-[200px] bg-secondary">
-                  <Image
-                    src={doc.src}
-                    alt={doc.alt}
-                    fill
-                    className="object-contain p-4"
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                  />
-                </div>
-                <div className="p-4 space-y-1">
-                  <p className="font-display text-sm font-semibold text-foreground">{doc.alt}</p>
-                  <p className="text-xs text-muted-foreground font-body">Available on request</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <CTASection
         title={c.cta.title}

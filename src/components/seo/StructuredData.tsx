@@ -21,16 +21,13 @@ export const OrganizationSchema = () => {
     name: "Vedant Fashion Pvt. Ltd.",
     url: BASE_URL,
     logo: `${BASE_URL}/logo.png`,
-    description: "Premium sustainable garment manufacturer exporting GOTS, OEKO-TEX & GRS certified apparel to Europe and Russia since 1998.",
-    foundingDate: "1998",
-    numberOfEmployees: { "@type": "QuantitativeValue", value: 800 },
+    description: "Ladies woven garment manufacturer and exporter based in Mumbai, India, supplying the UAE, Russia, Poland, and South Africa.",
     contactPoint: [
-      { "@type": "ContactPoint", telephone: "+49-40-3210-1234", contactType: "sales", areaServed: "EU", availableLanguage: ["English", "German", "French"] },
+      { "@type": "ContactPoint", telephone: "+91-79-2657-0000", contactType: "sales", areaServed: "Worldwide", availableLanguage: ["English", "Hindi"] },
       { "@type": "ContactPoint", telephone: "+91-79-2657-0000", contactType: "customer service", areaServed: "Worldwide", availableLanguage: ["English", "Hindi"] },
     ],
     address: [
-      { "@type": "PostalAddress", streetAddress: "Speicherstadt 12", addressLocality: "Hamburg", postalCode: "20457", addressCountry: "DE" },
-      { "@type": "PostalAddress", streetAddress: "GIDC Phase IV", addressLocality: "Ahmedabad", addressRegion: "Gujarat", postalCode: "382445", addressCountry: "IN" },
+      { "@type": "PostalAddress", addressLocality: "Mumbai", addressRegion: "Maharashtra", addressCountry: "IN" },
     ],
     sameAs: ["https://www.linkedin.com/company/vedantfashion"],
   };
@@ -207,16 +204,15 @@ export const LocalBusinessSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Vedant Fashion Pvt. Ltd. — European Office",
+    name: "Vedant Fashion Pvt. Ltd. — Mumbai",
     image: `${BASE_URL}/logo.png`,
-    telephone: "+49-40-3210-1234",
-    email: "europe@vedantfashion.com",
+    telephone: "+91-79-2657-0000",
+    email: "export@vedantfashion.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Speicherstadt 12",
-      addressLocality: "Hamburg",
-      postalCode: "20457",
-      addressCountry: "DE",
+      addressLocality: "Mumbai",
+      addressRegion: "Maharashtra",
+      addressCountry: "IN",
     },
     openingHoursSpecification: [{
       "@type": "OpeningHoursSpecification",

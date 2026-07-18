@@ -27,7 +27,7 @@ export async function generateMetadata({
     description:
       "Answers to B2B buyer questions on MOQ, sampling, certifications, shipping to UAE/Saudi/Qatar, payment terms, and GCC compliance. Vedant Fashion India.",
     keywords:
-      "wholesale FAQ garment manufacturer, MOQ ladies woven wear, GOTS certified supplier India, shipping UAE Saudi Arabia Qatar, payment terms LC TT, GCC compliance ESMA SASO, AQL inspection garments, FOB CIF DDP India",
+      "wholesale FAQ garment manufacturer, MOQ ladies woven wear, garment manufacturer India, shipping UAE Saudi Arabia Qatar, payment terms LC TT, GCC compliance ESMA SASO, AQL inspection garments, FOB CIF DDP India",
     alternates: buildHreflangAlternates("/wholesale-faq"),
   };
 }
@@ -70,7 +70,7 @@ const SECTIONS: Section[] = [
       },
       {
         q: "What information do you need to provide a quotation?",
-        a: "To provide a formal FOB quotation within 24 hours, we need: (1) style reference or tech pack / sketch, (2) target fabric (composition, GSM, weave — or we propose options), (3) order quantity per style per colour, (4) required certifications (GOTS, OEKO-TEX, etc.), (5) destination port and preferred incoterm, (6) target delivery date. For repeat buyers, a brief email with style code and quantity is sufficient. We respond with itemised FOB pricing, lead time, and a production schedule.",
+        a: "To provide a formal FOB quotation within 24 hours, we need: (1) style reference or tech pack / sketch, (2) target fabric (composition, GSM, weave — or we propose options), (3) order quantity per style per colour, (4) any specific compliance or testing requirements, (5) destination port and preferred incoterm, (6) target delivery date. For repeat buyers, a brief email with style code and quantity is sufficient. We respond with itemised FOB pricing, lead time, and a production schedule.",
       },
     ],
   },
@@ -135,15 +135,15 @@ const SECTIONS: Section[] = [
       },
       {
         q: "What certifications does Vedant Fashion hold?",
-        a: "Vedant Fashion holds the following active certifications: GOTS 6.0 (Global Organic Textile Standard) — covering organic cotton and blended fibre garments; OEKO-TEX Standard 100 — tested for harmful substances across all product classes; GRS 4.0 (Global Recycled Standard) — for recycled fibre products; BSCI (Business Social Compliance Initiative) audit; SEDEX / SMETA 4-Pillar social compliance audit; ISO 9001:2015 quality management system. Certificate copies are available on request and provided as standard in the shipment documentation package.",
+        a: "Vedant Fashion does not currently hold third-party certifications such as GOTS or OEKO-TEX. We are expanding our single Mumbai production unit and evaluating certification programs as part of that growth. In the meantime, we maintain strict internal quality control, fabric testing, and compliance with buyer-specific labelling and documentation requirements for the UAE, Russia, Poland, and South Africa markets.",
       },
       {
         q: "Are your dyes AZO-free and formaldehyde within safe limits?",
-        a: "Yes. Vedant Fashion uses only AZO-free reactive and vat dyes across all product lines. Formaldehyde content is maintained below 75 ppm for adult garments (EU Category II standard) and below 30 ppm for children's wear. pH levels are controlled between 4.0 and 7.5. These parameters are verified by independent NABL-accredited laboratory testing on each fabric batch. Test reports are included in shipment documentation and are available for regulatory submission in UAE, Saudi Arabia, and EU markets.",
+        a: "Yes. Vedant Fashion uses only AZO-free reactive and vat dyes across all product lines. Formaldehyde content is maintained below 75 ppm for adult garments and below 30 ppm for children's wear. pH levels are controlled between 4.0 and 7.5. These parameters are verified by independent NABL-accredited laboratory testing on each fabric batch. Test reports are included in shipment documentation and are available for regulatory submission where required.",
       },
       {
-        q: "Can you supply GOTS-certified organic cotton garments?",
-        a: "Yes. Vedant Fashion is GOTS 6.0 certified, and a significant proportion of our woven blouses, cotton dresses, and resort wear are manufactured from GOTS-certified organic cotton. GOTS Transaction Certificates (TCs) are issued per shipment through our certification body and are traceable at the product level. For buyers requiring GOTS certification, please specify this at the time of ordering so the correct certified fabric and production lot are allocated. GOTS-certified garments carry the GOTS label per the standard's labelling rules.",
+        q: "Can you supply organic cotton garments?",
+        a: "Yes. A proportion of our woven blouses, cotton dresses, and resort wear can be manufactured from organic cotton on request. We do not currently hold GOTS or other organic certifications — if certified organic fabric with traceable documentation is a requirement for your order, please discuss this with our team so we can advise on sourcing options.",
       },
     ],
   },
@@ -162,7 +162,7 @@ const SECTIONS: Section[] = [
       },
       {
         q: "What export documents do you provide with each shipment?",
-        a: "Every Vedant Fashion shipment includes: Commercial Invoice (with unit price, total value, HS codes), Packing List (style, colour, size, carton weights and dimensions), Bill of Lading (sea) or Airway Bill (air), Certificate of Origin (GSP / bilateral — required for preferential duty), GOTS / OEKO-TEX certificate copies, AZO-free and formaldehyde test reports, ESMA / SASO compliance declaration (for GCC shipments), and Arabic / English care label samples. For India-UAE CEPA shipments, a CEPA-compliant Certificate of Origin is issued.",
+        a: "Every Vedant Fashion shipment includes: Commercial Invoice (with unit price, total value, HS codes), Packing List (style, colour, size, carton weights and dimensions), Bill of Lading (sea) or Airway Bill (air), Certificate of Origin (GSP / bilateral — required for preferential duty), AZO-free and formaldehyde test reports, ESMA / SASO compliance declaration (for GCC shipments), and Arabic / English care label samples. For India-UAE CEPA shipments, a CEPA-compliant Certificate of Origin is issued.",
       },
       {
         q: "What are the HS codes for your main product categories?",

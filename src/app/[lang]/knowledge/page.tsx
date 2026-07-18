@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   return {
     title: "Textile Knowledge Hub — Guides for Garment Buyers",
-    description: "40+ guides on fabric types, garment manufacturing, GCC export, OEKO-TEX, MOQ, and shipping to UAE, Saudi Arabia, Russia & Middle East wholesale buyers.",
+    description: "40+ guides on fabric types, garment manufacturing, GCC export, compliance, MOQ, and shipping to UAE, Saudi Arabia, Russia & Middle East wholesale buyers.",
     keywords: "textile knowledge, garment manufacturing guide, fabric types, EU textile regulations, B2B fashion",
     alternates: buildHreflangAlternates("/knowledge"),
   };

@@ -18,13 +18,6 @@ const markets = [
   { region: "Egypt & Others", countries: "Alexandria, Cairo + Global", share: "5%", highlight: false },
 ];
 
-const logos = [
-  "25,000+ pieces manufactured monthly",
-  "18–22 days sea freight to UAE",
-  "GOTS & OEKO-TEX certified production",
-  "FOB Mumbai · CIF · DDP available",
-];
-
 const ExportMarkets = ({ lang }: ExportMarketsProps) => {
   const params = useParams();
   const locale = lang ?? (typeof params?.lang === "string" ? params.lang : "en");
@@ -73,15 +66,6 @@ const ExportMarkets = ({ lang }: ExportMarketsProps) => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Trade presence */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {logos.map((item, i) => (
-            <div key={i} className="bg-secondary/50 rounded px-4 py-3 text-center">
-              <p className="text-body-sm text-foreground">{item}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

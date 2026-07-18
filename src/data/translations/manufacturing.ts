@@ -57,7 +57,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   en: {
     hero: {
       subtitle: "Manufacturing",
-      title: "Vertically Integrated Garment Production",
+      title: "Garment Production in Mumbai",
       description:
         "5,000 sq ft manufacturing facility in Mumbai with 60 machines and 15 skilled workers. In-house cutting, stitching, and finishing. 60–90 day bulk lead time. Exporting ladies woven wear to UAE, Russia, Poland, and South Africa.",
     },
@@ -90,7 +90,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Stage 1",
           title: "Fabric Sourcing & Testing",
-          desc: "In-house textile lab for shrinkage, colorfastness, GSM, and tensile strength testing. All fabrics sourced from GOTS-certified mills across India.",
+          desc: "In-house textile lab for shrinkage, colorfastness, GSM, and tensile strength testing. Fabrics sourced from trusted mills across India, with a growing share of sustainable and recycled fabrics.",
         },
         {
           stage: "Stage 2",
@@ -180,29 +180,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   ar: {
     hero: {
       subtitle: "التصنيع",
-      title: "إنتاج ملابس متكامل رأسياً",
+      title: "إنتاج الملابس في مومباي",
       description:
-        "أربعة مرافق حديثة في غوجارات بطاقة 50,000 قطعة/شهر. من الألياف إلى الملبوس النهائي — كل خطوة تحت سقف واحد، معتمد بالكامل بشهادتي GOTS وBSCI.",
+        "منشأة تصنيع بمساحة 5,000 قدم مربع في مومباي مزودة بـ 60 آلة و15 عاملاً ماهراً. قص وخياطة وتشطيب داخلي بالكامل. مهلة تسليم 60–90 يوماً للطلبيات الكبيرة. تصدير ملابس نسائية منسوجة إلى الإمارات وروسيا وبولندا وجنوب أفريقيا.",
     },
     advantages: {
-      subtitle: "لماذا يختارنا المشترون الأوروبيون",
+      subtitle: "لماذا يختارنا مشترو الشرق الأوسط والعالم",
       title: "مزايا التصنيع",
       items: [
         {
-          title: "ضمان مهلة التسليم",
-          desc: "مهلة تسليم قياسية 45 يوماً من تأكيد الطلب. مهلة 30 يوماً للطلبيات المتكررة. نقبل بند العقوبة في حالة التأخير.",
+          title: "مهل تسليم موثوقة",
+          desc: "إنتاج بالجملة خلال 60–90 يوماً من تأكيد الطلب. تسليم العينات خلال أسبوعين. نخطط للإنتاج بعناية ونطلعكم على المستجدات باستمرار.",
         },
         {
           title: "ضمان الجودة",
-          desc: "معيار AQL 2.5 في كل مرحلة. كشف إبر 100%. فرق مراقبة الجودة التابعة للمشتري مرحب بها في الموقع. الفحص من طرف ثالث متاح عند الطلب.",
+          desc: "عملية مراقبة جودة من 10 خطوات تغطي فحص الأقمشة وفحوصات الخياطة أثناء الإنتاج والتحقق من القياسات والتشطيب والفحص النهائي قبل التعبئة.",
         },
         {
-          title: "فريق حساب مخصص",
-          desc: "يحصل كل عميل أوروبي على مسؤول تجاري مخصص ومسؤول جودة ومنسق لوجستي. نقطة تواصل واحدة من مرحلة العينات إلى الشحن.",
+          title: "تواصل مباشر",
+          desc: "يتعامل كل عميل مباشرة مع شرافان ديوان، المدير. بلا وسطاء وبلا سوء تفاهم. واتساب: +91 9930968116",
         },
         {
-          title: "التكامل الرأسي",
-          desc: "توريد الأقمشة والصباغة والقطع والخياطة والإنهاء والتعبئة — كل ذلك تحت إدارة واحدة. لا مقاولة من الباطن دون موافقة المشتري.",
+          title: "حد أدنى مرن للطلبية",
+          desc: "حد أدنى 100 قطعة لكل تصميم ولون — أقل من معظم المصنعين الهنود. العلامة الخاصة والتعبئة المخصصة متاحة.",
         },
       ],
     },
@@ -213,7 +213,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "المرحلة 1",
           title: "توريد الأقمشة والاختبار",
-          desc: "مختبر نسيج داخلي لاختبار الانكماش والثبات اللوني وكثافة الغرام والمتانة. جميع الأقمشة مصدرها مصانع معتمدة بشهادة GOTS في الهند وأوروبا.",
+          desc: "مختبر نسيج داخلي لاختبار الانكماش والثبات اللوني وكثافة الغرام والمتانة. الأقمشة من مصانع موثوقة في الهند، مع حصة متزايدة من الأقمشة المستدامة والمعاد تدويرها.",
         },
         {
           stage: "المرحلة 2",
@@ -247,20 +247,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "البنية التحتية للتصنيع",
       units: [
         {
-          name: "الوحدة 1 — الملابس المنسوجة",
-          desc: "منشأتنا الرئيسية تتولى جميع عمليات إنتاج الملابس المنسوجة — بلوزات وقمصان وفساتين. 8 خطوط خياطة وقطع آلي ومختبر داخلي. إضاءة طبيعية وأنظمة تهوية في جميع أنحاء المنشأة.",
+          name: "منشأة فيدانت فاشون — مومباي",
+          desc: "منشأة إنتاج بمساحة 5,000 قدم مربع في أسالفا غاتكوبار، مومباي. تضم جميع العمليات الداخلية: فحص الأقمشة وغرفة القص وطابق خياطة بـ 60 آلة وقسم التشطيب ومنطقة مراقبة الجودة. طباعة الأقمشة يتم تنفيذها لدى مطابع متخصصة.",
         },
         {
-          name: "الوحدة 2 — الإنهاء والزخرفة",
-          desc: "مخصصة لغسيل الملابس والصباغة والتطريز والإنهاءات الخاصة. غسيل إنزيمي وحجري ومعالجات بمرطبات صديقة للبيئة. محطة Zero Liquid Discharge تعمل منذ 2021.",
+          name: "قسم القص والأقمشة",
+          desc: "غرفة قص مخصصة مع وضع دقيق للأنماط وقص حسب المقاس وفحص عيوب الأقمشة قبل بدء الإنتاج. تتعامل مع الفسكوز وخلطات الكتان والريون والجورجيت والكريب.",
         },
         {
-          name: "الوحدة 3 — العينات والبحث والتطوير",
-          desc: "مركز نماذج أولية سريعة لعينات المشترين. تسليم عينات خلال 48 ساعة للطلبات العاجلة. غرفة أنماط CAD ومختبر نسيج بمطياف ضوئي ومكتبة اتجاهات موسمية.",
+          name: "طابق الخياطة والتشطيب",
+          desc: "60 آلة تغطي الخياطة بإبرة واحدة والأوفرلوك والتشطيب. فحوصات جودة أثناء كل مرحلة خياطة. أعمال التطريز والترتر تُنفذ داخلياً.",
         },
         {
-          name: "الوحدة 4 — الحياكة الدائرية والجيرسيه",
-          desc: "معالجة حياكة دائرية للتيشيرتات وقمصان البولو وفساتين الجيرسيه. 4 خطوط إنتاج بطاقة 15,000 قطعة/شهر. تخصص في جيرسيه القطن العضوي ومزيج Tencel.",
+          name: "قسم مراقبة الجودة والتعبئة",
+          desc: "الفحص النهائي والتحقق من القياسات وتشذيب الخيوط والكي والطي والتعبئة وفق مواصفات العميل. بطاقات العلامة الخاصة والتعبئة المخصصة متاحة.",
         },
       ],
       imagePlaceholders: { factoryFloor: "أرضية المصنع", cuttingRoom: "غرفة القطع", qualityLab: "مختبر الجودة" },
@@ -285,16 +285,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "طاقة الإنتاج",
       items: [
         { label: "قطعة / شهر" },
-        { label: "وحدات تصنيع" },
+        { label: "وحدة تصنيع" },
         { label: "عامل ماهر" },
         { label: "مهلة التسليم القياسية" },
       ],
     },
     cta: {
-      title: "جدولة جولة افتراضية بالمصنع",
+      title: "اطلب عينة أو عرض سعر",
       description:
-        "شاهد خطوط إنتاجنا في العمل. نقدم جولات فيديو مباشرة للمشترين المحتملين عبر جميع المرافق الأربعة.",
-      buttonText: "احجز جولة",
+        "أرسل لنا ملخص التصميم أو متطلبات العينة. سنرد خلال 24 ساعة بمهلة التسليم وسعر FOB وتوفر الإنتاج.",
+      buttonText: "احصل على عرض سعر",
     },
   },
 
@@ -302,29 +302,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   ru: {
     hero: {
       subtitle: "Производство",
-      title: "Вертикально интегрированное швейное производство",
+      title: "Швейное производство в Мумбаи",
       description:
-        "Четыре современных предприятия в Гуджарате с мощностью 50 000 единиц в месяц. От волокна до готового изделия — каждый этап под одной крышей, полная сертификация GOTS и BSCI.",
+        "Производственное предприятие площадью 5 000 кв. футов в Мумбаи, 60 единиц оборудования и 15 квалифицированных рабочих. Собственный раскрой, пошив и отделка. Срок выполнения оптовых заказов — 60–90 дней. Экспорт женской тканой одежды в ОАЭ, Россию, Польшу и Южную Африку.",
     },
     advantages: {
-      subtitle: "Почему европейские покупатели выбирают нас",
+      subtitle: "Почему покупатели с Ближнего Востока и всего мира выбирают нас",
       title: "Преимущества производства",
       items: [
         {
-          title: "Гарантия сроков",
-          desc: "Стандартный срок производства — 45 дней с момента подтверждения заказа. Экспресс-производство за 30 дней для повторных заказов. Принимаем штрафные условия за просрочку.",
+          title: "Надёжные сроки",
+          desc: "60–90 дней на оптовое производство с момента подтверждения заказа. Образцы — за 2 недели. Мы тщательно планируем производство и держим вас в курсе на каждом этапе.",
         },
         {
-          title: "Контроль качества",
-          desc: "AQL 2.5 на каждом этапе. Стопроцентный контроль игл. Инспекционные группы покупателя приветствуются на месте. Независимая инспекция организуется по запросу.",
+          title: "Качество на каждом этапе",
+          desc: "10-этапный процесс контроля качества: проверка тканей, контроль пошива в процессе, проверка размеров, отделка и финальная инспекция перед упаковкой.",
         },
         {
-          title: "Персональная команда",
-          desc: "Каждый европейский клиент получает персонального мерчандайзера, инспектора качества и логистического координатора. Единая точка контакта — от образцов до отгрузки.",
+          title: "Прямое общение",
+          desc: "Каждый клиент работает напрямую со Шраваном Дываном, директором. Без посредников и недопонимания. WhatsApp: +91 9930968116",
         },
         {
-          title: "Вертикальная интеграция",
-          desc: "Закупка ткани, крашение, раскрой, пошив, отделка и упаковка — всё под единым управлением. Субподряд без согласования с покупателем не допускается.",
+          title: "Гибкий минимальный заказ",
+          desc: "Минимум 100 единиц на дизайн и цвет — меньше, чем у большинства индийских производителей. Доступны частная марка и индивидуальная упаковка.",
         },
       ],
     },
@@ -335,7 +335,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Этап 1",
           title: "Закупка и тестирование ткани",
-          desc: "Собственная текстильная лаборатория для проверки усадки, устойчивости окраски, плотности GSM и прочности на разрыв. Все ткани закупаются на сертифицированных по GOTS фабриках в Индии и Европе.",
+          desc: "Собственная текстильная лаборатория для проверки усадки, устойчивости окраски, плотности GSM и прочности на разрыв. Ткани закупаются на проверенных фабриках Индии, с растущей долей устойчивых и переработанных тканей.",
         },
         {
           stage: "Этап 2",
@@ -369,20 +369,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Производственная инфраструктура",
       units: [
         {
-          name: "Предприятие 1 — Тканые изделия",
-          desc: "Флагманское предприятие для всего тканого производства — блузы, рубашки, платья. 8 пошивочных линий, автоматический раскрой, собственная лаборатория. Естественное освещение и вентиляция во всех помещениях.",
+          name: "Vedant Fashion — предприятие в Мумбаи",
+          desc: "Производственное предприятие площадью 5 000 кв. футов в Асалфа Гхаткопар, Мумбаи. Все операции под одной крышей: проверка ткани, раскройный цех, пошивочный участок на 60 машин, отделка и зона контроля качества. Печать по ткани выполняется у специализированных подрядчиков.",
         },
         {
-          name: "Предприятие 2 — Отделка и украшение",
-          desc: "Специализируется на стирке, крашении, вышивке и специальных отделках. Ферментная стирка, стирка с камнями, экологичные смягчающие обработки. Установка Zero Liquid Discharge работает с 2021 года.",
+          name: "Раскройный участок",
+          desc: "Отдельный раскройный цех с точной раскладкой лекал, раскроем по размерам и проверкой дефектов ткани перед началом производства. Работа с вискозой, льняными смесями, вискозой, жоржетом и крепом.",
         },
         {
-          name: "Предприятие 3 — Образцы и НИОКР",
-          desc: "Центр оперативного прототипирования для образцов покупателей. Срочное изготовление образцов за 48 часов. CAD-ателье, текстильная лаборатория со спектрофотометром, сезонная трендовая библиотека.",
+          name: "Пошивочный и отделочный участок",
+          desc: "60 машин: одноигольный стачной шов, оверлок и отделка. Контроль качества на каждом этапе пошива. Вышивка и пайетки выполняются собственными силами.",
         },
         {
-          name: "Предприятие 4 — Трикотаж",
-          desc: "Производство кругловязаного трикотажа для футболок, поло и платьев из джерси. 4 производственные линии мощностью 15 000 ед./мес. Специализация: органический хлопковый джерси и смесовый Tencel.",
+          name: "Участок контроля качества и упаковки",
+          desc: "Финальная инспекция, проверка размеров, обрезка нитей, глажка, складывание и упаковка по спецификации клиента. Доступны бирки частной марки и индивидуальная упаковка.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Производственный зал", cuttingRoom: "Раскройный цех", qualityLab: "Лаборатория качества" },
@@ -407,16 +407,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Производственные мощности",
       items: [
         { label: "Единиц / месяц" },
-        { label: "Производственных предприятий" },
+        { label: "Производственное предприятие" },
         { label: "Квалифицированных сотрудников" },
-        { label: "Стандартный срок производства" },
+        { label: "Дней срок оптового производства" },
       ],
     },
     cta: {
-      title: "Запланируйте виртуальный тур по фабрике",
+      title: "Запросить образец или расчёт стоимости",
       description:
-        "Посмотрите наши производственные линии в действии. Мы проводим видеоэкскурсии для потенциальных покупателей по всем четырём предприятиям.",
-      buttonText: "Записаться на тур",
+        "Отправьте нам бриф на дизайн или требования к образцу. Мы ответим в течение 24 часов со сроками, ценой FOB и доступностью производства.",
+      buttonText: "Получить расчёт стоимости",
     },
   },
 
@@ -424,29 +424,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   pl: {
     hero: {
       subtitle: "Produkcja",
-      title: "Pionowo zintegrowana produkcja odzieży",
+      title: "Produkcja odzieży w Mumbaju",
       description:
-        "Cztery nowoczesne zakłady w Gudźaracie o wydajności 50 000 szt./mies. Od włókna do gotowego wyrobu — każdy etap pod jednym dachem, z pełną certyfikacją GOTS i BSCI.",
+        "Zakład produkcyjny o powierzchni 5000 stóp kwadratowych w Mumbaju, z 60 maszynami i 15 wykwalifikowanymi pracownikami. Własne krojenie, szycie i wykańczanie. Termin realizacji zamówień hurtowych 60–90 dni. Eksport damskiej odzieży tkanej do ZEA, Rosji, Polski i RPA.",
     },
     advantages: {
-      subtitle: "Dlaczego europejscy kupujący nas wybierają",
+      subtitle: "Dlaczego kupujący z Bliskiego Wschodu i całego świata nas wybierają",
       title: "Zalety produkcji",
       items: [
         {
-          title: "Gwarancja terminu realizacji",
-          desc: "Standardowy termin 45 dni od potwierdzenia zamówienia. Ekspres 30 dni dostępny dla zamówień powtarzalnych. Klauzula karna za opóźnienie akceptowana.",
+          title: "Niezawodne terminy realizacji",
+          desc: "60–90 dni na produkcję hurtową od potwierdzenia zamówienia. 2 tygodnie na próbki. Starannie planujemy produkcję i informujemy na bieżąco.",
         },
         {
-          title: "Zapewnienie jakości",
-          desc: "AQL 2.5 na każdym etapie. 100% detekcja igieł. Zespoły QC kupującego mile widziane na miejscu. Inspekcja strony trzeciej organizowana na życzenie.",
+          title: "Jakość na każdym etapie",
+          desc: "10-etapowy proces kontroli jakości obejmujący kontrolę tkanin, kontrolę szycia w trakcie produkcji, weryfikację wymiarów, wykańczanie i kontrolę końcową przed pakowaniem.",
         },
         {
-          title: "Dedykowany zespół opiekuński",
-          desc: "Każdy klient europejski otrzymuje dedykowanego kupca, inspektora jakości i koordynatora logistyki. Jeden punkt kontaktu — od wzornictwa po wysyłkę.",
+          title: "Bezpośredni kontakt",
+          desc: "Każdy klient współpracuje bezpośrednio ze Shravanem Diwanem, dyrektorem. Bez pośredników i nieporozumień. WhatsApp: +91 9930968116",
         },
         {
-          title: "Integracja pionowa",
-          desc: "Pozyskiwanie tkanin, barwienie, krojenie, szycie, wykańczanie i pakowanie — wszystko pod jednym zarządem. Brak podwykonawstwa bez zgody kupującego.",
+          title: "Elastyczne minimum zamówienia",
+          desc: "Minimum 100 sztuk na wzór i kolor — mniej niż u większości indyjskich producentów. Dostępna marka własna i niestandardowe pakowanie.",
         },
       ],
     },
@@ -457,7 +457,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Etap 1",
           title: "Pozyskiwanie i testowanie tkanin",
-          desc: "Własne laboratorium tekstylne do badania kurczliwości, trwałości barwy, gęstości GSM i wytrzymałości na zerwanie. Wszystkie tkaniny ze zleceniodawców z certyfikatem GOTS w Indiach i Europie.",
+          desc: "Własne laboratorium tekstylne do badania kurczliwości, trwałości barwy, gęstości GSM i wytrzymałości na zerwanie. Tkaniny pochodzą ze sprawdzonych zakładów w Indiach, z rosnącym udziałem tkanin zrównoważonych i pochodzących z recyklingu.",
         },
         {
           stage: "Etap 2",
@@ -491,20 +491,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Infrastruktura produkcyjna",
       units: [
         {
-          name: "Zakład 1 — Odzież tkana",
-          desc: "Nasz sztandarowy zakład obsługujący całą produkcję tkanin — bluzki, koszule, sukienki. 8 linii szwalniczych, automatyczne krojenie, własne laboratorium. Naturalne oświetlenie i wentylacja w całym obiekcie.",
+          name: "Vedant Fashion — zakład w Mumbaju",
+          desc: "Zakład produkcyjny o powierzchni 5000 stóp kwadratowych w Asalpha Ghatkopar, Mumbaj. Wszystkie operacje pod jednym dachem: kontrola tkanin, krojownia, hala szwalnicza z 60 maszynami, dział wykańczania i kontrola jakości. Druk na tkaninach zlecany wyspecjalizowanym drukarniom.",
         },
         {
-          name: "Zakład 2 — Wykańczalnia i zdobnictwo",
-          desc: "Dedykowany do prania, barwienia, haftu i specjalnych wykończeń. Pranie enzymatyczne, pranie kamienne i ekologiczne zmiękczacze. Instalacja Zero Liquid Discharge działa od 2021 roku.",
+          name: "Dział krojenia i tkanin",
+          desc: "Dedykowana krojownia z precyzyjnym rozplanowaniem wzorów, krojeniem wg rozmiarów i kontrolą wad tkanin przed rozpoczęciem produkcji. Obsługuje wiskozę, mieszanki lnu, rayon, żorżetę i krepę.",
         },
         {
-          name: "Zakład 3 — Wzorcownia i B+R",
-          desc: "Centrum szybkiego prototypowania dla wzorców kupujących. Realizacja wzorców w 48 h dla pilnych zleceń. Pracownia CAD, laboratorium tekstylne ze spektrofotometrem i sezonowa biblioteka trendów.",
+          name: "Hala szycia i wykańczania",
+          desc: "60 maszyn obejmujących ścieg jednoigłowy, overlock i wykańczanie. Kontrola jakości na każdym etapie szycia. Haft i cekiny wykonywane wewnętrznie.",
         },
         {
-          name: "Zakład 4 — Dzianina okrągła i jersey",
-          desc: "Produkcja dzianiny okrągłej do t-shirtów, koszulek polo i sukienek jersey. 4 linie produkcyjne o wydajności 15 000 szt./mies. Specjalizacja: organic cotton jersey i mieszanki Tencel.",
+          name: "Dział kontroli jakości i pakowania",
+          desc: "Kontrola końcowa, weryfikacja wymiarów, obcinanie nitek, prasowanie, składanie i pakowanie zgodnie ze specyfikacją klienta. Dostępne metki marki własnej i niestandardowe pakowanie.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Hala produkcyjna", cuttingRoom: "Krojownia", qualityLab: "Laboratorium jakości" },
@@ -529,16 +529,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Zdolności produkcyjne",
       items: [
         { label: "Sztuk / miesiąc" },
-        { label: "Zakładów produkcyjnych" },
+        { label: "Zakład produkcyjny" },
         { label: "Wykwalifikowanych pracowników" },
-        { label: "Standardowy czas realizacji" },
+        { label: "Dni terminu realizacji hurtowej" },
       ],
     },
     cta: {
-      title: "Zaplanuj wirtualną wycieczkę po fabryce",
+      title: "Zamów próbkę lub wycenę",
       description:
-        "Zobacz nasze linie produkcyjne w akcji. Oferujemy transmisje wideo na żywo dla potencjalnych kupujących ze wszystkich czterech zakładów.",
-      buttonText: "Zarezerwuj wycieczkę",
+        "Prześlij nam brief projektowy lub wymagania dotyczące próbki. Odpowiemy w ciągu 24 godzin z terminem realizacji, ceną FOB i dostępnością produkcji.",
+      buttonText: "Uzyskaj wycenę",
     },
   },
 
@@ -546,29 +546,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   fr: {
     hero: {
       subtitle: "Production",
-      title: "Fabrication de vêtements verticalement intégrée",
+      title: "Fabrication de vêtements à Mumbai",
       description:
-        "Quatre installations de pointe au Gujarat avec une capacité de 50 000 pièces/mois. De la fibre au vêtement fini — chaque étape sous un même toit, entièrement certifié GOTS et BSCI.",
+        "Site de fabrication de 5 000 pieds carrés à Mumbai avec 60 machines et 15 ouvriers qualifiés. Coupe, couture et finition en interne. Délai de production en gros de 60 à 90 jours. Exportation de vêtements tissés pour femmes vers les Émirats arabes unis, la Russie, la Pologne et l'Afrique du Sud.",
     },
     advantages: {
-      subtitle: "Pourquoi les acheteurs européens nous choisissent",
+      subtitle: "Pourquoi les acheteurs du Moyen-Orient et du monde entier nous choisissent",
       title: "Avantages de fabrication",
       items: [
         {
-          title: "Garantie de délai",
-          desc: "Délai standard de 45 jours à partir de la confirmation de commande. Express 30 jours disponible pour les commandes répétées. Clause pénale acceptée en cas de retard.",
+          title: "Délais fiables",
+          desc: "Production en gros de 60 à 90 jours à partir de la confirmation de commande. Échantillons livrés en 2 semaines. Nous planifions la production avec soin et communiquons régulièrement.",
         },
         {
-          title: "Contrôle qualité",
-          desc: "AQL 2.5 à chaque étape. Détection d'aiguilles 100%. Équipes QC de l'acheteur bienvenues sur site. Inspection tierce organisée sur demande.",
+          title: "Qualité à chaque étape",
+          desc: "Processus de contrôle qualité en 10 étapes couvrant l'inspection des tissus, les contrôles de couture en cours de production, la vérification des mesures, la finition et l'inspection finale avant emballage.",
         },
         {
-          title: "Équipe dédiée",
-          desc: "Chaque client européen bénéficie d'un merchandiseur, d'un responsable QC et d'un coordinateur logistique dédiés. Interlocuteur unique de l'échantillonnage à l'expédition.",
+          title: "Communication directe",
+          desc: "Chaque client travaille directement avec Shravan Diwan, directeur. Sans intermédiaires ni malentendus. WhatsApp : +91 9930968116",
         },
         {
-          title: "Intégration verticale",
-          desc: "Approvisionnement en tissu, teinture, coupe, couture, finition et emballage — le tout sous une seule gestion. Pas de sous-traitance sans accord de l'acheteur.",
+          title: "MOQ flexible",
+          desc: "Minimum 100 pièces par modèle et par couleur — inférieur à la plupart des fabricants indiens. Marque privée et emballage personnalisé disponibles.",
         },
       ],
     },
@@ -579,7 +579,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Étape 1",
           title: "Approvisionnement et test des tissus",
-          desc: "Laboratoire textile interne pour les tests de rétrécissement, solidité des couleurs, GSM et résistance à la traction. Tous les tissus proviennent de filatures certifiées GOTS en Inde et en Europe.",
+          desc: "Laboratoire textile interne pour les tests de rétrécissement, solidité des couleurs, GSM et résistance à la traction. Tissus provenant d'usines fiables en Inde, avec une part croissante de tissus durables et recyclés.",
         },
         {
           stage: "Étape 2",
@@ -613,20 +613,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Infrastructure de fabrication",
       units: [
         {
-          name: "Unité 1 — Vêtements tissés",
-          desc: "Notre installation phare pour toute la production tissée — chemisiers, chemises, robes. 8 lignes de couture, coupe automatisée, laboratoire interne. Éclairage naturel et ventilation dans tout le bâtiment.",
+          name: "Vedant Fashion — Site de Mumbai",
+          desc: "Site de production de 5 000 pieds carrés à Asalpha Ghatkopar, Mumbai. Regroupe toutes les opérations internes : inspection des tissus, salle de coupe, atelier de couture de 60 machines, section de finition et zone de contrôle qualité. L'impression des tissus est sous-traitée à des imprimeurs spécialisés.",
         },
         {
-          name: "Unité 2 — Finition et embellissement",
-          desc: "Dédiée au lavage, teinture, broderie et finitions spéciales. Lavage enzymatique, stone wash et adoucissants écologiques. Installation Zero Liquid Discharge opérationnelle depuis 2021.",
+          name: "Section coupe et tissus",
+          desc: "Salle de coupe dédiée avec placement soigneux des patrons, coupe par taille et vérification des défauts de tissu avant le début de production. Traite le viscose, les mélanges de lin, le rayonne, la georgette et le crêpe.",
         },
         {
-          name: "Unité 3 — Prototypage et R&D",
-          desc: "Centre de prototypage rapide pour les échantillons acheteurs. Livraison d'échantillons en 48h pour les demandes urgentes. Atelier patronage CAO, laboratoire textile avec spectrophotomètre, bibliothèque de tendances saisonnières.",
+          name: "Atelier couture et finition",
+          desc: "60 machines couvrant le point noué simple aiguille, le surjet et la finition. Contrôles qualité à chaque étape de couture. Broderie et travaux de sequins réalisés en interne.",
         },
         {
-          name: "Unité 4 — Maille et jersey",
-          desc: "Tricotage circulaire pour t-shirts, polos et robes en jersey. 4 lignes de production avec 15 000 pcs/mois. Spécialisation en jersey coton bio et mélanges Tencel.",
+          name: "Section QC et emballage",
+          desc: "Inspection finale, vérification des mesures, coupe des fils, repassage, pliage et emballage selon les spécifications du client. Étiquettes marque privée et emballage personnalisé disponibles.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Salle de production", cuttingRoom: "Salle de coupe", qualityLab: "Laboratoire qualité" },
@@ -651,16 +651,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Capacité de production",
       items: [
         { label: "Pièces / mois" },
-        { label: "Unités de fabrication" },
+        { label: "Site de fabrication" },
         { label: "Travailleurs qualifiés" },
-        { label: "Délai de production standard" },
+        { label: "Jours délai de production en gros" },
       ],
     },
     cta: {
-      title: "Planifiez une visite virtuelle de l'usine",
+      title: "Demander un échantillon ou un devis",
       description:
-        "Regardez nos lignes de production en action. Nous proposons des visites vidéo en direct aux acheteurs potentiels dans les quatre installations.",
-      buttonText: "Réserver une visite",
+        "Envoyez-nous votre brief de conception ou vos exigences d'échantillon. Nous répondrons sous 24 heures avec le délai, le prix FOB et la disponibilité de production.",
+      buttonText: "Obtenir un devis",
     },
   },
 
@@ -668,29 +668,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   it: {
     hero: {
       subtitle: "Produzione",
-      title: "Produzione abbigliamento verticalmente integrata",
+      title: "Produzione di abbigliamento a Mumbai",
       description:
-        "Quattro stabilimenti all'avanguardia nel Gujarat con capacità di 50.000 pezzi/mese. Dalla fibra al capo finito — ogni fase sotto lo stesso tetto, con piena certificazione GOTS e BSCI.",
+        "Stabilimento produttivo di 5.000 piedi quadrati a Mumbai con 60 macchine e 15 lavoratori qualificati. Taglio, cucitura e finitura interni. Tempi di produzione all'ingrosso di 60–90 giorni. Esportazione di abbigliamento tessuto da donna verso Emirati Arabi Uniti, Russia, Polonia e Sudafrica.",
     },
     advantages: {
-      subtitle: "Perché gli acquirenti europei ci scelgono",
+      subtitle: "Perché gli acquirenti del Medio Oriente e del mondo ci scelgono",
       title: "Vantaggi produttivi",
       items: [
         {
-          title: "Garanzia sui tempi di consegna",
-          desc: "Tempi standard di 45 giorni dalla conferma ordine. Express 30 giorni disponibile per ordini ripetuti. Clausola penale accettata per consegne in ritardo.",
+          title: "Tempi di consegna affidabili",
+          desc: "Produzione all'ingrosso in 60–90 giorni dalla conferma dell'ordine. Campioni in 2 settimane. Pianifichiamo la produzione con cura e comunichiamo aggiornamenti costanti.",
         },
         {
-          title: "Controllo qualità",
-          desc: "AQL 2.5 ad ogni fase. Rilevamento aghi 100%. I team QC dell'acquirente sono benvenuti in loco. Ispezione terze parti organizzata su richiesta.",
+          title: "Qualità in ogni fase",
+          desc: "Processo di controllo qualità in 10 fasi che copre l'ispezione dei tessuti, i controlli di cucitura in linea, la verifica delle misure, la finitura e l'ispezione finale prima dell'imballaggio.",
         },
         {
-          title: "Team dedicato",
-          desc: "Ogni cliente europeo ha un merchandiser, un responsabile QC e un coordinatore logistico dedicati. Unico punto di contatto dal campionamento alla spedizione.",
+          title: "Comunicazione diretta",
+          desc: "Ogni cliente lavora direttamente con Shravan Diwan, Direttore. Nessun intermediario, nessun malinteso. WhatsApp: +91 9930968116",
         },
         {
-          title: "Integrazione verticale",
-          desc: "Approvvigionamento tessuti, tintura, taglio, cucitura, finitura e imballaggio — tutto sotto un'unica gestione. Nessun subappalto senza approvazione dell'acquirente.",
+          title: "MOQ flessibile",
+          desc: "Minimo 100 pezzi per design e colore — inferiore alla maggior parte dei produttori indiani. Private label e imballaggio personalizzato disponibili.",
         },
       ],
     },
@@ -701,7 +701,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Fase 1",
           title: "Approvvigionamento e test dei tessuti",
-          desc: "Laboratorio tessile interno per test di restringimento, solidità del colore, GSM e resistenza alla trazione. Tutti i tessuti da filature certificate GOTS in India e in Europa.",
+          desc: "Laboratorio tessile interno per test di restringimento, solidità del colore, GSM e resistenza alla trazione. Tessuti da fornitori affidabili in India, con una quota crescente di tessuti sostenibili e riciclati.",
         },
         {
           stage: "Fase 2",
@@ -735,20 +735,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Infrastruttura produttiva",
       units: [
         {
-          name: "Unità 1 — Capi tessuti",
-          desc: "Il nostro stabilimento principale per tutta la produzione tessuta — bluse, camicie, abiti. 8 linee di cucitura, taglio automatizzato, laboratorio interno. Illuminazione naturale e ventilazione in tutto lo stabilimento.",
+          name: "Vedant Fashion — Stabilimento di Mumbai",
+          desc: "Stabilimento produttivo di 5.000 piedi quadrati ad Asalpha Ghatkopar, Mumbai. Ospita tutte le operazioni interne: ispezione tessuti, sala taglio, reparto cucitura con 60 macchine, sezione finitura e area controllo qualità. La stampa su tessuto è affidata a stampatori specializzati esterni.",
         },
         {
-          name: "Unità 2 — Finitura e abbellimento",
-          desc: "Dedicata a lavaggi, tintura, ricamo e finiture speciali. Lavaggio enzimatico, stone wash e trattamenti ammorbidenti ecologici. Impianto Zero Liquid Discharge operativo dal 2021.",
+          name: "Sezione taglio e tessuti",
+          desc: "Sala taglio dedicata con posizionamento accurato dei patroni, taglio per taglia e controllo difetti tessuto prima dell'inizio produzione. Gestisce viscosa, misti lino, rayon, georgette e crêpe.",
         },
         {
-          name: "Unità 3 — Campionatura e R&S",
-          desc: "Centro di prototipazione rapida per campioni acquirenti. Campioni urgenti in 48 ore. Sala patroni CAD, laboratorio tessile con spettrofotometro e biblioteca tendenze stagionali.",
+          name: "Reparto cucitura e finitura",
+          desc: "60 macchine per punto fisso ago singolo, overlock e finitura. Controlli qualità ad ogni fase di cucitura. Ricamo e paillettes eseguiti internamente.",
         },
         {
-          name: "Unità 4 — Maglieria circolare e jersey",
-          desc: "Lavorazione a maglia circolare per t-shirt, polo e abiti in jersey. 4 linee produttive da 15.000 pz/mese. Specializzazione in jersey di cotone biologico e blend Tencel.",
+          name: "Sezione QC e imballaggio",
+          desc: "Ispezione finale, verifica misure, taglio fili, stiratura, piegatura e imballaggio secondo le specifiche del cliente. Etichette private label e imballaggio personalizzato disponibili.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Piano di produzione", cuttingRoom: "Sala taglio", qualityLab: "Laboratorio qualità" },
@@ -773,16 +773,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Capacità produttiva",
       items: [
         { label: "Pezzi / mese" },
-        { label: "Unità produttive" },
+        { label: "Stabilimento produttivo" },
         { label: "Lavoratori qualificati" },
-        { label: "Tempi di produzione standard" },
+        { label: "Giorni tempi produzione ingrosso" },
       ],
     },
     cta: {
-      title: "Programma un tour virtuale dello stabilimento",
+      title: "Richiedi un campione o un preventivo",
       description:
-        "Guarda le nostre linee di produzione in azione. Offriamo tour video in diretta per acquirenti potenziali in tutti e quattro gli stabilimenti.",
-      buttonText: "Prenota un tour",
+        "Inviaci il tuo brief di design o le tue esigenze di campionatura. Risponderemo entro 24 ore con tempi di consegna, prezzo FOB e disponibilità produttiva.",
+      buttonText: "Richiedi un preventivo",
     },
   },
 
@@ -790,29 +790,29 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
   nl: {
     hero: {
       subtitle: "Productie",
-      title: "Verticaal geïntegreerde kledingproductie",
+      title: "Kledingproductie in Mumbai",
       description:
-        "Vier ultramoderne vestigingen in Gujarat met een capaciteit van 50.000 stuks/maand. Van vezel tot afgewerkt kledingstuk — elke stap onder één dak, volledig GOTS- en BSCI-gecertificeerd.",
+        "Productiefaciliteit van 5.000 vierkante voet in Mumbai met 60 machines en 15 vakbekwame werknemers. Eigen snijden, naaien en afwerking. Levertijd van 60–90 dagen voor grootschalige bestellingen. Export van geweven dameskleding naar de VAE, Rusland, Polen en Zuid-Afrika.",
     },
     advantages: {
-      subtitle: "Waarom Europese inkopers voor ons kiezen",
+      subtitle: "Waarom inkopers uit het Midden-Oosten en wereldwijd voor ons kiezen",
       title: "Productie­voordelen",
       items: [
         {
-          title: "Levertijdgarantie",
-          desc: "Standaard levertijd 45 dagen na orderbevestiging. Express 30 dagen beschikbaar voor herhalingsorders. Boeteclausule voor te late levering geaccepteerd.",
+          title: "Betrouwbare levertijden",
+          desc: "60–90 dagen bulkproductie vanaf orderbevestiging. 2 weken doorlooptijd voor stalen. We plannen productie zorgvuldig en houden u voortdurend op de hoogte.",
         },
         {
-          title: "Kwaliteitsborging",
-          desc: "AQL 2.5 in elke fase. 100% naalddetectie. QC-teams van de inkoper zijn welkom op locatie. Onafhankelijke inspectie op verzoek geregeld.",
+          title: "Kwaliteit in elke fase",
+          desc: "10-stappen kwaliteitscontroleproces: stofinspectie, controles tijdens het naaien, maatverificatie, afwerking en eindcontrole voor het verpakken.",
         },
         {
-          title: "Dedicated accountteam",
-          desc: "Elke Europese klant krijgt een vaste merchandiser, QC-medewerker en logistiek coördinator. Eén aanspreekpunt van bemonstering tot verzending.",
+          title: "Direct contact",
+          desc: "Elke klant werkt rechtstreeks met Shravan Diwan, directeur. Geen tussenpersonen, geen miscommunicatie. WhatsApp: +91 9930968116",
         },
         {
-          title: "Verticale integratie",
-          desc: "Stofinkoop, verving, snijden, naaien, afwerking en verpakking — alles onder één management. Geen uitbesteding zonder toestemming van de inkoper.",
+          title: "Flexibele MOQ",
+          desc: "Minimaal 100 stuks per ontwerp per kleur — lager dan de meeste Indiase fabrikanten. Private label en aangepaste verpakking beschikbaar.",
         },
       ],
     },
@@ -823,7 +823,7 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
         {
           stage: "Stap 1",
           title: "Stofinkoop en -testen",
-          desc: "Eigen textiellaboratorium voor krimp, kleurechtheid, GSM en treksterkte. Alle stoffen van GOTS-gecertificeerde weefmills in India en Europa.",
+          desc: "Eigen textiellaboratorium voor krimp, kleurechtheid, GSM en treksterkte. Stoffen van betrouwbare fabrieken in India, met een groeiend aandeel duurzame en gerecyclede stoffen.",
         },
         {
           stage: "Stap 2",
@@ -857,20 +857,20 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Productie-infrastructuur",
       units: [
         {
-          name: "Vestiging 1 — Geweven kledij",
-          desc: "Onze vlaggenschipvestiging voor alle geweven productie — blouses, shirts, jurken. 8 naailijnen, geautomatiseerd snijden, eigen laboratorium. Daglicht en ventilatie door het hele gebouw.",
+          name: "Vedant Fashion — Vestiging Mumbai",
+          desc: "Productiefaciliteit van 5.000 vierkante voet in Asalpha Ghatkopar, Mumbai. Huisvest alle interne operaties: stofinspectie, snijzaal, naaivloer met 60 machines, afwerkingssectie en QC-zone. Stofbedrukking wordt uitbesteed aan gespecialiseerde drukkerijen.",
         },
         {
-          name: "Vestiging 2 — Afwerking en decoratie",
-          desc: "Gewijd aan wassen, verven, borduren en speciale afwerkingen. Enzymatisch wassen, stonewash en milieuvriendelijke verzachters. Zero Liquid Discharge-installatie operationeel sinds 2021.",
+          name: "Snij- en stofsectie",
+          desc: "Speciale snijzaal met zorgvuldige patroonplaatsing, snijden op maat en controle op stofgebreken voordat de productie begint. Verwerkt viscose, linnenmengsels, rayon, georgette en crêpe.",
         },
         {
-          name: "Vestiging 3 — Staalmakerij en R&D",
-          desc: "Snel prototypingcentrum voor inkopers­stalen. Spoedlevering stalen binnen 48 uur. CAD-atelier, textiellaboratorium met spectrofotometer en seizoenstrends­bibliotheek.",
+          name: "Naai- en afwerkingsvloer",
+          desc: "60 machines voor eennaaldstiksel, overlock en afwerking. Kwaliteitscontroles bij elke naaifase. Borduur- en pailletwerk intern uitgevoerd.",
         },
         {
-          name: "Vestiging 4 — Breisel en jersey",
-          desc: "Rondbreien voor t-shirts, polo's en jerseyjurken. 4 productielijnen met 15.000 st./maand. Specialisatie in organisch katoenen jersey en Tencel-mengsels.",
+          name: "QC- en verpakkingssectie",
+          desc: "Eindcontrole, maatcontrole, draadjes knippen, strijken, vouwen en verpakken volgens klantspecificaties. Private label-labels en aangepaste verpakking beschikbaar.",
         },
       ],
       imagePlaceholders: { factoryFloor: "Productievloer", cuttingRoom: "Snijzaal", qualityLab: "Kwaliteitslab" },
@@ -895,16 +895,16 @@ export const manufacturingContent: Record<string, ManufacturingLocale> = {
       title: "Productiecapaciteit",
       items: [
         { label: "Stuks / maand" },
-        { label: "Productiefaciliteiten" },
+        { label: "Productiefaciliteit" },
         { label: "Gekwalificeerde medewerkers" },
-        { label: "Standaard levertijd" },
+        { label: "Dagen levertijd bulkproductie" },
       ],
     },
     cta: {
-      title: "Plan een virtuele fabrieksrondleiding",
+      title: "Vraag een staal of offerte aan",
       description:
-        "Bekijk onze productielijnen in actie. Wij bieden live videorondleidingen aan voor potentiële inkopers in alle vier vestigingen.",
-      buttonText: "Rondleiding boeken",
+        "Stuur ons uw ontwerpbrief of stalenvereisten. Wij reageren binnen 24 uur met levertijd, FOB-prijs en productiebeschikbaarheid.",
+      buttonText: "Offerte aanvragen",
     },
   },
 };

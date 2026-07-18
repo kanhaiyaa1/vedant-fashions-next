@@ -19,7 +19,7 @@ export async function generateMetadata({
     description:
       "Embroidered ladies garments manufacturer India. Hand & machine embroidery. MOQ 100 pcs. FOB USD 8–15. Exporting to UAE, Saudi Arabia, GCC.",
     keywords:
-      "embroidery garments manufacturer India, hand embroidery blouse UAE, machine embroidery top wholesale, embroidered kurti Middle East, embroidery garment exporter India, hand embroidery manufacturer Gujarat, MOQ 100 embroidery, FOB embroidery garments India",
+      "embroidery garments manufacturer India, hand embroidery blouse UAE, machine embroidery top wholesale, embroidered kurti Middle East, embroidery garment exporter India, hand embroidery manufacturer Mumbai, MOQ 100 embroidery, FOB embroidery garments India",
     alternates: buildHreflangAlternates("/products/embroidery"),
   };
 }

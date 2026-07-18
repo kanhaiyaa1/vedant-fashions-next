@@ -20,9 +20,9 @@ export async function generateMetadata({
   return {
     title: "Ladies Woven Wear Manufacturer Middle East | Vedant Fashion",
     description:
-      "Wholesale ladies woven garments for UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Egypt, Russia & Poland. GOTS certified. MOQ from 300 pcs. FOB India.",
+      "Wholesale ladies woven garments for UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, Egypt, Russia & Poland. MOQ from 300 pcs. FOB India.",
     keywords:
-      "ladies woven wear manufacturer Middle East, wholesale garments UAE Saudi Arabia, woven blouses cotton dresses linen shirts India, GOTS certified garment manufacturer, MOQ 300 pcs wholesale India, ladies wear exporter GCC, private label garment India Middle East",
+      "ladies woven wear manufacturer Middle East, wholesale garments UAE Saudi Arabia, woven blouses cotton dresses linen shirts India, garment manufacturer India, MOQ 300 pcs wholesale India, ladies wear exporter GCC, private label garment India Middle East",
     alternates: buildHreflangAlternates("/products"),
   };
 }
@@ -165,7 +165,7 @@ export default async function ProductCategoriesPage({
         <PageHero
           subtitle="Product Categories"
           title="Ladies Woven Wear — Wholesale Manufacturing from India"
-          description="GOTS and OEKO-TEX certified ladies woven garments manufactured in India for Middle East, GCC, and global wholesale buyers. MOQ from 300 pcs. FOB Mumbai."
+          description="Ladies woven garments manufactured in India for Middle East, GCC, and global wholesale buyers. MOQ from 300 pcs. FOB Mumbai."
           transparent
         />
       </PageHeroArt>
@@ -174,12 +174,12 @@ export default async function ProductCategoriesPage({
       <ContentBlock subtitle="Export Markets" title="We Export Ladies Woven Wear To">
         <div className="max-w-3xl mx-auto space-y-5">
           <p className="text-body text-muted-foreground leading-relaxed">
-            Vedant Fashion exports certified ladies woven wear to wholesale buyers in{" "}
+            Vedant Fashion exports ladies woven wear to wholesale buyers in{" "}
             <strong className="text-foreground">
               {EXPORT_MARKETS.join(", ")}
             </strong>
-            . Our 45,000 sq ft ISO 9001:2015 factory in Gujarat, India handles end-to-end
-            production — from GOTS-certified fabric sourcing and pattern making to finishing,
+            . Our expanding ISO 9001:2015 factory in Mumbai, India handles end-to-end
+            production — from fabric sourcing and pattern making to finishing,
             AQL 2.5 quality inspection, and FOB export packing.
           </p>
           <p className="text-body text-muted-foreground leading-relaxed">

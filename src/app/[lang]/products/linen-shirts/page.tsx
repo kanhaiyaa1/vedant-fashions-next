@@ -17,7 +17,7 @@ export async function generateMetadata({
   return {
     title: "Linen Shirts Manufacturer Middle East | Vedant Fashion",
     description:
-      "OEKO-TEX linen shirt manufacturer for UAE, Saudi Arabia, Qatar, Kuwait. MOQ 500 pcs. FOB USD 5.50–8.00. European flax. 18–22 days to Jebel Ali.",
+      "Linen shirt manufacturer for UAE, Saudi Arabia, Qatar, Kuwait. MOQ 500 pcs. FOB USD 5.50–8.00. European flax. 18–22 days to Jebel Ali.",
     keywords:
       "linen shirts manufacturer UAE, linen shirt supplier Saudi Arabia, wholesale linen shirt exporter India, European flax linen shirts wholesale, linen shirt MOQ 500 pcs, ladies linen shirt Middle East, linen shirt Qatar Kuwait, FOB linen manufacturer India, private label linen shirts, enzyme washed linen shirt wholesale",
     alternates: buildHreflangAlternates("/products/linen-shirts"),
@@ -47,7 +47,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "How are your linen shirts packed and what documentation is provided for GCC import?",
-    a: "Linen shirts are individually folded, poly-bagged, and packed in export cartons — typically 12 pieces per carton. We provide Commercial Invoice, Packing List, Certificate of Origin, Bill of Lading, OEKO-TEX certificate copy, and (for UAE) ESMA-compliant bilingual care label declaration. Saudi SASO documentation is facilitated via accredited Conformity Assessment Bodies for regulated product lines.",
+    a: "Linen shirts are individually folded, poly-bagged, and packed in export cartons — typically 12 pieces per carton. We provide Commercial Invoice, Packing List, Certificate of Origin, Bill of Lading, and (for UAE) ESMA-compliant bilingual care label declaration. Saudi SASO documentation is facilitated via accredited Conformity Assessment Bodies for regulated product lines.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default async function LinenShirtsPage({
       <ProductCategoryPage
         categorySlug="linen-shirts"
         primaryKeyword="Linen Shirts Manufacturer for Middle East Wholesale Buyers"
-        heroDescription="OEKO-TEX certified European flax linen shirts manufactured in India. Classic, camp collar, guayabera, oversized, and embroidered styles. Enzyme-washed for softness. FOB USD 5.50–8.00 per piece. MOQ 500 pcs. 18–22 days sea freight to Jebel Ali."
+        heroDescription="European flax linen shirts manufactured in India. Classic, camp collar, guayabera, oversized, and embroidered styles. Enzyme-washed for softness. FOB USD 5.50–8.00 per piece. MOQ 500 pcs. 18–22 days sea freight to Jebel Ali."
         middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
         gccMarketNotes={[
           { country: "UAE", note: "Camp collar and short-sleeve linen shirts in high demand for resort retail and hospitality channels across Dubai and Abu Dhabi. 18–22 days to Jebel Ali." },

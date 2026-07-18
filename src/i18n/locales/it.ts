@@ -26,7 +26,7 @@ const it: Translations = {
   "nav.inquireNow": "Richiedi preventivo",
   "nav.knowledgeHub": "Centro conoscenze",
 
-  "footer.tagline": "Produttore premium di abbigliamento sostenibile con esportazione in Europa e Russia. Certificato GOTS, OEKO-TEX e GRS. Al servizio di oltre 200 marchi dal 1998.",
+  "footer.tagline": "Produttore di abbigliamento tessuto da donna con sede a Mumbai, India. Esportazione verso Emirati Arabi Uniti, Russia, Polonia e Sudafrica.",
   "footer.company": "Azienda",
   "footer.products": "Prodotti",
   "footer.services": "Servizi",
@@ -55,12 +55,12 @@ const it: Translations = {
 
   "home.heroTitle": "Produttore premium di abbigliamento per marchi europei",
   "home.heroSubtitle": "Produzione sostenibile",
-  "home.heroDescription": "Produzione di abbigliamento certificato GOTS, OEKO-TEX e GRS. Esportazione di camicette tessute, abiti in cotone, camicie in lino e moda resort in oltre 25 paesi europei dal 1998.",
+  "home.heroDescription": "Abbigliamento tessuto premium da donna, prodotto a Mumbai, India. Esportazione di camicette, abiti in cotone, camicie in lino e moda resort verso Emirati Arabi Uniti, Russia, Polonia e Sudafrica.",
   "home.heroCta": "Scopri il nostro catalogo",
 
   "about.title": "Chi è Vedant Fashion",
   "about.subtitle": "La nostra storia",
-  "about.description": "Dal 1998 siamo un partner affidabile per i marchi di moda europei alla ricerca di una produzione premium e sostenibile dall'India.",
+  "about.description": "Siamo un produttore ed esportatore di abbigliamento tessuto da donna con sede a Mumbai, al servizio di Emirati Arabi Uniti, Russia, Polonia e Sudafrica.",
 
   "manufacturing.title": "Capacità produttive",
   "manufacturing.subtitle": "Eccellenza produttiva",
@@ -84,7 +84,7 @@ const it: Translations = {
 
   "contact.title": "Contattaci",
   "contact.subtitle": "Mettiti in contatto",
-  "contact.description": "Contatta il nostro team vendite export ad Amburgo o il nostro ufficio produzione ad Ahmedabad.",
+  "contact.description": "Contatta il nostro team vendite export a Mumbai, India.",
 
   "inquiry.title": "Modulo di richiesta",
   "inquiry.subtitle": "Inizia il tuo ordine",

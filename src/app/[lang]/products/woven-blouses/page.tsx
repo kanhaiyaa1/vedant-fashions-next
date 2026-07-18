@@ -17,9 +17,9 @@ export async function generateMetadata({
   return {
     title: "Woven Blouses Manufacturer Middle East | Vedant Fashion",
     description:
-      "GOTS-certified woven blouse manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 4.50–7.00. 18–22 days to Jebel Ali.",
+      "Woven blouse manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 4.50–7.00. 18–22 days to Jebel Ali.",
     keywords:
-      "woven blouses manufacturer UAE, ladies blouse supplier Saudi Arabia, wholesale blouse exporter India, GOTS certified blouse manufacturer, woven blouse MOQ 300 pcs, organic cotton blouse wholesale, blouse supplier Qatar Kuwait, ladies woven wear Middle East, FOB blouse manufacturer India, private label blouse manufacturer",
+      "woven blouses manufacturer UAE, ladies blouse supplier Saudi Arabia, wholesale blouse exporter India, woven blouse manufacturer India, woven blouse MOQ 300 pcs, organic cotton blouse wholesale, blouse supplier Qatar Kuwait, ladies woven wear Middle East, FOB blouse manufacturer India, private label blouse manufacturer",
     alternates: buildHreflangAlternates("/products/woven-blouses"),
   };
 }
@@ -47,7 +47,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "What certifications do your woven blouses carry?",
-    a: "Depending on the style and fabric, our woven blouses carry GOTS 6.0, OEKO-TEX Standard 100, GRS 4.0, FSC, and EU Ecolabel certifications. All blouses use AZO-free dyes with formaldehyde content below 75 ppm (Category II), meeting EU REACH and GCC import standards. Full certificate copies are provided with each shipment.",
+    a: "We do not currently hold third-party certifications such as GOTS or OEKO-TEX. All blouses use AZO-free dyes with formaldehyde content below 75 ppm (Category II), meeting GCC import standards, and are backed by our in-house quality testing.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default async function WovenBlousesPage({
       <ProductCategoryPage
         categorySlug="woven-blouses"
         primaryKeyword="Woven Blouses Manufacturer for Middle East Wholesale Buyers"
-        heroDescription="GOTS 6.0 and OEKO-TEX certified ladies woven blouses manufactured in India. Organic cotton poplin, Tencel™ lyocell, linen-cotton blends. FOB USD 4.50–7.00 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali, Dubai."
+        heroDescription="Ladies woven blouses manufactured in India. Organic cotton poplin, Tencel™ lyocell, linen-cotton blends. FOB USD 4.50–7.00 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali, Dubai."
         middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"]}
         faqs={FAQS}
         lang={lang}

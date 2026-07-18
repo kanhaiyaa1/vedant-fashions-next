@@ -28,7 +28,7 @@ const en: Translations = {
   "nav.knowledgeHub": "Knowledge Hub",
 
   // Footer
-  "footer.tagline": "Premium sustainable garment manufacturer exporting to Europe and Russia. GOTS, OEKO-TEX, and GRS certified. Serving 200+ brands since 1998.",
+  "footer.tagline": "Ladies woven wear manufacturer based in Mumbai, India, exporting to UAE, Russia, Poland, and South Africa.",
   "footer.company": "Company",
   "footer.products": "Products",
   "footer.services": "Services",
@@ -57,9 +57,9 @@ const en: Translations = {
   "common.furtherReading": "Further Reading",
 
   // Home Hero
-  "home.heroTagline": "B2B Wholesale · Since 1998",
-  "home.heroTitle": "Sustainable Textiles for European Markets",
-  "home.heroDescription": "Premium organic and recycled fabrics crafted with precision. GOTS, OEKO-TEX® and GRS certified. Trusted by 200+ brands across Germany, France, Italy and the Netherlands.",
+  "home.heroTagline": "B2B Wholesale · Est. 2024",
+  "home.heroTitle": "Ladies Woven Wear from Mumbai, India",
+  "home.heroDescription": "Premium ladies woven wear manufactured with precision in Mumbai, India. Exporting to UAE, Russia, Poland, and South Africa.",
   "home.heroCta1": "Request Catalogue",
   "home.heroCta2": "Book a Showroom Visit",
   "home.heroSubtitle": "Sustainable Manufacturing",
@@ -69,16 +69,16 @@ const en: Translations = {
   "home.stat3Label": "Countries Served",
   "home.collection": "SS 2026 Collection",
   "home.available": "Now Available",
-  "home.badge": "GOTS Certified",
+  "home.badge": "Mumbai Manufactured",
   "home.badgeDesc": "100% Organic Cotton",
 
   // About
   "about.title": "About Vedant Fashion",
   "about.subtitle": "Our Story",
-  "about.description": "Since 1998, we have been a trusted partner for European fashion brands seeking premium, sustainable garment manufacturing from India.",
+  "about.description": "We are a Mumbai-based ladies woven wear manufacturer and exporter, serving UAE, Russia, Poland, and South Africa.",
   "about.heroSubtitle": "Our Story",
-  "about.heroTitle": "Three Decades of Textile Excellence",
-  "about.heroDescription": "From a single cotton unit in Ahmedabad to a vertically integrated garment manufacturer serving 200+ European brands. Vedant Fashion combines Indian craftsmanship with European quality standards.",
+  "about.heroTitle": "Vedant Fashion — Made With Care",
+  "about.heroDescription": "Ladies woven wear manufacturer based in Mumbai, India, currently expanding capacity. Vedant Fashion combines Indian craftsmanship with dependable export quality.",
 
   // Manufacturing
   "manufacturing.title": "Manufacturing Capabilities",
@@ -86,9 +86,9 @@ const en: Translations = {
   "manufacturing.description": "State-of-the-art garment manufacturing facility with capacity for 50,000 garments per month across multiple production lines.",
   "manufacturing.heroSubtitle": "Manufacturing",
   "manufacturing.heroTitle": "Vertically Integrated Garment Production",
-  "manufacturing.heroDescription": "Four state-of-the-art facilities in Gujarat with 50,000 pieces/month capacity. From fibre to finished garment — every step under one roof, fully GOTS and BSCI certified.",
+  "manufacturing.heroDescription": "A single state-of-the-art facility in Mumbai, currently expanding capacity. From fibre to finished garment — every step under one roof.",
   "manufacturing.ctaTitle": "Schedule a Virtual Factory Tour",
-  "manufacturing.ctaDesc": "See our production lines in action. We offer live video tours for prospective buyers across all four facilities.",
+  "manufacturing.ctaDesc": "See our production lines in action. We offer live video tours for prospective buyers.",
   "manufacturing.ctaButton": "Book a Tour",
 
   // Sustainability
@@ -127,7 +127,7 @@ const en: Translations = {
   // Private Label
   "privateLabel.heroSubtitle": "Private Label",
   "privateLabel.heroTitle": "Your Brand, Our Manufacturing",
-  "privateLabel.heroDescription": "Full private-label manufacturing from concept to delivery. We produce under your brand with complete confidentiality, EU-compliant labelling, and certification traceability. Serving 200+ European brands since 1998.",
+  "privateLabel.heroDescription": "Full private-label manufacturing from concept to delivery. We produce under your brand with complete confidentiality and full traceability.",
   "privateLabel.ctaTitle": "Start Your Private Label Programme",
   "privateLabel.ctaDesc": "Send us your brand brief and we'll provide a comprehensive proposal within 48 hours. NDA available on request.",
   "privateLabel.ctaButton": "Get Started",
@@ -143,7 +143,7 @@ const en: Translations = {
   // Fabric Sourcing
   "fabricSourcing.heroSubtitle": "Fabric Sourcing",
   "fabricSourcing.heroTitle": "Certified Fabrics from Trusted Mills",
-  "fabricSourcing.heroDescription": "We source from 30+ GOTS and OEKO-TEX certified mills across India and Europe. Full chain-of-custody documentation, in-house testing, and REACH-compliant processing for every metre.",
+  "fabricSourcing.heroDescription": "We source from trusted mills across India. In-house testing and quality checks for every metre of fabric.",
   "fabricSourcing.ctaTitle": "Request Fabric Swatches",
   "fabricSourcing.ctaDesc": "Free swatch cards for our standard range. Custom development hangers available at cost. Ships worldwide within 3 days.",
   "fabricSourcing.ctaButton": "Order Swatches",
@@ -165,7 +165,7 @@ const en: Translations = {
   // Shipping
   "shipping.heroSubtitle": "Shipping & Logistics",
   "shipping.heroTitle": "Reliable Global Delivery",
-  "shipping.heroDescription": "From our factories in Gujarat to your warehouse in Europe — seamless logistics with full documentation for EU customs clearance. FOB, CIF, and DDP Incoterms available. 98.5% on-time delivery rate.",
+  "shipping.heroDescription": "From our factory in Mumbai to your warehouse worldwide — seamless logistics with full export documentation. FOB, CIF, and DDP Incoterms available.",
   "shipping.ctaTitle": "Need a Shipping Quote?",
   "shipping.ctaDesc": "We provide door-to-door logistics quotes within 24 hours. FOB, CIF, and DDP pricing available for any European destination.",
   "shipping.ctaButton": "Get Shipping Quote",
@@ -176,7 +176,7 @@ const en: Translations = {
   "catalog.description": "Browse our complete range of wholesale garments — woven blouses, cotton dresses, linen shirts, resort wear, and more.",
   "catalog.heroSubtitle": "Product Catalogue",
   "catalog.heroTitle": "Wholesale Garment Collection",
-  "catalog.heroDescription": "Browse our complete range of GOTS and OEKO-TEX certified garments. All products manufactured in-house with full traceability and European export compliance.",
+  "catalog.heroDescription": "Browse our complete range of quality-inspected garments. All products manufactured in-house with full traceability and export compliance.",
   "catalog.ctaTitle": "Can't Find What You Need?",
   "catalog.ctaDesc": "We develop custom styles from your tech packs. Send us your designs and we'll provide a detailed quote within 48 hours.",
   "catalog.ctaButton": "Request Custom Development",
@@ -192,7 +192,7 @@ const en: Translations = {
   // Contact
   "contact.title": "Contact Us",
   "contact.subtitle": "Get in Touch",
-  "contact.description": "Reach our export sales team in Hamburg or our production office in Ahmedabad.",
+  "contact.description": "Reach our export sales team in Mumbai, India.",
   "contact.heroSubtitle": "Contact",
   "contact.heroTitle": "Let's Start a Conversation",
   "contact.heroDescription": "Whether you're a boutique buyer or a major retail chain, our export team is ready to discuss your requirements. Samples dispatched within 3 business days.",
@@ -203,7 +203,7 @@ const en: Translations = {
   // Products
   "products.heroSubtitle": "Products",
   "products.heroTitle": "Our Product Categories",
-  "products.heroDescription": "Curated garment ranges designed for European wholesale buyers. Every piece GOTS / OEKO-TEX certified, produced in our own facilities with full traceability.",
+  "products.heroDescription": "Curated garment ranges designed for global wholesale buyers. Every piece quality-inspected, produced in our own facility with full traceability.",
   "products.ctaTitle": "Need Custom Development?",
   "products.ctaDesc": "We develop custom styles from your tech packs. Send us your designs and we'll quote within 48 hours.",
   "products.ctaButton": "Send Tech Pack",

@@ -29,7 +29,7 @@ const ar: Translations = {
   "nav.knowledgeHub": "مركز المعرفة",
 
   // Footer
-  "footer.tagline": "مصنع ملابس نسائية متخصص في التصدير إلى الشرق الأوسط وروسيا والأسواق العالمية. شهادات GOTS وOEKO-TEX. الحد الأدنى للطلب 300 قطعة. FOB مومباي.",
+  "footer.tagline": "مصنع ملابس نسائية منسوجة مقرّه مومباي، الهند، متخصص في التصدير إلى الإمارات وروسيا وبولندا وجنوب أفريقيا. الحد الأدنى للطلب 100 قطعة. FOB مومباي.",
   "footer.company": "الشركة",
   "footer.products": "المنتجات",
   "footer.services": "الخدمات",
@@ -58,9 +58,9 @@ const ar: Translations = {
   "common.furtherReading": "قراءة إضافية",
 
   // Home Hero
-  "home.heroTagline": "الجملة B2B · منذ 1998",
+  "home.heroTagline": "الجملة B2B · تأسست 2024",
   "home.heroTitle": "ملابس نسائية منسوجة للشرق الأوسط والخليج",
-  "home.heroDescription": "مصنع ملابس نسائية معتمد بشهادات GOTS وOEKO-TEX في الهند. بلوزات، فساتين، قمصان كتانية وملابس منتجعات. FOB مومباي. الحد الأدنى للطلب 300 قطعة.",
+  "home.heroDescription": "مصنع ملابس نسائية مقرّه مومباي، الهند. بلوزات، فساتين، قمصان كتانية وملابس منتجعات. FOB مومباي. الحد الأدنى للطلب 100 قطعة.",
   "home.heroCta1": "طلب كتالوج",
   "home.heroCta2": "تواصل مع فريق التصدير",
   "home.heroSubtitle": "تصنيع مستدام",
@@ -70,16 +70,16 @@ const ar: Translations = {
   "home.stat3Label": "أسواق التصدير",
   "home.collection": "مجموعة 2026",
   "home.available": "متوفرة الآن",
-  "home.badge": "معتمد GOTS",
+  "home.badge": "صناعة مومباي",
   "home.badgeDesc": "قطن عضوي 100%",
 
   // About
   "about.title": "عن فيدانت فاشيون",
   "about.subtitle": "قصتنا",
-  "about.description": "منذ عام 1998، نحن شريك موثوق لمشتري الجملة في الشرق الأوسط وروسيا وأوروبا.",
+  "about.description": "نحن مُصنّع ومُصدّر ملابس نسائية منسوجة مقرّه مومباي، نخدم الإمارات وروسيا وبولندا وجنوب أفريقيا.",
   "about.heroSubtitle": "قصتنا",
-  "about.heroTitle": "عقود من التميز في صناعة النسيج",
-  "about.heroDescription": "من وحدة قطنية واحدة في أحمد آباد إلى مصنع متكامل يخدم مئات العلامات التجارية عالمياً.",
+  "about.heroTitle": "فيدانت فاشون — صُنعت بعناية",
+  "about.heroDescription": "مصنع ملابس نسائية منسوجة مقرّه مومباي، الهند، في توسع مستمر. فيدانت فاشون تجمع بين الحرفية الهندية والجودة الموثوقة للتصدير.",
 
   // Manufacturing
   "manufacturing.title": "قدرات التصنيع",
@@ -144,7 +144,7 @@ const ar: Translations = {
   // Fabric Sourcing
   "fabricSourcing.heroSubtitle": "توريد الأقمشة",
   "fabricSourcing.heroTitle": "أقمشة معتمدة من مصانع موثوقة",
-  "fabricSourcing.heroDescription": "نوفر أقمشة من أكثر من 30 مصنعاً معتمداً بشهادات GOTS وOEKO-TEX.",
+  "fabricSourcing.heroDescription": "نوفر أقمشة من مصانع موثوقة عبر الهند مع فحص جودة داخلي لكل متر.",
   "fabricSourcing.ctaTitle": "طلب عينات الأقمشة",
   "fabricSourcing.ctaDesc": "بطاقات عينات مجانية لمجموعتنا القياسية. شحن عالمي خلال 3 أيام.",
   "fabricSourcing.ctaButton": "طلب العينات",
@@ -177,7 +177,7 @@ const ar: Translations = {
   "catalog.description": "تصفح مجموعتنا الكاملة من الملابس بالجملة.",
   "catalog.heroSubtitle": "كتالوج المنتجات",
   "catalog.heroTitle": "مجموعة الملابس بالجملة",
-  "catalog.heroDescription": "تصفح مجموعتنا الكاملة من الملابس المعتمدة بشهادات GOTS وOEKO-TEX.",
+  "catalog.heroDescription": "تصفح مجموعتنا الكاملة من الملابس المفحوصة الجودة.",
   "catalog.ctaTitle": "لا تجد ما تبحث عنه؟",
   "catalog.ctaDesc": "نطور تصاميم مخصصة من ملفاتك التقنية. أرسل تصاميمك وسنقدم عرض سعر خلال 48 ساعة.",
   "catalog.ctaButton": "طلب تطوير مخصص",
@@ -204,7 +204,7 @@ const ar: Translations = {
   // Products
   "products.heroSubtitle": "المنتجات",
   "products.heroTitle": "فئات منتجاتنا",
-  "products.heroDescription": "مجموعات ملابس مصممة لمشتري الجملة في الشرق الأوسط. كل قطعة معتمدة بشهادات GOTS / OEKO-TEX.",
+  "products.heroDescription": "مجموعات ملابس مصممة لمشتري الجملة في الشرق الأوسط. كل قطعة مفحوصة الجودة ومُنتَجة داخلياً.",
   "products.ctaTitle": "هل تحتاج تطويراً مخصصاً؟",
   "products.ctaDesc": "نطور تصاميم مخصصة من ملفاتك التقنية. أرسل تصاميمك وسنقدم عرضاً خلال 48 ساعة.",
   "products.ctaButton": "أرسل الملف التقني",

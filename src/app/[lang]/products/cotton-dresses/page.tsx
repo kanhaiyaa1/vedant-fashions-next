@@ -17,9 +17,9 @@ export async function generateMetadata({
   return {
     title: "Cotton Dresses Manufacturer Middle East | Vedant Fashion",
     description:
-      "GOTS-certified cotton dress manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 6.00–9.50. 18–22 days to Jebel Ali.",
+      "Cotton dress manufacturer for UAE, Saudi Arabia, Qatar & Kuwait. MOQ 300 pcs. FOB USD 6.00–9.50. 18–22 days to Jebel Ali.",
     keywords:
-      "cotton dresses manufacturer UAE, organic dress supplier Saudi Arabia, wholesale dress exporter India, GOTS certified dress manufacturer, cotton dress MOQ 300 pcs, ladies dress wholesale Middle East, dress supplier Qatar Kuwait, FOB dress manufacturer India, private label dress manufacturer, organic cotton midi dress wholesale",
+      "cotton dresses manufacturer UAE, organic dress supplier Saudi Arabia, wholesale dress exporter India, cotton dress manufacturer India, cotton dress MOQ 300 pcs, ladies dress wholesale Middle East, dress supplier Qatar Kuwait, FOB dress manufacturer India, private label dress manufacturer, organic cotton midi dress wholesale",
     alternates: buildHreflangAlternates("/products/cotton-dresses"),
   };
 }
@@ -27,7 +27,7 @@ export async function generateMetadata({
 const FAQS: CategoryFaq[] = [
   {
     q: "What cotton dress styles do you manufacture for Middle East wholesale buyers?",
-    a: "Our cotton dress range includes A-line midi dresses, shirt dresses, wrap dresses, tiered maxi dresses, pinafores, smocked-bodice midi dresses, button-front styles, linen-cotton shift dresses, embroidered-bodice dresses, and digital-print midi dresses — 20+ SKUs in total. All styles are available in GOTS-certified organic cotton, with modest-wear adaptations (longer hem, higher neckline, sleeve extensions) available for the GCC market.",
+    a: "Our cotton dress range includes A-line midi dresses, shirt dresses, wrap dresses, tiered maxi dresses, pinafores, smocked-bodice midi dresses, button-front styles, linen-cotton shift dresses, embroidered-bodice dresses, and digital-print midi dresses — 20+ SKUs in total. All styles are available in organic cotton on request, with modest-wear adaptations (longer hem, higher neckline, sleeve extensions) available for the GCC market.",
   },
   {
     q: "What is the FOB price range for organic cotton dresses exported to the UAE and GCC?",
@@ -65,7 +65,7 @@ export default async function CottonDressesPage({
       <ProductCategoryPage
         categorySlug="cotton-dresses"
         primaryKeyword="Cotton Dresses Manufacturer for Middle East Wholesale Buyers"
-        heroDescription="GOTS 6.0 certified organic cotton dress manufacturer in India. A-line, shirt, wrap, maxi, and smocked styles. Modest-wear adaptations for GCC. FOB USD 6.00–9.50 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali."
+        heroDescription="Organic cotton dress manufacturer in India. A-line, shirt, wrap, maxi, and smocked styles. Modest-wear adaptations for GCC. FOB USD 6.00–9.50 per piece. MOQ 300 pcs. 18–22 days sea freight to Jebel Ali."
         middleEastMarkets={["UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Egypt"]}
         faqs={FAQS}
         lang={lang}

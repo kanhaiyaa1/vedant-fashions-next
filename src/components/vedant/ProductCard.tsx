@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { getCategoryImages } from "@/data/images";
 
 interface ProductCardProps {
@@ -13,7 +12,7 @@ interface ProductCardProps {
   image?: string;
 }
 
-const ProductCard = ({ name, category, composition, weight, moq, certifications, image }: ProductCardProps) => {
+const ProductCard = ({ name, category, composition, weight, moq, image }: ProductCardProps) => {
   const cardImage = image ?? getCategoryImages(category)[0];
   return (
     <div className="group cursor-pointer hover-card rounded">
@@ -28,16 +27,6 @@ const ProductCard = ({ name, category, composition, weight, moq, certifications,
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-secondary/60" />
-        <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-charcoal/60 to-transparent">
-          <span className="text-sm text-primary-foreground font-medium">View Details →</span>
-        </div>
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-          {certifications.map((cert) => (
-            <Badge key={cert} className="bg-olive text-olive-foreground text-[10px] uppercase tracking-wider border-0 rounded-sm px-2 py-0.5">
-              {cert}
-            </Badge>
-          ))}
-        </div>
       </div>
       {/* Info */}
       <div className="space-y-1.5">

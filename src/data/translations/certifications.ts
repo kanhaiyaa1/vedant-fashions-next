@@ -1,8 +1,11 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Certifications page content translations
 // Languages: en · ar · ru · pl · fr · it · nl
-// NOTE: cert names (GOTS, OEKO-TEX, etc.) and auditor company names are kept
-//       in English in the component — only scope, validity, details translate.
+// NOTE: Vedant Fashion currently holds no third-party certifications. This page
+//       is framed honestly around the compliance and quality practices we
+//       follow in-house, not around certifications we do not hold.
+//       Practice names and responsibility tags are kept in English in the
+//       component — only scope, frequency, and details translate.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface CertificationItem {
@@ -14,7 +17,7 @@ export interface CertificationItem {
 export interface CertificationsLocale {
   hero: { subtitle: string; title: string; description: string };
   section: { subtitle: string; title: string };
-  certs: CertificationItem[]; // 8 items — order matches certs array in page
+  certs: CertificationItem[]; // 8 items — order matches practices array in page
   activeBadge: string;
   validityLabel: string;
   auditorLabel: string;
@@ -25,490 +28,442 @@ export const certificationsContent: Record<string, CertificationsLocale> = {
   // ─── English ───────────────────────────────────────────────────────────────
   en: {
     hero: {
-      subtitle: "Certifications",
-      title: "Verified, Audited, Transparent",
+      subtitle: "Compliance & Quality",
+      title: "Honest About Where We Stand",
       description:
-        "Every certification we hold is independently audited and publicly verifiable. We provide full documentation with every shipment for EU customs and buyer compliance teams.",
+        "We don't hold third-party certifications yet — and we'd rather tell you that plainly than make claims we can't back up. Here's what we do follow: in-house quality checks, sustainable fabric sourcing, and compliance practices, with certifications on our roadmap as we expand.",
     },
-    section: { subtitle: "Our Certifications", title: "Standards We Meet" },
+    section: { subtitle: "Our Practices", title: "What We Follow Today" },
     certs: [
       {
-        scope: "Organic fiber processing — from raw material to finished product",
-        validity: "Renewed annually",
+        scope: "Fabric inspection before production begins",
+        validity: "Every batch",
         details:
-          "Covers our entire organic cotton and linen supply chain. License No: Available on request. Scope: processing, manufacturing, trading.",
+          "Shrinkage, colorfastness, GSM, and tensile strength checked in our in-house textile lab before cutting starts.",
       },
       {
-        scope: "Product safety — tested for harmful substances",
-        validity: "Renewed annually",
+        scope: "Product safety — awareness of harmful substances",
+        validity: "Ongoing",
         details:
-          "All product classes tested. Class I (baby) and Class II (skin contact) certified. Certificate No: Available on request.",
+          "We work with dyes and finishes chosen to avoid known harmful substances, and are moving toward formal REACH-aligned documentation.",
       },
       {
-        scope: "Recycled content verification and responsible production",
-        validity: "Renewed annually",
+        scope: "Sustainable and recycled fabric sourcing",
+        validity: "Growing share",
         details:
-          "Certified for recycled polyester and recycled cotton blends. Minimum 50% recycled input verified.",
+          "An increasing share of our fabric comes from sustainable and recycled sources as we expand our supplier network.",
       },
       {
-        scope: "Quality management systems",
-        validity: "3-year cycle",
+        scope: "Quality management within our facility",
+        validity: "Every order",
         details:
-          "Covers design, manufacturing, quality control, and export processes across all four facilities.",
+          "In-house checks covering design, cutting, stitching, finishing, and export packing — not yet third-party certified.",
       },
       {
-        scope: "EU chemical safety regulation (EC 1907/2006)",
-        validity: "Continuous",
+        scope: "Chemical safety awareness (REACH-aligned)",
+        validity: "Ongoing",
         details:
-          "All chemicals, dyes, and finishes are REACH-registered. Restricted Substance List (RSL) maintained per AAFA standards.",
+          "We favour REACH-aligned dyes and finishes and are working toward formal chemical compliance documentation.",
       },
       {
-        scope: "Ethical trade — labor, health & safety, environment, business ethics",
-        validity: "Biennial audit",
+        scope: "Fair labour practices at our facility",
+        validity: "Ongoing",
         details:
-          "All four facilities audited. Zero critical non-conformances in last 3 audits. Worker welfare committee operational.",
+          "Living wages above local minimum, a majority-women workforce, and a respectful working environment — not yet independently audited.",
       },
       {
-        scope: "Social compliance in global supply chains",
-        validity: "Renewed biennially",
+        scope: "Responsible waste handling",
+        validity: "Ongoing",
         details:
-          "Rating: Good. Covers working conditions, environmental protection, and ethical business behavior.",
+          "Fabric offcuts reused where possible; packaging materials recycled. Formal environmental management is part of our expansion plan.",
       },
       {
-        scope: "Responsible cotton sourcing",
-        validity: "Annual membership",
+        scope: "Export documentation and customs compliance",
+        validity: "Every shipment",
         details:
-          "Licensed to source and use Better Cotton. Mass balance tracking through full supply chain.",
+          "Correct HS code classification, Certificate of Origin, and shipment documentation provided for every order.",
       },
     ],
-    activeBadge: "Active",
-    validityLabel: "Validity:",
-    auditorLabel: "Auditor:",
+    activeBadge: "In Practice",
+    validityLabel: "Frequency:",
+    auditorLabel: "Responsibility:",
     cta: {
-      title: "Need Certificate Copies?",
+      title: "Have Questions About Our Practices?",
       description:
-        "We provide digital copies of all certifications, audit reports, and test results upon request.",
-      buttonText: "Request Certificates",
+        "Ask us directly about fabric sourcing, quality checks, or working conditions at our Mumbai facility. We'll answer honestly, including where we're still building toward certification.",
+      buttonText: "Get in Touch",
     },
   },
 
   // ─── Arabic ────────────────────────────────────────────────────────────────
   ar: {
     hero: {
-      subtitle: "الشهادات",
-      title: "موثّق، مدقَّق، شفّاف",
+      subtitle: "الامتثال والجودة",
+      title: "صراحة حول موقعنا الحالي",
       description:
-        "كل شهادة نحملها تخضع لتدقيق مستقل ويمكن التحقق منها علناً. نقدم وثائق كاملة مع كل شحنة لفرق الامتثال لدى المشترين وجمارك الاتحاد الأوروبي.",
+        "لا نملك حتى الآن شهادات معتمدة من طرف ثالث — ونفضّل أن نخبرك بذلك بوضوح بدلاً من تقديم ادعاءات لا يمكننا إثباتها. إليك ما نتبعه فعلاً: فحوصات جودة داخلية، وتوريد أقمشة مستدامة، وممارسات امتثال، مع خطط للحصول على شهادات ضمن خارطة طريق التوسع.",
     },
-    section: { subtitle: "شهاداتنا", title: "المعايير التي نستوفيها" },
+    section: { subtitle: "ممارساتنا", title: "ما نتبعه اليوم" },
     certs: [
       {
-        scope: "معالجة الألياف العضوية — من المواد الخام إلى المنتج النهائي",
-        validity: "تجديد سنوي",
-        details:
-          "يغطي سلسلة توريد القطن العضوي والكتان بالكامل. رقم الترخيص: Available on request. النطاق: المعالجة والتصنيع والتداول.",
+        scope: "فحص الأقمشة قبل بدء الإنتاج",
+        validity: "كل دفعة",
+        details: "فحص الانكماش والثبات اللوني وكثافة الغرام والمتانة في مختبرنا النسيجي الداخلي قبل بدء القص.",
       },
       {
-        scope: "سلامة المنتج — اختبار للمواد الضارة",
-        validity: "تجديد سنوي",
-        details:
-          "اختبار جميع فئات المنتجات. معتمد للفئة الأولى (الرضع) والفئة الثانية (ملامسة الجلد). رقم الشهادة: Available on request.",
-      },
-      {
-        scope: "التحقق من المحتوى المُعاد تدويره والإنتاج المسؤول",
-        validity: "تجديد سنوي",
-        details:
-          "معتمد للبوليستر المُعاد تدويره وخلطات القطن المُعاد تدويره. التحقق من نسبة مدخلات إعادة التدوير بحد أدنى 50%.",
-      },
-      {
-        scope: "أنظمة إدارة الجودة",
-        validity: "دورة 3 سنوات",
-        details:
-          "يغطي عمليات التصميم والتصنيع ومراقبة الجودة والتصدير في جميع المرافق الأربعة.",
-      },
-      {
-        scope: "لائحة سلامة المواد الكيميائية الأوروبية (EC 1907/2006)",
+        scope: "سلامة المنتج — الوعي بالمواد الضارة",
         validity: "مستمر",
-        details:
-          "جميع المواد الكيميائية والأصباغ والإنهاءات مسجلة بموجب REACH. قائمة المواد المقيّدة (RSL) محفوظة وفق معايير AAFA.",
+        details: "نعمل بأصباغ وإنهاءات مختارة لتجنب المواد الضارة المعروفة، ونتحرك نحو توثيق رسمي متوافق مع REACH.",
       },
       {
-        scope: "التجارة الأخلاقية — العمل والصحة والسلامة والبيئة وأخلاقيات الأعمال",
-        validity: "تدقيق مرة كل سنتين",
-        details:
-          "تم تدقيق جميع المرافق الأربعة. صفر حالات عدم مطابقة حرجة في آخر 3 عمليات تدقيق. لجنة رعاية العمال تعمل بكامل طاقتها.",
+        scope: "توريد أقمشة مستدامة ومعاد تدويرها",
+        validity: "حصة متزايدة",
+        details: "حصة متزايدة من أقمشتنا تأتي من مصادر مستدامة ومعاد تدويرها مع توسيع شبكة مورّدينا.",
       },
       {
-        scope: "الامتثال الاجتماعي في سلاسل التوريد العالمية",
-        validity: "تجديد مرة كل سنتين",
-        details:
-          "التقييم: جيد. يغطي ظروف العمل وحماية البيئة والسلوك التجاري الأخلاقي.",
+        scope: "إدارة الجودة داخل منشأتنا",
+        validity: "كل طلبية",
+        details: "فحوصات داخلية تغطي التصميم والقص والخياطة والتشطيب وتعبئة التصدير — لم تُعتمد بعد من طرف ثالث.",
       },
       {
-        scope: "المصادر المسؤولة للقطن",
-        validity: "عضوية سنوية",
-        details:
-          "مرخص لمصادر القطن الأفضل واستخدامه. تتبع ميزان الكتلة عبر سلسلة التوريد الكاملة.",
+        scope: "الوعي بالسلامة الكيميائية (متوافق مع REACH)",
+        validity: "مستمر",
+        details: "نفضّل الأصباغ والإنهاءات المتوافقة مع REACH ونعمل نحو توثيق رسمي للامتثال الكيميائي.",
+      },
+      {
+        scope: "ممارسات عمل عادلة في منشأتنا",
+        validity: "مستمر",
+        details: "أجور معيشية تفوق الحد الأدنى المحلي، وقوة عاملة غالبيتها من النساء، وبيئة عمل محترمة — لم تخضع بعد لتدقيق مستقل.",
+      },
+      {
+        scope: "إدارة مسؤولة للنفايات",
+        validity: "مستمر",
+        details: "إعادة استخدام مخلفات الأقمشة حيثما أمكن؛ وإعادة تدوير مواد التغليف. الإدارة البيئية الرسمية جزء من خطة توسعنا.",
+      },
+      {
+        scope: "وثائق التصدير والامتثال الجمركي",
+        validity: "كل شحنة",
+        details: "تصنيف صحيح لرموز HS، وشهادة منشأ، ووثائق شحن لكل طلبية.",
       },
     ],
-    activeBadge: "نشط",
-    validityLabel: "الصلاحية:",
-    auditorLabel: "المدقق:",
+    activeBadge: "مطبّق",
+    validityLabel: "التكرار:",
+    auditorLabel: "المسؤولية:",
     cta: {
-      title: "هل تحتاج إلى نسخ الشهادات؟",
+      title: "لديك أسئلة حول ممارساتنا؟",
       description:
-        "نوفر نسخاً رقمية من جميع الشهادات وتقارير التدقيق ونتائج الاختبارات عند الطلب.",
-      buttonText: "طلب الشهادات",
+        "اسألنا مباشرة عن مصادر الأقمشة أو فحوصات الجودة أو ظروف العمل في منشأتنا بمومباي. سنجيب بصراحة، بما في ذلك ما زلنا نعمل على تحقيقه للحصول على الشهادات.",
+      buttonText: "تواصل معنا",
     },
   },
 
   // ─── Russian ───────────────────────────────────────────────────────────────
   ru: {
     hero: {
-      subtitle: "Сертификаты",
-      title: "Подтверждено, проверено, прозрачно",
+      subtitle: "Соответствие и качество",
+      title: "Честно о том, где мы находимся",
       description:
-        "Каждый наш сертификат проходит независимый аудит и доступен для публичной проверки. Полный пакет документов прилагается к каждой отгрузке для таможни ЕС и compliance-служб покупателей.",
+        "У нас пока нет сертификатов от независимых органов — и мы предпочитаем сказать об этом прямо, вместо того чтобы делать заявления, которые не можем подтвердить. Вот что мы действительно соблюдаем: внутренний контроль качества, закупку устойчивых тканей и практики соответствия, а сертификация — часть нашего плана расширения.",
     },
-    section: { subtitle: "Наши сертификаты", title: "Стандарты, которым мы соответствуем" },
+    section: { subtitle: "Наши практики", title: "Чему мы следуем сегодня" },
     certs: [
       {
-        scope: "Переработка органического волокна — от сырья до готового изделия",
-        validity: "Ежегодное обновление",
-        details:
-          "Охватывает всю цепочку поставок органического хлопка и льна. Лицензия №: Available on request. Область применения: переработка, производство, торговля.",
+        scope: "Проверка ткани перед началом производства",
+        validity: "Каждая партия",
+        details: "Усадка, устойчивость окраски, плотность GSM и прочность на разрыв проверяются в нашей внутренней текстильной лаборатории перед раскроем.",
       },
       {
-        scope: "Безопасность продукции — тестирование на вредные вещества",
-        validity: "Ежегодное обновление",
-        details:
-          "Протестированы все классы продукции. Сертификаты класса I (для детей) и класса II (контакт с кожей). Сертификат №: Available on request.",
+        scope: "Безопасность продукции — осведомлённость о вредных веществах",
+        validity: "Постоянно",
+        details: "Мы работаем с красителями и отделками, выбранными для избежания известных вредных веществ, и движемся к формальной документации, соответствующей REACH.",
       },
       {
-        scope: "Верификация переработанного содержимого и ответственного производства",
-        validity: "Ежегодное обновление",
-        details:
-          "Сертификация для смесей вторичного полиэстера и вторичного хлопка. Подтверждено минимум 50% вторичного сырья.",
+        scope: "Закупка устойчивых и переработанных тканей",
+        validity: "Растущая доля",
+        details: "Растущая доля наших тканей поступает из устойчивых и переработанных источников по мере расширения сети поставщиков.",
       },
       {
-        scope: "Системы менеджмента качества",
-        validity: "3-летний цикл",
-        details:
-          "Охватывает проектирование, производство, контроль качества и экспортные процессы на всех четырёх предприятиях.",
+        scope: "Управление качеством на нашем предприятии",
+        validity: "Каждый заказ",
+        details: "Внутренние проверки охватывают дизайн, раскрой, пошив, отделку и экспортную упаковку — пока без сертификации третьей стороной.",
       },
       {
-        scope: "Регламент ЕС по химической безопасности (EC 1907/2006)",
-        validity: "Непрерывно",
-        details:
-          "Все химикаты, красители и отделочные вещества зарегистрированы в REACH. Список ограниченных веществ (RSL) ведётся по стандартам AAFA.",
+        scope: "Осведомлённость о химической безопасности (соответствие REACH)",
+        validity: "Постоянно",
+        details: "Мы отдаём предпочтение красителям и отделкам, соответствующим REACH, и работаем над формальной документацией химического соответствия.",
       },
       {
-        scope: "Этическая торговля — труд, охрана здоровья и безопасность, экология, деловая этика",
-        validity: "Раз в два года",
-        details:
-          "Все четыре предприятия прошли аудит. Ноль критических несоответствий по итогам последних 3 аудитов. Комитет по социальному обеспечению работников действует.",
+        scope: "Справедливые трудовые практики на нашем предприятии",
+        validity: "Постоянно",
+        details: "Заработная плата выше местного минимума, преимущественно женский коллектив и уважительная рабочая среда — пока без независимого аудита.",
       },
       {
-        scope: "Социальное соответствие в глобальных цепочках поставок",
-        validity: "Обновление раз в два года",
-        details:
-          "Оценка: Хорошо. Охватывает условия труда, защиту окружающей среды и этику делового поведения.",
+        scope: "Ответственное обращение с отходами",
+        validity: "Постоянно",
+        details: "Обрезки ткани повторно используются там, где это возможно; упаковочные материалы перерабатываются. Формальный экологический менеджмент — часть нашего плана расширения.",
       },
       {
-        scope: "Ответственные закупки хлопка",
-        validity: "Ежегодное членство",
-        details:
-          "Лицензия на закупку и использование Better Cotton. Прослеживаемость через всю цепочку поставок.",
+        scope: "Экспортная документация и таможенное соответствие",
+        validity: "Каждая отгрузка",
+        details: "Корректная классификация кодов ТН ВЭД, сертификат происхождения и документация по отгрузке для каждого заказа.",
       },
     ],
-    activeBadge: "Действует",
-    validityLabel: "Срок действия:",
-    auditorLabel: "Аудитор:",
+    activeBadge: "Соблюдается",
+    validityLabel: "Периодичность:",
+    auditorLabel: "Ответственность:",
     cta: {
-      title: "Нужны копии сертификатов?",
+      title: "Есть вопросы о наших практиках?",
       description:
-        "По запросу предоставляем электронные копии всех сертификатов, аудиторских заключений и результатов тестирования.",
-      buttonText: "Запросить сертификаты",
+        "Спросите нас напрямую о закупке тканей, контроле качества или условиях труда на нашем предприятии в Мумбаи. Мы ответим честно, включая то, над чем мы всё ещё работаем на пути к сертификации.",
+      buttonText: "Связаться с нами",
     },
   },
 
   // ─── Polish ────────────────────────────────────────────────────────────────
   pl: {
     hero: {
-      subtitle: "Certyfikaty",
-      title: "Zweryfikowane, audytowane, przejrzyste",
+      subtitle: "Zgodność i jakość",
+      title: "Szczerze o tym, gdzie jesteśmy",
       description:
-        "Każdy posiadany przez nas certyfikat jest niezależnie audytowany i publicznie weryfikowalny. Dostarczamy kompletną dokumentację z każdą wysyłką dla służb celnych UE i zespołów compliance kupujących.",
+        "Nie posiadamy jeszcze certyfikatów strony trzeciej — i wolimy powiedzieć to wprost, niż składać deklaracje, których nie możemy poprzeć. Oto, czego faktycznie przestrzegamy: wewnętrzna kontrola jakości, pozyskiwanie zrównoważonych tkanin oraz praktyki zgodności, a certyfikacja jest częścią naszego planu rozwoju.",
     },
-    section: { subtitle: "Nasze certyfikaty", title: "Standardy, które spełniamy" },
+    section: { subtitle: "Nasze praktyki", title: "Czego przestrzegamy dziś" },
     certs: [
       {
-        scope: "Przetwarzanie włókien organicznych — od surowca do gotowego wyrobu",
-        validity: "Odnawiane rocznie",
-        details:
-          "Obejmuje cały łańcuch dostaw organicznej bawełny i lnu. Nr licencji: Available on request. Zakres: przetwarzanie, produkcja, handel.",
+        scope: "Kontrola tkanin przed rozpoczęciem produkcji",
+        validity: "Każda partia",
+        details: "Kurczliwość, trwałość barwy, gęstość GSM i wytrzymałość na zerwanie sprawdzane w naszym wewnętrznym laboratorium tekstylnym przed krojeniem.",
       },
       {
-        scope: "Bezpieczeństwo produktu — badanie pod kątem substancji szkodliwych",
-        validity: "Odnawiane rocznie",
-        details:
-          "Badane wszystkie klasy produktów. Certyfikat klasy I (niemowlęta) i klasy II (kontakt ze skórą). Nr certyfikatu: Available on request.",
+        scope: "Bezpieczeństwo produktu — świadomość substancji szkodliwych",
+        validity: "Na bieżąco",
+        details: "Pracujemy z barwnikami i wykończeniami dobranymi tak, by unikać znanych substancji szkodliwych, dążąc do formalnej dokumentacji zgodnej z REACH.",
       },
       {
-        scope: "Weryfikacja zawartości materiałów z recyklingu i odpowiedzialnej produkcji",
-        validity: "Odnawiane rocznie",
-        details:
-          "Certyfikat dla mieszanek poliestrowych z recyklingu i bawełny z recyklingu. Potwierdzono min. 50% surowców z recyklingu.",
+        scope: "Pozyskiwanie tkanin zrównoważonych i z recyklingu",
+        validity: "Rosnący udział",
+        details: "Rosnący udział naszych tkanin pochodzi ze zrównoważonych i pochodzących z recyklingu źródeł w miarę rozwoju sieci dostawców.",
       },
       {
-        scope: "Systemy zarządzania jakością",
-        validity: "Cykl 3-letni",
-        details:
-          "Obejmuje procesy projektowania, produkcji, kontroli jakości i eksportu we wszystkich czterech zakładach.",
+        scope: "Zarządzanie jakością w naszym zakładzie",
+        validity: "Każde zamówienie",
+        details: "Wewnętrzne kontrole obejmujące projektowanie, krojenie, szycie, wykańczanie i pakowanie eksportowe — jeszcze bez certyfikacji strony trzeciej.",
       },
       {
-        scope: "Europejskie rozporządzenie o bezpieczeństwie chemicznym (EC 1907/2006)",
-        validity: "Ciągłe",
-        details:
-          "Wszystkie chemikalia, barwniki i środki wykończeniowe zarejestrowane w REACH. Lista substancji ograniczonych (RSL) prowadzona zgodnie ze standardami AAFA.",
+        scope: "Świadomość bezpieczeństwa chemicznego (zgodność z REACH)",
+        validity: "Na bieżąco",
+        details: "Preferujemy barwniki i wykończenia zgodne z REACH i pracujemy nad formalną dokumentacją zgodności chemicznej.",
       },
       {
-        scope: "Handel etyczny — praca, BHP, środowisko, etyka biznesowa",
-        validity: "Audyt co dwa lata",
-        details:
-          "Audytowane wszystkie cztery zakłady. Zero krytycznych niezgodności w ostatnich 3 audytach. Komisja ds. dobrostanu pracowników jest aktywna.",
+        scope: "Uczciwe praktyki pracy w naszym zakładzie",
+        validity: "Na bieżąco",
+        details: "Wynagrodzenia powyżej lokalnego minimum, siła robocza w większości kobieca i środowisko pracy oparte na szacunku — jeszcze bez niezależnego audytu.",
       },
       {
-        scope: "Społeczna odpowiedzialność w globalnych łańcuchach dostaw",
-        validity: "Odnawiane co dwa lata",
-        details:
-          "Ocena: Dobra. Obejmuje warunki pracy, ochronę środowiska i etyczne zachowanie w biznesie.",
+        scope: "Odpowiedzialne gospodarowanie odpadami",
+        validity: "Na bieżąco",
+        details: "Odpady tkaninowe ponownie wykorzystywane, gdy to możliwe; materiały opakowaniowe poddawane recyklingowi. Formalne zarządzanie środowiskowe jest częścią naszego planu rozwoju.",
       },
       {
-        scope: "Odpowiedzialne pozyskiwanie bawełny",
-        validity: "Roczne członkostwo",
-        details:
-          "Licencja na pozyskiwanie i stosowanie Better Cotton. Śledzenie bilansu masy przez cały łańcuch dostaw.",
+        scope: "Dokumentacja eksportowa i zgodność celna",
+        validity: "Każda wysyłka",
+        details: "Poprawna klasyfikacja kodów HS, świadectwo pochodzenia i dokumentacja wysyłkowa dla każdego zamówienia.",
       },
     ],
-    activeBadge: "Aktywny",
-    validityLabel: "Ważność:",
-    auditorLabel: "Audytor:",
+    activeBadge: "Stosowane",
+    validityLabel: "Częstotliwość:",
+    auditorLabel: "Odpowiedzialność:",
     cta: {
-      title: "Potrzebujesz kopii certyfikatów?",
+      title: "Masz pytania dotyczące naszych praktyk?",
       description:
-        "Na życzenie dostarczamy cyfrowe kopie wszystkich certyfikatów, raportów z audytów i wyników testów.",
-      buttonText: "Zamów certyfikaty",
+        "Zapytaj nas bezpośrednio o pozyskiwanie tkanin, kontrolę jakości lub warunki pracy w naszym zakładzie w Mumbaju. Odpowiemy szczerze, w tym o tym, nad czym wciąż pracujemy w drodze do certyfikacji.",
+      buttonText: "Skontaktuj się",
     },
   },
 
   // ─── French ────────────────────────────────────────────────────────────────
   fr: {
     hero: {
-      subtitle: "Certifications",
-      title: "Vérifiées, auditées, transparentes",
+      subtitle: "Conformité et qualité",
+      title: "Honnêtes sur notre situation actuelle",
       description:
-        "Chaque certification que nous détenons est auditée de façon indépendante et publiquement vérifiable. Nous fournissons une documentation complète avec chaque expédition pour les douanes européennes et les équipes conformité des acheteurs.",
+        "Nous ne détenons pas encore de certifications tierces — et nous préférons vous le dire clairement plutôt que de faire des allégations que nous ne pouvons pas étayer. Voici ce que nous suivons réellement : des contrôles qualité internes, un approvisionnement en tissus durables et des pratiques de conformité, avec la certification inscrite dans notre feuille de route de développement.",
     },
-    section: { subtitle: "Nos certifications", title: "Les standards que nous respectons" },
+    section: { subtitle: "Nos pratiques", title: "Ce que nous suivons aujourd'hui" },
     certs: [
       {
-        scope: "Traitement des fibres biologiques — de la matière première au produit fini",
-        validity: "Renouvelée annuellement",
-        details:
-          "Couvre l'ensemble de notre chaîne d'approvisionnement en coton biologique et en lin. N° de licence : Available on request. Périmètre : transformation, fabrication, commerce.",
+        scope: "Inspection des tissus avant le début de la production",
+        validity: "Chaque lot",
+        details: "Rétrécissement, solidité des couleurs, GSM et résistance à la traction vérifiés dans notre laboratoire textile interne avant la coupe.",
       },
       {
-        scope: "Sécurité produit — testé pour les substances nocives",
-        validity: "Renouvelée annuellement",
-        details:
-          "Toutes les classes de produits testées. Classe I (bébé) et classe II (contact cutané) certifiées. N° de certificat : Available on request.",
+        scope: "Sécurité produit — sensibilisation aux substances nocives",
+        validity: "En continu",
+        details: "Nous travaillons avec des colorants et finitions choisis pour éviter les substances nocives connues, et évoluons vers une documentation formelle alignée sur REACH.",
       },
       {
-        scope: "Vérification du contenu recyclé et production responsable",
-        validity: "Renouvelée annuellement",
-        details:
-          "Certifié pour les mélanges de polyester recyclé et de coton recyclé. Minimum 50% de matières recyclées vérifiées.",
+        scope: "Approvisionnement en tissus durables et recyclés",
+        validity: "Part croissante",
+        details: "Une part croissante de nos tissus provient de sources durables et recyclées à mesure que nous développons notre réseau de fournisseurs.",
       },
       {
-        scope: "Systèmes de management de la qualité",
-        validity: "Cycle 3 ans",
-        details:
-          "Couvre les processus de conception, de fabrication, de contrôle qualité et d'exportation dans les quatre sites.",
+        scope: "Gestion de la qualité au sein de notre site",
+        validity: "Chaque commande",
+        details: "Contrôles internes couvrant la conception, la coupe, la couture, la finition et l'emballage export — pas encore certifiés par un tiers.",
       },
       {
-        scope: "Réglementation européenne sur la sécurité chimique (CE 1907/2006)",
-        validity: "Continue",
-        details:
-          "Tous les produits chimiques, colorants et finitions sont enregistrés REACH. Liste de substances restreintes (RSL) maintenue selon les standards AAFA.",
+        scope: "Sensibilisation à la sécurité chimique (alignée REACH)",
+        validity: "En continu",
+        details: "Nous privilégions les colorants et finitions alignés REACH et travaillons vers une documentation formelle de conformité chimique.",
       },
       {
-        scope: "Commerce éthique — travail, santé & sécurité, environnement, éthique des affaires",
-        validity: "Audit biennal",
-        details:
-          "Les quatre sites ont été audités. Zéro non-conformité critique lors des 3 derniers audits. Comité de bien-être des travailleurs opérationnel.",
+        scope: "Pratiques de travail équitables sur notre site",
+        validity: "En continu",
+        details: "Salaires supérieurs au minimum local, effectif majoritairement féminin et environnement de travail respectueux — pas encore audités de façon indépendante.",
       },
       {
-        scope: "Conformité sociale dans les chaînes d'approvisionnement mondiales",
-        validity: "Renouvelée tous les deux ans",
-        details:
-          "Note : Bonne. Couvre les conditions de travail, la protection de l'environnement et l'éthique commerciale.",
+        scope: "Gestion responsable des déchets",
+        validity: "En continu",
+        details: "Chutes de tissu réutilisées dans la mesure du possible ; matériaux d'emballage recyclés. Une gestion environnementale formelle fait partie de notre plan de développement.",
       },
       {
-        scope: "Approvisionnement responsable en coton",
-        validity: "Adhésion annuelle",
-        details:
-          "Licence pour s'approvisionner et utiliser le Better Cotton. Traçabilité de la balance massique sur toute la chaîne.",
+        scope: "Documentation d'exportation et conformité douanière",
+        validity: "Chaque expédition",
+        details: "Classification correcte des codes SH, certificat d'origine et documentation d'expédition fournis pour chaque commande.",
       },
     ],
-    activeBadge: "Actif",
-    validityLabel: "Validité :",
-    auditorLabel: "Auditeur :",
+    activeBadge: "En pratique",
+    validityLabel: "Fréquence :",
+    auditorLabel: "Responsabilité :",
     cta: {
-      title: "Vous avez besoin de copies de certificats ?",
+      title: "Des questions sur nos pratiques ?",
       description:
-        "Nous fournissons des copies numériques de toutes les certifications, rapports d'audit et résultats de tests sur demande.",
-      buttonText: "Demander les certificats",
+        "Demandez-nous directement des informations sur l'approvisionnement en tissus, les contrôles qualité ou les conditions de travail sur notre site de Mumbai. Nous répondrons honnêtement, y compris sur ce que nous construisons encore vers la certification.",
+      buttonText: "Nous contacter",
     },
   },
 
   // ─── Italian ───────────────────────────────────────────────────────────────
   it: {
     hero: {
-      subtitle: "Certificazioni",
-      title: "Verificate, controllate, trasparenti",
+      subtitle: "Conformità e qualità",
+      title: "Onesti sulla nostra situazione attuale",
       description:
-        "Ogni certificazione che deteniamo è sottoposta ad audit indipendente e pubblicamente verificabile. Forniamo documentazione completa con ogni spedizione per i team di conformità degli acquirenti e per la dogana UE.",
+        "Non deteniamo ancora certificazioni di terze parti — e preferiamo dirlo chiaramente piuttosto che fare affermazioni che non possiamo dimostrare. Ecco cosa seguiamo realmente: controlli qualità interni, approvvigionamento di tessuti sostenibili e pratiche di conformità, con la certificazione parte del nostro percorso di espansione.",
     },
-    section: { subtitle: "Le nostre certificazioni", title: "Gli standard che rispettiamo" },
+    section: { subtitle: "Le nostre pratiche", title: "Cosa seguiamo oggi" },
     certs: [
       {
-        scope: "Lavorazione di fibre biologiche — dalla materia prima al prodotto finito",
-        validity: "Rinnovata annualmente",
-        details:
-          "Copre l'intera catena di fornitura di cotone biologico e lino. N. licenza: Available on request. Ambito: lavorazione, produzione, commercio.",
+        scope: "Ispezione dei tessuti prima dell'inizio della produzione",
+        validity: "Ogni lotto",
+        details: "Restringimento, solidità del colore, GSM e resistenza alla trazione verificati nel nostro laboratorio tessile interno prima del taglio.",
       },
       {
-        scope: "Sicurezza del prodotto — testato per sostanze nocive",
-        validity: "Rinnovata annualmente",
-        details:
-          "Tutte le classi di prodotti testate. Classe I (neonati) e Classe II (contatto con la pelle) certificate. N. certificato: Available on request.",
+        scope: "Sicurezza del prodotto — consapevolezza delle sostanze nocive",
+        validity: "Continuo",
+        details: "Lavoriamo con coloranti e finiture scelti per evitare sostanze nocive note, muovendoci verso una documentazione formale allineata a REACH.",
       },
       {
-        scope: "Verifica del contenuto riciclato e produzione responsabile",
-        validity: "Rinnovata annualmente",
-        details:
-          "Certificazione per miscele di poliestere riciclato e cotone riciclato. Verificato almeno il 50% di materia prima riciclata.",
+        scope: "Approvvigionamento di tessuti sostenibili e riciclati",
+        validity: "Quota crescente",
+        details: "Una quota crescente dei nostri tessuti proviene da fonti sostenibili e riciclate man mano che ampliamo la nostra rete di fornitori.",
       },
       {
-        scope: "Sistemi di gestione della qualità",
-        validity: "Ciclo triennale",
-        details:
-          "Copre progettazione, produzione, controllo qualità e processi di esportazione in tutti e quattro gli stabilimenti.",
+        scope: "Gestione della qualità all'interno del nostro stabilimento",
+        validity: "Ogni ordine",
+        details: "Controlli interni che coprono design, taglio, cucitura, finitura e imballaggio per l'export — non ancora certificati da terzi.",
       },
       {
-        scope: "Regolamento europeo sulla sicurezza chimica (CE 1907/2006)",
-        validity: "Continua",
-        details:
-          "Tutti i prodotti chimici, coloranti e fissativi sono registrati REACH. Lista delle sostanze limitate (RSL) mantenuta secondo gli standard AAFA.",
+        scope: "Consapevolezza della sicurezza chimica (allineata REACH)",
+        validity: "Continuo",
+        details: "Privilegiamo coloranti e finiture allineati a REACH e lavoriamo verso una documentazione formale di conformità chimica.",
       },
       {
-        scope: "Commercio etico — lavoro, salute e sicurezza, ambiente, etica aziendale",
-        validity: "Audit biennale",
-        details:
-          "Tutti e quattro gli stabilimenti sono stati auditati. Zero non conformità critiche negli ultimi 3 audit. Comitato benessere lavoratori operativo.",
+        scope: "Pratiche di lavoro eque nel nostro stabilimento",
+        validity: "Continuo",
+        details: "Salari superiori al minimo locale, forza lavoro a maggioranza femminile e ambiente di lavoro rispettoso — non ancora sottoposti ad audit indipendente.",
       },
       {
-        scope: "Conformità sociale nelle catene di fornitura globali",
-        validity: "Rinnovata ogni due anni",
-        details:
-          "Valutazione: Buona. Comprende condizioni di lavoro, tutela ambientale e comportamento aziendale etico.",
+        scope: "Gestione responsabile dei rifiuti",
+        validity: "Continuo",
+        details: "Scarti di tessuto riutilizzati ove possibile; materiali di imballaggio riciclati. La gestione ambientale formale fa parte del nostro piano di espansione.",
       },
       {
-        scope: "Approvvigionamento responsabile di cotone",
-        validity: "Adesione annuale",
-        details:
-          "Licenza per l'approvvigionamento e l'utilizzo di Better Cotton. Tracciabilità del bilancio di massa sull'intera catena.",
+        scope: "Documentazione di esportazione e conformità doganale",
+        validity: "Ogni spedizione",
+        details: "Corretta classificazione dei codici HS, certificato di origine e documentazione di spedizione forniti per ogni ordine.",
       },
     ],
-    activeBadge: "Attivo",
-    validityLabel: "Validità:",
-    auditorLabel: "Ente di controllo:",
+    activeBadge: "In pratica",
+    validityLabel: "Frequenza:",
+    auditorLabel: "Responsabilità:",
     cta: {
-      title: "Hai bisogno di copie dei certificati?",
+      title: "Hai domande sulle nostre pratiche?",
       description:
-        "Forniamo copie digitali di tutte le certificazioni, rapporti di audit e risultati dei test su richiesta.",
-      buttonText: "Richiedi i certificati",
+        "Chiedici direttamente informazioni sull'approvvigionamento dei tessuti, i controlli di qualità o le condizioni di lavoro presso il nostro stabilimento di Mumbai. Risponderemo onestamente, incluso su cosa stiamo ancora costruendo verso la certificazione.",
+      buttonText: "Contattaci",
     },
   },
 
   // ─── Dutch ─────────────────────────────────────────────────────────────────
   nl: {
     hero: {
-      subtitle: "Certificeringen",
-      title: "Geverifieerd, geauditeerd, transparant",
+      subtitle: "Naleving & kwaliteit",
+      title: "Eerlijk over waar wij staan",
       description:
-        "Elk certificaat dat wij bezitten is onafhankelijk geauditeerd en publiek verifieerbaar. Wij leveren volledige documentatie bij elke zending voor EU-douane en compliance­teams van inkopers.",
+        "Wij bezitten nog geen certificeringen van derden — en dat zeggen we liever ronduit dan claims te doen die we niet kunnen onderbouwen. Dit volgen we wél: interne kwaliteitscontroles, inkoop van duurzame stoffen en nalevingspraktijken, met certificering als onderdeel van onze uitbreidingsroutekaart.",
     },
-    section: { subtitle: "Onze certificeringen", title: "Normen waaraan wij voldoen" },
+    section: { subtitle: "Onze praktijken", title: "Wat wij vandaag volgen" },
     certs: [
       {
-        scope: "Verwerking van biologische vezels — van grondstof tot eindproduct",
-        validity: "Jaarlijks vernieuwd",
-        details:
-          "Dekt onze volledige toeleveringsketen voor biologisch katoen en linnen. Licentie nr.: Available on request. Scope: verwerking, productie, handel.",
+        scope: "Stofinspectie voordat de productie begint",
+        validity: "Elke partij",
+        details: "Krimp, kleurechtheid, GSM en treksterkte gecontroleerd in ons interne textiellaboratorium voordat het snijden begint.",
       },
       {
-        scope: "Productveiligheid — getest op schadelijke stoffen",
-        validity: "Jaarlijks vernieuwd",
-        details:
-          "Alle productklassen getest. Klasse I (baby) en Klasse II (huidcontact) gecertificeerd. Certificaatnr.: Available on request.",
-      },
-      {
-        scope: "Verificatie gerecycled materiaal en verantwoorde productie",
-        validity: "Jaarlijks vernieuwd",
-        details:
-          "Gecertificeerd voor gerecycled polyester en gerecycled katoenmengsel. Minimaal 50% gerecyclede input geverifieerd.",
-      },
-      {
-        scope: "Kwaliteitsmanagementsystemen",
-        validity: "3-jarige cyclus",
-        details:
-          "Dekt ontwerp, productie, kwaliteitscontrole en exportprocessen in alle vier vestigingen.",
-      },
-      {
-        scope: "EU-verordening chemische veiligheid (EG 1907/2006)",
+        scope: "Productveiligheid — bewustzijn van schadelijke stoffen",
         validity: "Doorlopend",
-        details:
-          "Alle chemicaliën, kleurstoffen en afwerkingen zijn REACH-geregistreerd. Lijst van Beperkte Stoffen (RSL) bijgehouden per AAFA-normen.",
+        details: "Wij werken met kleurstoffen en afwerkingen die gekozen zijn om bekende schadelijke stoffen te vermijden, en werken toe naar formele REACH-conforme documentatie.",
       },
       {
-        scope: "Eerlijke handel — arbeid, gezondheid & veiligheid, milieu, bedrijfsethiek",
-        validity: "Tweejaarlijkse audit",
-        details:
-          "Alle vier vestigingen geauditeerd. Nul kritieke non-conformiteiten in de laatste 3 audits. Commissie werknemerswelzijn operationeel.",
+        scope: "Inkoop van duurzame en gerecyclede stoffen",
+        validity: "Groeiend aandeel",
+        details: "Een groeiend aandeel van onze stoffen komt uit duurzame en gerecyclede bronnen naarmate we ons leveranciersnetwerk uitbreiden.",
       },
       {
-        scope: "Sociale naleving in wereldwijde toeleveringsketens",
-        validity: "Tweejaarlijks vernieuwd",
-        details:
-          "Beoordeling: Goed. Omvat arbeidsomstandigheden, milieubescherming en ethisch zakelijk gedrag.",
+        scope: "Kwaliteitsmanagement binnen onze vestiging",
+        validity: "Elke bestelling",
+        details: "Interne controles voor ontwerp, snijden, naaien, afwerking en exportverpakking — nog niet extern gecertificeerd.",
       },
       {
-        scope: "Verantwoorde katoeninkoop",
-        validity: "Jaarlijks lidmaatschap",
-        details:
-          "Licentie voor inkoop en gebruik van Better Cotton. Massabalans-tracking door de volledige keten.",
+        scope: "Bewustzijn van chemische veiligheid (REACH-conform)",
+        validity: "Doorlopend",
+        details: "Wij geven de voorkeur aan REACH-conforme kleurstoffen en afwerkingen en werken toe naar formele chemische nalevingsdocumentatie.",
+      },
+      {
+        scope: "Eerlijke arbeidspraktijken bij onze vestiging",
+        validity: "Doorlopend",
+        details: "Leefbaar loon boven het lokale minimum, een overwegend vrouwelijk personeelsbestand en een respectvolle werkomgeving — nog niet onafhankelijk geauditeerd.",
+      },
+      {
+        scope: "Verantwoorde afvalverwerking",
+        validity: "Doorlopend",
+        details: "Textielresten waar mogelijk hergebruikt; verpakkingsmaterialen gerecycled. Formeel milieubeheer maakt deel uit van ons uitbreidingsplan.",
+      },
+      {
+        scope: "Exportdocumentatie en douaneconformiteit",
+        validity: "Elke zending",
+        details: "Correcte HS-codeclassificatie, oorsprongscertificaat en verzenddocumentatie geleverd bij elke bestelling.",
       },
     ],
-    activeBadge: "Actief",
-    validityLabel: "Geldigheid:",
-    auditorLabel: "Auditor:",
+    activeBadge: "In praktijk",
+    validityLabel: "Frequentie:",
+    auditorLabel: "Verantwoordelijkheid:",
     cta: {
-      title: "Certificaatkopieën nodig?",
+      title: "Vragen over onze praktijken?",
       description:
-        "Op verzoek leveren wij digitale kopieën van alle certificeringen, auditrapporten en testresultaten.",
-      buttonText: "Certificaten opvragen",
+        "Vraag ons rechtstreeks naar stofinkoop, kwaliteitscontroles of arbeidsomstandigheden bij onze vestiging in Mumbai. Wij antwoorden eerlijk, ook over waar we nog naartoe werken op weg naar certificering.",
+      buttonText: "Neem contact op",
     },
   },
 };

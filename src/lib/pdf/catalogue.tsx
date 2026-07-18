@@ -319,7 +319,7 @@ export function CataloguePDF({ products, categories, generatedDate }: CatalogueP
           </Text>
 
           <View style={{ flexDirection: "row", justifyContent: "center", flexWrap: "wrap" }}>
-            {["GOTS Certified", "OEKO-TEX", "FOB Mumbai"].map((cert) => (
+            {["ISO 9001:2015", "FOB Mumbai"].map((cert) => (
               <View key={cert} style={styles.certBadge}>
                 <Text style={styles.certBadgeText}>{cert}</Text>
               </View>
@@ -333,10 +333,10 @@ export function CataloguePDF({ products, categories, generatedDate }: CatalogueP
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About Vedant Fashion</Text>
           <Text style={styles.bodyText}>
-            Vedant Fashion is a Mumbai-based B2B manufacturer and exporter of premium ladies woven wear. Founded in 2024, we
-            specialise in GOTS-certified organic cotton, Tencel™ lyocell, and linen-blend garments for wholesale buyers across
-            the UAE, Russia, Poland, and South Africa. Our 5,000 sq ft facility operates 60 machines and employs 15 skilled
-            craftspeople. We offer FOB pricing from USD 5–8 per piece with MOQ from 100 pieces per style and full private
+            Vedant Fashion is a Mumbai-based B2B manufacturer and exporter of premium ladies woven wear. We
+            specialise in organic cotton, Tencel™ lyocell, and linen-blend garments for wholesale buyers across
+            the UAE, Russia, Poland, and South Africa. Our expanding production unit in Mumbai has a capacity of around
+            200,000 garments per year. We offer FOB pricing from USD 5–8 per piece with MOQ from 100 pieces per style and full private
             label services including custom branding, packaging, and Arabic/English bilingual care labels for GCC compliance.
           </Text>
         </View>
@@ -444,7 +444,7 @@ export function CataloguePDF({ products, categories, generatedDate }: CatalogueP
           <Text style={styles.sectionTitle}>Ordering Information</Text>
           <View style={styles.table}>
             {[
-              ["MOQ", "100 pcs per style (standard); 300 pcs for GOTS-certified styles"],
+              ["MOQ", "100 pcs per style (standard); 300 pcs for select styles"],
               ["Sample Process", "Sealed sample approval before bulk. Digital lab-dip available."],
               ["Lead Time", "45–60 days production + 18–22 days sea freight to Jebel Ali"],
               ["Payment Terms", "60-day LC or 30% TT deposit, balance before shipment"],

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   await params;
   return {
     title: "About Vedant Fashion",
-    description: "Ladies woven wear manufacturer India — exporting to UAE, Saudi Arabia, Russia & global markets since 2015. GOTS & OEKO-TEX certified. MOQ 300 pcs.",
+    description: "Ladies woven wear manufacturer based in Mumbai, India — exporting to UAE, Russia, Poland, and South Africa. MOQ 100 pcs.",
     alternates: buildHreflangAlternates("/about"),
   };
 }
@@ -28,7 +28,7 @@ const AboutPage = async ({ params }: { params: Promise<{ lang: string }> }) => {
 
   return (
     <div className="min-h-screen bg-background font-body">
-      <WebPageSchema title="About Vedant Fashion" description="Mumbai-based B2B ladies woven wear manufacturer exporting to UAE, Saudi Arabia, Qatar, Kuwait, Russia and global markets since 2015." url="/about" type="AboutPage" />
+      <WebPageSchema title="About Vedant Fashion" description="Mumbai-based B2B ladies woven wear manufacturer exporting to UAE, Russia, Poland, and South Africa." url="/about" type="AboutPage" />
       <BreadcrumbSchema items={[{ name: "Home", url: "/" }, { name: "About", url: "/about" }]} />
       <PageHeroArt image="/images/site-files/cloth-crafting.png" opacity={0.15} blur={1}>
         <PageHero

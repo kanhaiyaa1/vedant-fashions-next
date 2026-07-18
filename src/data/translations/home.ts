@@ -37,19 +37,19 @@ export const homeContent: Record<string, HomeLocale> = {
   en: {
     hero: {
       badge: "B2B Wholesale · Mumbai, India",
-      title: "Ladies Woven Wear Manufacturer — Exporting to Middle East & Global",
+      title: "Ladies Woven Wear — Exporting to Middle East & Global",
       subtitle: "B2B Wholesale Garment Manufacturer",
       description:
-        "Ladies woven wear manufacturer based in Mumbai, India. Viscose, rayon, georgette, linen blends, and crepe. MOQ 100 pieces. FOB USD 5–8. Exporting to UAE, Russia, Poland, and South Africa.",
+        "Ladies woven wear manufacturer and exporter based in Mumbai, India. Experts in viscose, rayon, georgette, linen and linen blends, crepe, and poplin fabrics. MOQ 100 pieces. FOB USD 5–8. Exporting to UAE, Russia, Poland, and South Africa.",
       ctaPrimary: "View Our Collections",
       ctaSecondary: "Send Enquiry",
       collectionLabel: "SS 2026 Collection",
       collectionAvailable: "Now Available",
-      certBadge: "GOTS Certified",
-      certBadgeDesc: "100% Organic Cotton",
+      certBadge: "Sustainable Fabrics",
+      certBadgeDesc: "100% Recycled Fabrics",
     },
     stats: [
-      { value: "10,000+", label: "Pieces / Month" },
+      { value: "18,000+", label: "Pieces / Month" },
       { value: "100", label: "MOQ per Style" },
       { value: "4", label: "Export Markets" },
       { value: "18-22", label: "Days to UAE" },

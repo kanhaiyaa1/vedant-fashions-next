@@ -32,10 +32,10 @@ const EQUIPMENT_DATA = [
 
 // Non-translatable facility specs: location, area, cert
 const FACILITY_SPECS = [
-  { location: "Ahmedabad",   area: "35,000 sq ft", cert: "GOTS · BSCI" },
-  { location: "Gandhinagar", area: "18,000 sq ft", cert: "ZLD · OEKO-TEX" },
-  { location: "Ahmedabad",   area: "8,000 sq ft",  cert: "ISO 17025 (lab)" },
-  { location: "Surat",       area: "22,000 sq ft", cert: "GOTS · GRS" },
+  { location: "Mumbai", area: "5,000 sq ft", cert: "In-house QC" },
+  { location: "Mumbai", area: "Cutting Room", cert: "In-house" },
+  { location: "Mumbai", area: "60 Machines", cert: "In-house" },
+  { location: "Mumbai", area: "QC & Packing", cert: "In-house" },
 ];
 
 // Non-translatable metric nums
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   await params;
   return {
     title: "Garment Manufacturing India | Ladies Woven Wear",
-    description: "Vertically integrated ladies woven wear manufacturing in Gujarat, India. GOTS certified. 8,000+ pcs/day. Exporting to UAE, Saudi Arabia & Russia.",
+    description: "Ladies woven wear manufacturing in Mumbai, India. In-house cutting, stitching & finishing. Exporting to UAE, Russia, Poland & South Africa.",
     alternates: buildHreflangAlternates("/manufacturing"),
   };
 }

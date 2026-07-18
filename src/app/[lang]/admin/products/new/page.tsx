@@ -14,7 +14,7 @@ const CATEGORIES = [
   { value: "other", label: "Other" },
 ];
 
-const CERTS = ["GOTS", "OEKO-TEX", "GRS", "BSCI", "ISO 9001"];
+const CERTS = ["ISO 9001", "GRS", "BSCI"];
 
 export default function NewProductPage() {
   const router = useRouter();

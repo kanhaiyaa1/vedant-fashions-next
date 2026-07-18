@@ -39,16 +39,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Fabric Sourcing",
       title: "Certified Fabrics from Trusted Mills",
-      description: "We source from 30+ GOTS and OEKO-TEX certified mills across India and Europe. Full chain-of-custody documentation, in-house testing, and REACH-compliant processing for every metre.",
+      description: "We source from 30+ mills across India and Europe. Full chain-of-custody documentation, in-house testing, and REACH-compliant processing for every metre.",
     },
     sourcing: {
       subtitle: "Our Approach",
       title: "Responsible Fabric Sourcing",
       items: [
-        { title: "Certified Supply Chain", desc: "Every metre of fabric comes with full chain-of-custody documentation. GOTS Transaction Certificates issued per shipment. No blending of certified and non-certified materials." },
+        { title: "Traceable Supply Chain", desc: "Every metre of fabric comes with full chain-of-custody documentation. No blending of tracked and untracked materials." },
         { title: "30+ Partner Mills", desc: "Long-standing relationships with mills in Gujarat, Maharashtra, Tamil Nadu, and European linen producers. Annual audits ensure compliance with our quality and social standards." },
         { title: "In-House Testing", desc: "All incoming fabric tested for GSM, shrinkage (ISO 6330), colorfastness (ISO 105-C06), tensile strength (ISO 13934-1), and composition verification before entering production." },
-        { title: "Dyeing & Finishing", desc: "REACH-compliant, AZO-free reactive dyes. OEKO-TEX Standard 100 certified chemicals. Low-impact dyeing processes with water recycling. Lab dips within 5 working days." },
+        { title: "Dyeing & Finishing", desc: "REACH-compliant, AZO-free reactive dyes. Low-impact dyeing processes with water recycling. Lab dips within 5 working days." },
       ],
     },
     library: {
@@ -77,7 +77,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "REACH Compliant", desc: "All chemicals and dyes comply with EU REACH Regulation (EC) No 1907/2006. Restricted Substance List (RSL) tested by accredited labs." },
         { title: "AZO-Free Dyes", desc: "Zero use of AZO dyes across all production. Every dye lot tested per EU Directive 2002/61/EC. Test reports available per shipment." },
-        { title: "OEKO-TEX Chemicals", desc: "Only OEKO-TEX Standard 100 certified auxiliaries used in wet processing. Annual chemical inventory audit by third-party labs." },
+        { title: "Tested Chemicals", desc: "Only auxiliaries verified through in-house and third-party lab testing used in wet processing. Annual chemical inventory audit by third-party labs." },
       ],
     },
     cta: { title: "Request Fabric Swatches", description: "Free swatch cards for our standard range. Custom development hangers available at cost. Ships worldwide within 3 days.", buttonText: "Order Swatches" },
@@ -88,16 +88,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "توريد الأقمشة",
       title: "أقمشة معتمدة من مطاحن موثوقة",
-      description: "نوفّر من أكثر من 30 مطحناً معتمداً من GOTS وOEKO-TEX في الهند وأوروبا. وثائق كاملة لسلسلة الحيازة واختبارات داخلية ومعالجة مطابقة لمعايير REACH لكل متر.",
+      description: "نوفّر من أكثر من 30 مطحناً في الهند وأوروبا. وثائق كاملة لسلسلة الحيازة واختبارات داخلية ومعالجة مطابقة لمعايير REACH لكل متر.",
     },
     sourcing: {
       subtitle: "نهجنا",
       title: "توريد أقمشة مسؤول",
       items: [
-        { title: "سلسلة توريد معتمدة", desc: "كل متر من القماش مرفق بوثائق كاملة لسلسلة الحيازة. تُصدر شهادات معاملة GOTS مع كل شحنة. لا يجري مزج المواد المعتمدة بغير المعتمدة." },
+        { title: "سلسلة توريد قابلة للتتبع", desc: "كل متر من القماش مرفق بوثائق كاملة لسلسلة الحيازة. لا يجري مزج المواد المتتبعة بغير المتتبعة." },
         { title: "أكثر من 30 مطحناً شريكاً", desc: "علاقات راسخة مع مطاحن في غوجارات ومهاراشترا وتاميل نادو ومنتجي الكتان الأوروبيين. تضمن المراجعات السنوية الامتثال لمعايير الجودة والمسؤولية الاجتماعية." },
         { title: "اختبارات داخلية", desc: "يُختبر كل قماش وارد لـ GSM والانكماش (ISO 6330) وثبات اللون (ISO 105-C06) ومقاومة الشد (ISO 13934-1) والتحقق من التركيب قبل الدخول في الإنتاج." },
-        { title: "الصباغة والتشطيب", desc: "أصباغ تفاعلية خالية من AZO ومطابقة لمعايير REACH. كيماويات معتمدة من OEKO-TEX Standard 100. عمليات صباغة منخفضة التأثير مع إعادة تدوير الماء. عينات الألوان المعملية خلال 5 أيام عمل." },
+        { title: "الصباغة والتشطيب", desc: "أصباغ تفاعلية خالية من AZO ومطابقة لمعايير REACH. عمليات صباغة منخفضة التأثير مع إعادة تدوير الماء. عينات الألوان المعملية خلال 5 أيام عمل." },
       ],
     },
     library: {
@@ -126,7 +126,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "مطابق لـ REACH", desc: "جميع الكيماويات والأصباغ مطابقة للائحة REACH الأوروبية (EC) رقم 1907/2006. اختبار قائمة المواد المحظورة (RSL) من قِبل مختبرات معتمدة." },
         { title: "أصباغ خالية من AZO", desc: "عدم استخدام أصباغ AZO في أي إنتاج. يُختبر كل دُفعة صبغ وفق التوجيه الأوروبي 2002/61/EC. تقارير الاختبار متاحة مع كل شحنة." },
-        { title: "كيماويات OEKO-TEX", desc: "تُستخدم فقط مواد مساعدة معتمدة من OEKO-TEX Standard 100 في المعالجة الرطبة. مراجعة سنوية لجرد الكيماويات من قِبل مختبرات مستقلة." },
+        { title: "كيماويات مُختبَرة", desc: "تُستخدم فقط مواد مساعدة تم التحقق منها عبر اختبارات داخلية ومختبرات خارجية في المعالجة الرطبة. مراجعة سنوية لجرد الكيماويات من قِبل مختبرات مستقلة." },
       ],
     },
     cta: { title: "اطلبوا عينات الأقمشة", description: "بطاقات عينات مجانية لنطاقنا القياسي. شماعات التطوير المخصص متاحة بتكلفة. الشحن عالمياً خلال 3 أيام.", buttonText: "اطلب عينات" },
@@ -137,16 +137,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Закупка тканей",
       title: "Сертифицированные ткани от проверенных фабрик",
-      description: "Мы закупаем у 30+ сертифицированных фабрик GOTS и OEKO-TEX по всей Индии и Европе. Полная документация цепочки хранения, собственное тестирование и обработка в соответствии с REACH для каждого метра.",
+      description: "Мы закупаем у 30+ фабрик по всей Индии и Европе. Полная документация цепочки хранения, собственное тестирование и обработка в соответствии с REACH для каждого метра.",
     },
     sourcing: {
       subtitle: "Наш подход",
       title: "Ответственная закупка тканей",
       items: [
-        { title: "Сертифицированная цепочка поставок", desc: "Каждый метр ткани сопровождается полной документацией цепочки хранения. GOTS Transaction Certificates выдаются на каждую партию. Смешивание сертифицированных и несертифицированных материалов исключено." },
+        { title: "Прослеживаемая цепочка поставок", desc: "Каждый метр ткани сопровождается полной документацией цепочки хранения. Смешивание отслеживаемых и неотслеживаемых материалов исключено." },
         { title: "30+ партнёрских фабрик", desc: "Долгосрочные отношения с фабриками в Гуджарате, Махараштре, Тамил Наду и европейскими производителями льна. Ежегодные аудиты обеспечивают соответствие нашим стандартам качества и социальной ответственности." },
         { title: "Собственное тестирование", desc: "Все входящие ткани проходят испытания на GSM, усадку (ISO 6330), устойчивость окраски (ISO 105-C06), прочность на разрыв (ISO 13934-1) и верификацию состава до поступления в производство." },
-        { title: "Крашение и отделка", desc: "Реактивные красители, не содержащие AZO, соответствующие REACH. Химикаты, сертифицированные по OEKO-TEX Standard 100. Маловоздействующие процессы крашения с рециклингом воды. Лабораторные крашения в течение 5 рабочих дней." },
+        { title: "Крашение и отделка", desc: "Реактивные красители, не содержащие AZO, соответствующие REACH. Маловоздействующие процессы крашения с рециклингом воды. Лабораторные крашения в течение 5 рабочих дней." },
       ],
     },
     library: {
@@ -175,7 +175,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "Соответствие REACH", desc: "Все химикаты и красители соответствуют Регламенту ЕС REACH (EC) № 1907/2006. Список ограниченных веществ (RSL) проверяется аккредитованными лабораториями." },
         { title: "Красители без AZO", desc: "Полный отказ от красителей AZO во всём производстве. Каждая партия красителя тестируется по Директиве ЕС 2002/61/EC. Протоколы испытаний доступны по каждой партии." },
-        { title: "Химикаты OEKO-TEX", desc: "В мокрых процессах используются только вспомогательные вещества, сертифицированные по OEKO-TEX Standard 100. Ежегодный аудит химического инвентаря сторонними лабораториями." },
+        { title: "Проверенные химикаты", desc: "В мокрых процессах используются только вспомогательные вещества, проверенные собственными и сторонними лабораториями. Ежегодный аудит химического инвентаря сторонними лабораториями." },
       ],
     },
     cta: { title: "Запросить образцы тканей", description: "Бесплатные карточки образцов для стандартного ассортимента. Вешалки для разработки под заказ — по стоимости. Доставка по всему миру в течение 3 дней.", buttonText: "Заказать образцы" },
@@ -186,16 +186,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Pozyskiwanie tkanin",
       title: "Certyfikowane tkaniny z zaufanych zakładów",
-      description: "Pozyskujemy od 30+ certyfikowanych zakładów GOTS i OEKO-TEX w Indiach i Europie. Pełna dokumentacja łańcucha własności, testy wewnętrzne i przetwarzanie zgodne z REACH dla każdego metra.",
+      description: "Pozyskujemy od 30+ zakładów w Indiach i Europie. Pełna dokumentacja łańcucha własności, testy wewnętrzne i przetwarzanie zgodne z REACH dla każdego metra.",
     },
     sourcing: {
       subtitle: "Nasze podejście",
       title: "Odpowiedzialne pozyskiwanie tkanin",
       items: [
-        { title: "Certyfikowany łańcuch dostaw", desc: "Każdy metr tkaniny posiada pełną dokumentację łańcucha własności. Świadectwa transakcji GOTS wystawiane per przesyłka. Brak mieszania materiałów certyfikowanych z niecertyfikowanymi." },
+        { title: "Identyfikowalny łańcuch dostaw", desc: "Każdy metr tkaniny posiada pełną dokumentację łańcucha własności. Brak mieszania materiałów identyfikowalnych z niezidentyfikowanymi." },
         { title: "30+ zakładów partnerskich", desc: "Długotrwałe relacje z zakładami w Gujarat, Maharashtra, Tamil Nadu i europejskimi producentami lnu. Coroczne audyty zapewniają zgodność z naszymi standardami jakości i społecznymi." },
         { title: "Testy wewnętrzne", desc: "Wszystkie przychodzące tkaniny testowane pod kątem GSM, kurczliwości (ISO 6330), trwałości barwy (ISO 105-C06), wytrzymałości na rozciąganie (ISO 13934-1) i weryfikacji składu przed wejściem do produkcji." },
-        { title: "Barwienie i wykańczanie", desc: "Barwniki reaktywne wolne od AZO, zgodne z REACH. Chemikalia certyfikowane przez OEKO-TEX Standard 100. Niskoemisyjne procesy barwienia z recyklingiem wody. Barwienia laboratoryjne w ciągu 5 dni roboczych." },
+        { title: "Barwienie i wykańczanie", desc: "Barwniki reaktywne wolne od AZO, zgodne z REACH. Niskoemisyjne procesy barwienia z recyklingiem wody. Barwienia laboratoryjne w ciągu 5 dni roboczych." },
       ],
     },
     library: {
@@ -224,7 +224,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "Zgodność z REACH", desc: "Wszystkie chemikalia i barwniki są zgodne z rozporządzeniem UE REACH (WE) nr 1907/2006. Lista substancji ograniczonych (RSL) testowana przez akredytowane laboratoria." },
         { title: "Barwniki wolne od AZO", desc: "Zero użycia barwników AZO w całej produkcji. Każda partia barwnika testowana zgodnie z Dyrektywą UE 2002/61/WE. Raporty z testów dostępne per przesyłka." },
-        { title: "Chemikalia OEKO-TEX", desc: "Wyłącznie środki pomocnicze certyfikowane przez OEKO-TEX Standard 100 stosowane w mokrym przetwarzaniu. Coroczny audyt inwentarza chemicznego przez zewnętrzne laboratoria." },
+        { title: "Testowane chemikalia", desc: "Wyłącznie środki pomocnicze zweryfikowane przez testy wewnętrzne i zewnętrzne laboratoria stosowane w mokrym przetwarzaniu. Coroczny audyt inwentarza chemicznego przez zewnętrzne laboratoria." },
       ],
     },
     cta: { title: "Zamów próbki tkanin", description: "Bezpłatne karty próbek dla naszego standardowego asortymentu. Wieszaki do niestandardowego opracowania dostępne po kosztach. Wysyłka na cały świat w ciągu 3 dni.", buttonText: "Zamów próbki" },
@@ -235,16 +235,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Approvisionnement en tissus",
       title: "Tissus certifiés provenant de filatures de confiance",
-      description: "Nous sourcions auprès de 30+ filatures certifiées GOTS et OEKO-TEX en Inde et en Europe. Documentation complète de la chaîne de traçabilité, tests internes et traitement conforme REACH pour chaque mètre.",
+      description: "Nous sourcions auprès de 30+ filatures en Inde et en Europe. Documentation complète de la chaîne de traçabilité, tests internes et traitement conforme REACH pour chaque mètre.",
     },
     sourcing: {
       subtitle: "Notre approche",
       title: "Approvisionnement responsable en tissus",
       items: [
-        { title: "Chaîne d'approvisionnement certifiée", desc: "Chaque mètre de tissu est accompagné d'une documentation complète de chaîne de traçabilité. Certificats de Transaction GOTS émis par expédition. Aucun mélange de matières certifiées et non certifiées." },
+        { title: "Chaîne d'approvisionnement traçable", desc: "Chaque mètre de tissu est accompagné d'une documentation complète de chaîne de traçabilité. Aucun mélange de matières traçables et non traçables." },
         { title: "30+ filatures partenaires", desc: "Relations de longue date avec des filatures au Gujarat, Maharashtra, Tamil Nadu et des producteurs de lin européens. Les audits annuels garantissent la conformité à nos standards de qualité et sociaux." },
         { title: "Tests internes", desc: "Tous les tissus entrants testés pour GSM, rétrécissement (ISO 6330), solidité des teintures (ISO 105-C06), résistance à la traction (ISO 13934-1) et vérification de composition avant d'entrer en production." },
-        { title: "Teinture et finition", desc: "Colorants réactifs conformes REACH, sans AZO. Produits chimiques certifiés OEKO-TEX Standard 100. Processus de teinture à faible impact avec recyclage de l'eau. Bains de teinte dans les 5 jours ouvrables." },
+        { title: "Teinture et finition", desc: "Colorants réactifs conformes REACH, sans AZO. Processus de teinture à faible impact avec recyclage de l'eau. Bains de teinte dans les 5 jours ouvrables." },
       ],
     },
     library: {
@@ -273,7 +273,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "Conforme REACH", desc: "Tous les produits chimiques et colorants sont conformes au Règlement UE REACH (CE) No 1907/2006. Liste des substances restreintes (RSL) testée par des laboratoires accrédités." },
         { title: "Colorants sans AZO", desc: "Utilisation zéro de colorants AZO dans toute la production. Chaque lot de colorant testé selon la Directive UE 2002/61/CE. Rapports de test disponibles par expédition." },
-        { title: "Produits chimiques OEKO-TEX", desc: "Seuls des auxiliaires certifiés OEKO-TEX Standard 100 sont utilisés en traitement humide. Audit annuel de l'inventaire chimique par des laboratoires tiers." },
+        { title: "Produits chimiques testés", desc: "Seuls des auxiliaires vérifiés par des tests internes et des laboratoires tiers sont utilisés en traitement humide. Audit annuel de l'inventaire chimique par des laboratoires tiers." },
       ],
     },
     cta: { title: "Demander des échantillons de tissus", description: "Cartes d'échantillons gratuites pour notre gamme standard. Cintres de développement personnalisé disponibles au prix coûtant. Expédition mondiale en 3 jours.", buttonText: "Commander des échantillons" },
@@ -284,16 +284,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Approvvigionamento tessuti",
       title: "Tessuti certificati da filature di fiducia",
-      description: "Approvvigoniamo da 30+ filature certificate GOTS e OEKO-TEX in India e in Europa. Documentazione completa della catena di custodia, test interni e lavorazione conforme a REACH per ogni metro.",
+      description: "Approvvigoniamo da 30+ filature in India e in Europa. Documentazione completa della catena di custodia, test interni e lavorazione conforme a REACH per ogni metro.",
     },
     sourcing: {
       subtitle: "Il nostro approccio",
       title: "Approvvigionamento responsabile di tessuti",
       items: [
-        { title: "Catena di fornitura certificata", desc: "Ogni metro di tessuto è accompagnato da documentazione completa della catena di custodia. Certificati di Transazione GOTS emessi per spedizione. Nessuna miscelazione di materiali certificati e non certificati." },
+        { title: "Catena di fornitura tracciabile", desc: "Ogni metro di tessuto è accompagnato da documentazione completa della catena di custodia. Nessuna miscelazione di materiali tracciabili e non tracciabili." },
         { title: "30+ filature partner", desc: "Relazioni consolidate con filature in Gujarat, Maharashtra, Tamil Nadu e produttori europei di lino. Audit annuali garantiscono la conformità ai nostri standard qualitativi e sociali." },
         { title: "Test interni", desc: "Tutti i tessuti in entrata testati per GSM, ritiro (ISO 6330), solidità del colore (ISO 105-C06), resistenza alla trazione (ISO 13934-1) e verifica della composizione prima di entrare in produzione." },
-        { title: "Tintura e finitura", desc: "Coloranti reattivi conformi a REACH, senza AZO. Ausiliari certificati OEKO-TEX Standard 100. Processi di tintura a basso impatto con riciclo dell'acqua. Campionature di colore entro 5 giorni lavorativi." },
+        { title: "Tintura e finitura", desc: "Coloranti reattivi conformi a REACH, senza AZO. Processi di tintura a basso impatto con riciclo dell'acqua. Campionature di colore entro 5 giorni lavorativi." },
       ],
     },
     library: {
@@ -322,7 +322,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "Conforme REACH", desc: "Tutti i prodotti chimici e i coloranti sono conformi al Regolamento UE REACH (CE) N. 1907/2006. Elenco delle sostanze limitatee (RSL) testato da laboratori accreditati." },
         { title: "Coloranti senza AZO", desc: "Zero utilizzo di coloranti AZO in tutta la produzione. Ogni lotto di colorante testato secondo la Direttiva UE 2002/61/CE. Rapporti di test disponibili per spedizione." },
-        { title: "Prodotti chimici OEKO-TEX", desc: "Solo ausiliari certificati OEKO-TEX Standard 100 utilizzati nella lavorazione umida. Audit annuale dell'inventario chimico da parte di laboratori terzi." },
+        { title: "Prodotti chimici testati", desc: "Solo ausiliari verificati tramite test interni e laboratori terzi utilizzati nella lavorazione umida. Audit annuale dell'inventario chimico da parte di laboratori terzi." },
       ],
     },
     cta: { title: "Richiedere campioni di tessuto", description: "Cartelle campioni gratuite per la nostra gamma standard. Campioni di sviluppo personalizzato disponibili a costo. Spedizione in tutto il mondo entro 3 giorni.", buttonText: "Ordina campioni" },
@@ -333,16 +333,16 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
     hero: {
       subtitle: "Stofinkoop",
       title: "Gecertificeerde stoffen van vertrouwde fabrieken",
-      description: "We sourcen bij 30+ GOTS- en OEKO-TEX-gecertificeerde fabrieken in India en Europa. Volledige documentatie van de bewaarderscyclus, interne tests en REACH-conforme verwerking voor elke meter.",
+      description: "We sourcen bij 30+ fabrieken in India en Europa. Volledige documentatie van de bewaarderscyclus, interne tests en REACH-conforme verwerking voor elke meter.",
     },
     sourcing: {
       subtitle: "Onze aanpak",
       title: "Verantwoorde stofinkoop",
       items: [
-        { title: "Gecertificeerde toeleveringsketen", desc: "Elke meter stof wordt vergezeld van volledige documentatie van de bewaarderscyclus. GOTS Transactiecertificaten uitgegeven per zending. Geen vermenging van gecertificeerde en niet-gecertificeerde materialen." },
+        { title: "Traceerbare toeleveringsketen", desc: "Elke meter stof wordt vergezeld van volledige documentatie van de bewaarderscyclus. Geen vermenging van traceerbare en niet-traceerbare materialen." },
         { title: "30+ partnerfabrieken", desc: "Langdurige relaties met fabrieken in Gujarat, Maharashtra, Tamil Nadu en Europese linnenproducenten. Jaarlijkse audits zorgen voor naleving van onze kwaliteits- en sociale normen." },
         { title: "Interne tests", desc: "Alle inkomende stoffen getest op GSM, krimp (ISO 6330), kleurechtheid (ISO 105-C06), treksterkte (ISO 13934-1) en samenstelling verificatie voor de productie ingaat." },
-        { title: "Verven en afwerken", desc: "REACH-conforme reactieve verfstoffen zonder AZO. OEKO-TEX Standard 100 gecertificeerde chemicaliën. Laagsimpact verfprocessen met waterrecycling. Laboratoriumkleuringen binnen 5 werkdagen." },
+        { title: "Verven en afwerken", desc: "REACH-conforme reactieve verfstoffen zonder AZO. Laagsimpact verfprocessen met waterrecycling. Laboratoriumkleuringen binnen 5 werkdagen." },
       ],
     },
     library: {
@@ -371,7 +371,7 @@ export const fabricSourcingContent: Record<string, FabricSourcingLocale> = {
       items: [
         { title: "REACH-conform", desc: "Alle chemicaliën en verfstoffen voldoen aan EU REACH-Verordening (EG) Nr. 1907/2006. Lijst Beperkte Stoffen (RSL) getest door geaccrediteerde laboratoria." },
         { title: "AZO-vrije verfstoffen", desc: "Nul gebruik van AZO-verfstoffen in de gehele productie. Elke verfstofpartij getest per EU-Richtlijn 2002/61/EG. Testrapporten beschikbaar per zending." },
-        { title: "OEKO-TEX chemicaliën", desc: "Alleen OEKO-TEX Standard 100 gecertificeerde hulpstoffen gebruikt in natte verwerking. Jaarlijkse chemische inventarisaudit door externe laboratoria." },
+        { title: "Geteste chemicaliën", desc: "Alleen hulpstoffen geverifieerd via interne en externe laboratoriumtests gebruikt in natte verwerking. Jaarlijkse chemische inventarisaudit door externe laboratoria." },
       ],
     },
     cta: { title: "Stoffen stalenkaarten aanvragen", description: "Gratis stalenkaarten voor ons standaardassortiment. Maatwerkontwikkeling hangers beschikbaar tegen kostprijs. Wereldwijde verzending binnen 3 dagen.", buttonText: "Stalen bestellen" },

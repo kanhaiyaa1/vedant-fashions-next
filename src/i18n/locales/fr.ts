@@ -26,7 +26,7 @@ const fr: Translations = {
   "nav.inquireNow": "Demander un devis",
   "nav.knowledgeHub": "Centre de connaissances",
 
-  "footer.tagline": "Fabricant premium de vêtements durables exportant vers l'Europe et la Russie. Certifié GOTS, OEKO-TEX et GRS. Au service de 200+ marques depuis 1998.",
+  "footer.tagline": "Fabricant de vêtements tissés pour femmes basé à Mumbai, en Inde. Exportation vers les Émirats arabes unis, la Russie, la Pologne et l'Afrique du Sud.",
   "footer.company": "Entreprise",
   "footer.products": "Produits",
   "footer.services": "Services",
@@ -55,12 +55,12 @@ const fr: Translations = {
 
   "home.heroTitle": "Fabricant premium de vêtements pour les marques européennes",
   "home.heroSubtitle": "Fabrication durable",
-  "home.heroDescription": "Fabrication de vêtements certifiés GOTS, OEKO-TEX et GRS. Exportation de blouses tissées, robes en coton, chemises en lin et mode balnéaire vers plus de 25 pays européens depuis 1998.",
+  "home.heroDescription": "Vêtements tissés premium pour femmes, fabriqués à Mumbai, en Inde. Exportation de chemisiers, robes en coton, chemises en lin et mode resort vers les Émirats arabes unis, la Russie, la Pologne et l'Afrique du Sud.",
   "home.heroCta": "Découvrir notre catalogue",
 
   "about.title": "À propos de Vedant Fashion",
   "about.subtitle": "Notre histoire",
-  "about.description": "Depuis 1998, nous sommes un partenaire de confiance pour les marques de mode européennes à la recherche d'une fabrication premium et durable en Inde.",
+  "about.description": "Nous sommes un fabricant et exportateur de vêtements tissés pour femmes basé à Mumbai, au service des Émirats arabes unis, de la Russie, de la Pologne et de l'Afrique du Sud.",
 
   "manufacturing.title": "Capacités de fabrication",
   "manufacturing.subtitle": "Excellence de production",
@@ -84,7 +84,7 @@ const fr: Translations = {
 
   "contact.title": "Contactez-nous",
   "contact.subtitle": "Prenez contact",
-  "contact.description": "Contactez notre équipe commerciale export à Hambourg ou notre bureau de production à Ahmedabad.",
+  "contact.description": "Contactez notre équipe commerciale export à Mumbai, en Inde.",
 
   "inquiry.title": "Formulaire de demande",
   "inquiry.subtitle": "Commencer votre commande",

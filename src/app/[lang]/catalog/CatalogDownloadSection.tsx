@@ -72,7 +72,7 @@ export default function CatalogDownloadSection({ userId, userEmail }: CatalogDow
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
-            {["100+ styles", "FOB prices included", "GOTS & OEKO-TEX specs", "MOQ per style"].map((f) => (
+            {["100+ styles", "FOB prices included", "Full fabric specs", "MOQ per style"].map((f) => (
               <span key={f} className="flex items-center gap-1.5">
                 <span className="text-gold">✓</span> {f}
               </span>

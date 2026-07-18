@@ -44,9 +44,8 @@ const EXPORT_DOCS = [
   { name: "Bill of Lading",                     desc: "Original negotiable B/L or seawaybill issued by the shipping line (original or telex release)." },
   { name: "Certificate of Origin (GSP)",        desc: "Issued by FIEO / Export Inspection Council for GSP preferential duty in eligible markets." },
   { name: "CEPA Certificate of Origin (UAE)",   desc: "India-UAE CEPA preferential origin certificate — reduces UAE import duty to 0% on qualifying garments." },
-  { name: "GOTS / OEKO-TEX Certificate Copies", desc: "Current scope certificate or transaction certificate per shipment for GOTS-certified orders." },
   { name: "AZO-Free Test Report",               desc: "Third-party lab report (SGS / Intertek) confirming absence of restricted azo dyes per EN 14362-1." },
-  { name: "Formaldehyde Test Report",           desc: "Test confirming formaldehyde levels within OEKO-TEX / REACH limits for all age categories." },
+  { name: "Formaldehyde Test Report",           desc: "Test confirming formaldehyde levels within REACH limits for all age categories." },
   { name: "ESMA / SASO Compliance Declaration", desc: "Self-declaration or third-party conformity assessment for UAE ESMA and Saudi SASO textile regulations." },
   { name: "Arabic / English Care Label Samples",desc: "Pre-production woven label samples with bilingual care symbols per ISO 3758 for GCC buyer approval." },
 ];

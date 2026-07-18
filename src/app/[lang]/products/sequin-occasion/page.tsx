@@ -39,7 +39,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "What sequin fabrics and embellishment materials do you use?",
-    a: "We use pailette sequin (80% polyester / 20% nylon, 220 GSM), sequin mesh (100% polyester, 200 GSM), and metallic foil-print base fabrics. Beads used are glass and acrylic in AZO-free colourways. All base fabrics and trims carry OEKO-TEX Standard 100 certification and comply with EU REACH and GCC chemical standards.",
+    a: "We use pailette sequin (80% polyester / 20% nylon, 220 GSM), sequin mesh (100% polyester, 200 GSM), and metallic foil-print base fabrics. Beads used are glass and acrylic in AZO-free colourways. All base fabrics and trims comply with GCC chemical standards.",
   },
   {
     q: "Can you produce custom colour sequin garments for a specific brand or collection?",

@@ -8,10 +8,10 @@ const standards = [
     icon: Shield,
     category: "Chemical Safety",
     items: [
-      { name: "REACH Regulation (EC 1907/2006)", status: "Compliant" },
-      { name: "AZO-free dyes (EN 14362)", status: "Certified" },
-      { name: "Formaldehyde < 75 ppm (Category II)", status: "Tested" },
-      { name: "Heavy metals within EU limits", status: "Tested" },
+      { name: "REACH Regulation (EC 1907/2006)", status: "Aligned" },
+      { name: "AZO-free dyes (EN 14362)", status: "Practice" },
+      { name: "Formaldehyde < 75 ppm (Category II)", status: "In-house Check" },
+      { name: "Heavy metals within EU limits", status: "In-house Check" },
       { name: "Phthalates-free (for childrenswear)", status: "Available" },
     ],
   },
@@ -19,7 +19,7 @@ const standards = [
     icon: FileText,
     category: "Textile Labelling",
     items: [
-      { name: "EU Regulation No. 1007/2011", status: "Compliant" },
+      { name: "EU Regulation No. 1007/2011", status: "Aligned" },
       { name: "Fibre composition labelling (all EU languages)", status: "Included" },
       { name: "Country of origin marking", status: "Included" },
       { name: "Care labelling (ISO 3758 / ASTM D5489)", status: "Included" },
@@ -29,21 +29,21 @@ const standards = [
     icon: FlaskConical,
     category: "Testing & Quality",
     items: [
-      { name: "ISO 13934-1 (Tensile strength)", status: "Tested" },
-      { name: "ISO 12947-2 (Abrasion resistance)", status: "Tested" },
-      { name: "ISO 105-C06 (Colorfastness to washing)", status: "Tested" },
-      { name: "ISO 12945-2 (Pilling resistance)", status: "Tested" },
-      { name: "ISO 3759 (Dimensional change)", status: "Tested" },
+      { name: "ISO 13934-1 (Tensile strength)", status: "In-house Test" },
+      { name: "ISO 12947-2 (Abrasion resistance)", status: "In-house Test" },
+      { name: "ISO 105-C06 (Colorfastness to washing)", status: "In-house Test" },
+      { name: "ISO 12945-2 (Pilling resistance)", status: "In-house Test" },
+      { name: "ISO 3759 (Dimensional change)", status: "In-house Test" },
     ],
   },
   {
     icon: Scale,
-    category: "Social Compliance",
+    category: "Social Practices",
     items: [
-      { name: "SEDEX / SMETA 4-pillar audit", status: "Audited" },
-      { name: "SA8000 (Social Accountability)", status: "Certified" },
-      { name: "ILO Core Conventions", status: "Compliant" },
-      { name: "Living wage commitment", status: "Verified" },
+      { name: "Fair labour practices", status: "In Practice" },
+      { name: "Health & safety at our facility", status: "In Practice" },
+      { name: "ILO Core Conventions", status: "Aligned" },
+      { name: "Living wage commitment", status: "In Practice" },
     ],
   },
   {
@@ -52,7 +52,7 @@ const standards = [
     items: [
       { name: "Certificate of Origin (GSP Form A)", status: "Issued" },
       { name: "EUR.1 movement certificates (where applicable)", status: "Available" },
-      { name: "Correct HS code classification", status: "Verified" },
+      { name: "Correct HS code classification", status: "In Practice" },
       { name: "CPSIA compliant (US market)", status: "Available" },
     ],
   },
@@ -60,17 +60,17 @@ const standards = [
     icon: Globe,
     category: "Environmental",
     items: [
-      { name: "GOTS (Global Organic Textile Standard)", status: "Certified" },
-      { name: "GRS (Global Recycled Standard)", status: "Certified" },
-      { name: "OEKO-TEX® Standard 100", status: "Certified" },
-      { name: "Zero liquid discharge (ZLD)", status: "Operational" },
+      { name: "Sustainable fabric sourcing", status: "Growing" },
+      { name: "Recycled fabric inputs", status: "Growing" },
+      { name: "Responsible waste handling", status: "In Practice" },
+      { name: "Formal environmental management", status: "Roadmap" },
     ],
   },
 ];
 
 const statusColor = (status: string) => {
-  if (status === "Certified" || status === "Compliant" || status === "Operational") return "bg-olive text-olive-foreground";
-  if (status === "Tested" || status === "Audited" || status === "Verified" || status === "Issued") return "bg-primary text-primary-foreground";
+  if (status === "Aligned" || status === "In Practice" || status === "Included" || status === "Issued") return "bg-olive text-olive-foreground";
+  if (status === "In-house Test" || status === "Growing" || status === "Available") return "bg-primary text-primary-foreground";
   return "bg-secondary text-secondary-foreground";
 };
 

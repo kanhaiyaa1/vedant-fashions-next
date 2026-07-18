@@ -23,16 +23,16 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 const SOURCING_ICONS = [Leaf, Globe, FlaskConical, Palette];
 
 const FABRICS = [
-  { name: "Organic Cotton Poplin",  weight: "100–120 GSM", width: "150 cm", weave: "Plain",         origin: "Gujarat, Maharashtra",    cert: "GOTS" },
-  { name: "Organic Cotton Voile",   weight: "70–85 GSM",   width: "145 cm", weave: "Plain",         origin: "Tamil Nadu",               cert: "GOTS" },
-  { name: "Organic Cotton Oxford",  weight: "120–140 GSM", width: "150 cm", weave: "Basket",        origin: "Gujarat",                  cert: "GOTS" },
-  { name: "Organic Cotton Twill",   weight: "180–220 GSM", width: "150 cm", weave: "Twill 2/1",     origin: "Maharashtra",              cert: "GOTS" },
-  { name: "Tencel™ Lyocell",        weight: "95–115 GSM",  width: "140 cm", weave: "Satin",         origin: "Lenzing AG, Austria",      cert: "OEKO-TEX" },
+  { name: "Organic Cotton Poplin",  weight: "100–120 GSM", width: "150 cm", weave: "Plain",         origin: "Gujarat, Maharashtra",    cert: "" },
+  { name: "Organic Cotton Voile",   weight: "70–85 GSM",   width: "145 cm", weave: "Plain",         origin: "Tamil Nadu",               cert: "" },
+  { name: "Organic Cotton Oxford",  weight: "120–140 GSM", width: "150 cm", weave: "Basket",        origin: "Gujarat",                  cert: "" },
+  { name: "Organic Cotton Twill",   weight: "180–220 GSM", width: "150 cm", weave: "Twill 2/1",     origin: "Maharashtra",              cert: "" },
+  { name: "Tencel™ Lyocell",        weight: "95–115 GSM",  width: "140 cm", weave: "Satin",         origin: "Lenzing AG, Austria",      cert: "" },
   { name: "European Flax Linen",    weight: "140–180 GSM", width: "145 cm", weave: "Plain",         origin: "Belgium, France",          cert: "European Flax®" },
-  { name: "Linen-Cotton Blend",     weight: "120–140 GSM", width: "150 cm", weave: "Plain",         origin: "India + Europe blend",     cert: "GRS" },
-  { name: "Recycled Polyester",     weight: "100–150 GSM", width: "155 cm", weave: "Plain/Twill",   origin: "India (rPET)",             cert: "GRS" },
-  { name: "Bamboo Viscose",         weight: "130–160 GSM", width: "150 cm", weave: "Jersey",        origin: "China (FSC bamboo)",       cert: "OEKO-TEX" },
-  { name: "Organic Cotton Jersey",  weight: "140–180 GSM", width: "160 cm (tubular)", weave: "Single jersey", origin: "Gujarat",       cert: "GOTS" },
+  { name: "Linen-Cotton Blend",     weight: "120–140 GSM", width: "150 cm", weave: "Plain",         origin: "India + Europe blend",     cert: "" },
+  { name: "Recycled Polyester",     weight: "100–150 GSM", width: "155 cm", weave: "Plain/Twill",   origin: "India (rPET)",             cert: "" },
+  { name: "Bamboo Viscose",         weight: "130–160 GSM", width: "150 cm", weave: "Jersey",        origin: "China (FSC bamboo)",       cert: "" },
+  { name: "Organic Cotton Jersey",  weight: "140–180 GSM", width: "160 cm (tubular)", weave: "Single jersey", origin: "Gujarat",       cert: "" },
 ];
 
 export default async function FabricSourcingPage({ params }: { params: Promise<{ lang: string }> }) {

@@ -39,7 +39,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "What fabrics are used in your co-ord sets?",
-    a: "Our co-ord sets are available in viscose rayon challis (110 GSM), georgette (90 GSM), crepe (150 GSM), and linen-viscose blends. All fabrics carry OEKO-TEX Standard 100 certification. Rayon and viscose sets are most popular for resort and GCC climates due to their lightweight breathability.",
+    a: "Our co-ord sets are available in viscose rayon challis (110 GSM), georgette (90 GSM), crepe (150 GSM), and linen-viscose blends. All fabrics undergo in-house quality testing. Rayon and viscose sets are most popular for resort and GCC climates due to their lightweight breathability.",
   },
   {
     q: "Are co-ord sets suitable for the UAE and Gulf retail market?",

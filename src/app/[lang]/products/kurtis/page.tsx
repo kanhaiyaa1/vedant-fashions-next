@@ -39,7 +39,7 @@ const FAQS: CategoryFaq[] = [
   },
   {
     q: "What fabrics are your kurtis made from?",
-    a: "Our kurtis are available in cotton cambric (100 GSM), rayon challis (110 GSM), polyester georgette (90 GSM), cotton lawn (80 GSM), and linen-cotton blends. All fabrics carry OEKO-TEX Standard 100 certification. Cotton and rayon styles are most popular for GCC climates due to their breathability.",
+    a: "Our kurtis are available in cotton cambric (100 GSM), rayon challis (110 GSM), polyester georgette (90 GSM), cotton lawn (80 GSM), and linen-cotton blends. All fabrics undergo in-house quality testing. Cotton and rayon styles are most popular for GCC climates due to their breathability.",
   },
   {
     q: "Can you produce custom print kurtis with Arabic motifs or brand embroidery?",

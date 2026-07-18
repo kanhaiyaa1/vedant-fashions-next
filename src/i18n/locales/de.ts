@@ -26,7 +26,7 @@ const de: Translations = {
   "nav.inquireNow": "Jetzt anfragen",
   "nav.knowledgeHub": "Wissenszentrum",
 
-  "footer.tagline": "Premium nachhaltiger Bekleidungshersteller mit Export nach Europa und Russland. GOTS, OEKO-TEX und GRS zertifiziert. Seit 1998 für 200+ Marken.",
+  "footer.tagline": "Hersteller gewebter Damenbekleidung mit Sitz in Mumbai, Indien. Export in die VAE, nach Russland, Polen und Südafrika.",
   "footer.company": "Unternehmen",
   "footer.products": "Produkte",
   "footer.services": "Dienstleistungen",
@@ -55,12 +55,12 @@ const de: Translations = {
 
   "home.heroTitle": "Premium-Bekleidungshersteller für europäische Marken",
   "home.heroSubtitle": "Nachhaltige Fertigung",
-  "home.heroDescription": "GOTS-, OEKO-TEX- und GRS-zertifizierte Bekleidungsherstellung. Export von Premium-Blusen, Baumwollkleidern, Leinenhemden und Resort-Mode in über 25 europäische Länder seit 1998.",
+  "home.heroDescription": "Premium gewebte Damenbekleidung, gefertigt in Mumbai, Indien. Export von Blusen, Baumwollkleidern, Leinenhemden und Resort-Mode in die VAE, nach Russland, Polen und Südafrika.",
   "home.heroCta": "Unseren Katalog entdecken",
 
   "about.title": "Über Vedant Fashion",
   "about.subtitle": "Unsere Geschichte",
-  "about.description": "Seit 1998 sind wir ein vertrauenswürdiger Partner für europäische Modemarken, die nachhaltige Premium-Bekleidung aus Indien suchen.",
+  "about.description": "Wir sind ein in Mumbai ansässiger Hersteller und Exporteur gewebter Damenbekleidung, tätig in den VAE, Russland, Polen und Südafrika.",
 
   "manufacturing.title": "Fertigungskapazitäten",
   "manufacturing.subtitle": "Produktionsexzellenz",
@@ -84,7 +84,7 @@ const de: Translations = {
 
   "contact.title": "Kontakt",
   "contact.subtitle": "Nehmen Sie Kontakt auf",
-  "contact.description": "Erreichen Sie unser Export-Vertriebsteam in Hamburg oder unser Produktionsbüro in Ahmedabad.",
+  "contact.description": "Erreichen Sie unser Export-Vertriebsteam in Mumbai, Indien.",
 
   "inquiry.title": "Anfrageformular",
   "inquiry.subtitle": "Ihre Bestellung starten",

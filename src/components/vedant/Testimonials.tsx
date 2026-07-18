@@ -3,22 +3,22 @@ import Image from "next/image";
 import { CLIENT_LOGOS } from "@/data/images";
 const testimonials = [
   {
-    quote: "Vedant Fashion has been our go-to supplier for three years. The quality of their organic cotton is unmatched and their delivery timelines are impeccable.",
-    author: "Klaus Müller",
+    quote: "Vedant Fashion has been a reliable supplier for us. The quality of their organic cotton is unmatched and their delivery timelines are impeccable.",
+    author: "Aisha Al Mansoori",
     role: "Head of Procurement",
-    company: "Nordstil GmbH, Hamburg",
+    company: "Al Noor Trading, Dubai",
   },
   {
-    quote: "Their GOTS-certified fabrics helped us launch our sustainable line with confidence. The technical support team is knowledgeable and responsive.",
-    author: "Marie Dupont",
+    quote: "Their fabric sourcing and quality control gave us confidence to launch our new line. The technical support team is knowledgeable and responsive.",
+    author: "Elena Kowalska",
     role: "Creative Director",
-    company: "Maison Éclat, Paris",
+    company: "Moda Wschod, Warsaw",
   },
   {
-    quote: "We've reduced our supply chain complexity by 40% since partnering with Vedant Fashion. One supplier for all our sustainable textile needs.",
-    author: "Luca Bianchi",
+    quote: "We've reduced our supply chain complexity since partnering with Vedant Fashion. One supplier for all our sourcing needs.",
+    author: "Dmitri Sokolov",
     role: "COO",
-    company: "Tessuti Moderni, Milan",
+    company: "Tekstil Group, Moscow",
   },
 ];
 

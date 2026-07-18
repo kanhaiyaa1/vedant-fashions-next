@@ -55,7 +55,7 @@ function HubArticlePage({ slug, lang }: { slug: string; lang: string }) {
   const ctaMap: Record<string, { title: string; desc: string; btn: string; href: string }> = {
     "fabric-types": { title: "Need Fabric Samples?", desc: "Request swatch cards for any fabric in our range.", btn: "Request Swatches", href: `/${lang}/inquiry` },
     "garment-manufacturing": { title: "Ready to Start Manufacturing?", desc: "Get a detailed quote and production timeline within 48 hours.", btn: "Get Quote", href: `/${lang}/inquiry` },
-    sustainability: { title: "Looking for Sustainable Manufacturing?", desc: "GOTS, OEKO-TEX, and GRS certified production.", btn: "Discuss Sustainability", href: `/${lang}/inquiry` },
+    sustainability: { title: "Looking for Sustainable Manufacturing?", desc: "Organic and recycled fabric sourcing on request.", btn: "Discuss Sustainability", href: `/${lang}/inquiry` },
     "eu-regulations": { title: "Need Compliance Support?", desc: "Full certification documentation for every shipment.", btn: "Contact Compliance Team", href: `/${lang}/inquiry` },
     "quality-control": { title: "Quality Is Our Priority", desc: "AQL 2.5 inspection with transparent QC reporting.", btn: "Learn About Our QC", href: `/${lang}/quality-control` },
     "export-logistics": { title: "Need a Shipping Quote?", desc: "FOB, CIF, and DDP pricing. Response within 24 hours.", btn: "Get Shipping Quote", href: `/${lang}/inquiry` },

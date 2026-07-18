@@ -80,7 +80,7 @@ function buildDescription(product: Product) {
       <div>
         <h3 className="font-display text-lg font-semibold text-foreground mb-2">Design Details</h3>
         <p>
-          Every {product.name} is produced in our Gujarat facility with attention to construction
+          Every {product.name} is produced in our Mumbai facility with attention to construction
           details that matter to wholesale buyers: balanced seam allowances, reinforced stress
           points, consistent stitch density, and clean finishing throughout. Embellishments,
           prints, and surface treatments are applied after quality inspection of the base fabric.
